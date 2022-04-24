@@ -1,0 +1,75 @@
+---
+import Page from "@/components/Page/Page.tsx";
+import Header from "@/components/Header/Header.tsx";
+import MenuToggle from "@/components/MenuToggle/MenuToggle.tsx";
+import Content from "@/components/Content/Content.tsx";
+import "@/styles/global.scss";
+
+import "@/styles/reset.css";
+import "@/styles/bootstrap-grid.min.css";
+import "@/styles/animations.css";
+import "@/styles/perfect-scrollbar.css";
+import "@/styles/owl.carousel.css";
+import "@/styles/magnific-popup.css";
+import "@/styles/main.css";
+
+const name = "Nurliman Diara";
+const titles = ["Web Developer", "Frontend Developer"];
+---
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BreezyCV - Resume / CV / vCard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="BreezyCV - Resume / CV / vCard Template" />
+    <meta
+      name="keywords"
+      content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, Material CV, portfolio"
+    />
+    <meta name="author" content="lmpixels" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <!-- Animated Background -->
+    <div class="lm-animated-bg" style="background-image: url(img/main_bg.png);"></div>
+    <!-- /Animated Background -->
+
+    <Page>
+      <Header client:load {name} title={titles[0]} />
+      <MenuToggle client:media="(max-width: 1025px)" />
+
+      <!-- Arrows Nav -->
+      <div class="lmpixels-arrows-nav">
+        <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
+        <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
+      </div>
+      <!-- End Arrows Nav -->
+
+      <Content client:idle />
+    </Page>
+
+    <script is:inline src="/js/jquery.min.js"></script>
+    <script is:inline src="/js/modernizr.custom.js"></script>
+    <!-- <script is:inline src="/js/animating.js"></script> -->
+
+    <script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
+    <script is:inline src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script is:inline src="/js/perfect-scrollbar.min.js"></script>
+    <script is:inline src="/js/jquery.shuffle.min.js"></script>
+    <script is:inline src="/js/masonry.pkgd.min.js"></script>
+    <script is:inline src="/js/owl.carousel.min.js"></script>
+    <script is:inline src="/js/jquery.magnific-popup.min.js"></script>
+
+    <script
+      is:inline
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"
+    ></script>
+    <script is:inline src="/js/jquery.googlemap.js"></script>
+    <script is:inline src="/js/validator.js"></script>
+    <!-- <script is:inline src="/js/main.js"></script> -->
+  </body>
+</html>

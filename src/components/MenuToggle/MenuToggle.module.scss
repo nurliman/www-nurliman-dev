@@ -1,0 +1,74 @@
+.toggle {
+  @media only screen and (min-width: 1025px) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    position: absolute;
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 46px;
+    text-align: center;
+    background-color: #04b4e0;
+    right: 10px;
+    font-size: 19px;
+    top: 10px;
+    border-radius: 30px;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 900;
+
+    & span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 50%;
+      background: #fff;
+      border-radius: 5px;
+      opacity: 1;
+      left: 25%;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 16px;
+        transform-origin: left center;
+      }
+
+      &:nth-child(2) {
+        top: 22px;
+        transform-origin: left center;
+      }
+
+      &:nth-child(3) {
+        top: 28px;
+        transform-origin: left center;
+      }
+    }
+  }
+}
+
+.open {
+  @media only screen and (max-width: 1024px) {
+    & span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        top: 13px;
+        left: 15px;
+      }
+
+      &:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 30px;
+        left: 15px;
+      }
+    }
+  }
+}

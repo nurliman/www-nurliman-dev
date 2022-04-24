@@ -1,0 +1,61 @@
+.container {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  max-width: calc(100% - 380px);
+
+  @media only screen and (max-width: 1280px) {
+    max-width: calc(100% - 330px);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    max-width: calc(100% - 420px);
+  }
+}
+
+.inner {
+  position: relative;
+  height: 100%;
+  perspective: 1500px;
+  backface-visibility: hidden;
+}
+
+.section {
+  position: absolute;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+  padding: 0;
+  opacity: 0;
+  overflow: auto;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  @media only screen and (max-width: 1024px) {
+    border-radius: 0;
+    overflow: auto !important;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    border-radius: 0;
+  }
+}
+
+.active {
+  opacity: 1;
+  overflow: auto;
+  visibility: visible;
+  z-index: 99;
+}

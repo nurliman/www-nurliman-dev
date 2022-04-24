@@ -1,0 +1,15 @@
+.buttons {
+  margin-top: 50px;
+
+  & :global(.btn-primary) {
+    background-color: transparent;
+    color: #f5f5f5;
+    border-color: #f5f5f5;
+
+    &:hover {
+      background-color: #fff;
+      color: #04b4e0;
+      border-color: #fff;
+    }
+  }
+}

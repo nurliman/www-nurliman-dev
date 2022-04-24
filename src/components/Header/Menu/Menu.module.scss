@@ -1,0 +1,121 @@
+.menu {
+  @media only screen and (max-width: 1024px) {
+    margin: 30px 0;
+
+    & li:global(.active) .anchor {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    position: absolute;
+    padding: 15px 0;
+    width: 70px;
+    right: -90px;
+    background-color: #444;
+    border-radius: 35px;
+    z-index: 999;
+    list-style: none;
+    top: 0;
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.15);
+  }
+
+  @media only screen and (min-width: 1025px) {
+    background-color: #222;
+    width: 86px;
+    left: -86px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 0;
+
+    & li:global(.active) .anchor {
+      color: #04b4e0;
+    }
+  }
+}
+
+.anchor {
+  @media only screen and (max-width: 1024px) {
+    display: block;
+    color: #fff;
+    padding: 12px 0;
+    line-height: 21px;
+    opacity: 0.7;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    display: block;
+    position: relative;
+    color: #b5b6b7;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      color: #04b4e0;
+    }
+
+    &:hover .linkText {
+      right: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    border-bottom: 1px solid #333;
+
+    &:hover .linkText {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.icon {
+  display: none;
+
+  @media only screen and (min-width: 1025px) {
+    display: block;
+    font-size: 30px;
+  }
+}
+
+.linkText {
+  @media only screen and (max-width: 1024px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    position: absolute;
+    width: auto;
+    visibility: hidden;
+    opacity: 0;
+    color: #fff;
+    padding: 2px 10px;
+    background-color: #04b4e0;
+    white-space: nowrap;
+    right: 0;
+    top: -50%;
+    margin-top: 50%;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+    box-shadow: 0px 10px 10px -8px rgba(0, 0, 0, 0.22);
+  }
+
+  @media only screen and (min-width: 1025px) {
+    position: relative;
+    left: 0;
+    right: 0;
+    right: auto;
+    visibility: visible;
+    opacity: 1;
+    color: #eee;
+    font-size: 11px;
+    padding: 8px 0 5px;
+    background: transparent;
+    box-shadow: none;
+  }
+}
