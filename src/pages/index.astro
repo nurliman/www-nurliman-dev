@@ -3,6 +3,12 @@ import Page from "@/components/Page/Page.tsx";
 import Header from "@/components/Header/Header.tsx";
 import MenuToggle from "@/components/MenuToggle/MenuToggle.tsx";
 import Content from "@/components/Content/Content.tsx";
+import HomeSection from "@/components/Sections/Home/Home.tsx";
+import AboutMeSection from "@/components/Sections/AboutMe/AboutMe.tsx";
+import ResumeSection from "@/components/Sections/Resume/Resume.tsx";
+import PortfolioSection from "@/components/Sections/Portfolio/Portfolio.tsx";
+import BlogSection from "@/components/Sections/Blog/Blog.tsx";
+import ContactSection from "@/components/Sections/Contact/Contact.tsx";
 import "@/styles/global.scss";
 
 import "@/styles/reset.css";
@@ -48,7 +54,14 @@ const titles = ["Web Developer", "Frontend Developer"];
       </div>
       <!-- End Arrows Nav -->
 
-      <Content client:idle />
+      <Content>
+        <HomeSection client:load/>
+        <AboutMeSection client:idle/>
+        <ResumeSection client:idle/>
+        <PortfolioSection client:idle/>
+        <BlogSection client:idle/>
+        <ContactSection client:idle/>
+      </Content>
     </Page>
 
     <script is:inline src="/js/jquery.min.js"></script>
