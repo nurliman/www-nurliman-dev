@@ -14,18 +14,18 @@ specifiers:
   prettier: ^2.6.2
   prettier-plugin-astro: ^0.0.12
   sass: ^1.50.1
-  solid-js: ^1.3.16
+  solid-js: ^1.3.17
 
 dependencies:
   '@nanostores/solid': 0.1.6
-  '@solid-primitives/media': 1.3.0_solid-js@1.3.16
+  '@solid-primitives/media': 1.3.0_solid-js@1.3.17
   clsx: 1.1.1
   dayjs: 1.11.1
   nanostores: 0.5.12
-  solid-js: 1.3.16
+  solid-js: 1.3.17
 
 devDependencies:
-  '@astrojs/solid-js': 0.1.2_solid-js@1.3.16
+  '@astrojs/solid-js': 0.1.2_solid-js@1.3.17
   astro: 1.0.0-beta.17_sass@1.50.1
   autoprefixer: 10.4.5
   postcss-flexbugs-fixes: 5.0.2
@@ -110,14 +110,14 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     dev: true
 
-  /@astrojs/solid-js/0.1.2_solid-js@1.3.16:
+  /@astrojs/solid-js/0.1.2_solid-js@1.3.17:
     resolution: {integrity: sha512-xXrKwWprjMkZMVSmqfPJOlrwr3WvuoZckSN/VE5WZf8JYJBZrmsEh5xJg+s3Q9dJQQ2ZdsNhTer5pm3Gp+YbOg==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       solid-js: ^1.3.6
     dependencies:
       babel-preset-solid: 1.3.16
-      solid-js: 1.3.16
+      solid-js: 1.3.17
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -458,7 +458,7 @@ packages:
     resolution: {integrity: sha512-0nX7kUrpy5VAPkrR6S3HY1hPZymd3y/dWNsQ8aUIvXyKiukw/B5x5Hm9jvG4gG9ZjDnRXaYR3KWHeANxkNaTlw==}
     dependencies:
       nanostores: 0.5.12
-      solid-js: 1.3.16
+      solid-js: 1.3.17
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -502,12 +502,12 @@ packages:
       tsm: 2.2.1
     dev: true
 
-  /@solid-primitives/media/1.3.0_solid-js@1.3.16:
+  /@solid-primitives/media/1.3.0_solid-js@1.3.17:
     resolution: {integrity: sha512-lpz4+pA7stwuC0G3Kpua+Y0lO5kUPXj8p7vJBHHO3KNcM+jM4A/kAzRuR5JuG2lIXBxu7x+rhSsOHeYHVHa78A==}
     peerDependencies:
       solid-js: ^1.3.1
     dependencies:
-      solid-js: 1.3.16
+      solid-js: 1.3.17
     dev: false
 
   /@types/acorn/4.0.6:
@@ -3810,8 +3810,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /solid-js/1.3.16:
-    resolution: {integrity: sha512-ks9wrUFLx2vzXnR+yXLtL/qO++lixueYsPb9baN0jMNpe1nzAdZn8AbodCmDu9yLPrA7oEFt5CYnzN6/MwtswA==}
+  /solid-js/1.3.17:
+    resolution: {integrity: sha512-BFCosxa4hRm+LF7S+kBL5bNr4RtuZif6AaR5FdQkBpV1E6QNLAOFm4HWgEN8vL2aCWEKl384cT8Etw8ziW8aag==}
     dev: false
 
   /source-map-js/1.0.2:
