@@ -3,7 +3,7 @@ import { useStore } from "@nanostores/solid";
 import { sectionsStore } from "@/stores/sections";
 import styles from "./Section.module.scss";
 
-type Props = ComponentProps<"section"> & {
+type Props = Omit<ComponentProps<"section">, "className"> & {
   sectionId: string;
 };
 
@@ -16,7 +16,7 @@ const Section: Component<Props> = (props) => {
       classList={{
         [styles.section]: true,
         [styles.active]: sectionsState().active === props.sectionId,
-        className: !!props.className,
+        [props.class]: !!props.class,
       }}
     >
       {props.children}
