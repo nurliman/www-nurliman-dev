@@ -15,5 +15,10 @@ const initialValue = {
 export const sectionsStore = atom(initialValue);
 
 export function setActive(id: string) {
+  if (!id) return;
   sectionsStore.set({ ...sectionsStore.get(), active: id });
+}
+
+export function getActiveIndex() {
+  return sectionsStore.get().list.findIndex((x) => x.id === sectionsStore.get().active);
 }

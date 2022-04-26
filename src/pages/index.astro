@@ -9,6 +9,7 @@ import ResumeSection from "@/components/Sections/Resume/Resume.tsx";
 import PortfolioSection from "@/components/Sections/Portfolio/Portfolio.tsx";
 import BlogSection from "@/components/Sections/Blog/Blog.tsx";
 import ContactSection from "@/components/Sections/Contact/Contact.tsx";
+import ArrowNav from "@/components/ArrowNav/ArrowNav.tsx";
 import "@/styles/global.scss";
 
 import "@/styles/reset.css";
@@ -46,14 +47,7 @@ const titles = ["Web Developer", "Frontend Developer"];
     <Page>
       <Header client:load {name} title={titles[0]} />
       <MenuToggle client:media="(max-width: 1025px)" />
-
-      <!-- Arrows Nav -->
-      <div class="lmpixels-arrows-nav">
-        <div class="lmpixels-arrow-right"><i class="lnr lnr-chevron-right"></i></div>
-        <div class="lmpixels-arrow-left"><i class="lnr lnr-chevron-left"></i></div>
-      </div>
-      <!-- End Arrows Nav -->
-
+      <ArrowNav client:load />
       <Content>
         <HomeSection client:load />
         <AboutMeSection client:idle />

@@ -49,41 +49,6 @@
 4. Header
 ------------------------------------------------------------ */
 
-/* --- LMPixels Arrow Nav --- */
-.lmpixels-arrows-nav {
-  position: absolute;
-  padding: 10px 0;
-  width: 60px;
-  right: -80px;
-  background-color: #444;
-  border-radius: 35px;
-  z-index: 98;
-  list-style: none;
-  bottom: 0;
-  -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.15);
-}
-
-.lmpixels-arrows-nav div {
-  display: block;
-  position: relative;
-  text-align: center;
-  color: #b5b6b7;
-  padding: 10px;
-  font-size: 24px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.lmpixels-arrows-nav div:hover {
-  color: #04b4e0;
-}
-/* --- End LMPixels Arrow Nav --- */
-
 /* ------------------------------------------------------------
 5. Page Content
 ------------------------------------------------------------ */
@@ -1849,19 +1814,6 @@ blockquote {
     overflow: auto !important;
   }
 
-  .lmpixels-arrows-nav {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 48px;
-    right: 10px;
-    bottom: 10px;
-    padding: 5px 0;
-    border: 2px solid #04b4e0;
-  }
-
-  .lmpixels-arrows-nav div {
-    font-size: 24px;
-  }
-
   .single-page-content .post-content {
     position: relative;
     margin-left: 20px;
@@ -2121,15 +2073,8 @@ blockquote {
   .single-page-content {
     border-radius: 0;
   }
-  .lmpixels-arrows-nav {
-    background-color: #444;
-    width: 48px;
-    right: 10px;
-    bottom: 10px;
-    padding: 5px 0;
-    border: 2px solid #04b4e0;
-  }
 }
+
 .home-page-first-style {
   min-height: calc(100vh - 140px) !important;
 }

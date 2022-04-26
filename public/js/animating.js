@@ -81,22 +81,6 @@ var PageTransitions = (function ($, options) {
 
         $('body').append('<div id="page-ajax-loaded" class="page-ajax-loaded animated animated-section-moveFromLeft"></div>');
         ajaxLoader();
-
-        $(".lmpixels-arrow-right").click(function() {
-            var activeItem = $('.main-menu a.active').parent("li");
-            activeItem.next("li").children("a").click();
-            if ( activeItem.is(':last-child') ) {
-                $('.main-menu li:first-child').children("a").click();
-            }
-        });
-
-        $(".lmpixels-arrow-left").click(function() {
-            var activeItem = $('.main-menu a.active').parent("li");
-            activeItem.prev("li").children("a").click();
-            if ( activeItem.is(':first-child') ) {
-                $('.main-menu li:last-child').children("a").click();
-            }
-        });
     }
 
     function getActiveSection() {
