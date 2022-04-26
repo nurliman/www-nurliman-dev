@@ -30,6 +30,7 @@
     "eslint": "^8.14.0",
     "eslint-plugin-solid": "^0.4.7",
     "husky": "^7.0.4",
+    "lint-staged": "^12.4.0",
     "postcss": "^8.4.12",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.4.3",
@@ -50,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.+(js|mjs|cjs|jsx|ts|tsx)": "eslint --cache --fix"
   }
 }
