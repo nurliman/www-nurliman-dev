@@ -2084,20 +2084,6 @@ blockquote {
 ============================================================================= */
 
 /* v1.1 */
-.lm-animated-bg {
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: -28px;
-  left: -28px;
-  right: -28px;
-  bottom: -28px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
 .vcentered {
   vertical-align: middle;
   width: 100%;
@@ -2252,10 +2238,6 @@ blockquote {
 }
 
 @media only screen and (max-width: 1024px) {
-  .lm-animated-bg {
-    display: none;
-  }
-
   .title-block h2 {
     font-size: 48px;
     line-height: 56px;

@@ -99,26 +99,6 @@
 
     // On Document Load
     $(document).ready(function () {
-        var movementStrength = 23;
-        var height = movementStrength / $(document).height();
-        var width = movementStrength / $(document).width();
-        $("body").on('mousemove', function(e){
-            var pageX = e.pageX - ($(document).width() / 2),
-                pageY = e.pageY - ($(document).height() / 2),
-                newvalueX = width * pageX * -1,
-                newvalueY = height * pageY * -1,
-                elements = $('.lm-animated-bg');
-
-            elements.addClass('transition');
-            elements.css({
-                "background-position": "calc( 50% + " + newvalueX + "px ) calc( 50% + " + newvalueY + "px )",
-            });
-
-            setTimeout(function() {
-                elements.removeClass('transition');
-            }, 300);
-        })
-
         // Sidebar toggle
         $('.sidebar-toggle').on("click", function () {
             $('#blog-sidebar').toggleClass('open');
