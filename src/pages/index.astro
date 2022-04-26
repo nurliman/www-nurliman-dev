@@ -20,9 +20,6 @@ import "@/styles/perfect-scrollbar.css";
 import "@/styles/owl.carousel.css";
 import "@/styles/magnific-popup.css";
 import "@/styles/main.css";
-
-const name = "Nurliman Diara";
-const titles = ["Web Developer", "Frontend Developer"];
 ---
 
 <html lang="en" class="no-js">
@@ -43,7 +40,7 @@ const titles = ["Web Developer", "Frontend Developer"];
   <body>
     <AnimatedBackground />
     <Page>
-      <Header client:load {name} title={titles[0]} />
+      <Header client:load />
       <MenuToggle client:media="(max-width: 1025px)" />
       <ArrowNav client:load />
       <Content>
