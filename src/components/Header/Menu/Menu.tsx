@@ -8,16 +8,15 @@ import styles from "./Menu.module.scss";
 export default function Menu() {
   const sectionsState = useStore(sectionsStore);
 
-  function onItemClick(id: string) {
+  const onItemClick = (id: string) => {
     setActive(id);
     setShow(false);
-  }
+  };
 
   return (
     <ul class={clsx(styles.menu, "main-menu")}>
-      <For
-        each={sectionsState().list}
-        children={({ id, name, icon }) => (
+      <For each={sectionsState().list}>
+        {({ id, name, icon }) => (
           <li classList={{ active: sectionsState().active === id }}>
             <a
               href={"#" + id}
@@ -29,7 +28,7 @@ export default function Menu() {
             </a>
           </li>
         )}
-      />
+      </For>
     </ul>
   );
 }
