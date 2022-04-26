@@ -15,12 +15,12 @@ specifiers:
   eslint-plugin-solid: ^0.4.7
   husky: ^7.0.4
   keen-slider: ^6.6.10
-  lint-staged: ^12.4.0
+  lint-staged: ^12.4.1
   nanoid: ^3.3.3
   nanostores: ^0.5.12
   postcss: ^8.4.12
   postcss-flexbugs-fixes: ^5.0.2
-  postcss-preset-env: ^7.4.3
+  postcss-preset-env: ^7.4.4
   prettier: ^2.6.2
   prettier-plugin-astro: ^0.0.12
   pretty-quick: ^3.1.3
@@ -48,10 +48,10 @@ devDependencies:
   eslint: 8.14.0
   eslint-plugin-solid: 0.4.7_5wsz2tb7zzudmaqxfve53vbauu
   husky: 7.0.4
-  lint-staged: 12.4.0
+  lint-staged: 12.4.1
   postcss: 8.4.12
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.12
-  postcss-preset-env: 7.4.3_postcss@8.4.12
+  postcss-preset-env: 7.4.4_postcss@8.4.12
   prettier: 2.6.2
   prettier-plugin-astro: 0.0.12
   pretty-quick: 3.1.3_prettier@2.6.2
@@ -2910,8 +2910,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/12.4.0:
-    resolution: {integrity: sha512-3X7MR0h9b7qf4iXf/1n7RlVAx+EzpAZXoCEMhVSpaBlgKDfH2ewf+QUm7BddFyq29v4dgPP+8+uYpWuSWx035A==}
+  /lint-staged/12.4.1:
+    resolution: {integrity: sha512-PTXgzpflrQ+pODQTG116QNB+Q6uUTDg5B5HqGvNhoQSGt8Qy+MA/6zSnR8n38+sxP5TapzeQGTvoKni0KRS8Vg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -4142,8 +4142,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-preset-env/7.4.3_postcss@8.4.12:
-    resolution: {integrity: sha512-dlPA65g9KuGv7YsmGyCKtFkZKCPLkoVMUE3omOl6yM+qrynVHxFvf0tMuippIrXB/sB/MyhL1FgTIbrO+qMERg==}
+  /postcss-preset-env/7.4.4_postcss@8.4.12:
+    resolution: {integrity: sha512-MqzSEx/QsvOk562iV9mLTgIvLFEOq1os9QBQfkgnq8TW6yKhVFPGh0gdXSK5ZlmjuNQEga6/x833e86XZF/lug==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.4
