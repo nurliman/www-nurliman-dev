@@ -5,6 +5,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "types": ["astro/env"],
     "baseUrl": ".",
     "paths": {
