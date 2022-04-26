@@ -18,7 +18,7 @@ export default function Menu() {
       <For
         each={sectionsState().list}
         children={({ id, name, icon }) => (
-          <li class={sectionsState().active === id && "active"}>
+          <li classList={{ active: sectionsState().active === id }}>
             <a
               href={"#" + id}
               class={clsx(styles.anchor, "nav-anim")}
