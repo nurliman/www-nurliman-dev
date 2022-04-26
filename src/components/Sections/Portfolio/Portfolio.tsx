@@ -49,7 +49,6 @@ export default function PortfolioSection() {
               <div class="portfolio-grid three-columns">
                 <figure class="item lbaudio" data-groups='["category_all", "category_soundcloud"]'>
                   <div class="portfolio-item-img">
-                    )
                     <img src="img/portfolio/1.jpg" alt="SoundCloud Audio" title="" />
                     <a
                       href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&#038;color=%23ff5500&#038;auto_play=false&#038;hide_related=false&#038;show_comments=true&#038;show_user=true&#038;show_reposts=false&#038;show_teaser=true&#038;visual=true"
@@ -65,7 +64,6 @@ export default function PortfolioSection() {
 
                 <figure class="item standard" data-groups='["category_all", "category_detailed"]'>
                   <div class="portfolio-item-img">
-                    )
                     <img src="img/portfolio/2.jpg" alt="Media Project 2" title="" />
                     <a href="portfolio-1.html" class="ajax-page-load"></a>
                   </div>
@@ -95,7 +93,6 @@ export default function PortfolioSection() {
 
                 <figure class="item standard" data-groups='["category_all", "category_detailed"]'>
                   <div class="portfolio-item-img">
-                    )
                     <img src="img/portfolio/4.jpg" alt="Media Project 1" title="" />
                     <a href="portfolio-1.html" class="ajax-page-load"></a>
                   </div>
@@ -109,7 +106,6 @@ export default function PortfolioSection() {
                   <div class="portfolio-item-img">
                     <img src="img/portfolio/5.jpg" alt="Mockup Design 1" title="" />
                     <a class="lightbox" title="Mockup Design 1" href="img/portfolio/full/5.jpg"></a>
-                    )
                   </div>
 
                   <i class="far fa-image"></i>
