@@ -17,6 +17,7 @@
     "@solid-primitives/media": "^1.3.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.1",
+    "nanoid": "^3.3.3",
     "nanostores": "^0.5.12",
     "solid-js": "^1.3.17"
   },
