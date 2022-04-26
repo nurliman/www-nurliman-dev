@@ -47,7 +47,10 @@ export default function PortfolioSection() {
               </ul>
 
               <div className="portfolio-grid three-columns">
-                <figure className="item lbaudio" data-groups='["category_all", "category_soundcloud"]'>
+                <figure
+                  className="item lbaudio"
+                  data-groups='["category_all", "category_soundcloud"]'
+                >
                   <div className="portfolio-item-img">
                     <img src="img/portfolio/1.jpg" alt="SoundCloud Audio" title="" />
                     <a
@@ -62,7 +65,10 @@ export default function PortfolioSection() {
                   <span className="category">SoundCloud</span>
                 </figure>
 
-                <figure className="item standard" data-groups='["category_all", "category_detailed"]'>
+                <figure
+                  className="item standard"
+                  data-groups='["category_all", "category_detailed"]'
+                >
                   <div className="portfolio-item-img">
                     <img src="img/portfolio/2.jpg" alt="Media Project 2" title="" />
                     <a href="portfolio-1.html" className="ajax-page-load"></a>
@@ -91,7 +97,10 @@ export default function PortfolioSection() {
                   <span className="category">Vimeo Videos</span>
                 </figure>
 
-                <figure className="item standard" data-groups='["category_all", "category_detailed"]'>
+                <figure
+                  className="item standard"
+                  data-groups='["category_all", "category_detailed"]'
+                >
                   <div className="portfolio-item-img">
                     <img src="img/portfolio/4.jpg" alt="Media Project 1" title="" />
                     <a href="portfolio-1.html" className="ajax-page-load"></a>
@@ -105,7 +114,11 @@ export default function PortfolioSection() {
                 <figure className="item lbimage" data-groups='["category_all", "category_mockups"]'>
                   <div className="portfolio-item-img">
                     <img src="img/portfolio/5.jpg" alt="Mockup Design 1" title="" />
-                    <a className="lightbox" title="Mockup Design 1" href="img/portfolio/full/5.jpg"></a>
+                    <a
+                      className="lightbox"
+                      title="Mockup Design 1"
+                      href="img/portfolio/full/5.jpg"
+                    ></a>
                   </div>
 
                   <i className="far fa-image"></i>
