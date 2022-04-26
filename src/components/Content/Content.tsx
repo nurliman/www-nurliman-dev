@@ -3,8 +3,8 @@ import styles from "./Content.module.scss";
 
 const Content: Component = ({ children }) => {
   return (
-    <div className={styles.container}>
-      <div id="animated-sections" className={styles.inner}>
+    <div class={styles.container}>
+      <div id="animated-sections" class={styles.inner}>
         {children}
       </div>
     </div>
