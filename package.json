@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format:all": "prettier --write \"**/*.+(astro|js|mjs|cjs|jsx|ts|tsx|css|scss|md|json|yml|yaml)\" --ignore-path .gitignore"
+    "format:all": "prettier --write \"**/*.+(astro|js|mjs|cjs|jsx|ts|tsx|css|scss|md|json|yml|yaml)\" --ignore .gitignore --ignore .prettierignore"
   },
   "dependencies": {
     "@nanostores/solid": "^0.1.6",
