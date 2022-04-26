@@ -10,7 +10,8 @@
     "lint": "eslint ./src --ext .js,.mjs,.cjs,.jsx,.ts,.tsx --cache --fix",
     "format": "pretty-quick --staged --ignore .gitignore --ignore .prettierignore",
     "format:all": "prettier --write \"**/*.+(astro|js|mjs|cjs|jsx|ts|tsx|css|scss|md|json|yml|yaml)\" --ignore .gitignore --ignore .prettierignore",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@nanostores/solid": "^0.1.6",
