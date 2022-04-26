@@ -1,10 +1,10 @@
-import {} from "solid-js";
+import { PropsWithChildren } from "solid-js";
 import styles from "./Page.module.scss";
 
-export default function Page({ children }) {
+export default function Page(props: PropsWithChildren) {
   return (
-    <div className={styles.container}>
-      <div className={styles.inner}>{children}</div>
+    <div class={styles.container}>
+      <div class={styles.inner}>{props.children}</div>
     </div>
   );
 }

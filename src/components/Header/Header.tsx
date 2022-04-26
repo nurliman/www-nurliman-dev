@@ -1,4 +1,4 @@
-import { Component, createSignal, onMount, onCleanup } from "solid-js";
+import { Component, createSignal, onMount, onCleanup, mergeProps } from "solid-js";
 import createMediaQuery from "@solid-primitives/media";
 import { useStore } from "@nanostores/solid";
 import dayjs from "dayjs";
@@ -15,7 +15,8 @@ type Props = {
   title?: string;
 };
 
-const Header: Component<Props> = ({ name = "No Name!", title = "No Title!" }) => {
+const Header: Component<Props> = (_props) => {
+  const props = mergeProps({ name: "No Name!", title: "No Title!" }, _props);
   const [currentYear] = createSignal(dayjs().year());
   const headerState = useStore(headerStore);
   const isSmall = createMediaQuery("(max-width: 1024px)");
@@ -40,12 +41,12 @@ const Header: Component<Props> = ({ name = "No Name!", title = "No Title!" }) =>
       }}
     >
       <div>
-        <div className={styles.photo}>
-          <img src={photoOfMe} alt={name} />
+        <div class={styles.photo}>
+          <img src={photoOfMe} alt={props.name} />
         </div>
-        <div className={styles.titles}>
-          <h2>{name}</h2>
-          <h4>{title}</h4>
+        <div class={styles.titles}>
+          <h2>{props.name}</h2>
+          <h4>{props.title}</h4>
         </div>
       </div>
       <Menu />

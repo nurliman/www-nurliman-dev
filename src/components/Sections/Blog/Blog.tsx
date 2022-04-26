@@ -1,6 +1,6 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
-import styles from "./Blog.module.scss";
+// import styles from "./Blog.module.scss";
 
 export default function BlogSection() {
   return (

@@ -1,6 +1,6 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
-import styles from "./Home.module.scss";
+// import styles from "./Home.module.scss";
 
 export default function HomeSection() {
   return (

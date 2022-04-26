@@ -7,19 +7,19 @@ type Props = ComponentProps<"section"> & {
   sectionId: string;
 };
 
-const Section: Component<Props> = ({ children, className, sectionId }) => {
+const Section: Component<Props> = (props) => {
   const sectionsState = useStore(sectionsStore);
 
   return (
     <section
-      data-id={sectionId}
+      data-id={props.sectionId}
       classList={{
         [styles.section]: true,
-        [styles.active]: sectionsState().active === sectionId,
-        className: !!className,
+        [styles.active]: sectionsState().active === props.sectionId,
+        className: !!props.className,
       }}
     >
-      {children}
+      {props.children}
     </section>
   );
 };

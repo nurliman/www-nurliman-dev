@@ -1,13 +1,14 @@
-import { Component, ComponentProps } from "solid-js";
+import { Component, ComponentProps, splitProps } from "solid-js";
 import clsx from "clsx";
 import styles from "./Copyrights.module.scss";
 
-type Props = ComponentProps<"div">;
+type Props = Omit<ComponentProps<"div">, "className">;
 
-const Copyrights: Component<Props> = ({ children, className, ...props }) => {
+const Copyrights: Component<Props> = (_props) => {
+  const [props, restProps] = splitProps(_props, ["children", "class"]);
   return (
-    <div className={clsx(styles.copyrights, className)} {...props}>
-      {children}
+    <div class={clsx(styles.copyrights, props.class)} {...restProps}>
+      {props.children}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
-import styles from "./AboutMe.module.scss";
+// import styles from "./AboutMe.module.scss";
 
 export default function AboutMeSection() {
   return (

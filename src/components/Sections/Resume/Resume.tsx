@@ -1,6 +1,6 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
-import styles from "./Resume.module.scss";
+// import styles from "./Resume.module.scss";
 
 export default function ResumeSection() {
   return (

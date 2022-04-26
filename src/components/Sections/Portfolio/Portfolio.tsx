@@ -1,6 +1,6 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
-import styles from "./Portfolio.module.scss";
+// import styles from "./Portfolio.module.scss";
 
 export default function PortfolioSection() {
   return (

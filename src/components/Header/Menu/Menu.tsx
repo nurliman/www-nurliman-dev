@@ -14,18 +14,18 @@ export default function Menu() {
   }
 
   return (
-    <ul className={clsx(styles.menu, "main-menu")}>
+    <ul class={clsx(styles.menu, "main-menu")}>
       <For
         each={sectionsState().list}
         children={({ id, name, icon }) => (
-          <li className={sectionsState().active === id && "active"}>
+          <li class={sectionsState().active === id && "active"}>
             <a
               href={"#" + id}
-              className={clsx(styles.anchor, "nav-anim")}
+              class={clsx(styles.anchor, "nav-anim")}
               onClick={() => onItemClick(id)}
             >
-              <span className={clsx(styles.icon, "lnr", icon)}></span>
-              <span className={styles.linkText}>{name}</span>
+              <span class={clsx(styles.icon, "lnr", icon)}></span>
+              <span class={styles.linkText}>{name}</span>
             </a>
           </li>
         )}

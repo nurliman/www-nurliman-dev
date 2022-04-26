@@ -1,6 +1,6 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
-import styles from "./Contact.module.scss";
+// import styles from "./Contact.module.scss";
 
 export default function ContactSection() {
   return (
@@ -67,7 +67,7 @@ export default function ContactSection() {
                         name="name"
                         class="form-control"
                         placeholder=""
-                        required="required"
+                        required
                         data-error="Name is required."
                       />
                       <label>Full Name</label>
@@ -82,7 +82,7 @@ export default function ContactSection() {
                         name="email"
                         class="form-control"
                         placeholder=""
-                        required="required"
+                        required
                         data-error="Valid email is required."
                       />
                       <label>Email Address</label>
@@ -97,7 +97,7 @@ export default function ContactSection() {
                         name="subject"
                         class="form-control"
                         placeholder=""
-                        required="required"
+                        required
                         data-error="Subject is required."
                       />
                       <label>Subject</label>
@@ -113,7 +113,7 @@ export default function ContactSection() {
                         class="form-control"
                         placeholder=""
                         rows="7"
-                        required="required"
+                        required
                         data-error="Please, leave me a message."
                       ></textarea>
                       <label>Message</label>
