@@ -14,6 +14,7 @@ specifiers:
   eslint: ^8.14.0
   eslint-plugin-solid: ^0.4.7
   husky: ^7.0.4
+  keen-slider: ^6.6.10
   lint-staged: ^12.4.0
   nanoid: ^3.3.3
   nanostores: ^0.5.12
@@ -32,6 +33,7 @@ dependencies:
   '@solid-primitives/media': 1.3.0_solid-js@1.3.17
   clsx: 1.1.1
   dayjs: 1.11.1
+  keen-slider: 6.6.10
   nanoid: 3.3.3
   nanostores: 0.5.12
   solid-js: 1.3.17
@@ -2862,6 +2864,10 @@ packages:
   /kebab-case/1.0.1:
     resolution: {integrity: sha512-txPHx6nVLhv8PHGXIlAk0nYoh894SpAqGPXNvbg2hh8spvHXIah3+vT87DLoa59nKgC6scD3u3xAuRIgiMqbfQ==}
     dev: true
+
+  /keen-slider/6.6.10:
+    resolution: {integrity: sha512-1OwX8DfPiMCcPKVlo3Glw0FxrGbjaiy6wP8KN7bDkNbVmgxmcrODbFZYW5nA5LsF0VKho4unIDR6wCMUKZOEpA==}
+    dev: false
 
   /kind-of/6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
