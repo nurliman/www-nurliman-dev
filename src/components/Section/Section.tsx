@@ -1,6 +1,5 @@
 import { Component, ComponentProps } from "solid-js";
 import { useStore } from "@nanostores/solid";
-import clsx from "clsx";
 import { sectionsStore } from "@/stores/sections";
 import styles from "./Section.module.scss";
 
@@ -14,11 +13,11 @@ const Section: Component<Props> = ({ children, className, sectionId }) => {
   return (
     <section
       data-id={sectionId}
-      className={clsx(
-        styles.section,
-        sectionsState().active === sectionId && styles.active,
-        className,
-      )}
+      classList={{
+        [styles.section]: true,
+        [styles.active]: sectionsState().active === sectionId,
+        className: !!className,
+      }}
     >
       {children}
     </section>

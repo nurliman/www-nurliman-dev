@@ -1,7 +1,6 @@
 import { Component, createSignal, onMount, onCleanup } from "solid-js";
 import createMediaQuery from "@solid-primitives/media";
 import { useStore } from "@nanostores/solid";
-import clsx from "clsx";
 import dayjs from "dayjs";
 import Menu from "./Menu";
 import Socials from "./Socials";
@@ -35,10 +34,10 @@ const Header: Component<Props> = ({ name = "No Name!", title = "No Title!" }) =>
 
   return (
     <header
-      className={clsx({
+      classList={{
         [styles.container]: true,
         [styles.containerHide]: isSmall() && !headerState().show,
-      })}
+      }}
     >
       <div>
         <div className={styles.photo}>
