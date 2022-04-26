@@ -21,7 +21,7 @@ specifiers:
   prettier: ^2.6.2
   prettier-plugin-astro: ^0.0.12
   pretty-quick: ^3.1.3
-  sass: ^1.50.1
+  sass: ^1.51.0
   solid-js: ^1.3.17
   typescript: ^4.6.3
 
@@ -38,7 +38,7 @@ devDependencies:
   '@types/node': 17.0.27
   '@typescript-eslint/eslint-plugin': 5.21.0_qkphj4uotsplaxw5uwbni7kfxa
   '@typescript-eslint/parser': 5.21.0_5wsz2tb7zzudmaqxfve53vbauu
-  astro: 1.0.0-beta.17_sass@1.50.1
+  astro: 1.0.0-beta.17_sass@1.51.0
   autoprefixer: 10.4.5_postcss@8.4.12
   eslint: 8.14.0
   eslint-plugin-solid: 0.4.7_5wsz2tb7zzudmaqxfve53vbauu
@@ -49,7 +49,7 @@ devDependencies:
   prettier: 2.6.2
   prettier-plugin-astro: 0.0.12
   pretty-quick: 3.1.3_prettier@2.6.2
-  sass: 1.50.1
+  sass: 1.51.0
   typescript: 4.6.3
 
 packages:
@@ -935,7 +935,7 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /astro/1.0.0-beta.17_sass@1.50.1:
+  /astro/1.0.0-beta.17_sass@1.51.0:
     resolution: {integrity: sha512-CpPJVBiuz4twPH4XgabEpj3py2YMhPnrIxrduJZzSY5NuVs+K7h23wq1umbDZnIY67pRFaPZZtdx0YqKajIXHw==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
@@ -995,7 +995,7 @@ packages:
       strip-ansi: 7.0.1
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
-      vite: 2.9.5_sass@1.50.1
+      vite: 2.9.5_sass@1.51.0
       yargs-parser: 21.0.1
       zod: 3.14.4
     transitivePeerDependencies:
@@ -4405,8 +4405,8 @@ packages:
       suf-regex: 0.3.4
     dev: true
 
-  /sass/1.50.1:
-    resolution: {integrity: sha512-noTnY41KnlW2A9P8sdwESpDmo+KBNkukI1i8+hOK3footBUcohNHtdOJbckp46XO95nuvcHDDZ+4tmOnpK3hjw==}
+  /sass/1.51.0:
+    resolution: {integrity: sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -5005,7 +5005,7 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /vite/2.9.5_sass@1.50.1:
+  /vite/2.9.5_sass@1.51.0:
     resolution: {integrity: sha512-dvMN64X2YEQgSXF1lYabKXw3BbN6e+BL67+P3Vy4MacnY+UzT1AfkHiioFSi9+uiDUiaDy7Ax/LQqivk6orilg==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -5025,7 +5025,7 @@ packages:
       postcss: 8.4.12
       resolve: 1.22.0
       rollup: 2.70.2
-      sass: 1.50.1
+      sass: 1.51.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
