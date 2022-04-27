@@ -1,10 +1,12 @@
 import { Component, ComponentProps } from "solid-js";
 import { useStore } from "@nanostores/solid";
 import { sectionsStore } from "@/stores/sections";
+import clsx from "clsx";
 import styles from "./Section.module.scss";
 
 type Props = Omit<ComponentProps<"section">, "className"> & {
   sectionId: string;
+  innerClass?: string;
 };
 
 const Section: Component<Props> = (props) => {
@@ -19,7 +21,7 @@ const Section: Component<Props> = (props) => {
         [props.class]: !!props.class,
       }}
     >
-      {props.children}
+      <div class={clsx(styles.inner, props.innerClass)}>{props.children}</div>
     </section>
   );
 };

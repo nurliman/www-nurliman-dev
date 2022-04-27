@@ -25,6 +25,22 @@
   }
 }
 
+.inner {
+  background-color: #222;
+  padding: 60px;
+  position: relative;
+  height: auto;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate3d(0, 0, 0);
+
+  @media only screen and (max-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
 .active {
   opacity: 1;
   overflow: auto;

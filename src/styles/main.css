@@ -53,21 +53,6 @@
 5. Page Content
 ------------------------------------------------------------ */
 
-.section-content {
-  background-color: #222;
-  padding: 60px;
-  position: relative;
-  height: auto;
-  width: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -ms-transform: none;
-}
-
 .single-page-content {
   position: absolute;
   background-color: #222;
@@ -1824,11 +1809,6 @@ blockquote {
 @media only screen and (max-width: 768px) {
   .portfolio-grid figure {
     width: 50%;
-  }
-
-  .section-content {
-    padding-left: 40px;
-    padding-right: 40px;
   }
 
   .info-list {

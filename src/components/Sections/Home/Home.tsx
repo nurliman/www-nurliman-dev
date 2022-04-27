@@ -39,24 +39,22 @@ export default function HomeSection() {
   });
 
   return (
-    <Section sectionId="home">
-      <div class="section-content vcentered">
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class={styles.titleBlock}>
-              <h2>{meState().name}</h2>
-              <div ref={slider} class={styles.fader}>
-                <For each={meState().titles}>
-                  {(title, idx) => (
-                    <div
-                      class={clsx(styles.faderSlide, "keen-slider__slide")}
-                      style={{ opacity: opacities()[idx()] }}
-                    >
-                      <div class={styles.subtitle}>{title}</div>
-                    </div>
-                  )}
-                </For>
-              </div>
+    <Section sectionId="home" innerClass="vcentered">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class={styles.titleBlock}>
+            <h2>{meState().name}</h2>
+            <div ref={slider} class={styles.fader}>
+              <For each={meState().titles}>
+                {(title, idx) => (
+                  <div
+                    class={clsx(styles.faderSlide, "keen-slider__slide")}
+                    style={{ opacity: opacities()[idx()] }}
+                  >
+                    <div class={styles.subtitle}>{title}</div>
+                  </div>
+                )}
+              </For>
             </div>
           </div>
         </div>
