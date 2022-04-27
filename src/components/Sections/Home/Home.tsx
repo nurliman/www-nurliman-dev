@@ -1,53 +1,41 @@
-import { For, createSignal, onMount, onCleanup } from "solid-js";
+import { For, createSignal, createEffect } from "solid-js";
 import clsx from "clsx";
-import KeenSlider from "keen-slider";
+import { createSlider, autoplay } from "@/libs/slider";
 import { useStore } from "@nanostores/solid";
 import { meStore } from "@/stores/me";
+import { sectionsStore } from "@/stores/sections";
 import Section from "@/components/Section";
 import styles from "./Home.module.scss";
 
 export default function HomeSection() {
-  let fader;
   const meState = useStore(meStore);
+  const sectionsState = useStore(sectionsStore);
+  const [pause, togglePause] = createSignal(false);
   const [opacities, setOpacities] = createSignal<number[]>([]);
 
-  onMount(() => {
-    const slider = new KeenSlider(
-      fader,
-      {
-        loop: true,
-        drag: false,
-        defaultAnimation: {
-          duration: 2000,
-        },
-        slides: meState().titles.length,
-        detailsChanged: (s) => {
-          const newOpacities = s.track.details.slides.map((slide) => slide.portion);
-          setOpacities(newOpacities);
-        },
-        renderMode: "custom",
+  const [slider] = createSlider(
+    {
+      loop: true,
+      drag: false,
+      defaultAnimation: {
+        duration: 2000,
       },
-      [
-        (slider) => {
-          let timeout: NodeJS.Timeout;
+      slides: meState().titles.length,
+      detailsChanged: (s) => {
+        const newOpacities = s.track.details.slides.map((slide) => slide.portion);
+        setOpacities(newOpacities);
+      },
+      renderMode: "custom",
+    },
+    autoplay(2500, {
+      pause,
+      pauseOnDrag: false,
+    }),
+  );
 
-          const nextTimeout = () => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-              slider.next();
-            }, 2500);
-          };
-
-          slider.on("created", nextTimeout);
-          slider.on("animationEnded", nextTimeout);
-          slider.on("updated", nextTimeout);
-        },
-      ],
-    );
-
-    onCleanup(() => {
-      slider.destroy();
-    });
+  createEffect(() => {
+    const isNotHome = sectionsState().active.toLowerCase() !== "home";
+    if (pause() !== isNotHome) togglePause(isNotHome);
   });
 
   return (
@@ -57,7 +45,7 @@ export default function HomeSection() {
           <div class="col-sm-12 col-md-12 col-lg-12">
             <div class={styles.titleBlock}>
               <h2>{meState().name}</h2>
-              <div ref={fader} class={styles.fader}>
+              <div ref={slider} class={styles.fader}>
                 <For each={meState().titles}>
                   {(title, idx) => (
                     <div
