@@ -118,20 +118,6 @@
 
         customScroll();
 
-        // Text rotation
-        $('.text-rotation').owlCarousel({
-            loop: true,
-            dots: false,
-            nav: false,
-            margin: 0,
-            items: 1,
-            autoplay: true,
-            autoplayHoverPause: false,
-            autoplayTimeout: 3800,
-            animateOut: 'animated-section-scaleDown',
-            animateIn: 'animated-section-scaleUp'
-        });
-
         // Testimonials Slider
         $(".testimonials.owl-carousel").owlCarousel({
             nav: true, // Show next/prev buttons.
