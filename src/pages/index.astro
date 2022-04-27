@@ -1,4 +1,12 @@
 ---
+import "@/styles/reset.css";
+import "@/styles/bootstrap-grid.min.css";
+import "@/styles/animations.css";
+import "@/styles/perfect-scrollbar.css";
+import "@/styles/magnific-popup.css";
+import "@/styles/main.css";
+import "@/styles/global.scss";
+import "keen-slider/keen-slider.min.css";
 import AnimatedBackground from "@/components/AnimatedBackground/AnimatedBackground.astro";
 import Page from "@/components/Page/Page.tsx";
 import Header from "@/components/Header/Header.tsx";
@@ -11,14 +19,6 @@ import PortfolioSection from "@/components/Sections/Portfolio/Portfolio.tsx";
 import BlogSection from "@/components/Sections/Blog/Blog.tsx";
 import ContactSection from "@/components/Sections/Contact/Contact.tsx";
 import ArrowNav from "@/components/ArrowNav/ArrowNav.tsx";
-import "keen-slider/keen-slider.min.css";
-import "@/styles/global.scss";
-import "@/styles/reset.css";
-import "@/styles/bootstrap-grid.min.css";
-import "@/styles/animations.css";
-import "@/styles/perfect-scrollbar.css";
-import "@/styles/magnific-popup.css";
-import "@/styles/main.css";
 ---
 
 <html lang="en" class="no-js">
@@ -51,25 +51,26 @@ import "@/styles/main.css";
         <ContactSection client:idle />
       </Content>
     </Page>
+    <!-- 
+      <script is:inline src="/js/jquery.min.js"></script>
+      <script is:inline src="/js/modernizr.custom.js"></script>
+      <script is:inline src="/js/animating.js"></script>
 
-    <script is:inline src="/js/jquery.min.js"></script>
-    <script is:inline src="/js/modernizr.custom.js"></script>
-    <!-- <script is:inline src="/js/animating.js"></script> -->
+      <script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
+      <script is:inline src="https://www.google.com/recaptcha/api.js"></script>
 
-    <script is:inline src="/js/imagesloaded.pkgd.min.js"></script>
-    <script is:inline src="https://www.google.com/recaptcha/api.js"></script>
+      <script is:inline src="/js/perfect-scrollbar.min.js"></script>
+      <script is:inline src="/js/jquery.shuffle.min.js"></script>
+      <script is:inline src="/js/masonry.pkgd.min.js"></script>
+      <script is:inline src="/js/jquery.magnific-popup.min.js"></script>
 
-    <script is:inline src="/js/perfect-scrollbar.min.js"></script>
-    <script is:inline src="/js/jquery.shuffle.min.js"></script>
-    <script is:inline src="/js/masonry.pkgd.min.js"></script>
-    <script is:inline src="/js/jquery.magnific-popup.min.js"></script>
-
-    <script
-      is:inline
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"
-    ></script>
-    <script is:inline src="/js/jquery.googlemap.js"></script>
-    <script is:inline src="/js/validator.js"></script>
-    <!-- <script is:inline src="/js/main.js"></script> -->
+      <script
+        is:inline
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"
+      ></script>
+      <script is:inline src="/js/jquery.googlemap.js"></script>
+      <script is:inline src="/js/validator.js"></script>
+      <script is:inline src="/js/main.js"></script>
+     -->
   </body>
 </html>
