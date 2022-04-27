@@ -16,6 +16,7 @@
   "dependencies": {
     "@nanostores/solid": "^0.1.6",
     "@solid-primitives/media": "^1.3.0",
+    "@solid-primitives/timer": "^1.3.1",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.1",
     "keen-slider": "^6.6.10",
