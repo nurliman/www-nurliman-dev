@@ -20,6 +20,7 @@ import PortfolioSection from "@/components/Sections/Portfolio/Portfolio.tsx";
 import BlogSection from "@/components/Sections/Blog/Blog.tsx";
 import ContactSection from "@/components/Sections/Contact/Contact.tsx";
 import ArrowNav from "@/components/ArrowNav/ArrowNav.tsx";
+import HashRouter from "@/components/HashRouter/HashRouter.tsx";
 ---
 
 <html lang="en" class="no-js">
@@ -40,6 +41,7 @@ import ArrowNav from "@/components/ArrowNav/ArrowNav.tsx";
   <body>
     <AnimatedBackground />
     <Page>
+      <HashRouter client:load />
       <Header client:load />
       <MenuToggle client:media="(max-width: 1025px)" />
       <ArrowNav client:load />
