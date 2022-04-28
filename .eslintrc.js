@@ -12,4 +12,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:solid/typescript",
   ],
+  rules: {
+    "@typescript-eslint/no-var-requires": 0,
+  },
 };
