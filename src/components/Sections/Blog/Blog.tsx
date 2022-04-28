@@ -1,13 +1,12 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
 // import styles from "./Blog.module.scss";
 
 export default function BlogSection() {
   return (
     <Section sectionId="blog">
-      <div class="page-title">
-        <h2>Blog</h2>
-      </div>
+      <PageTitle>Blog</PageTitle>
 
       <div class="row">
         <div class="col-xs-12 col-sm-12">

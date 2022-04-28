@@ -1,13 +1,12 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
 // import styles from "./Resume.module.scss";
 
 export default function ResumeSection() {
   return (
     <Section sectionId="resume">
-      <div class="page-title">
-        <h2>Resume</h2>
-      </div>
+      <PageTitle>Resume</PageTitle>
 
       <div class="row">
         <div class="col-xs-12 col-sm-7">

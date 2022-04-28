@@ -1,15 +1,14 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
 // import styles from "./AboutMe.module.scss";
 
 export default function AboutMeSection() {
   return (
     <Section sectionId="about-me">
-      <div class="page-title">
-        <h2>
-          About <span>Me</span>
-        </h2>
-      </div>
+      <PageTitle>
+        About <span>Me</span>
+      </PageTitle>
 
       <div class="row">
         <div class="col-xs-12 col-sm-7">

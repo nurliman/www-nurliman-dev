@@ -1,13 +1,12 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
 // import styles from "./Portfolio.module.scss";
 
 export default function PortfolioSection() {
   return (
     <Section sectionId="portfolio">
-      <div class="page-title">
-        <h2>Portfolio</h2>
-      </div>
+      <PageTitle>Portfolio</PageTitle>
 
       <div class="row">
         <div class="col-xs-12 col-sm-12">

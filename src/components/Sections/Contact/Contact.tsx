@@ -1,13 +1,12 @@
 import {} from "solid-js";
 import Section from "@/components/Section";
+import PageTitle from "@/components/PageTitle";
 // import styles from "./Contact.module.scss";
 
 export default function ContactSection() {
   return (
     <Section sectionId="contact">
-      <div class="page-title">
-        <h2>Contact</h2>
-      </div>
+      <PageTitle>Contact</PageTitle>
 
       <div class="row">
         <div class="col-xs-12 col-sm-4">
