@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.21.0
   astro: ^1.0.0-beta.19
   autoprefixer: ^10.4.5
+  bootstrap: 4.1.3
   clsx: ^1.1.1
   cssnano: ^5.1.7
   dayjs: ^1.11.1
@@ -37,6 +38,7 @@ dependencies:
   '@nanostores/solid': 0.1.6
   '@solid-primitives/media': 1.3.0_solid-js@1.3.17
   '@solid-primitives/timer': 1.3.1_solid-js@1.3.17
+  bootstrap: 4.1.3
   clsx: 1.1.1
   dayjs: 1.11.1
   keen-slider: 6.6.10
@@ -1115,6 +1117,14 @@ packages:
   /boolbase/1.0.0:
     resolution: {integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=}
     dev: true
+
+  /bootstrap/4.1.3:
+    resolution: {integrity: sha512-rDFIzgXcof0jDyjNosjv4Sno77X4KuPeFxG2XZZv1/Kc8DRVGVADdoQyyOVDwPqL36DDmtCQbrpMCqvpPLJQ0w==}
+    engines: {node: '>=6'}
+    peerDependencies:
+      jquery: 1.9.1 - 3
+      popper.js: ^1.14.3
+    dev: false
 
   /boxen/6.2.1:
     resolution: {integrity: sha512-H4PEsJXfFI/Pt8sjDWbHlQPx4zL/bvSQjcilJmaulGt5mLDorHOHpmdXAJcBcmru7PhYSp/cDMWRko4ZUMFkSw==}
