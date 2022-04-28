@@ -19,6 +19,7 @@ specifiers:
   lint-staged: ^12.4.1
   nanoid: ^3.3.3
   nanostores: ^0.5.12
+  perfect-scrollbar: ^1.5.5
   postcss: ^8.4.12
   postcss-flexbugs-fixes: ^5.0.2
   postcss-preset-env: ^7.4.4
@@ -38,6 +39,7 @@ dependencies:
   keen-slider: 6.6.10
   nanoid: 3.3.3
   nanostores: 0.5.12
+  perfect-scrollbar: 1.5.5
   solid-js: 1.3.17
 
 devDependencies:
@@ -3864,6 +3866,10 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
     dev: true
+
+  /perfect-scrollbar/1.5.5:
+    resolution: {integrity: sha512-dzalfutyP3e/FOpdlhVryN4AJ5XDVauVWxybSkLZmakFE2sS3y3pc4JnSprw8tGmHvkaG5Edr5T7LBTZ+WWU2g==}
+    dev: false
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}

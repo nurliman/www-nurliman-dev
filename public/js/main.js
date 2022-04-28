@@ -31,21 +31,6 @@
     }
     // /Portfolio subpage filters
 
-    // Custom scroll
-    function customScroll() {
-        var windowWidth = $(window).width();
-        if (windowWidth > 1024) {
-            $('.animated-section, .single-page-content').each(function() {
-                $(this).perfectScrollbar();
-            });
-        } else {
-            $('.animated-section, .single-page-content').each(function() {
-                $(this).perfectScrollbar('destroy');
-            });
-        }
-    }
-    // /Custom scroll
-
     // Contact form validator
     $(function () {
 
@@ -89,12 +74,6 @@
                 });
             }
         })
-        .on('resize', function() { //Resize
-             $('.animated-section').each(function() {
-                $(this).perfectScrollbar('update');
-            });
-            customScroll();
-        });
 
 
     // On Document Load
@@ -115,8 +94,6 @@
         $container.imagesLoaded(function(){
             $container.masonry();
         });
-
-        customScroll();
 
         // Testimonials Slider
         $(".testimonials.owl-carousel").owlCarousel({
