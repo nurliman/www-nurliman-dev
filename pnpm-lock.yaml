@@ -8,7 +8,7 @@ specifiers:
   '@types/node': ^17.0.27
   '@typescript-eslint/eslint-plugin': ^5.21.0
   '@typescript-eslint/parser': ^5.21.0
-  astro: ^1.0.0-beta.17
+  astro: ^1.0.0-beta.19
   autoprefixer: ^10.4.5
   clsx: ^1.1.1
   dayjs: ^1.11.1
@@ -51,7 +51,7 @@ devDependencies:
   '@types/node': 17.0.27
   '@typescript-eslint/eslint-plugin': 5.21.0_qkphj4uotsplaxw5uwbni7kfxa
   '@typescript-eslint/parser': 5.21.0_5wsz2tb7zzudmaqxfve53vbauu
-  astro: 1.0.0-beta.17_sass@1.51.0
+  astro: 1.0.0-beta.19_sass@1.51.0
   autoprefixer: 10.4.5_postcss@8.4.12
   eslint: 8.14.0
   eslint-plugin-solid: 0.4.7_5wsz2tb7zzudmaqxfve53vbauu
@@ -558,19 +558,19 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@proload/core/0.2.2:
-    resolution: {integrity: sha512-HYQEblYXIpW77kvGyW4penEl9D9e9MouPhTqVaDz9+QVFliYjsq18inTfnfTa81s3oraPVtTk60tqCWOf2fKGQ==}
+  /@proload/core/0.3.2:
+    resolution: {integrity: sha512-4ga4HpS0ieVYWVMS+F62W++6SNACBu0lkw8snw3tEdH6AeqZu8i8262n3I81jWAWXVcg3sMfhb+kBexrfGrTUQ==}
     dependencies:
       deepmerge: 4.2.2
       escalade: 3.1.1
     dev: true
 
-  /@proload/plugin-tsm/0.1.1_@proload+core@0.2.2:
-    resolution: {integrity: sha512-qfGegg6I3YBCZDjYR9xb41MTc2EfL0sQQmw49Z/yi9OstIpUa/67MBy4AuNhoyG9FuOXia9gPoeBk5pGnBOGtA==}
+  /@proload/plugin-tsm/0.2.1_@proload+core@0.3.2:
+    resolution: {integrity: sha512-Ex1sL2BxU+g8MHdAdq9SZKz+pU34o8Zcl9PHWo2WaG9hrnlZme607PU6gnpoAYsDBpHX327+eu60wWUk+d/b+A==}
     peerDependencies:
-      '@proload/core': ^0.2.1
+      '@proload/core': ^0.3.2
     dependencies:
-      '@proload/core': 0.2.2
+      '@proload/core': 0.3.2
       tsm: 2.2.1
     dev: true
 
@@ -969,8 +969,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /astro/1.0.0-beta.17_sass@1.51.0:
-    resolution: {integrity: sha512-CpPJVBiuz4twPH4XgabEpj3py2YMhPnrIxrduJZzSY5NuVs+K7h23wq1umbDZnIY67pRFaPZZtdx0YqKajIXHw==}
+  /astro/1.0.0-beta.19_sass@1.51.0:
+    resolution: {integrity: sha512-CXw4KDIAJdQG1ofDD+gDjp+Pb7yKjcU/bWm8+bDipRzlbZ8V2P0I3LScFd9eRgZ54Sz3AjEYR/WClT0n6aeJKg==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -983,8 +983,8 @@ packages:
       '@babel/generator': 7.17.9
       '@babel/parser': 7.17.9
       '@babel/traverse': 7.17.9
-      '@proload/core': 0.2.2
-      '@proload/plugin-tsm': 0.1.1_@proload+core@0.2.2
+      '@proload/core': 0.3.2
+      '@proload/plugin-tsm': 0.2.1_@proload+core@0.3.2
       ast-types: 0.14.2
       boxen: 6.2.1
       ci-info: 3.3.0
