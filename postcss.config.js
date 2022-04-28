@@ -10,5 +10,8 @@ module.exports = {
         "custom-properties": false,
       },
     }),
+    require("cssnano")({
+      preset: "default",
+    }),
   ],
 };
