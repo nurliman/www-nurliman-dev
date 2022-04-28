@@ -17,6 +17,7 @@ specifiers:
   husky: ^7.0.4
   keen-slider: ^6.6.10
   lint-staged: ^12.4.1
+  modern-normalize: ^1.1.0
   nanoid: ^3.3.3
   nanostores: ^0.5.12
   perfect-scrollbar: ^1.5.5
@@ -26,6 +27,7 @@ specifiers:
   prettier: ^2.6.2
   prettier-plugin-astro: ^0.0.12
   pretty-quick: ^3.1.3
+  reset-css: ^5.0.1
   sass: ^1.51.0
   solid-js: ^1.3.17
   typescript: ^4.6.3
@@ -37,9 +39,11 @@ dependencies:
   clsx: 1.1.1
   dayjs: 1.11.1
   keen-slider: 6.6.10
+  modern-normalize: 1.1.0
   nanoid: 3.3.3
   nanostores: 0.5.12
   perfect-scrollbar: 1.5.5
+  reset-css: 5.0.1
   solid-js: 1.3.17
 
 devDependencies:
@@ -3567,6 +3571,11 @@ packages:
       kind-of: 6.0.3
     dev: true
 
+  /modern-normalize/1.1.0:
+    resolution: {integrity: sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==}
+    engines: {node: '>=6'}
+    dev: false
+
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -4472,6 +4481,10 @@ packages:
       retext-smartypants: 5.1.0
       unist-util-visit: 4.1.0
     dev: true
+
+  /reset-css/5.0.1:
+    resolution: {integrity: sha512-VyuJdNFfp5x/W6e5wauJM59C02Vs0P22sxzZGhQMPaqu/NGTeFxlBFOOw3eq9vQd19gIDdZp7zi89ylyKOJ33Q==}
+    dev: false
 
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}

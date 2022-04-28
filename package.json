@@ -20,9 +20,11 @@
     "clsx": "^1.1.1",
     "dayjs": "^1.11.1",
     "keen-slider": "^6.6.10",
+    "modern-normalize": "^1.1.0",
     "nanoid": "^3.3.3",
     "nanostores": "^0.5.12",
     "perfect-scrollbar": "^1.5.5",
+    "reset-css": "^5.0.1",
     "solid-js": "^1.3.17"
   },
   "devDependencies": {
