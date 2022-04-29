@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && npm run optimize:css",
+    "build": "cross-env NODE_ENV=production astro build && npm run optimize:css",
     "preview": "astro preview",
     "optimize:css": "node scripts/optimize-css.mjs",
     "lint": "eslint ./src --ext .js,.mjs,.cjs,.jsx,.ts,.tsx --cache --fix",
@@ -36,6 +36,7 @@
     "@typescript-eslint/parser": "^5.21.0",
     "astro": "^1.0.0-beta.19",
     "autoprefixer": "^10.4.5",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.1.7",
     "eslint": "^8.14.0",
     "eslint-plugin-solid": "^0.4.7",

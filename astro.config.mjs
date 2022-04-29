@@ -1,14 +1,16 @@
 import { defineConfig } from "astro/config";
 import solid from "@astrojs/solid-js";
 
-// https://astro.build/config
-export default defineConfig({
+const astroConfig = defineConfig({
   integrations: [solid()],
   vite: {
     css: {
       modules: {
-        generateScopedName: "[hash:base64:6]",
+        generateScopedName:
+          process.env.NODE_ENV === "production" ? "[hash:base64:6]" : "_[local]_[hash:base64:5]",
       },
     },
   },
 });
+
+export default astroConfig;
