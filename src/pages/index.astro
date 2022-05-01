@@ -45,7 +45,7 @@ import HashRouter from "@/components/HashRouter/HashRouter.tsx";
       <Header client:load />
       <MenuToggle client:media="(max-width: 1025px)" />
       <ArrowNav client:load />
-      <Content>
+      <Content client:load>
         <HomeSection client:load />
         <AboutMeSection client:idle />
         <ResumeSection client:idle />

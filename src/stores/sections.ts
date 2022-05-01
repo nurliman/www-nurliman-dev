@@ -22,3 +22,7 @@ export function setActive(id: string) {
 export function getActiveIndex() {
   return sectionsStore.get().list.findIndex((x) => x.id === sectionsStore.get().active);
 }
+
+export function getIndexById(id: string) {
+  return sectionsStore.get().list.findIndex((x) => x.id === id);
+}
