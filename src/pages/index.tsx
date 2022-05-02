@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedBackground from "components/AnimatedBackground";
 import Page from "components/Page";
 import HashRouter from "components/HashRouter";
 import Header from "components/Header";
@@ -15,7 +16,7 @@ import ContactSection from "components/Sections/Contact";
 const MainPage: React.FC = () => {
   return (
     <>
-      {/* <AnimatedBackground /> */}
+      <AnimatedBackground />
       <Page>
         <HashRouter />
         <Header />
