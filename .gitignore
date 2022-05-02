@@ -7,6 +7,13 @@ node_modules/
 /.pnp
 .pnp.js
 
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
 # logs
 npm-debug.log*
 yarn-debug.log*
