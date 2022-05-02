@@ -1,15 +1,17 @@
 import { Component } from "solid-js";
+import { useStore } from "@nanostores/solid";
 import { headerStore, setShow } from "@/stores/header";
 import styles from "./MenuToggle.module.scss";
 
 const MenuToggle: Component = () => {
-  const toggle = () => setShow(!headerStore.show);
+  const headerState = useStore(headerStore);
+  const toggle = () => setShow(!headerState().show);
 
   return (
     <div
       classList={{
         [styles.toggle]: true,
-        [styles.open]: headerStore.show,
+        [styles.open]: headerState().show,
       }}
       onClick={toggle}
     >

@@ -1,11 +1,11 @@
-import { createStore } from "solid-js/store";
+import { atom } from "nanostores";
 
 const initialValue = {
   isAnimating: false,
 };
 
-export const [animationStore, setAnimationStore] = createStore(initialValue);
+export const animationStore = atom(initialValue);
 
 export function setAnimating(state: boolean) {
-  setAnimationStore("isAnimating", state);
+  animationStore.set({ ...animationStore.get(), isAnimating: state });
 }

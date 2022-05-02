@@ -1,4 +1,5 @@
 import { For } from "solid-js";
+import { useStore } from "@nanostores/solid";
 import clsx from "clsx";
 import { setShow } from "@/stores/header";
 import { sectionsStore, setActive } from "@/stores/sections";
@@ -6,17 +7,20 @@ import { animationStore } from "@/stores/animation";
 import styles from "./Menu.module.scss";
 
 export default function Menu() {
+  const sectionsState = useStore(sectionsStore);
+  const animationState = useStore(animationStore);
+
   const onItemClick = (id: string) => {
-    if (animationStore.isAnimating) return;
+    if (animationState().isAnimating) return;
     setActive(id);
     setShow(false);
   };
 
   return (
     <ul class={clsx(styles.menu, "main-menu")}>
-      <For each={sectionsStore.list}>
+      <For each={sectionsState().list}>
         {({ id, name, icon }) => (
-          <li classList={{ active: sectionsStore.active === id }}>
+          <li classList={{ active: sectionsState().active === id }}>
             <a
               href={"#" + id}
               class={clsx(styles.anchor, "nav-anim")}

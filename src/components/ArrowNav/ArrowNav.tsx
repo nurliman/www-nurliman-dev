@@ -1,37 +1,41 @@
 import {} from "solid-js";
+import { useStore } from "@nanostores/solid";
 import { sectionsStore, getActiveIndex, setActive } from "@/stores/sections";
 import { animationStore } from "@/stores/animation";
 import styles from "./ArrowNav.module.scss";
 
 export default function ArrowNav() {
+  const sectionsState = useStore(sectionsStore);
+  const animationState = useStore(animationStore);
+
   const next = () => {
-    if (animationStore.isAnimating) return;
+    if (animationState().isAnimating) return;
     let activeIndex = getActiveIndex();
 
     if (Number(activeIndex) < 0) return;
 
-    if (activeIndex >= sectionsStore.list.length - 1) {
+    if (activeIndex >= sectionsState().list.length - 1) {
       activeIndex = 0;
     } else {
       activeIndex++;
     }
 
-    setActive(sectionsStore.list[activeIndex]?.id);
+    setActive(sectionsState().list[activeIndex]?.id);
   };
 
   const prev = () => {
-    if (animationStore.isAnimating) return;
+    if (animationState().isAnimating) return;
     let activeIndex = getActiveIndex();
 
     if (Number(activeIndex) < 0) return;
 
     if (activeIndex < 1) {
-      activeIndex = sectionsStore.list.length - 1;
+      activeIndex = sectionsState().list.length - 1;
     } else {
       activeIndex--;
     }
 
-    setActive(sectionsStore.list[activeIndex]?.id);
+    setActive(sectionsState().list[activeIndex]?.id);
   };
 
   return (

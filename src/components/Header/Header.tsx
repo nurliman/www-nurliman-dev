@@ -1,5 +1,6 @@
 import { Component, createSignal, onMount, onCleanup } from "solid-js";
 import createMediaQuery from "@solid-primitives/media";
+import { useStore } from "@nanostores/solid";
 import dayjs from "dayjs";
 import Menu from "./Menu";
 import Socials from "./Socials";
@@ -12,6 +13,8 @@ import photoOfMe from "@/assets/me.jpg";
 
 const Header: Component = () => {
   const [currentYear] = createSignal(dayjs().year());
+  const meState = useStore(meStore);
+  const headerState = useStore(headerStore);
   const isSmall = createMediaQuery("(max-width: 1024px)");
 
   function hideMenu() {
@@ -30,16 +33,16 @@ const Header: Component = () => {
     <header
       classList={{
         [styles.container]: true,
-        [styles.containerHide]: isSmall() && !headerStore.show,
+        [styles.containerHide]: isSmall() && !headerState().show,
       }}
     >
       <div>
         <div class={styles.photo}>
-          <img src={photoOfMe} alt={meStore.name} />
+          <img src={photoOfMe} alt={meState().name} />
         </div>
         <div class={styles.titles}>
-          <h2>{meStore.name}</h2>
-          <h4>{meStore.titles[0]}</h4>
+          <h2>{meState().name}</h2>
+          <h4>{meState().titles[0]}</h4>
         </div>
       </div>
       <Menu />
