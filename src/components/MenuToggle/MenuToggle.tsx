@@ -1,18 +1,20 @@
-import { Component } from "solid-js";
-import { useStore } from "@nanostores/solid";
-import { headerStore, setShow } from "@/stores/header";
+import { useCallback } from "react";
+import clsx from "clsx";
+import { useAppDispatch, useAppSelector } from "store";
+import { setShow } from "store/headerSlice";
 import styles from "./MenuToggle.module.scss";
 
-const MenuToggle: Component = () => {
-  const headerState = useStore(headerStore);
-  const toggle = () => setShow(!headerState().show);
+const MenuToggle = () => {
+  const dispatch = useAppDispatch();
+  const showHeader = useAppSelector((s) => s.header.show);
+  const toggle = useCallback(() => dispatch(setShow(!showHeader)), [showHeader]);
 
   return (
     <div
-      classList={{
+      className={clsx({
         [styles.toggle]: true,
-        [styles.open]: headerState().show,
-      }}
+        [styles.open]: showHeader,
+      })}
       onClick={toggle}
     >
       <span></span>

@@ -1,50 +1,50 @@
-import {} from "solid-js";
-import { useStore } from "@nanostores/solid";
-import { sectionsStore, getActiveIndex, setActive } from "@/stores/sections";
-import { animationStore } from "@/stores/animation";
+import { useCallback } from "react";
+import { useAppSelector, useAppDispatch } from "store";
+import { getActiveIndex, setActive } from "store/sectionsSlice";
 import styles from "./ArrowNav.module.scss";
 
 export default function ArrowNav() {
-  const sectionsState = useStore(sectionsStore);
-  const animationState = useStore(animationStore);
+  const dispatch = useAppDispatch();
+  const sectionsList = useAppSelector((s) => s.sections.list);
+  const isAnimating = useAppSelector((s) => s.animation.isAnimating);
 
-  const next = () => {
-    if (animationState().isAnimating) return;
+  const next = useCallback(() => {
+    if (isAnimating) return;
     let activeIndex = getActiveIndex();
 
     if (Number(activeIndex) < 0) return;
 
-    if (activeIndex >= sectionsState().list.length - 1) {
+    if (activeIndex >= sectionsList.length - 1) {
       activeIndex = 0;
     } else {
       activeIndex++;
     }
 
-    setActive(sectionsState().list[activeIndex]?.id);
-  };
+    dispatch(setActive(sectionsList[activeIndex]?.id));
+  }, [sectionsList, isAnimating]);
 
-  const prev = () => {
-    if (animationState().isAnimating) return;
+  const prev = useCallback(() => {
+    if (isAnimating) return;
     let activeIndex = getActiveIndex();
 
     if (Number(activeIndex) < 0) return;
 
     if (activeIndex < 1) {
-      activeIndex = sectionsState().list.length - 1;
+      activeIndex = sectionsList.length - 1;
     } else {
       activeIndex--;
     }
 
-    setActive(sectionsState().list[activeIndex]?.id);
-  };
+    dispatch(setActive(sectionsList[activeIndex]?.id));
+  }, [sectionsList, isAnimating]);
 
   return (
-    <div class={styles.container}>
-      <div class={styles.arrow} onClick={next}>
-        <i class="lnr lnr-chevron-right"></i>
+    <div className={styles.container}>
+      <div className={styles.arrow} onClick={next}>
+        <i className="lnr lnr-chevron-right"></i>
       </div>
-      <div class={styles.arrow} onClick={prev}>
-        <i class="lnr lnr-chevron-left"></i>
+      <div className={styles.arrow} onClick={prev}>
+        <i className="lnr lnr-chevron-left"></i>
       </div>
     </div>
   );

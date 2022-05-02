@@ -1,10 +1,10 @@
-import { Component } from "solid-js";
+import React from "react";
 import styles from "./Content.module.scss";
 
-const Content: Component = (props) => {
+const Content: React.FC = (props) => {
   return (
-    <div class={styles.container}>
-      <div id="animated-sections" class={styles.inner}>
+    <div className={styles.container}>
+      <div id="animated-sections" className={styles.inner}>
         {props.children}
       </div>
     </div>

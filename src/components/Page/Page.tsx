@@ -1,10 +1,12 @@
-import { PropsWithChildren } from "solid-js";
+import React from "react";
 import styles from "./Page.module.scss";
 
-export default function Page(props: PropsWithChildren) {
+const Page: React.FC = (props) => {
   return (
-    <div class={styles.container}>
-      <div class={styles.inner}>{props.children}</div>
+    <div className={styles.container}>
+      <div className={styles.inner}>{props.children}</div>
     </div>
   );
-}
+};
+
+export default Page;

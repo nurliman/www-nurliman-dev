@@ -1,20 +1,22 @@
-import { PropsWithChildren, onMount } from "solid-js";
-import { useStore } from "@nanostores/solid";
-import { sectionsStore, setActive } from "@/stores/sections";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "store";
+import { setActive } from "store/sectionsSlice";
 
-export default function HashRouter({ children }: PropsWithChildren) {
-  const sectionsState = useStore(sectionsStore);
+const HashRouter: React.FC = ({ children }) => {
+  const dispatch = useAppDispatch();
+  const sectionsList = useAppSelector((s) => s.sections.list);
 
-  onMount(() => {
+  useEffect(() => {
     const hash = window.location.hash.replace("#", "");
 
     if (!hash) return;
 
-    const sections = sectionsState().list;
-    const foundSection = sections.find(({ id }) => id.toLowerCase() === hash.toLowerCase());
+    const foundSection = sectionsList.find(({ id }) => id.toLowerCase() === hash.toLowerCase());
 
-    foundSection && setActive(hash);
-  });
+    foundSection && dispatch(setActive(hash));
+  }, []);
 
-  return children;
-}
+  return <>{children}</>;
+};
+
+export default HashRouter;

@@ -1,14 +1,13 @@
-import { Component, ComponentProps, splitProps } from "solid-js";
+import { FunctionComponent, DetailedHTMLProps, HTMLAttributes } from "react";
 import clsx from "clsx";
 import styles from "./Copyrights.module.scss";
 
-type Props = Omit<ComponentProps<"div">, "className">;
+type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
-const Copyrights: Component<Props> = (_props) => {
-  const [props, restProps] = splitProps(_props, ["children", "class"]);
+const Copyrights: FunctionComponent<Props> = ({ children, className, ...restProps }) => {
   return (
-    <div class={clsx(styles.copyrights, props.class)} {...restProps}>
-      {props.children}
+    <div className={clsx(styles.copyrights, className)} {...restProps}>
+      {children}
     </div>
   );
 };

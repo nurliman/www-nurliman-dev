@@ -1,54 +1,55 @@
-import { Component, createSignal, onMount, onCleanup } from "solid-js";
-import createMediaQuery from "@solid-primitives/media";
-import { useStore } from "@nanostores/solid";
+import { useState, useEffect, useCallback } from "react";
+import useMedia from "use-media";
+import { useAppDispatch, useAppSelector } from "store";
 import dayjs from "dayjs";
+import clsx from "clsx";
 import Menu from "./Menu";
 import Socials from "./Socials";
 import Buttons from "./Buttons";
 import Copyrights from "./Copyrights";
-import { meStore } from "@/stores/me";
-import { headerStore, setShow } from "@/stores/header";
+import { setShow } from "store/headerSlice";
 import styles from "./Header.module.scss";
-import photoOfMe from "@/assets/me.jpg";
+import photoOfMe from "assets/me.jpg";
 
-const Header: Component = () => {
-  const [currentYear] = createSignal(dayjs().year());
-  const meState = useStore(meStore);
-  const headerState = useStore(headerStore);
-  const isSmall = createMediaQuery("(max-width: 1024px)");
+const Header = () => {
+  const dispatch = useAppDispatch();
+  const [currentYear] = useState(dayjs().year());
+  const meState = useAppSelector((s) => s.me);
+  const headerShow = useAppSelector((s) => s.header.show);
+  const isSmall = useMedia({ maxWidth: 1024 });
 
-  function hideMenu() {
-    setShow(false);
-  }
+  const hideMenu = useCallback(() => {
+    dispatch(setShow(false));
+  }, []);
 
-  onMount(() => {
-    window?.addEventListener("resize", hideMenu, { passive: true });
-  });
+  useEffect(() => {
+    window.addEventListener("resize", hideMenu);
 
-  onCleanup(() => {
-    window?.removeEventListener("resize", hideMenu);
-  });
+    return () => {
+      window.removeEventListener("resize", hideMenu);
+    };
+  }, []);
 
   return (
     <header
-      classList={{
+      className={clsx({
         [styles.container]: true,
-        [styles.containerHide]: isSmall() && !headerState().show,
-      }}
+        [styles.containerHide]: isSmall && !headerShow,
+      })}
     >
       <div>
-        <div class={styles.photo}>
-          <img src={photoOfMe} alt={meState().name} />
+        <div className={styles.photo}>
+          <img src={photoOfMe.src} alt={meState.name} />
         </div>
-        <div class={styles.titles}>
-          <h2>{meState().name}</h2>
-          <h4>{meState().titles[0]}</h4>
+        <div className={styles.titles}>
+          <h2>{meState.name}</h2>
+          <h4>{meState.titles[0]}</h4>
         </div>
       </div>
       <Menu />
       <Socials />
       <Buttons />
-      <Copyrights>© {currentYear()} All rights reserved.</Copyrights>
+      <Copyrights>© {currentYear} All rights reserved.</Copyrights>
     </header>
   );
 };

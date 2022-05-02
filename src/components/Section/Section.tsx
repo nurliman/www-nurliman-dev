@@ -1,98 +1,92 @@
-import {
-  Component,
-  ComponentProps,
-  createEffect,
-  createMemo,
-  on,
-  onMount,
-  onCleanup,
-} from "solid-js";
-import { useStore } from "@nanostores/solid";
-import { sectionsStore, getIndexById } from "@/stores/sections";
-import { setAnimating } from "@/stores/animation";
+import React, { ComponentProps, useCallback, useEffect, useRef } from "react";
+import { useAppDispatch, useAppSelector } from "store";
+import { getIndexById } from "store/sectionsSlice";
+import { setAnimating } from "store/animationSlice";
 import clsx from "clsx";
 import PerfectScrollbar from "perfect-scrollbar";
 import styles from "./Section.module.scss";
 
-type Props = Omit<ComponentProps<"section">, "className"> & {
+type Props = ComponentProps<"section"> & {
   sectionId: string;
-  innerClass?: string;
+  innerClassName?: string;
 };
 
-const Section: Component<Props> = (props) => {
-  let container: HTMLDivElement;
-  let perfectScrollbar: PerfectScrollbar;
-  const sectionsState = useStore(sectionsStore);
-  const activeSection = createMemo(() => sectionsState().active);
-  const psInit = () => (perfectScrollbar = new PerfectScrollbar(container));
-  const psDestroy = (ps = perfectScrollbar) => {
-    typeof ps?.destroy === "function" && ps.destroy();
-    ps = null;
-  };
+const Section: React.FC<Props> = ({ className, innerClassName, children, sectionId }) => {
+  const dispatch = useAppDispatch();
+  const container = useRef<HTMLDivElement>();
+  const perfectScrollbar = useRef<PerfectScrollbar>();
+  const activeSection = useAppSelector((s) => s.sections.active);
+  const prevActiveSection = useRef<string>();
 
-  onMount(() => {
+  const psInit = useCallback(() => {
+    perfectScrollbar.current = new PerfectScrollbar(container.current);
+    return perfectScrollbar.current;
+  }, [perfectScrollbar, container]);
+
+  const psDestroy = useCallback(
+    (ps = perfectScrollbar.current) => {
+      typeof ps?.destroy === "function" && ps.destroy();
+      ps = null;
+    },
+    [perfectScrollbar],
+  );
+
+  useEffect(() => {
     const ps = psInit();
     const psUpdate = () => typeof ps?.update === "function" && ps.update();
 
     window.addEventListener("resize", psUpdate);
 
-    onCleanup(() => {
+    return () => {
       psDestroy(ps);
       window.removeEventListener("resize", psUpdate);
-    });
-  });
+    };
+  }, []);
 
-  createEffect(
-    on(activeSection, (active, prevActive) => {
-      setAnimating(false);
+  useEffect(() => {
+    dispatch(setAnimating(false));
 
-      if (!container) return;
-      if (active === prevActive) return;
+    if (!container) return;
+    if (activeSection === prevActiveSection.current) return;
 
-      setAnimating(true);
+    dispatch(setAnimating(true));
 
-      let animationInClass = ["animated-section-rotateCarouselBottomIn"],
-        animationOutClass = ["animated-section-rotateCarouselBottomOut", "animated-section-ontop"];
+    let animationInClass = ["animated-section-rotateCarouselBottomIn"],
+      animationOutClass = ["animated-section-rotateCarouselBottomOut", "animated-section-ontop"];
 
-      if (getIndexById(active) > getIndexById(prevActive)) {
-        animationInClass = ["animated-section-rotateCarouselTopIn"];
-        animationOutClass = ["animated-section-rotateCarouselTopOut", "animated-section-ontop"];
-      }
+    if (getIndexById(activeSection) > getIndexById(prevActiveSection.current)) {
+      animationInClass = ["animated-section-rotateCarouselTopIn"];
+      animationOutClass = ["animated-section-rotateCarouselTopOut", "animated-section-ontop"];
+    }
 
-      if (prevActive === props.sectionId) {
-        container.classList.add(...animationOutClass);
+    if (prevActiveSection.current === sectionId) {
+      container.current.classList.add(...animationOutClass);
 
-        container.onanimationend = () => {
-          psDestroy();
-          container.classList.remove(styles.active);
-          container.classList.remove(...animationOutClass);
-        };
-      }
+      container.current.onanimationend = () => {
+        psDestroy();
+        container.current.classList.remove(styles.active);
+        container.current.classList.remove(...animationOutClass);
+      };
+    }
 
-      if (active === props.sectionId) {
-        psInit();
-        container.scrollTop = 0;
-        container.classList.add(styles.active);
-        container.classList.add(...animationInClass);
+    if (activeSection === sectionId) {
+      psInit();
+      container.current.scrollTop = 0;
+      container.current.classList.add(styles.active);
+      container.current.classList.add(...animationInClass);
 
-        container.onanimationend = () => {
-          container.classList.remove(...animationInClass);
-          setAnimating(false);
-        };
-      }
-    }),
-  );
+      container.current.onanimationend = () => {
+        container.current.classList.remove(...animationInClass);
+        dispatch(setAnimating(false));
+      };
+    }
+
+    prevActiveSection.current = activeSection;
+  }, [activeSection]);
 
   return (
-    <section
-      ref={container}
-      data-id={props.sectionId}
-      classList={{
-        [styles.section]: true,
-        [props.class]: !!props.class,
-      }}
-    >
-      <div class={clsx(styles.inner, props.innerClass)}>{props.children}</div>
+    <section ref={container} data-id={sectionId} className={clsx(styles.section, className)}>
+      <div className={clsx(styles.inner, innerClassName)}>{children}</div>
     </section>
   );
 };
