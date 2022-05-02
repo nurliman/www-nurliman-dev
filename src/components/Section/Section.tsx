@@ -7,7 +7,6 @@ import {
   onMount,
   onCleanup,
 } from "solid-js";
-import { useStore } from "@nanostores/solid";
 import { sectionsStore, getIndexById } from "@/stores/sections";
 import { setAnimating } from "@/stores/animation";
 import clsx from "clsx";
@@ -22,8 +21,7 @@ type Props = Omit<ComponentProps<"section">, "className"> & {
 const Section: Component<Props> = (props) => {
   let container: HTMLDivElement;
   let perfectScrollbar: PerfectScrollbar;
-  const sectionsState = useStore(sectionsStore);
-  const activeSection = createMemo(() => sectionsState().active);
+  const activeSection = createMemo(() => sectionsStore.active);
   const psInit = () => (perfectScrollbar = new PerfectScrollbar(container));
   const psDestroy = (ps = perfectScrollbar) => {
     typeof ps?.destroy === "function" && ps.destroy();

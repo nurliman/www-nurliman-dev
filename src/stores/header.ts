@@ -1,9 +1,9 @@
-import { atom } from "nanostores";
+import { createStore } from "solid-js/store";
 
 const initialValue = { show: false };
 
-export const headerStore = atom(initialValue);
+export const [headerStore, setHeaderStore] = createStore(initialValue);
 
 export function setShow(show: boolean) {
-  headerStore.set({ ...headerStore.get(), show });
+  setHeaderStore("show", show);
 }

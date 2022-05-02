@@ -1,15 +1,12 @@
 import { For, createSignal, createEffect } from "solid-js";
 import clsx from "clsx";
 import { createSlider, autoplay } from "@/libs/slider";
-import { useStore } from "@nanostores/solid";
 import { meStore } from "@/stores/me";
 import { sectionsStore } from "@/stores/sections";
 import Section from "@/components/Section";
 import styles from "./Home.module.scss";
 
 export default function HomeSection() {
-  const meState = useStore(meStore);
-  const sectionsState = useStore(sectionsStore);
   const [pause, togglePause] = createSignal(false);
   const [opacities, setOpacities] = createSignal<number[]>([]);
 
@@ -20,7 +17,7 @@ export default function HomeSection() {
       defaultAnimation: {
         duration: 2000,
       },
-      slides: meState().titles.length,
+      slides: meStore.titles.length,
       detailsChanged: (s) => {
         const newOpacities = s.track.details.slides.map((slide) => slide.portion);
         setOpacities(newOpacities);
@@ -34,16 +31,16 @@ export default function HomeSection() {
   );
 
   createEffect(() => {
-    const isNotHome = sectionsState().active.toLowerCase() !== "home";
+    const isNotHome = sectionsStore.active.toLowerCase() !== "home";
     if (pause() !== isNotHome) togglePause(isNotHome);
   });
 
   return (
     <Section sectionId="home" innerClass={styles.centered}>
       <div class={styles.titleBlock}>
-        <h2>{meState().name}</h2>
+        <h2>{meStore.name}</h2>
         <div ref={slider} class={styles.fader}>
-          <For each={meState().titles}>
+          <For each={meStore.titles}>
             {(title, idx) => (
               <div
                 class={clsx(styles.faderSlide, "keen-slider__slide")}

@@ -1,4 +1,4 @@
-import { atom } from "nanostores";
+import { createStore } from "solid-js/store";
 
 const initialValue = {
   list: [
@@ -12,17 +12,17 @@ const initialValue = {
   active: "home",
 };
 
-export const sectionsStore = atom(initialValue);
+export const [sectionsStore, setSectionsStore] = createStore(initialValue);
 
 export function setActive(id: string) {
   if (!id) return;
-  sectionsStore.set({ ...sectionsStore.get(), active: id });
+  setSectionsStore("active", id);
 }
 
 export function getActiveIndex() {
-  return sectionsStore.get().list.findIndex((x) => x.id === sectionsStore.get().active);
+  return sectionsStore.list.findIndex((x) => x.id === sectionsStore.active);
 }
 
 export function getIndexById(id: string) {
-  return sectionsStore.get().list.findIndex((x) => x.id === id);
+  return sectionsStore.list.findIndex((x) => x.id === id);
 }
