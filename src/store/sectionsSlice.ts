@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import store from "stores";
+import store from "store";
 
 export interface SectionsState {
   list: { id: string; name: string; icon: string }[];

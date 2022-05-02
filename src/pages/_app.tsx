@@ -1,7 +1,7 @@
 import React from "react";
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
-import store from "stores";
+import store from "store";
 import "styles/global.scss";
 
 const App: React.FC<AppProps> = (props) => {
