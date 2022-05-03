@@ -6,7 +6,6 @@ specifiers:
   '@types/react': '17'
   '@typescript-eslint/eslint-plugin': ^5.21.0
   '@typescript-eslint/parser': ^5.21.0
-  autoprefixer: ^10.4.5
   bootstrap: 4.1.3
   clsx: ^1.1.1
   critters: ^0.0.16
@@ -64,7 +63,6 @@ devDependencies:
   '@types/react': 17.0.44
   '@typescript-eslint/eslint-plugin': 5.21.0_qkphj4uotsplaxw5uwbni7kfxa
   '@typescript-eslint/parser': 5.21.0_5wsz2tb7zzudmaqxfve53vbauu
-  autoprefixer: 10.4.5_postcss@8.4.12
   critters: 0.0.16
   cross-env: 7.0.3
   cssnano: 5.1.7_postcss@8.4.12
@@ -79,7 +77,7 @@ devDependencies:
   next-plugin-preact: 3.0.6_hiusxyyovnqxcy3o6plqkraykq
   postcss: 8.4.12
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.12
-  postcss-preset-env: 7.4.4_postcss@8.4.12
+  postcss-preset-env: 7.5.0_postcss@8.4.12
   preact-render-to-string: 5.2.0_preact@10.7.1
   prettier: 2.6.2
   pretty-quick: 3.1.3_prettier@2.6.2
@@ -185,6 +183,25 @@ packages:
     dependencies:
       postcss: 8.4.12
       postcss-value-parser: 4.2.0
+    dev: true
+
+  /@csstools/postcss-stepped-value-functions/1.0.0_postcss@8.4.12:
+    resolution: {integrity: sha512-q8c4bs1GumAiRenmFjASBcWSLKrbzHzWl6C2HcaAxAXIiL2rUlUWbqQZUjwVG5tied0rld19j/Mm90K3qI26vw==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.3
+    dependencies:
+      postcss: 8.4.12
+      postcss-value-parser: 4.2.0
+    dev: true
+
+  /@csstools/postcss-unset-value/1.0.0_postcss@8.4.12:
+    resolution: {integrity: sha512-T5ZyNSw9G0x0UDFiXV40a7VjKw2b+l4G+S0sctKqxhx8cg9QtMUAGwJBVU9mHPDPoZEmwm0tEoukjl4zb9MU7Q==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.3
+    dependencies:
+      postcss: 8.4.12
     dev: true
 
   /@eslint/eslintrc/1.2.2:
@@ -955,15 +972,15 @@ packages:
     hasBin: true
     dev: true
 
-  /autoprefixer/10.4.5_postcss@8.4.12:
-    resolution: {integrity: sha512-Fvd8yCoA7lNX/OUllvS+aS1I7WRBclGXsepbvT8ZaPgrH24rgXpZzF0/6Hh3ZEkwg+0AES/Osd196VZmYoEFtw==}
+  /autoprefixer/10.4.7_postcss@8.4.12:
+    resolution: {integrity: sha512-ypHju4Y2Oav95SipEcCcI5J7CGPuvz8oat7sUtYj3ClK44bldfvtvcxK6IEK++7rqB7YchDGzweZIBG+SD0ZAA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.20.3
-      caniuse-lite: 1.0.30001332
+      caniuse-lite: 1.0.30001335
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1143,6 +1160,10 @@ packages:
 
   /caniuse-lite/1.0.30001332:
     resolution: {integrity: sha512-10T30NYOEQtN6C11YGg411yebhvpnC6Z102+B95eAsN0oB6KUs01ivE8u+G6FMIRtIrVlYXhL+LUwQ3/hXwDWw==}
+    dev: true
+
+  /caniuse-lite/1.0.30001335:
+    resolution: {integrity: sha512-ddP1Tgm7z2iIxu6QTtbZUv6HJxSaV/PZeSrWFZtbY4JZ69tOeNhBCl3HyRQgeNZKE5AOn1kpV7fhljigy0Ty3w==}
     dev: true
 
   /chalk/3.0.0:
@@ -1477,8 +1498,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /cssdb/6.5.0:
-    resolution: {integrity: sha512-Rh7AAopF2ckPXe/VBcoUS9JrCZNSyc60+KpgE6X25vpVxA32TmiqvExjkfhwP4wGSb6Xe8Z/JIyGqwgx/zZYFA==}
+  /cssdb/6.6.1:
+    resolution: {integrity: sha512-0/nZEYfp8SFEzJkMud8NxZJsGfD7RHDJti6GRBLZptIwAzco6RTx1KgwFl4mGWsYS0ZNbCrsY9QryhQ4ldF3Mg==}
     dev: true
 
   /cssesc/3.0.0:
@@ -4502,8 +4523,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-preset-env/7.4.4_postcss@8.4.12:
-    resolution: {integrity: sha512-MqzSEx/QsvOk562iV9mLTgIvLFEOq1os9QBQfkgnq8TW6yKhVFPGh0gdXSK5ZlmjuNQEga6/x833e86XZF/lug==}
+  /postcss-preset-env/7.5.0_postcss@8.4.12:
+    resolution: {integrity: sha512-0BJzWEfCdTtK2R3EiKKSdkE51/DI/BwnhlnicSW482Ym6/DGHud8K0wGLcdjip1epVX0HKo4c8zzTeV/SkiejQ==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
       postcss: ^8.4
@@ -4516,12 +4537,14 @@ packages:
       '@csstools/postcss-normalize-display-values': 1.0.0_postcss@8.4.12
       '@csstools/postcss-oklab-function': 1.1.0_postcss@8.4.12
       '@csstools/postcss-progressive-custom-properties': 1.3.0_postcss@8.4.12
-      autoprefixer: 10.4.5_postcss@8.4.12
+      '@csstools/postcss-stepped-value-functions': 1.0.0_postcss@8.4.12
+      '@csstools/postcss-unset-value': 1.0.0_postcss@8.4.12
+      autoprefixer: 10.4.7_postcss@8.4.12
       browserslist: 4.20.3
       css-blank-pseudo: 3.0.3_postcss@8.4.12
       css-has-pseudo: 3.0.4_postcss@8.4.12
       css-prefers-color-scheme: 6.0.3_postcss@8.4.12
-      cssdb: 6.5.0
+      cssdb: 6.6.1
       postcss: 8.4.12
       postcss-attribute-case-insensitive: 5.0.0_postcss@8.4.12
       postcss-clamp: 4.1.0_postcss@8.4.12
