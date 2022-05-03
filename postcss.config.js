@@ -1,7 +1,7 @@
 module.exports = {
-  plugins: [
-    require("postcss-flexbugs-fixes"),
-    require("postcss-preset-env")({
+  plugins: {
+    "postcss-flexbugs-fixes": {},
+    "postcss-preset-env": {
       autoprefixer: {
         flexbox: "no-2009",
       },
@@ -9,9 +9,9 @@ module.exports = {
       features: {
         "custom-properties": false,
       },
-    }),
-    require("cssnano")({
+    },
+    cssnano: {
       preset: "default",
-    }),
-  ],
+    },
+  },
 };
