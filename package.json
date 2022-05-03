@@ -40,6 +40,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
     "next": "^12.1.5",
+    "next-build-id": "^3.0.0",
     "next-plugin-preact": "^3.0.6",
     "postcss": "^8.4.12",
     "postcss-flexbugs-fixes": "^5.0.2",

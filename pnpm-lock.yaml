@@ -19,6 +19,7 @@ specifiers:
   modern-normalize: ^1.1.0
   nanoid: ^3.3.3
   next: ^12.1.5
+  next-build-id: ^3.0.0
   next-plugin-preact: ^3.0.6
   perfect-scrollbar: ^1.5.5
   postcss: ^8.4.12
@@ -65,6 +66,7 @@ devDependencies:
   husky: 7.0.4
   lint-staged: 12.4.1
   next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+  next-build-id: 3.0.0
   next-plugin-preact: 3.0.6_hiusxyyovnqxcy3o6plqkraykq
   postcss: 8.4.12
   postcss-flexbugs-fixes: 5.0.2_postcss@8.4.12
@@ -2298,6 +2300,11 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
+    dev: true
+
+  /next-build-id/3.0.0:
+    resolution: {integrity: sha512-B3JCsL/9Z/wkmo3EySukQHCgx89Aw0i4LPi2MEhCboQBJ6wpkYTIu1z6hOYKuw/S1Wy8ZRqCEq0dVY/ST6jGqg==}
+    engines: {node: '>=8'}
     dev: true
 
   /next-plugin-preact/3.0.6_hiusxyyovnqxcy3o6plqkraykq:
