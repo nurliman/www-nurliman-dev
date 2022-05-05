@@ -1,4 +1,6 @@
 import styles from "./Socials.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export default function Socials() {
   return (
@@ -6,17 +8,17 @@ export default function Socials() {
       <ul>
         <li>
           <a href="#" target="_blank">
-            <i className="fab fa-linkedin-in"></i>
+            <FontAwesomeIcon icon={faLinkedinIn} height="18" />
           </a>
         </li>
         <li>
           <a href="#" target="_blank">
-            <i className="fab fa-facebook-f"></i>
+            <FontAwesomeIcon icon={faFacebookF} height="18" />
           </a>
         </li>
         <li>
           <a href="#" target="_blank">
-            <i className="fab fa-twitter"></i>
+            <FontAwesomeIcon icon={faTwitter} height="18" />
           </a>
         </li>
       </ul>

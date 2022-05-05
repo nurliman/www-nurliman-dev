@@ -1,6 +1,8 @@
 import Section from "components/Section";
 import PageTitle from "components/PageTitle";
-// import styles from "./Portfolio.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeUp, faFileAlt, faVideo, faImage } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Portfolio.module.scss";
 
 export default function PortfolioSection() {
   return (
@@ -57,7 +59,9 @@ export default function PortfolioSection() {
                   ></a>
                 </div>
 
-                <i className="fa fa-volume-up"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon height={18} width={18} icon={faVolumeUp} />
+                </div>
                 <h4 className="name">SoundCloud Audio</h4>
                 <span className="category">SoundCloud</span>
               </figure>
@@ -68,7 +72,9 @@ export default function PortfolioSection() {
                   <a href="portfolio-1.html" className="ajax-page-load"></a>
                 </div>
 
-                <i className="far fa-file-alt"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon height={18} width={18} icon={faFileAlt} />
+                </div>
                 <h4 className="name">Detailed Project 2</h4>
                 <span className="category">Detailed</span>
               </figure>
@@ -85,8 +91,9 @@ export default function PortfolioSection() {
                     title="Vimeo Video 1"
                   ></a>
                 </div>
-
-                <i className="fas fa-video"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon height={18} width={18} icon={faVideo} />
+                </div>
                 <h4 className="name">Vimeo Video 1</h4>
                 <span className="category">Vimeo Videos</span>
               </figure>
@@ -96,8 +103,9 @@ export default function PortfolioSection() {
                   <img src="img/portfolio/4.jpg" alt="Media Project 1" title="" />
                   <a href="portfolio-1.html" className="ajax-page-load"></a>
                 </div>
-
-                <i className="far fa-file-alt"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon height={18} width={18} icon={faFileAlt} />
+                </div>
                 <h4 className="name">Detailed Project 1</h4>
                 <span className="category">Detailed</span>
               </figure>
@@ -112,7 +120,9 @@ export default function PortfolioSection() {
                   ></a>
                 </div>
 
-                <i className="far fa-image"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon height={18} width={18} icon={faImage} />
+                </div>
                 <h4 className="name">Mockup Design 1</h4>
                 <span className="category">Mockups</span>
               </figure>
@@ -130,7 +140,9 @@ export default function PortfolioSection() {
                   ></a>
                 </div>
 
-                <i className="fas fa-video"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon height={18} width={18} icon={faVideo} />
+                </div>
                 <h4 className="name">YouTube Video 1</h4>
                 <span className="category">YouTube Videos</span>
               </figure>

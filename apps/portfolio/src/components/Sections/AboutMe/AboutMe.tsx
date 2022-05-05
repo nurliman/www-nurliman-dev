@@ -1,6 +1,8 @@
 import Section from "components/Section";
 import PageTitle from "components/PageTitle";
-// import styles from "./AboutMe.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import styles from "./AboutMe.module.scss";
 
 export default function AboutMeSection() {
   return (
@@ -156,8 +158,8 @@ export default function AboutMeSection() {
               <div className="author-info">
                 <h4 className="author">Julia Hickman</h4>
                 <h5 className="company">Omni Source</h5>
-                <div className="icon">
-                  <i className="fas fa-quote-right"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon icon={faQuoteRight} height="30" width="30" />
                 </div>
               </div>
             </div>
@@ -177,8 +179,8 @@ export default function AboutMeSection() {
               <div className="author-info">
                 <h4 className="author">Robert Watkins</h4>
                 <h5 className="company">Endicott Shoes</h5>
-                <div className="icon">
-                  <i className="fas fa-quote-right"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon icon={faQuoteRight} height="30" width="30" />
                 </div>
               </div>
             </div>
@@ -198,8 +200,8 @@ export default function AboutMeSection() {
               <div className="author-info">
                 <h4 className="author">Kristin Carroll</h4>
                 <h5 className="company">Helping Hand</h5>
-                <div className="icon">
-                  <i className="fas fa-quote-right"></i>
+                <div className={styles.icon}>
+                  <FontAwesomeIcon icon={faQuoteRight} height="30" width="30" />
                 </div>
               </div>
             </div>
