@@ -10,13 +10,14 @@ module.exports = {
         "custom-properties": false,
       },
     },
-    cssnano: {
-      preset: "default",
-    },
     "@fullhuman/postcss-purgecss": {
       content: ["./src/pages/**/*.{js,jsx,ts,tsx}", "./src/components/**/*.{js,jsx,ts,tsx}"],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
       safelist: ["html", "body", /^ps/, /^lnr/],
+    },
+    cssnano: {
+      preset: "default",
+      discardComments: true,
     },
   },
 };
