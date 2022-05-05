@@ -26,14 +26,12 @@ importers:
       '@typescript-eslint/parser': ^5.22.0
       bootstrap: 4.1.3
       clsx: ^1.1.1
-      cross-env: ^7.0.3
       cssnano: ^5.1.7
       dayjs: ^1.11.1
       eslint: ^8.14.0
       eslint-config-next: ^12.1.6
       keen-slider: ^6.6.12
       modern-normalize: ^1.1.0
-      nanoid: ^3.3.4
       next: 12.1.5
       next-build-id: ^3.0.0
       next-compose-plugins: ^2.2.1
@@ -60,7 +58,6 @@ importers:
       dayjs: 1.11.1
       keen-slider: 6.6.12
       modern-normalize: 1.1.0
-      nanoid: 3.3.4
       perfect-scrollbar: 1.5.5
       preact: 10.7.1
       react: /@preact/compat/17.0.3_preact@10.7.1
@@ -74,7 +71,6 @@ importers:
       '@types/react': 17.0.44
       '@typescript-eslint/eslint-plugin': 5.22.0_lnjlwhtxjffjmj5o7dnwvwyqxq
       '@typescript-eslint/parser': 5.22.0_t725usgvqspm5woeqpaxbfp2qu
-      cross-env: 7.0.3
       cssnano: 5.1.7_postcss@8.4.13
       eslint: 8.14.0
       eslint-config-next: 12.1.6_ldpv3uesskyaguxpaa56hbtpeu
@@ -986,14 +982,6 @@ packages:
   /core-js-pure/3.22.4:
     resolution: {integrity: sha512-4iF+QZkpzIz0prAFuepmxwJ2h5t4agvE8WPYqs2mjLJMNNwJOnpch76w2Q7bUfCPEv/V7wpvOfog0w273M+ZSw==}
     requiresBuild: true
-    dev: true
-
-  /cross-env/7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
-    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
-    hasBin: true
-    dependencies:
-      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/7.0.3:
@@ -2256,6 +2244,7 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
