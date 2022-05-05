@@ -19,7 +19,7 @@ specifiers:
   lint-staged: ^12.4.1
   modern-normalize: ^1.1.0
   nanoid: ^3.3.3
-  next: ^12.1.5
+  next: 12.1.5
   next-build-id: ^3.0.0
   next-plugin-preact: ^3.0.6
   perfect-scrollbar: ^1.5.5
@@ -898,7 +898,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001332
+      caniuse-lite: 1.0.30001335
       electron-to-chromium: 1.4.121
       escalade: 3.1.1
       node-releases: 2.0.3
@@ -921,13 +921,9 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.20.3
-      caniuse-lite: 1.0.30001332
+      caniuse-lite: 1.0.30001335
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
-    dev: true
-
-  /caniuse-lite/1.0.30001332:
-    resolution: {integrity: sha512-10T30NYOEQtN6C11YGg411yebhvpnC6Z102+B95eAsN0oB6KUs01ivE8u+G6FMIRtIrVlYXhL+LUwQ3/hXwDWw==}
     dev: true
 
   /caniuse-lite/1.0.30001335:
@@ -2356,7 +2352,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 12.1.5
-      caniuse-lite: 1.0.30001332
+      caniuse-lite: 1.0.30001335
       postcss: 8.4.5
       react: /@preact/compat/17.0.3_preact@10.7.1
       react-dom: /@preact/compat/17.0.3_preact@10.7.1
