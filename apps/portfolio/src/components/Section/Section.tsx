@@ -51,12 +51,12 @@ const Section: React.FC<Props> = ({ className, innerClassName, children, section
 
     dispatch(setAnimating(true));
 
-    let animationInClass = ["animated-section-rotateCarouselBottomIn"],
-      animationOutClass = ["animated-section-rotateCarouselBottomOut", "animated-section-ontop"];
+    let animationInClass = [styles.animBottomIn],
+      animationOutClass = [styles.animBottomOut];
 
     if (getIndexById(activeSection) > getIndexById(prevActiveSection.current)) {
-      animationInClass = ["animated-section-rotateCarouselTopIn"];
-      animationOutClass = ["animated-section-rotateCarouselTopOut", "animated-section-ontop"];
+      animationInClass = [styles.animTopIn];
+      animationOutClass = [styles.animTopOut];
     }
 
     if (prevActiveSection.current === sectionId) {

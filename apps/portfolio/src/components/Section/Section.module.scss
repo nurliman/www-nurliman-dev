@@ -47,3 +47,55 @@
   visibility: visible;
   z-index: 99;
 }
+
+.animBottomIn {
+  transform-origin: 50% 100%;
+  animation: rotateCarouselBottomIn 0.8s both ease;
+}
+
+.animBottomOut {
+  transform-origin: 50% 0%;
+  animation: rotateCarouselBottomOut 0.8s both ease;
+}
+
+.animTopIn {
+  transform-origin: 50% 0%;
+  animation: rotateCarouselTopIn 0.8s both ease;
+}
+
+.animTopOut {
+  transform-origin: 50% 100%;
+  animation: rotateCarouselTopOut 0.8s both ease;
+}
+
+@keyframes rotateCarouselBottomIn {
+  from {
+    opacity: 0.3;
+    transform: translateY(-200%) scale(0.4) rotateX(65deg);
+  }
+}
+
+@keyframes rotateCarouselBottomOut {
+  from {
+  }
+  to {
+    opacity: 0.3;
+    transform: translateY(200%) scale(0.4) rotateX(-65deg);
+  }
+}
+
+@keyframes rotateCarouselTopIn {
+  from {
+    opacity: 0.3;
+    transform: translateY(200%) scale(0.4) rotateX(-65deg);
+  }
+}
+
+@keyframes rotateCarouselTopOut {
+  from {
+  }
+  to {
+    opacity: 0.3;
+    transform: translateY(-200%) scale(0.4) rotateX(65deg);
+  }
+}
