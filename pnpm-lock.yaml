@@ -36,6 +36,8 @@ importers:
       nanoid: ^3.3.4
       next: 12.1.5
       next-build-id: ^3.0.0
+      next-compose-plugins: ^2.2.1
+      next-optimized-classnames: npm:@nurliman/next-optimized-classnames@^1.0.4
       next-plugin-preact: ^3.0.6
       perfect-scrollbar: ^1.5.5
       postcss: ^8.4.13
@@ -78,6 +80,8 @@ importers:
       eslint-config-next: 12.1.6_ldpv3uesskyaguxpaa56hbtpeu
       next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
       next-build-id: 3.0.0
+      next-compose-plugins: 2.2.1
+      next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
       next-plugin-preact: 3.0.6_hiusxyyovnqxcy3o6plqkraykq
       postcss: 8.4.13
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.13
@@ -383,6 +387,13 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@nurliman/next-optimized-classnames/1.0.4:
+    resolution: {integrity: sha512-kfsM6by8kmHrTJgsBSaphXvaJoxeyZm/8rNdLYnnqy88LWX7VbrJGDvEYqx4rBEYSLEsoBzfIgIp4fCZWVgOBA==}
+    dependencies:
+      css-class-generator: 2.0.0
+      lodash.foreach: 4.5.0
     dev: true
 
   /@preact/compat/17.0.3_preact@10.7.1:
@@ -1003,6 +1014,10 @@ packages:
     dependencies:
       postcss: 8.4.13
       postcss-selector-parser: 6.0.10
+    dev: true
+
+  /css-class-generator/2.0.0:
+    resolution: {integrity: sha512-zlmG8hCTmtc+3Esj1R5PgXCKDqJT1Uqhm8NyALvg3kSjAK0+tByFTkMhEh101V+f7toETM4RGigBU4BjGvphLg==}
     dev: true
 
   /css-declaration-sorter/6.2.2_postcss@8.4.13:
@@ -2128,6 +2143,10 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /lodash.foreach/4.5.0:
+    resolution: {integrity: sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=}
+    dev: true
+
   /lodash.memoize/4.1.2:
     resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=}
     dev: true
@@ -2245,6 +2264,10 @@ packages:
   /next-build-id/3.0.0:
     resolution: {integrity: sha512-B3JCsL/9Z/wkmo3EySukQHCgx89Aw0i4LPi2MEhCboQBJ6wpkYTIu1z6hOYKuw/S1Wy8ZRqCEq0dVY/ST6jGqg==}
     engines: {node: '>=8'}
+    dev: true
+
+  /next-compose-plugins/2.2.1:
+    resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: true
 
   /next-plugin-preact/3.0.6_hiusxyyovnqxcy3o6plqkraykq:
