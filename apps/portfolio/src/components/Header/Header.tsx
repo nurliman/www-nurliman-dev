@@ -13,7 +13,6 @@ import photoOfMe from "assets/me.jpg";
 
 const Header = () => {
   const dispatch = useAppDispatch();
-  const [currentYear] = useState(dayjs().year());
   const meState = useAppSelector((s) => s.me);
   const headerShow = useAppSelector((s) => s.header.show);
   const isSmall = useMedia({ maxWidth: 1024 }, true);
@@ -22,6 +21,12 @@ const Header = () => {
     dispatch(setShow(false));
   }, []);
 
+  const getCurrentYear = useCallback(() => {
+    return dayjs().year();
+  }, []);
+
+  const [currentYear, setCurrentYear] = useState(getCurrentYear());
+
   useEffect(() => {
     window.addEventListener("resize", hideMenu);
 
@@ -29,6 +34,10 @@ const Header = () => {
       window.removeEventListener("resize", hideMenu);
     };
   }, []);
+
+  useEffect(() => {
+    setCurrentYear(getCurrentYear());
+  }, [getCurrentYear]);
 
   return (
     <header
