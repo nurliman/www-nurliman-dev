@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAppSelector } from "store";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -10,12 +10,19 @@ export default function AboutMeSection() {
   const myAddress = useAppSelector((s) => s.me.address);
   const myEmail = useAppSelector((s) => s.me.email);
   const myPhone = useAppSelector((s) => s.me.phone);
-  const myAge = useMemo(() => {
+
+  const calculateMyAge = useCallback(() => {
     dayjs.extend(relativeTime);
     const dob = dayjs("06-02-1998", "DD-MM-YYYY");
     const age = dayjs().from(dob, true);
     return parseInt(age);
   }, []);
+
+  const [myAge, setMyAge] = useState(calculateMyAge());
+
+  useEffect(() => {
+    setMyAge(calculateMyAge());
+  }, [calculateMyAge]);
 
   return (
     <Section sectionId="about-me">
