@@ -16,7 +16,7 @@ const Header = () => {
   const [currentYear] = useState(dayjs().year());
   const meState = useAppSelector((s) => s.me);
   const headerShow = useAppSelector((s) => s.header.show);
-  const isSmall = useMedia({ maxWidth: 1024 });
+  const isSmall = useMedia({ maxWidth: 1024 }, true);
 
   const hideMenu = useCallback(() => {
     dispatch(setShow(false));
