@@ -349,30 +349,7 @@ input[type="text"],
 /* --- End Simple Info List --- */
 
 /* --- Info block with Icon --- */
-.info-block-w-icon {
-  margin-bottom: 25px;
-}
 
-.info-block-w-icon .ci-text h4 {
-  margin: 5px 0;
-}
-
-.info-block-w-icon .ci-text p {
-  font-size: 0.95em;
-}
-
-.info-block-w-icon .ci-icon {
-  display: table-cell;
-  width: 54px;
-  padding-right: 25px;
-}
-
-.info-block-w-icon i {
-  position: relative;
-  font-size: 42px;
-  color: #04b4e0;
-  opacity: 0.7;
-}
 /* --- End Info block with Icon --- */
 
 /* --- Info Block with Borders --- */
