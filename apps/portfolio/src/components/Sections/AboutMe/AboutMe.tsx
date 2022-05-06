@@ -1,3 +1,6 @@
+import { useMemo } from "react";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -5,6 +8,13 @@ import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import styles from "./AboutMe.module.scss";
 
 export default function AboutMeSection() {
+  const myAge = useMemo(() => {
+    dayjs.extend(relativeTime);
+    const dob = dayjs("06-02-1998", "DD-MM-YYYY");
+    const age = dayjs().from(dob, true);
+    return parseInt(age);
+  }, []);
+
   return (
     <Section sectionId="about-me">
       <PageTitle>
@@ -14,11 +24,12 @@ export default function AboutMeSection() {
       <div className="row">
         <div className="col-xs-12 col-sm-7">
           <p>
-            Proin volutpat mauris ac pellentesque pharetra. Suspendisse congue elit vel odio
-            suscipit, sit amet tempor nisl imperdiet. Quisque ex justo, faucibus ut mi in,
-            condimentum finibus dolor. Aliquam vitae hendrerit dolor, eget imperdiet mauris.
-            Maecenas et ante id ipsum condimentum dictum et vel massa. Ut in imperdiet dolor, vel
-            consectetur dui.
+            Prolific Javascript/Typescript programmer with 4+ years of experience working as a Web
+            Developer. Capable of working with a variety of technology, from Backend, Frontend and
+            even DevOps Technology. Seeking employment as a Programmer at any technology-based
+            company. Bringing exceptional skills in designing, coding, testing, and implementing
+            customizations to exceed customer expectations. Also coming with hunger to learning new
+            skills.
           </p>
         </div>
 
@@ -27,27 +38,27 @@ export default function AboutMeSection() {
             <ul>
               <li>
                 <span className="title">Age</span>
-                <span className="value">32</span>
+                <span className="value">{myAge}</span>
               </li>
 
               <li>
                 <span className="title">Residence</span>
-                <span className="value">USA</span>
+                <span className="value">Indonesia</span>
               </li>
 
               <li>
                 <span className="title">Address</span>
-                <span className="value">88 Some Street, Some Town</span>
+                <span className="value">Ujungberung, Bandung</span>
               </li>
 
               <li>
                 <span className="title">e-mail</span>
-                <span className="value">email@example.com</span>
+                <span className="value">nurlimandiara@gmail.com</span>
               </li>
 
               <li>
                 <span className="title">Phone</span>
-                <span className="value">+0123 123 456 789</span>
+                <span className="value">+62 821-3325-8511</span>
               </li>
             </ul>
           </div>
