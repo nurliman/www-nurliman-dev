@@ -1,11 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface MeState {
-  name: string;
-  titles: string[];
-}
-
-const initialState: MeState = {
+const initialState = {
   name: "Nurliman Diara",
   titles: [
     "Web Developer",
