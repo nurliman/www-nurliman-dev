@@ -7,7 +7,16 @@ export interface MeState {
 
 const initialState: MeState = {
   name: "Nurliman Diara",
-  titles: ["Web Developer", "Frontend Developer"],
+  titles: [
+    "Web Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "JavaScript/TypeScript Programmer",
+    "DevOps",
+    "Linux Administrator",
+    "UI/UX Designer",
+    "Graphic Designer",
+  ],
 };
 
 export const meSlice = createSlice({
