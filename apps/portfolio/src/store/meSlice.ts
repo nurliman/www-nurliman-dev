@@ -12,6 +12,12 @@ const initialState = {
     "UI/UX Designer",
     "Graphic Designer",
   ],
+  address: "Ujungberung, Bandung",
+  email: "nurlimandiara@gmail.com",
+  phone: {
+    display: "+62 821-3325-8511",
+    value: 6282133258511,
+  },
 };
 
 export const meSlice = createSlice({

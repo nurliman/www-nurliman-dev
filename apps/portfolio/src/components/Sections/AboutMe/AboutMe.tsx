@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useAppSelector } from "store";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import Section from "components/Section";
@@ -6,6 +7,9 @@ import PageTitle from "components/PageTitle";
 // import styles from "./AboutMe.module.scss";
 
 export default function AboutMeSection() {
+  const myAddress = useAppSelector((s) => s.me.address);
+  const myEmail = useAppSelector((s) => s.me.email);
+  const myPhone = useAppSelector((s) => s.me.phone);
   const myAge = useMemo(() => {
     dayjs.extend(relativeTime);
     const dob = dayjs("06-02-1998", "DD-MM-YYYY");
@@ -46,17 +50,17 @@ export default function AboutMeSection() {
 
               <li>
                 <span className="title">Address</span>
-                <span className="value">Ujungberung, Bandung</span>
+                <span className="value">{myAddress}</span>
               </li>
 
               <li>
                 <span className="title">e-mail</span>
-                <span className="value">nurlimandiara@gmail.com</span>
+                <span className="value">{myEmail}</span>
               </li>
 
               <li>
                 <span className="title">Phone</span>
-                <span className="value">+62 821-3325-8511</span>
+                <span className="value">{myPhone.display}</span>
               </li>
             </ul>
           </div>
