@@ -224,7 +224,7 @@ export default function ResumeSection() {
         <div className="col-xs-12 col-sm-6">
           <div className="certificate-item clearfix">
             <div className="certi-logo">
-              <img src="img/clients/client-1.png" alt="logo" />
+              <img loading="lazy" src="img/clients/client-1.png" alt="logo" />
             </div>
 
             <div className="certi-content">
@@ -247,7 +247,7 @@ export default function ResumeSection() {
         <div className="col-xs-12 col-sm-6">
           <div className="certificate-item clearfix">
             <div className="certi-logo">
-              <img src="img/clients/client-1.png" alt="logo" />
+              <img loading="lazy" src="img/clients/client-1.png" alt="logo" />
             </div>
 
             <div className="certi-content">

@@ -39,7 +39,7 @@ const Header = () => {
     >
       <div>
         <div className={styles.photo}>
-          <img src={photoOfMe.src} alt={meState.name} />
+          <img loading="lazy" src={photoOfMe.src} alt={meState.name} width={180} />
         </div>
         <div className={styles.titles}>
           <h2>{meState.name}</h2>

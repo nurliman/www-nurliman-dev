@@ -145,7 +145,7 @@ export default function AboutMeSection() {
           <div className="testimonials owl-carousel">
             <div className="testimonial">
               <div className="img">
-                <img src="img/testimonials/testimonial-1.jpg" alt="Alex Smith" />
+                <img loading="lazy" src="img/testimonials/testimonial-1.jpg" alt="Alex Smith" />
               </div>
               <div className="text">
                 <p>
@@ -166,7 +166,7 @@ export default function AboutMeSection() {
 
             <div className="testimonial">
               <div className="img">
-                <img src="img/testimonials/testimonial-2.jpg" alt="Alex Smith" />
+                <img loading="lazy" src="img/testimonials/testimonial-2.jpg" alt="Alex Smith" />
               </div>
               <div className="text">
                 <p>
@@ -187,7 +187,7 @@ export default function AboutMeSection() {
 
             <div className="testimonial">
               <div className="img">
-                <img src="img/testimonials/testimonial-3.jpg" alt="Alex Smith" />
+                <img loading="lazy" src="img/testimonials/testimonial-3.jpg" alt="Alex Smith" />
               </div>
               <div className="text">
                 <p>
@@ -224,43 +224,43 @@ export default function AboutMeSection() {
           <div className="clients owl-carousel">
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-1.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-1.png" alt="Logo" />
               </a>
             </div>
 
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-2.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-2.png" alt="Logo" />
               </a>
             </div>
 
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-3.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-3.png" alt="Logo" />
               </a>
             </div>
 
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-4.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-4.png" alt="Logo" />
               </a>
             </div>
 
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-5.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-5.png" alt="Logo" />
               </a>
             </div>
 
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-6.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-6.png" alt="Logo" />
               </a>
             </div>
 
             <div className="client-block">
               <a href="#" target="_blank" title="Logo">
-                <img src="img/clients/client-7.png" alt="Logo" />
+                <img loading="lazy" src="img/clients/client-7.png" alt="Logo" />
               </a>
             </div>
           </div>
