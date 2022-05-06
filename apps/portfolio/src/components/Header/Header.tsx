@@ -52,7 +52,7 @@ const Header = () => {
           <picture>
             <source srcSet={photoOfMeWebp.src} type="image/webp" />
             <source srcSet={photoOfMe.src} type="image/jpeg" />
-            <img src={photoOfMe.src} alt={meState.name} width={180} />
+            <img src={photoOfMe.src} alt={meState.name} width={180} height={180} />
           </picture>
         </div>
         <div className={styles.titles}>
