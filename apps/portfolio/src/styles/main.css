@@ -315,58 +315,6 @@ input[type="text"],
 /* ------------------------------------------------------------
 6. Elements
 ------------------------------------------------------------ */
-.block-title {
-  display: inline-block;
-  position: relative;
-  padding-right: 12px;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-.block-title h3 {
-  position: relative;
-  font-size: 21px;
-  z-index: 1;
-}
-
-.block-title h3 span {
-  color: #04b4e0;
-}
-
-.block-title:after {
-  position: absolute;
-  opacity: 0.45;
-  top: 10px;
-  right: 0;
-  content: "";
-  height: 20px;
-  width: 30px;
-  background-image: -webkit-repeating-radial-gradient(
-    center center,
-    #04b4e0,
-    #04b4e0 1px,
-    transparent 0px,
-    transparent 100%
-  );
-  background-image: -moz-repeating-radial-gradient(
-    center center,
-    #04b4e0,
-    #04b4e0 1px,
-    transparent 0px,
-    transparent 100%
-  );
-  background-image: -ms-repeating-radial-gradient(
-    center center,
-    #04b4e0,
-    #04b4e0 1px,
-    transparent 0px,
-    transparent 100%
-  );
-  -webkit-background-size: 6px 6px;
-  -moz-background-size: 6px 6px;
-  background-size: 6px 6px;
-  z-index: 0;
-}
 
 /* --- White Spaces --- */
 .white-space-10 {
@@ -398,22 +346,6 @@ input[type="text"],
 }
 /* --- End White Spaces --- */
 
-/* --- Simple Info List --- */
-.info-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.info-list ul li {
-  margin-bottom: 10px;
-}
-
-.info-list .title {
-  color: #04b4e0;
-  margin-right: 5px;
-  font-weight: 600;
-}
 /* --- End Simple Info List --- */
 
 /* --- Info block with Icon --- */
