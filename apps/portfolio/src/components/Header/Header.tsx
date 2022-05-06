@@ -10,6 +10,7 @@ import Copyrights from "./Copyrights";
 import { setShow } from "store/headerSlice";
 import styles from "./Header.module.scss";
 import photoOfMe from "assets/me.jpg";
+import photoOfMeWebp from "assets/me.webp";
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -48,7 +49,11 @@ const Header = () => {
     >
       <div>
         <div className={styles.photo}>
-          <img src={photoOfMe.src} alt={meState.name} width={180} />
+          <picture>
+            <source srcSet={photoOfMeWebp.src} type="image/webp" />
+            <source srcSet={photoOfMe.src} type="image/jpeg" />
+            <img src={photoOfMe.src} alt={meState.name} width={180} />
+          </picture>
         </div>
         <div className={styles.titles}>
           <h2>{meState.name}</h2>

@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
+import { checkWebpSupport } from "utils/checkWebpSupport";
 import animatedBackgroundImgUrl from "assets/animated-background.png";
+import animatedBackgroundImgUrlWebp from "assets/animated-background.webp";
 import styles from "./AnimatedBackground.module.scss";
 
 const AnimatedBackground: React.FC = () => {
@@ -45,6 +47,12 @@ const AnimatedBackground: React.FC = () => {
       document.body.removeEventListener("mousemove", animateBg);
     };
   }, [animateBg]);
+
+  useEffect(() => {
+    if (checkWebpSupport()) {
+      ref.current.style["backgroundImage"] = `url(${animatedBackgroundImgUrlWebp.src})`;
+    }
+  }, []);
 
   return (
     <div
