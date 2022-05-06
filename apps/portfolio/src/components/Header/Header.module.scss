@@ -43,13 +43,15 @@
 }
 
 .containerHide {
-  width: 0;
-  right: 0;
-  margin-right: -100%;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  box-shadow: none;
+  @media only screen and (max-width: 1024px) {
+    width: 0;
+    right: 0;
+    margin-right: -100%;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: none;
+  }
 }
 
 .photo {
