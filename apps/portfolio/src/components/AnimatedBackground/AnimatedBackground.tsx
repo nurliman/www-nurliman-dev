@@ -39,7 +39,7 @@ const AnimatedBackground: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    document.body.addEventListener("mousemove", animateBg, { passive: true });
+    document.body.addEventListener("mousemove", animateBg);
 
     return () => {
       document.body.removeEventListener("mousemove", animateBg);
