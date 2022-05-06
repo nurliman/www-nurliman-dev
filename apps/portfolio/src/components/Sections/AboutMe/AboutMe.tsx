@@ -85,25 +85,25 @@ export default function AboutMeSection() {
             <div className="info-list-w-icon">
               <div className="info-block-w-icon">
                 <div className="ci-icon">
-                  <i className="lnr lnr-store"></i>
+                  <i className="lnr lnr-laptop-phone"></i>
                 </div>
                 <div className="ci-text">
-                  <h4>Ecommerce</h4>
+                  <h4>Front-End Development</h4>
                   <p>
-                    Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum
-                    massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.
+                    Using modern JavaScript/TypeScript to create blazing fast User Interface with
+                    all cross-browser and multi-platform compatibility optimized.
                   </p>
                 </div>
               </div>
               <div className="info-block-w-icon">
                 <div className="ci-icon">
-                  <i className="lnr lnr-laptop-phone"></i>
+                  <i className="lnr lnr-cog"></i>
                 </div>
                 <div className="ci-text">
-                  <h4>Web Design</h4>
+                  <h4>Back-End Development</h4>
                   <p>
-                    Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum
-                    massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.
+                    Writing maintainable, testable, clean and efficient Web Backend using various
+                    languages and frameworks with performance in mind.
                   </p>
                 </div>
               </div>
@@ -116,25 +116,26 @@ export default function AboutMeSection() {
             <div className="info-list-w-icon">
               <div className="info-block-w-icon">
                 <div className="ci-icon">
-                  <i className="lnr lnr-pencil"></i>
+                  <i className="lnr lnr-cloud-upload"></i>
                 </div>
                 <div className="ci-text">
-                  <h4>Copywriting</h4>
+                  <h4>Cloud Development</h4>
                   <p>
-                    Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum
-                    massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.
+                    Build and Manage VMs, Cloud Databases, Cloud Computing, Cloud Storage, Cloud
+                    Network, Load Balancers etc with Google Cloud Platform.
                   </p>
                 </div>
               </div>
               <div className="info-block-w-icon">
                 <div className="ci-icon">
-                  <i className="lnr lnr-flag"></i>
+                  <i className="lnr lnr-diamond"></i>
                 </div>
                 <div className="ci-text">
-                  <h4>Management</h4>
+                  <h4>Graphic design</h4>
                   <p>
-                    Pellentesque pellentesque, ipsum sit amet auctor accumsan, odio tortor bibendum
-                    massa, sit amet ultricies ex lectus scelerisque nibh. Ut non sodales.
+                    Creating user flows, wireframes, prototypes and mockups. Translating
+                    requirements into style guides, design systems, design patterns and attractive
+                    user interfaces.
                   </p>
                 </div>
               </div>
