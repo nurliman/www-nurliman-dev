@@ -1,4 +1,5 @@
 import React from "react";
+import { NextSeo } from "next-seo";
 import AnimatedBackground from "components/AnimatedBackground";
 import Page from "components/Page";
 import HashRouter from "components/HashRouter";
@@ -16,6 +17,11 @@ import ContactSection from "components/Sections/Contact";
 const MainPage: React.FC = () => {
   return (
     <>
+      <NextSeo
+        title="Nurliman Diara | Web Developer"
+        description="This is Resume Website of Nurliman Diara Aria."
+        canonical="https://nurliman.dev/"
+      />
       <AnimatedBackground />
       <Page>
         <HashRouter />
