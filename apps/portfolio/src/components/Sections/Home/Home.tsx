@@ -33,7 +33,7 @@ export default function HomeSection() {
           clearTimeout(timeout.current);
           timeout.current = setTimeout(() => {
             slider.next();
-          }, 2500);
+          }, 1500);
         };
 
         slider.on("created", nextTimeout);
