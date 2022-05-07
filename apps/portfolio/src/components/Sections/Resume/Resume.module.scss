@@ -1,0 +1,139 @@
+.resumeGrid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  margin: 0 -15px;
+
+  & > * {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  @media only screen and (min-width: 769px) {
+    flex-direction: row;
+  }
+}
+
+.resumeGridCell {
+  margin-bottom: 40px;
+}
+
+.resumeGridColLeft {
+  flex: 7.2;
+
+  @media only screen and (min-width: 426px) {
+    min-width: 370px;
+  }
+
+  & .resumeGridCell {
+    margin-bottom: 50px;
+  }
+}
+
+.resumeGridColRight {
+  flex: 5;
+
+  @media only screen and (min-width: 426px) {
+    min-width: 250px;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+
+.skillsItemTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4px;
+
+  & > * {
+    line-height: 1.1em;
+  }
+
+  & h4 {
+    font-size: 13px;
+  }
+}
+
+.skillsItemValue {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.knowledges {
+  list-style: none;
+
+  & li {
+    display: inline-block;
+    background-color: #04b4e0;
+    border-radius: 3px;
+    color: #fff;
+    padding: 1px 10px;
+    margin: 3px 2px;
+    font-size: 13px;
+  }
+}
+
+.certificates {
+  display: flex;
+}
+
+.certificate {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border: 2px solid #444;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.certificateLogo {
+  display: table-cell;
+  width: 120px;
+  height: 100%;
+  background-color: #444;
+  padding: 25px;
+  vertical-align: middle;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+  & img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.certificateContent {
+  display: table-cell;
+  width: 100%;
+  padding: 20px 25px;
+  vertical-align: middle;
+}
+
+.certificateTitle {
+  & h4 {
+    font-size: 16px;
+    margin: 0 0 5px;
+  }
+}
+
+.certificateId {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.certificateDate {
+  font-size: 0.7em;
+  color: #777;
+  opacity: 0.7;
+}
