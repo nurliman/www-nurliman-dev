@@ -1,51 +1,57 @@
-import { useCallback } from "react";
-import { useAppSelector, useAppDispatch } from "store";
-import { getActiveIndex, setActive } from "store/sectionsSlice";
+import { useMemo } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useAppSelector } from "store";
 import styles from "./ArrowNav.module.scss";
 
 export default function ArrowNav() {
-  const dispatch = useAppDispatch();
+  const router = useRouter();
   const sectionsList = useAppSelector((s) => s.sections.list);
-  const isAnimating = useAppSelector((s) => s.animation.isAnimating);
 
-  const next = useCallback(() => {
-    if (isAnimating) return;
-    let activeIndex = getActiveIndex();
+  const activeIndex = useMemo(() => {
+    return sectionsList.findIndex((x) => x.path === router.pathname);
+  }, [router, sectionsList]);
 
+  const nextPage = useMemo(() => {
     if (Number(activeIndex) < 0) return;
+
+    let nextPageIndex: number;
 
     if (activeIndex >= sectionsList.length - 1) {
-      activeIndex = 0;
+      nextPageIndex = 0;
     } else {
-      activeIndex++;
+      nextPageIndex = activeIndex + 1;
     }
 
-    dispatch(setActive(sectionsList[activeIndex]?.id));
-  }, [sectionsList, isAnimating]);
+    return sectionsList[nextPageIndex];
+  }, [activeIndex, sectionsList]);
 
-  const prev = useCallback(() => {
-    if (isAnimating) return;
-    let activeIndex = getActiveIndex();
-
+  const prevPage = useMemo(() => {
     if (Number(activeIndex) < 0) return;
 
+    let prevPageIndex: number;
+
     if (activeIndex < 1) {
-      activeIndex = sectionsList.length - 1;
+      prevPageIndex = sectionsList.length - 1;
     } else {
-      activeIndex--;
+      prevPageIndex = activeIndex - 1;
     }
 
-    dispatch(setActive(sectionsList[activeIndex]?.id));
-  }, [sectionsList, isAnimating]);
+    return sectionsList[prevPageIndex];
+  }, [activeIndex, sectionsList]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.arrow} onClick={next}>
-        <i className="lnr lnr-chevron-right"></i>
-      </div>
-      <div className={styles.arrow} onClick={prev}>
-        <i className="lnr lnr-chevron-left"></i>
-      </div>
+      <Link href={nextPage?.path || "#"}>
+        <a className={styles.arrow}>
+          <i className="lnr lnr-chevron-right"></i>
+        </a>
+      </Link>
+      <Link href={prevPage?.path || "#"}>
+        <a className={styles.arrow}>
+          <i className="lnr lnr-chevron-left"></i>
+        </a>
+      </Link>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { ComponentProps, useCallback, useEffect, useRef } from "react";
-import { useAppSelector } from "store";
 import clsx from "clsx";
 import PerfectScrollbar from "perfect-scrollbar";
 import styles from "./Section.module.scss";
@@ -12,7 +11,6 @@ type Props = ComponentProps<"section"> & {
 const Section: React.FC<Props> = ({ className, innerClassName, children, sectionId }) => {
   const container = useRef<HTMLDivElement>();
   const perfectScrollbar = useRef<PerfectScrollbar>();
-  const activeSection = useAppSelector((s) => s.sections.active);
 
   const psInit = useCallback(() => {
     perfectScrollbar.current = new PerfectScrollbar(container.current);
@@ -49,7 +47,7 @@ const Section: React.FC<Props> = ({ className, innerClassName, children, section
     <section
       ref={container}
       data-id={sectionId}
-      className={clsx(styles.section, activeSection && styles.active, className)}
+      className={clsx(styles.section, styles.active, className)}
     >
       <div className={clsx(styles.inner, innerClassName)}>{children}</div>
     </section>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { ReactElement, ReactNode } from "react";
+import { NextPage } from "next";
 import { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import store from "store";
@@ -15,12 +16,18 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
 
-const App: React.FC<AppProps> = (props) => {
-  return (
-    <Provider store={store}>
-      <props.Component {...props.pageProps} />
-    </Provider>
-  );
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+const App: React.FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  return <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>;
 };
 
 export default App;

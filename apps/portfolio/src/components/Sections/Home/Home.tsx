@@ -8,7 +8,6 @@ import styles from "./Home.module.scss";
 export default function HomeSection() {
   const timeout = useRef<NodeJS.Timeout>();
   const meState = useAppSelector((s) => s.me);
-  const activeSection = useAppSelector((s) => s.sections.active);
   const [pause, togglePause] = useState(false);
   const [opacities, setOpacities] = useState<number[]>([]);
 
@@ -44,16 +43,14 @@ export default function HomeSection() {
   );
 
   useEffect(() => {
-    const isHome = activeSection.toLowerCase() === "home";
+    !pause && togglePause(true);
+    sliderRef.current.update();
 
-    if (isHome) {
-      !pause && togglePause(true);
-      sliderRef.current.update();
-    } else {
+    return () => {
       pause && togglePause(false);
       clearTimeout(timeout.current);
-    }
-  }, [activeSection]);
+    };
+  }, []);
 
   return (
     <Section sectionId="home" innerClassName={styles.centered}>

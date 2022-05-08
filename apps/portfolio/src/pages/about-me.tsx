@@ -1,21 +1,21 @@
 import { ReactElement } from "react";
 import { NextSeo } from "next-seo";
 import MainLayout from "components/Layouts/MainLayout";
-import HomeSection from "components/Sections/Home";
+import AboutMe from "components/Sections/AboutMe";
 
-const HomePage = () => {
+const AboutMePage = () => {
   return (
     <>
       <NextSeo
         title="Nurliman Diara | Web Developer"
         description="This is Resume Website of Nurliman Diara Aria."
-        canonical="https://nurliman.dev/"
+        canonical="https://nurliman.dev/about-me"
       />
-      <HomeSection />
+      <AboutMe />
     </>
   );
 };
 
-HomePage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>;
+AboutMePage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>;
 
-export default HomePage;
+export default AboutMePage;
