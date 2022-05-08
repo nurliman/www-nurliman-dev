@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 import AnimatedBackground from "components/AnimatedBackground";
 import Page from "components/Page";
 import Header from "components/Header";
@@ -15,7 +16,20 @@ type Props = {
 };
 
 const MainLayout: React.FC<Props> = ({ children, contentInnerClassName }) => {
+  const router = useRouter();
   const [psRef] = usePerfectScrollbar();
+
+  const handleRouteChange = useCallback(() => {
+    if (psRef.current) psRef.current.scrollTop = 0;
+  }, []);
+
+  useEffect(() => {
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
 
   return (
     <>
