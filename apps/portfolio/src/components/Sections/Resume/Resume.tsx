@@ -1,5 +1,4 @@
 import { useAppSelector } from "store";
-import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
 import Timeline from "components/Timeline";
@@ -16,7 +15,7 @@ export default function ResumeSection() {
   const myCertificates = useAppSelector((s) => s.me.certificates);
 
   return (
-    <Section sectionId="resume">
+    <>
       <PageTitle>Resume</PageTitle>
 
       <div className={styles.resumeGrid}>
@@ -130,6 +129,6 @@ export default function ResumeSection() {
           </div>
         ))}
       </div>
-    </Section>
+    </>
   );
 }

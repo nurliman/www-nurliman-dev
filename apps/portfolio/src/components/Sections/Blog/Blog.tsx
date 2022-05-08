@@ -1,10 +1,9 @@
-import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 // import styles from "./Blog.module.scss";
 
 export default function BlogSection() {
   return (
-    <Section sectionId="blog">
+    <>
       <PageTitle>Blog</PageTitle>
 
       <div className="row">
@@ -124,6 +123,6 @@ export default function BlogSection() {
           </div>
         </div>
       </div>
-    </Section>
+    </>
   );
 }

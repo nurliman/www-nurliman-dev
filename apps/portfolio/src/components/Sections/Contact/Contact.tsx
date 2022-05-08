@@ -1,10 +1,9 @@
-import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 // import styles from "./Contact.module.scss";
 
 export default function ContactSection() {
   return (
-    <Section sectionId="contact">
+    <>
       <PageTitle>Contact</PageTitle>
 
       <div className="row">
@@ -131,6 +130,6 @@ export default function ContactSection() {
           </form>
         </div>
       </div>
-    </Section>
+    </>
   );
 }

@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import { useKeenSlider } from "keen-slider/react";
 import { useAppSelector } from "store";
-import Section from "components/Section";
 import styles from "./Home.module.scss";
 
 export default function HomeSection() {
@@ -53,7 +52,7 @@ export default function HomeSection() {
   }, []);
 
   return (
-    <Section sectionId="home" innerClassName={styles.centered}>
+    <>
       <div className={styles.titleBlock}>
         <h2>{meState.name}</h2>
         <div ref={slider} className={styles.fader}>
@@ -68,6 +67,6 @@ export default function HomeSection() {
           ))}
         </div>
       </div>
-    </Section>
+    </>
   );
 }

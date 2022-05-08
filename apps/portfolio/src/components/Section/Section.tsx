@@ -1,25 +1,19 @@
-import React, { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 import clsx from "clsx";
-import { usePerfectScrollbar } from "hooks/usePerfectScrollbar";
 import styles from "./Section.module.scss";
 
 type Props = ComponentProps<"section"> & {
-  sectionId: string;
   innerClassName?: string;
 };
 
-const Section: React.FC<Props> = ({ className, innerClassName, children, sectionId }) => {
-  const [psRef] = usePerfectScrollbar();
-
+const Section = forwardRef<HTMLElement, Props>(({ className, innerClassName, children }, ref) => {
   return (
-    <section
-      ref={psRef}
-      data-id={sectionId}
-      className={clsx(styles.section, styles.active, className)}
-    >
+    <section ref={ref} className={clsx(styles.section, styles.active, className)}>
       <div className={clsx(styles.inner, innerClassName)}>{children}</div>
     </section>
   );
-};
+});
+
+Section.displayName = "Section";
 
 export default Section;

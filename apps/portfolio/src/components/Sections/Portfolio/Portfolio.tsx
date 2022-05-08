@@ -1,4 +1,3 @@
-import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVolumeUp, faFileAlt, faVideo, faImage } from "@fortawesome/free-solid-svg-icons";
@@ -6,7 +5,7 @@ import styles from "./Portfolio.module.scss";
 
 export default function PortfolioSection() {
   return (
-    <Section sectionId="portfolio">
+    <>
       <PageTitle>Portfolio</PageTitle>
 
       <div className="row">
@@ -150,6 +149,6 @@ export default function PortfolioSection() {
           </div>
         </div>
       </div>
-    </Section>
+    </>
   );
 }

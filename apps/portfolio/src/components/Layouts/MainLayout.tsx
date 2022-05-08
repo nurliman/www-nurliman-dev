@@ -5,10 +5,18 @@ import Page from "components/Page";
 import Header from "components/Header";
 import MenuToggle from "components/MenuToggle";
 import Content from "components/Content";
+import Section from "components/Section";
+import { usePerfectScrollbar } from "hooks/usePerfectScrollbar";
 
 const ArrowNav = dynamic(() => import("components/ArrowNav"), { ssr: false });
 
-const MainLayout: React.FC = ({ children }) => {
+type Props = {
+  contentInnerClassName?: string;
+};
+
+const MainLayout: React.FC<Props> = ({ children, contentInnerClassName }) => {
+  const [psRef] = usePerfectScrollbar();
+
   return (
     <>
       <AnimatedBackground />
@@ -16,7 +24,11 @@ const MainLayout: React.FC = ({ children }) => {
         <Header />
         <MenuToggle />
         <ArrowNav />
-        <Content>{children}</Content>
+        <Content>
+          <Section ref={psRef} innerClassName={contentInnerClassName}>
+            {children}
+          </Section>
+        </Content>
       </Page>
     </>
   );

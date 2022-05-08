@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import { useAppSelector } from "store";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
 import Space from "components/Space";
@@ -27,7 +26,7 @@ export default function AboutMeSection() {
   }, [calculateMyAge]);
 
   return (
-    <Section sectionId="about-me">
+    <>
       <PageTitle>
         About <span>Me</span>
       </PageTitle>
@@ -131,6 +130,6 @@ export default function AboutMeSection() {
           </div>
         </div>
       </div>
-    </Section>
+    </>
   );
 }
