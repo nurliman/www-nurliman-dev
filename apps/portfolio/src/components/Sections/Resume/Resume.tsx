@@ -1,11 +1,20 @@
+import { useAppSelector } from "store";
 import Section from "components/Section";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
 import Timeline from "components/Timeline";
 import ProgressBar from "components/ProgressBar";
 import styles from "./Resume.module.scss";
+import React from "react";
 
 export default function ResumeSection() {
+  const myExperiences = useAppSelector((s) => s.me.experiences);
+  const myEducations = useAppSelector((s) => s.me.educations);
+  const myProgrammingSkills = useAppSelector((s) => s.me.programmingSkills);
+  const myOtherSkills = useAppSelector((s) => s.me.otherSkills);
+  const myKnowledges = useAppSelector((s) => s.me.knowledges);
+  const myCertificates = useAppSelector((s) => s.me.certificates);
+
   return (
     <Section sectionId="resume">
       <PageTitle>Resume</PageTitle>
@@ -13,71 +22,34 @@ export default function ResumeSection() {
       <div className={styles.resumeGrid}>
         <div className={styles.resumeGridColLeft}>
           <div className={styles.resumeGridCell}>
-            <BlockTitle>Education</BlockTitle>
+            <BlockTitle>Experience</BlockTitle>
 
             <Timeline>
-              <Timeline.Item
-                period="2008"
-                company="University of Studies"
-                title="Frontend Development"
-                text={
-                  <>
-                    Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam
-                    sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante.
-                  </>
-                }
-              />
-              <Timeline.Item
-                period="2007"
-                company="University of Studies"
-                title="Graphic Design"
-                text={
-                  <>
-                    Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat
-                    risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor.
-                  </>
-                }
-              />
+              {myExperiences.map((exp) => (
+                <Timeline.Item
+                  key={exp.period + exp.company}
+                  period={exp.period}
+                  company={exp.company}
+                  title={exp.title}
+                  text={exp.description}
+                />
+              ))}
             </Timeline>
           </div>
 
           <div className={styles.resumeGridCell}>
-            <BlockTitle>Experience</BlockTitle>
+            <BlockTitle>Education</BlockTitle>
 
             <Timeline>
-              <Timeline.Item
-                period="2016 - Current"
-                company="Google"
-                title="Lead Ui/Ux Designer"
-                text={
-                  <>
-                    Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis.
-                    Phasellus eleifend tristique posuere. Sed vitae dui nec magna.
-                  </>
-                }
-              />
-              <Timeline.Item
-                period="2013 - 2016"
-                company="Adobe"
-                title="Senior Ui/Ux Designer"
-                text={
-                  <>
-                    Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla
-                    tristique, ornare felis id, congue libero. Nam volutpat euismod quam.
-                  </>
-                }
-              />
-              <Timeline.Item
-                period="2011 - 2013"
-                company="Google"
-                title="Junior Ui/Ux Designer"
-                text={
-                  <>
-                    Duis mollis nunc quis quam viverra venenatis. Nulla nulla arcu, congue vitae
-                    nunc ac, sodales ultricies diam. Nullam justo leo, tincidunt sit amet.
-                  </>
-                }
-              />
+              {myEducations.map((edu) => (
+                <Timeline.Item
+                  key={edu.period + edu.school}
+                  period={edu.period}
+                  company={edu.school}
+                  title={edu.field}
+                  text={edu.description}
+                />
+              ))}
             </Timeline>
           </div>
         </div>
@@ -85,71 +57,37 @@ export default function ResumeSection() {
         <div className={styles.resumeGridColRight}>
           <div className={styles.resumeGridCell}>
             <BlockTitle>
-              Design <span>Skills</span>
+              Programming <span>Skills</span>
             </BlockTitle>
 
             <div className={styles.skills}>
-              <div className={styles.skillsItemTop}>
-                <h4>Web Design</h4>
-                <div className={styles.skillsItemValue}>95%</div>
-              </div>
-              <ProgressBar progress={0.95} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>Print Design</h4>
-                <div className={styles.skillsItemValue}>65%</div>
-              </div>
-              <ProgressBar progress={0.65} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>Logo Design</h4>
-                <div className={styles.skillsItemValue}>80%</div>
-              </div>
-              <ProgressBar progress={0.8} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>Graphic Design</h4>
-                <div className={styles.skillsItemValue}>90%</div>
-              </div>
-              <ProgressBar progress={0.9} />
+              {myProgrammingSkills.map((skill) => (
+                <React.Fragment key={skill.name}>
+                  <div className={styles.skillsItemTop}>
+                    <h4>{skill.name}</h4>
+                    <div className={styles.skillsItemValue}>{skill.value * 100}%</div>
+                  </div>
+                  <ProgressBar progress={skill.value} />
+                </React.Fragment>
+              ))}
             </div>
           </div>
 
           <div className={styles.resumeGridCell}>
             <BlockTitle>
-              Coding <span>Skills</span>
+              Other <span>Skills</span>
             </BlockTitle>
 
             <div className={styles.skills}>
-              <div className={styles.skillsItemTop}>
-                <h4>JavaScript</h4>
-                <div className={styles.skillsItemValue}>95%</div>
-              </div>
-              <ProgressBar progress={0.95} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>PHP</h4>
-                <div className={styles.skillsItemValue}>85%</div>
-              </div>
-              <ProgressBar progress={0.85} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>HTML/CSS</h4>
-                <div className={styles.skillsItemValue}>100%</div>
-              </div>
-              <ProgressBar progress={1} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>Smarty/Twig</h4>
-                <div className={styles.skillsItemValue}>75%</div>
-              </div>
-              <ProgressBar progress={0.75} />
-
-              <div className={styles.skillsItemTop}>
-                <h4>Perl</h4>
-                <div className={styles.skillsItemValue}>90%</div>
-              </div>
-              <ProgressBar progress={0.9} />
+              {myOtherSkills.map((skill) => (
+                <React.Fragment key={skill.name}>
+                  <div className={styles.skillsItemTop}>
+                    <h4>{skill.name}</h4>
+                    <div className={styles.skillsItemValue}>{skill.value * 100}%</div>
+                  </div>
+                  <ProgressBar progress={skill.value} />
+                </React.Fragment>
+              ))}
             </div>
           </div>
 
@@ -157,15 +95,9 @@ export default function ResumeSection() {
             <BlockTitle>Knowledges</BlockTitle>
 
             <ul className={styles.knowledges}>
-              <li>Marketing</li>
-              <li>Print</li>
-              <li>Digital Design</li>
-              <li>Social Media</li>
-              <li>Time Management</li>
-              <li>Communication</li>
-              <li>Problem-Solving</li>
-              <li>Social Networking</li>
-              <li>Flexibility</li>
+              {myKnowledges.map((knowledge) => (
+                <li key={knowledge}>{knowledge}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -174,40 +106,29 @@ export default function ResumeSection() {
       <BlockTitle>Certificates</BlockTitle>
 
       <div className={styles.certificates}>
-        <div className={styles.certificate}>
-          <div className={styles.certificateLogo}>
-            <img loading="lazy" src="img/clients/client-1.png" alt="logo" />
-          </div>
+        {myCertificates.map((cert) => (
+          <div key={cert.credential.id} className={styles.certificate}>
+            <div className={styles.certificateLogo}>
+              <img
+                loading="lazy"
+                src={cert.organization.logoUrl}
+                alt={"Logo " + cert.organization.name}
+              />
+            </div>
 
-          <div className={styles.certificateContent}>
-            <div className={styles.certificateTitle}>
-              <h4>Psyhology of Intertnation Design</h4>
-            </div>
-            <div className={styles.certificateId}>
-              <span>Membership ID: XXXX</span>
-            </div>
-            <div className={styles.certificateDate}>
-              <span>19 April 2018</span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.certificate}>
-          <div className={styles.certificateLogo}>
-            <img loading="lazy" src="img/clients/client-1.png" alt="logo" />
-          </div>
-
-          <div className={styles.certificateContent}>
-            <div className={styles.certificateTitle}>
-              <h4>Psyhology of Intertnation Design</h4>
-            </div>
-            <div className={styles.certificateId}>
-              <span>Membership ID: XXXX</span>
-            </div>
-            <div className={styles.certificateDate}>
-              <span>19 April 2018</span>
+            <div className={styles.certificateContent}>
+              <div className={styles.certificateTitle}>
+                <h4>{cert.name}</h4>
+              </div>
+              <div className={styles.certificateId}>
+                <span>Credential ID: {cert.credential.id}</span>
+              </div>
+              <div className={styles.certificateDate}>
+                <span>{cert.date}</span>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </Section>
   );
