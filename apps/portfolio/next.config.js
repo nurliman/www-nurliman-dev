@@ -9,7 +9,7 @@ const config = {
   generateBuildId: () => nextBuildId({ dir: __dirname }),
 };
 
-module.exports = module.exports = withPlugins(
+module.exports = withPlugins(
   [
     nextPreact,
     nextOptimizedClassnames,
