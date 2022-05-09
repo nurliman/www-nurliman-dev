@@ -5,16 +5,19 @@
   "scripts": {
     "dev": "next",
     "export": "next export -o dist/",
-    "build": "next build && npm run export",
+    "build": "npm run partytown && next build && npm run export",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "cross-env ANALYZE=true next build"
+    "analyze": "cross-env ANALYZE=true next build",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.5.4",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@nurliman/gtm": "*",
     "@reduxjs/toolkit": "^1.8.1",
     "bootstrap": "4.1.3",
     "clsx": "^1.1.1",
