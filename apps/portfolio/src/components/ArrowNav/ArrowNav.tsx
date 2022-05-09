@@ -42,12 +42,12 @@ export default function ArrowNav() {
 
   return (
     <div className={styles.container}>
-      <Link href={nextPage?.path || "#"}>
+      <Link href={nextPage?.path || "javascript:void(0);"}>
         <a className={styles.arrow}>
           <i className="lnr lnr-chevron-right"></i>
         </a>
       </Link>
-      <Link href={prevPage?.path || "#"}>
+      <Link href={prevPage?.path || "javascript:void(0);"}>
         <a className={styles.arrow}>
           <i className="lnr lnr-chevron-left"></i>
         </a>
