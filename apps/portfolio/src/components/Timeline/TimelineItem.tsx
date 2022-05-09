@@ -10,6 +10,7 @@ type Props = React.ComponentProps<"div"> & {
 };
 
 const TimelineItem: React.FC<Props> = ({
+  // eslint-disable-next-line
   children,
   className,
   period,
