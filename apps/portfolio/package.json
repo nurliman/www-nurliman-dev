@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next",
     "export": "next export -o dist/",
-    "build": "npm run partytown && next build && npm run export",
+    "build": "npm run partytown && next build && next-sitemap && npm run export",
     "start": "next start",
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
@@ -48,6 +48,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-optimized-classnames": "npm:@nurliman/next-optimized-classnames@^1.0.4",
     "next-plugin-preact": "^3.0.6",
+    "next-sitemap": "^2.5.20",
     "postcss": "^8.4.13",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.5.0",
