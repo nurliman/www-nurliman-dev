@@ -1,6 +1,7 @@
 import React, { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
+import { DefaultSeo } from "next-seo";
 import { Provider } from "react-redux";
 import store from "store";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -27,7 +28,16 @@ type AppPropsWithLayout = AppProps & {
 const App: React.FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  return <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>;
+  return (
+    <>
+      <DefaultSeo
+        titleTemplate="%s | Nurliman Diara - Web Developer"
+        defaultTitle="Nurliman Diara | Web Developer"
+        description="This is Resume Website of Nurliman Diara Aria."
+      />
+      <Provider store={store}>{getLayout(<Component {...pageProps} />)}</Provider>
+    </>
+  );
 };
 
 export default App;

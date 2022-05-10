@@ -6,11 +6,7 @@ import Blog from "components/Sections/Blog";
 const BlogPage = () => {
   return (
     <>
-      <NextSeo
-        title="Nurliman Diara | Web Developer"
-        description="This is Resume Website of Nurliman Diara Aria."
-        canonical="https://nurliman.dev/blog"
-      />
+      <NextSeo title="Blog" canonical="https://nurliman.dev/blog" />
       <Blog />
     </>
   );

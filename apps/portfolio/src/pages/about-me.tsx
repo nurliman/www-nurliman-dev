@@ -6,11 +6,7 @@ import AboutMe from "components/Sections/AboutMe";
 const AboutMePage = () => {
   return (
     <>
-      <NextSeo
-        title="Nurliman Diara | Web Developer"
-        description="This is Resume Website of Nurliman Diara Aria."
-        canonical="https://nurliman.dev/about-me"
-      />
+      <NextSeo title="About Me" canonical="https://nurliman.dev/about-me" />
       <AboutMe />
     </>
   );
