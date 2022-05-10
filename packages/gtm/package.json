@@ -13,15 +13,15 @@
     "lint": "eslint src/**/*.ts* --cache --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "ssr-window": "^4.0.2"
+    "ssr-window": "4.0.2"
   },
   "devDependencies": {
-    "@types/react": "17",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "eslint": "^8.15.0",
-    "tsup": "^5.12.7",
-    "typescript": "^4.6.3"
+    "@types/react": "17.0.45",
+    "@typescript-eslint/eslint-plugin": "5.23.0",
+    "@typescript-eslint/parser": "5.23.0",
+    "eslint": "8.15.0",
+    "tsup": "5.12.7",
+    "typescript": "4.6.4"
   },
   "peerDependencies": {
     "react": ">= 17"
