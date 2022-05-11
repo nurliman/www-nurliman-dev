@@ -55,7 +55,7 @@ importers:
       preact-render-to-string: ^5.2.0
       react: npm:@preact/compat@^17.0.3
       react-dom: npm:@preact/compat@^17.0.3
-      react-hook-form: ^7.31.1
+      react-hook-form: ^7.28.1
       react-redux: ^8.0.1
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
       reset-css: ^5.0.1
