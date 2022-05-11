@@ -1,1 +1,6 @@
+# partytown
 public/~partytown
+
+# next-sitemap
+public/sitemap*
+public/robots.txt

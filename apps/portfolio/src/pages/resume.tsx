@@ -6,11 +6,7 @@ import Resume from "components/Sections/Resume";
 const ResumePage = () => {
   return (
     <>
-      <NextSeo
-        title="Nurliman Diara | Web Developer"
-        description="This is Resume Website of Nurliman Diara Aria."
-        canonical="https://nurliman.dev/resume"
-      />
+      <NextSeo title="Resume" canonical="https://nurliman.dev/resume" />
       <Resume />
     </>
   );

@@ -7,11 +7,7 @@ import styles from "styles/HomePage.module.scss";
 const HomePage = () => {
   return (
     <>
-      <NextSeo
-        title="Nurliman Diara | Web Developer"
-        description="This is Resume Website of Nurliman Diara Aria."
-        canonical="https://nurliman.dev/"
-      />
+      <NextSeo title="Home" canonical="https://nurliman.dev/" />
       <HomeSection />
     </>
   );
