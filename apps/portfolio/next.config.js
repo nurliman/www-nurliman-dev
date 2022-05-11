@@ -6,7 +6,6 @@ const nextBundleAnalyzer = require("@next/bundle-analyzer");
 
 /** @type {import('next').NextConfig} */
 const config = {
-  reactStrictMode: true,
   generateBuildId: () => nextBuildId({ dir: __dirname }),
 };
 
