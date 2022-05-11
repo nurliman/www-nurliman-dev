@@ -1,3 +1,44 @@
 .container {
   display: grid;
+  column-gap: 30px;
+
+  @media only screen and (min-width: 541px) {
+    grid-template-columns: 1fr 2.3fr;
+  }
+}
+
+.howCanIHelpYou {
+  justify-self: start;
+}
+
+.infoBlock {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 0 0 15px 0;
+  background-color: #333;
+  padding: 20px 10px;
+  border: 1px solid #444;
+  box-shadow: none;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  & i {
+    position: relative;
+    font-size: 33px;
+    color: #04b4e0;
+    z-index: 1;
+  }
+
+  & h4 {
+    font-size: 15px;
+    margin-top: 8px;
+  }
+}
+
+.map {
+  background-color: gray;
+  height: 140px;
+  margin-bottom: 35px;
 }
