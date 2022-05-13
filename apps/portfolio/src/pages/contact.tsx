@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { NextSeo } from "next-seo";
+import { useAppSelector } from "store";
 import MainLayout from "components/Layouts/MainLayout";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
@@ -7,6 +8,10 @@ import ContactForm from "components/ContactPage/ContactForm";
 import styles from "styles/ContactPage.module.scss";
 
 const ContactPage = () => {
+  const myAddress = useAppSelector((s) => s.me.address);
+  const myPhone = useAppSelector((s) => s.me.phone);
+  const myEmail = useAppSelector((s) => s.me.email);
+
   return (
     <>
       <NextSeo title="Contact" canonical="https://nurliman.dev/contact" />
@@ -15,17 +20,17 @@ const ContactPage = () => {
         <div className={styles.left}>
           <div className={styles.infoBlock}>
             <i className="lnr lnr-map-marker"></i>
-            <h4>San Francisco</h4>
+            <h4>{myAddress}</h4>
           </div>
 
           <div className={styles.infoBlock}>
             <i className="lnr lnr-phone-handset"></i>
-            <h4>415-832-2000</h4>
+            <h4>{myPhone.display}</h4>
           </div>
 
           <div className={styles.infoBlock}>
             <i className="lnr lnr-envelope"></i>
-            <h4>alex@example.com</h4>
+            <h4>{myEmail}</h4>
           </div>
 
           <div className={styles.infoBlock}>
