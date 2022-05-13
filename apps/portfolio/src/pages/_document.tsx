@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
           <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link
