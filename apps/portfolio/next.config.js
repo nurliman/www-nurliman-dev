@@ -3,6 +3,7 @@ const nextBuildId = require("next-build-id");
 const nextPreact = require("next-plugin-preact");
 const nextOptimizedClassnames = require("next-optimized-classnames");
 const nextBundleAnalyzer = require("@next/bundle-analyzer");
+const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -14,6 +15,7 @@ module.exports = withPlugins(
     nextPreact,
     nextOptimizedClassnames,
     [nextBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })],
+    withSentryConfig,
   ],
   config,
 );

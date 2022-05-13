@@ -4,3 +4,6 @@ public/~partytown
 # next-sitemap
 public/sitemap*
 public/robots.txt
+
+# Sentry
+.sentryclirc

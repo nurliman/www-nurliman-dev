@@ -11,5 +11,6 @@
     "dev": {
       "cache": false
     }
-  }
+  },
+  "globalDependencies": [".env", "$SENTRY_DSN", "$NEXT_PUBLIC_SENTRY_DSN"]
 }
