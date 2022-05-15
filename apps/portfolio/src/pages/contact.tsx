@@ -5,6 +5,7 @@ import MainLayout from "components/Layouts/MainLayout";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
 import ContactForm from "components/ContactPage/ContactForm";
+import Map from "components/ContactPage/Map";
 import styles from "styles/ContactPage.module.scss";
 
 const ContactPage = () => {
@@ -40,7 +41,7 @@ const ContactPage = () => {
         </div>
 
         <div className={styles.right}>
-          <div id="map" className={styles.map}></div>
+          <Map />
 
           <BlockTitle containerClass={styles.right}>
             How Can I <span>Help You?</span>
