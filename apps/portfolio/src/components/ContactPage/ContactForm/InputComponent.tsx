@@ -1,18 +1,23 @@
 import React, { ComponentProps } from "react";
 import clsx from "clsx";
 import { Controller, ControllerProps, Path, FieldValues } from "libs/react-hook-form";
+import InputText, { InputTextElementTag } from "components/InputText";
 import styles from "./ContactForm.module.scss";
 
-type InputElementTag = "input" | "textarea";
-type Props<T extends InputElementTag> = {
+type Props<T extends InputTextElementTag> = {
   className?: string;
   label?: React.ReactNode;
   inputElement?: T;
   inputProps?: ComponentProps<T>;
 };
 
+const defaultProps = {
+  inputElement: "input",
+  inputProps: {},
+};
+
 function InputComponent<
-  TInputElementTag extends InputElementTag = "input",
+  TInputElementTag extends InputTextElementTag,
   TFieldValues extends FieldValues = FieldValues,
   TName extends Path<TFieldValues> = Path<TFieldValues>,
 >({
@@ -22,32 +27,25 @@ function InputComponent<
   label,
   ...restProps
 }: Omit<ControllerProps<TFieldValues, TName>, "render"> & Props<TInputElementTag>) {
-  inputElement = inputElement ?? ("input" as any);
-  inputProps = inputProps ?? ({} as any);
-
   return (
     <Controller
       {...restProps}
-      render={({ field, fieldState: { error } }) => (
-        <div
-          className={clsx("form-group", "form-group-with-icon", styles.field, className, {
-            "has-error": error,
-            "has-danger": error,
-          })}
-        >
-          {React.createElement(inputElement, {
-            type: "text",
-            ...inputProps,
-            ...field,
-            className: clsx("form-control", inputProps.className),
-          })}
-          {label && <label>{label}</label>}
-          <div className="form-control-border"></div>
-          <div className="help-block with-errors">{error?.message}</div>
-        </div>
-      )}
+      render={({ field, fieldState: { error } }) => {
+        return (
+          <InputText
+            inputElement={inputElement}
+            {...inputProps}
+            {...field}
+            label={label}
+            containerClassName={clsx(styles.field, className)}
+            errorMessage={error?.message}
+          />
+        );
+      }}
     />
   );
 }
+
+InputComponent.defaultProps = defaultProps;
 
 export default InputComponent;

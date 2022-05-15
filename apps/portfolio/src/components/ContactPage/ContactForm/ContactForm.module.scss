@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  column-gap: 16px;
+  gap: 16px;
 
   @media only screen and (min-width: 769px) {
     grid-template-columns: 1fr 1fr;
@@ -17,6 +17,9 @@
 }
 
 .msgBox {
+  display: flex;
+  flex-direction: column;
+
   @media only screen and (min-width: 769px) {
     grid-row: 1 / 4;
     grid-column: 2 / -1;
