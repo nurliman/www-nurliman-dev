@@ -1,0 +1,20 @@
+.container {
+  padding: 0px;
+}
+
+.containerError {
+  padding: 5px;
+  border: 1px solid rgb(255, 82, 82);
+  border-radius: 4px;
+}
+
+.captcha {
+  min-height: 78px;
+}
+
+.errorMessage {
+  color: rgb(255, 82, 82);
+  font-size: 12px;
+  margin-right: 12px;
+  margin-top: 4px;
+}

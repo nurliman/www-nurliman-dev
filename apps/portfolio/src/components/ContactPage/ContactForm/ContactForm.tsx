@@ -1,7 +1,8 @@
-import React, { ComponentProps, useCallback } from "react";
+import React, { ComponentProps, useCallback, useEffect } from "react";
 import clsx from "clsx";
 import { useForm, SubmitHandler } from "libs/react-hook-form";
 import InputComponent from "./InputComponent";
+import Captcha from "components/Captcha";
 import styles from "./ContactForm.module.scss";
 
 type Props = ComponentProps<"form">;
@@ -11,15 +12,35 @@ type Inputs = {
   email: string;
   subject?: string;
   message?: string;
+  captchaToken: string;
 };
 
 const ContactForm: React.FC<Props> = ({ className }) => {
-  const { control, handleSubmit } = useForm<Inputs>();
+  const {
+    control,
+    register,
+    setValue,
+    resetField,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = useCallback((data) => console.log(data), []);
 
+  const onVerifyCaptcha = useCallback((token: string) => {
+    setValue("captchaToken", token);
+  }, []);
+
+  const clearCaptchaToken = useCallback(() => {
+    resetField("captchaToken");
+  }, []);
+
+  useEffect(() => {
+    register("captchaToken", { required: "Please verify that you are not a robot." });
+  });
+
   return (
-    <form className={clsx(styles.container, className)} onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={clsx(styles.container, className)}>
       <InputComponent
         control={control}
         name="name"
@@ -48,13 +69,12 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         inputProps={{ rows: 7 }}
         rules={{ required: "Please, leave me a message." }}
       />
-
-      <div
-        className={clsx("g-recaptcha", styles.spanRow)}
-        data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI"
-        data-theme="dark"
-      ></div>
-
+      <Captcha
+        containerClassName={styles.spanRow}
+        verifyCallback={onVerifyCaptcha}
+        onExpire={clearCaptchaToken}
+        errorMessage={errors?.captchaToken?.message}
+      />
       <input
         type="submit"
         className={clsx("button", "btn-send", styles.spanRow)}
