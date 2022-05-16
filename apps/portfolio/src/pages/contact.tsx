@@ -18,6 +18,7 @@ const ContactPage = () => {
       <NextSeo title="Contact" canonical="https://nurliman.dev/contact" />
       <PageTitle>Contact</PageTitle>
       <div className={styles.container}>
+        <Map className={styles.map} />
         <div className={styles.left}>
           <div className={styles.infoBlock}>
             <i className="lnr lnr-map-marker"></i>
@@ -41,8 +42,6 @@ const ContactPage = () => {
         </div>
 
         <div className={styles.right}>
-          <Map />
-
           <BlockTitle containerClass={styles.right}>
             How Can I <span>Help You?</span>
           </BlockTitle>
