@@ -5,6 +5,12 @@ import styles from "./Captcha.module.scss";
 
 const KEY = process.env.NEXT_PUBLIC_RECAPTCHA_KEY;
 
+declare global {
+  interface Window {
+    recaptchaOnLoadCallback?: () => any;
+  }
+}
+
 type Props = ComponentProps<"div"> & {
   verifyCallback?: (token: string) => any;
   onError?: () => any;
@@ -25,6 +31,8 @@ const Captcha: React.FC<Props> = ({
   const ref = useRef<HTMLDivElement>();
 
   const recaptchaOnLoadCallback = useCallback(() => {
+    if (typeof grecaptcha?.enterprise?.render !== "function") return;
+
     grecaptcha.enterprise.render(ref.current, {
       sitekey: KEY,
       theme: "dark",
@@ -32,11 +40,23 @@ const Captcha: React.FC<Props> = ({
       "expired-callback": onExpire,
       "error-callback": onError,
     });
-  }, []);
+  }, [ref.current]);
 
   useEffect(() => {
-    (window as any).recaptchaOnLoadCallback = recaptchaOnLoadCallback;
-  }, []);
+    if (!window.recaptchaOnLoadCallback) {
+      window.recaptchaOnLoadCallback = recaptchaOnLoadCallback;
+    }
+
+    if (window.grecaptcha) {
+      recaptchaOnLoadCallback();
+    }
+
+    return () => {
+      if (typeof grecaptcha?.enterprise?.reset === "function") {
+        grecaptcha.enterprise.reset();
+      }
+    };
+  }, [recaptchaOnLoadCallback]);
 
   return (
     <>
