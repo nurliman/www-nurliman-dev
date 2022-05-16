@@ -33,7 +33,7 @@ const Captcha: React.FC<Props> = ({
   const [isLoading, setIsLoading] = useState(true);
 
   const recaptchaOnLoadCallback = useCallback(() => {
-    if (typeof grecaptcha?.enterprise?.render !== "function") return;
+    if (typeof window.grecaptcha?.enterprise?.render !== "function") return;
     if (typeof recaptchaId === "number") return;
 
     setIsLoading(true);
@@ -66,7 +66,7 @@ const Captcha: React.FC<Props> = ({
 
     return () => {
       setRecaptchaId(null);
-      if (typeof grecaptcha?.enterprise?.reset === "function") {
+      if (typeof window.grecaptcha?.enterprise?.reset === "function") {
         grecaptcha.enterprise.reset();
       }
     };
