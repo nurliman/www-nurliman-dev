@@ -29,6 +29,7 @@ type IProps<Tag extends RelevantTags> = {
   dataText: string[];
   typingSpeed?: number;
   deletingSpeed?: number;
+  delay?: number;
   cursorColor?: string;
   cursorClassName?: string;
   headingClassName?: string;
@@ -47,6 +48,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     as: "div",
     typingSpeed: 150,
     deletingSpeed: 30,
+    delay: 1500,
     cursorColor: "rgb(4, 180, 224)",
   };
 
@@ -71,8 +73,8 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     clearTimeout(this.typingTimeout);
   }
 
-  handleType = () => {
-    const { dataText, deletingSpeed } = this.props;
+  handleType() {
+    const { dataText, deletingSpeed, delay } = this.props;
     const { isDeleting, loopNum, text, typingSpeed } = this.state;
     const i = loopNum % dataText.length;
     const fullText = dataText[i];
@@ -85,7 +87,11 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     });
 
     if (!isDeleting && text === fullText) {
-      setTimeout(() => this.setState({ isDeleting: true }), 500);
+      setTimeout(() => {
+        this.setState({ isDeleting: true });
+        this.typingTimeout = setTimeout(this.handleType, typingSpeed);
+      }, delay);
+      return;
     } else if (isDeleting && text === "") {
       this.setState({
         isDeleting: false,
@@ -94,7 +100,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     }
 
     this.typingTimeout = setTimeout(this.handleType, typingSpeed);
-  };
+  }
 
   render() {
     const {
@@ -108,6 +114,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
       dataText,
       typingSpeed,
       deletingSpeed,
+      delay,
       // end omit
       ...restProps
     } = this.props;
