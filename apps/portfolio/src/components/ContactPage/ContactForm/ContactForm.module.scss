@@ -2,7 +2,11 @@
   display: grid;
   gap: 16px;
 
-  @media only screen and (min-width: 769px) {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 1121px) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -20,7 +24,12 @@
   display: flex;
   flex-direction: column;
 
-  @media only screen and (min-width: 769px) {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    grid-row: 1 / 4;
+    grid-column: 2 / -1;
+  }
+
+  @media (min-width: 1121px) {
     grid-row: 1 / 4;
     grid-column: 2 / -1;
   }
