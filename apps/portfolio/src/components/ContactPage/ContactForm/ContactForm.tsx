@@ -21,6 +21,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
     register,
     setValue,
     resetField,
+    clearErrors,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
@@ -28,6 +29,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
   const onSubmit: SubmitHandler<Inputs> = useCallback((data) => console.log(data), []);
 
   const onVerifyCaptcha = useCallback((token: string) => {
+    clearErrors("captchaToken");
     setValue("captchaToken", token);
   }, []);
 
