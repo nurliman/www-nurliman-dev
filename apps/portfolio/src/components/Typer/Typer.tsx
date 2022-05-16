@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import omit from "object.omit";
 import styles from "./Typer.module.scss";
 
 type RelevantTags = Exclude<
@@ -105,8 +104,13 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
       cursorColor,
       cursorClassName,
       textClassName,
+      // start omit
+      dataText,
+      typingSpeed,
+      deletingSpeed,
+      // end omit
       ...restProps
-    } = omit(this.props, ["dataText", "typingSpeed", "deletingSpeed"]);
+    } = this.props;
 
     return React.createElement(
       as,
