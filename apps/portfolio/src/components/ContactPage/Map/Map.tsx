@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useAppSelector } from "store";
 import clsx from "clsx";
 import styles from "./Map.module.scss";
@@ -10,6 +10,8 @@ type Props = {
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 const Map: React.FC<Props> = ({ className }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const myAddress = useAppSelector((s) => s.me.address);
 
   const mapUrl = useMemo(() => {
@@ -22,8 +24,23 @@ const Map: React.FC<Props> = ({ className }) => {
     return url + "?" + query.toString();
   }, []);
 
+  const onLoadHandler = useCallback(() => {
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
+
   return (
-    <div id="map" className={clsx(styles.map, className)}>
+    <div
+      id="map"
+      className={clsx({
+        [styles.map]: true,
+        ["shimmer"]: isLoading,
+        [className]: className,
+      })}
+    >
       <iframe
         width="100%"
         height="100%"
@@ -32,6 +49,7 @@ const Map: React.FC<Props> = ({ className }) => {
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
         src={mapUrl}
+        onLoad={onLoadHandler}
       />
     </div>
   );
