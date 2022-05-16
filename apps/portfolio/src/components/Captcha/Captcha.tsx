@@ -36,7 +36,7 @@ const Captcha: React.FC<Props> = ({
     grecaptcha.enterprise.render(ref.current, {
       sitekey: KEY,
       theme: "dark",
-      callback: console.log,
+      callback: verifyCallback,
       "expired-callback": onExpire,
       "error-callback": onError,
     });
