@@ -1,0 +1,10 @@
+.cursor {
+  border-left: 0.1em solid;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
