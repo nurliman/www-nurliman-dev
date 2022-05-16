@@ -1,4 +1,4 @@
-import React, { ComponentProps, useCallback, useEffect, useRef } from "react";
+import React, { ComponentProps, useCallback, useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import clsx from "clsx";
 import styles from "./Captcha.module.scss";
@@ -29,17 +29,30 @@ const Captcha: React.FC<Props> = ({
   ...restProps
 }) => {
   const ref = useRef<HTMLDivElement>();
+  const [recaptchaId, setRecaptchaId] = useState<number>();
+  const [isLoading, setIsLoading] = useState(true);
 
   const recaptchaOnLoadCallback = useCallback(() => {
     if (typeof grecaptcha?.enterprise?.render !== "function") return;
+    if (typeof recaptchaId === "number") return;
 
-    grecaptcha.enterprise.render(ref.current, {
-      sitekey: KEY,
-      theme: "dark",
-      callback: verifyCallback,
-      "expired-callback": onExpire,
-      "error-callback": onError,
-    });
+    setIsLoading(true);
+
+    try {
+      const newRecaptchaId = grecaptcha.enterprise.render(ref.current, {
+        sitekey: KEY,
+        theme: "dark",
+        callback: verifyCallback,
+        "expired-callback": onExpire,
+        "error-callback": onError,
+      });
+
+      setRecaptchaId(newRecaptchaId);
+    } catch (error) {
+      console.warn(error);
+    } finally {
+      setTimeout(() => setIsLoading(false), 600);
+    }
   }, [ref.current]);
 
   useEffect(() => {
@@ -52,6 +65,7 @@ const Captcha: React.FC<Props> = ({
     }
 
     return () => {
+      setRecaptchaId(null);
       if (typeof grecaptcha?.enterprise?.reset === "function") {
         grecaptcha.enterprise.reset();
       }
@@ -71,7 +85,15 @@ const Captcha: React.FC<Props> = ({
           [containerClassName]: containerClassName,
         })}
       >
-        <div {...restProps} className={clsx(styles.captcha, className)} ref={ref} />
+        <div
+          {...restProps}
+          ref={ref}
+          className={clsx({
+            [styles.captcha]: true,
+            ["shimmer"]: isLoading,
+            [className]: className,
+          })}
+        />
         {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
       </div>
     </>
