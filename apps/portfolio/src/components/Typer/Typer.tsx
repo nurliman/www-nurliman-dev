@@ -57,7 +57,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     super(props);
 
     this.state = {
-      text: "",
+      text: props.dataText[0] || "",
       isDeleting: false,
       loopNum: 0,
       typingSpeed: props.typingSpeed,
