@@ -51,7 +51,7 @@ const Captcha: React.FC<Props> = ({
     } catch (error) {
       console.warn(error);
     } finally {
-      setTimeout(() => setIsLoading(false), 600);
+      setTimeout(() => setIsLoading(false), 1000);
     }
   }, [ref.current]);
 
