@@ -62,8 +62,14 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     };
   }
 
+  typingTimeout: NodeJS.Timeout;
+
   componentDidMount() {
     this.handleType();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.typingTimeout);
   }
 
   handleType = () => {
@@ -88,7 +94,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
       });
     }
 
-    setTimeout(this.handleType, typingSpeed);
+    this.typingTimeout = setTimeout(this.handleType, typingSpeed);
   };
 
   render() {
