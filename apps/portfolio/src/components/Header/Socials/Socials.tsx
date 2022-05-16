@@ -1,14 +1,20 @@
+import { useMemo } from "react";
+import { useAppSelector } from "store";
 import styles from "./Socials.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-const MY_SOCIALS = [
-  { name: "github", link: "https://github.com/nurliman", icon: faGithub },
-  { name: "linkedin", link: "https://www.linkedin.com/in/nurliman", icon: faLinkedinIn },
-  { name: "whatsapp", link: "https://wa.me/6283190455266", icon: faWhatsapp },
-];
-
 export default function Socials() {
+  const myPhone = useAppSelector((s) => s.me.phone);
+
+  const MY_SOCIALS = useMemo(() => {
+    return [
+      { name: "github", link: "https://github.com/nurliman", icon: faGithub },
+      { name: "linkedin", link: "https://www.linkedin.com/in/nurliman", icon: faLinkedinIn },
+      { name: "whatsapp", link: `https://wa.me/${myPhone?.value}`, icon: faWhatsapp },
+    ];
+  }, [myPhone]);
+
   return (
     <div className={styles.container}>
       <ul>
