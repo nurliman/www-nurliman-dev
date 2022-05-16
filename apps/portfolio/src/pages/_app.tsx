@@ -12,7 +12,6 @@ import "styles/magnific-popup.css";
 import "styles/main.css";
 import "styles/global.scss";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-import "keen-slider/keen-slider.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
