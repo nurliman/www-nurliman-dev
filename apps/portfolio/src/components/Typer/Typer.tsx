@@ -46,6 +46,7 @@ type IState = {
 class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag>, IState> {
   static defaultProps = {
     as: "div",
+    dataText: [],
     typingSpeed: 150,
     deletingSpeed: 30,
     delay: 1500,
@@ -73,7 +74,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     clearTimeout(this.typingTimeout);
   }
 
-  handleType() {
+  handleType = () => {
     const { dataText, deletingSpeed, delay } = this.props;
     const { isDeleting, loopNum, text, typingSpeed } = this.state;
     const i = loopNum % dataText.length;
@@ -100,7 +101,7 @@ class Typer<Tag extends RelevantTags = "div"> extends React.Component<IProps<Tag
     }
 
     this.typingTimeout = setTimeout(this.handleType, typingSpeed);
-  }
+  };
 
   render() {
     const {
