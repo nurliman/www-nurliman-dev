@@ -6,7 +6,7 @@ on:
       - main
       - releases/main
     paths:
-      - services/message-sender
+      - services/message-sender/**
 
 jobs:
   deploy:
