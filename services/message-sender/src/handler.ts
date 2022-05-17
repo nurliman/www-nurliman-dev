@@ -1,3 +1,5 @@
-export async function handleRequest(request: Request): Promise<Response> {
+type Env = Record<string, never>;
+
+export const handleRequest: ExportedHandlerFetchHandler<Env> = async (request) => {
   return new Response(`request method: ${request.method}`);
-}
+};

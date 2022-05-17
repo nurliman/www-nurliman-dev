@@ -2,7 +2,7 @@
   "name": "message-sender",
   "version": "0.0.1",
   "private": true,
-  "main": "dist/worker.js",
+  "main": "dist/worker.mjs",
   "scripts": {
     "build": "tsup",
     "lint": "eslint src/**/*.ts* --cache --fix --ignore-path .gitignore"
