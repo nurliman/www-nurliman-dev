@@ -132,6 +132,22 @@ importers:
       tsup: 5.12.8_typescript@4.6.4
       typescript: 4.6.4
 
+  services/message-sender:
+    specifiers:
+      '@cloudflare/workers-types': ^3.10.0
+      '@typescript-eslint/eslint-plugin': ^5.24.0
+      '@typescript-eslint/parser': ^5.24.0
+      eslint: ^8.15.0
+      tsup: ^5.12.8
+      typescript: ^4.6.4
+    devDependencies:
+      '@cloudflare/workers-types': 3.10.0
+      '@typescript-eslint/eslint-plugin': 5.24.0_w4ec7awddsetq6k5phhi6huiuu
+      '@typescript-eslint/parser': 5.24.0_hcfsmds2fshutdssjqluwm76uu
+      eslint: 8.15.0
+      tsup: 5.12.8_typescript@4.6.4
+      typescript: 4.6.4
+
 packages:
 
   /@babel/runtime-corejs3/7.17.9:
@@ -152,6 +168,10 @@ packages:
     resolution: {integrity: sha512-qnikpQgi30AS01aFlNQV6l8/qdZIcP76mp90ti+u4rucXHsn4afSKivQXApqxvrQG9+Ibv45STyvHizvxef/7A==}
     hasBin: true
     dev: false
+
+  /@cloudflare/workers-types/3.10.0:
+    resolution: {integrity: sha512-gn+H5Ps9yV1VYz8FJ08bMfXLW8ubNblRF9Z+m+0ctNMyl3CdoZmUfH1pMTxYE8SMUJbLxuNvpdlZhwLDoGFXaw==}
+    dev: true
 
   /@corex/deepmerge/2.6.148:
     resolution: {integrity: sha512-6QMz0/2h5C3ua51iAnXMPWFbb1QOU1UvSM4bKBw5mzdT+WtLgjbETBBIQZ+Sh9WvEcGwlAt/DEdRpIC3XlDBMA==}
