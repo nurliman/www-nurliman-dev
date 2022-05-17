@@ -9,5 +9,3 @@ vars = { ENVIRONMENT = "staging" }
 [env.production]
 name = "message-sender"
 vars = { ENVIRONMENT = "production" }
-workers_dev = false
-route = "message-sender.api.nurliman.dev/*"
