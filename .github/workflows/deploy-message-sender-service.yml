@@ -1,0 +1,59 @@
+name: Deploy message-sender Service
+
+on:
+  push:
+    branches:
+      - main
+      - releases/main
+    paths:
+      - services/message-sender
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - uses: pnpm/action-setup@v2.2.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm turbo run lint --filter=message-sender
+
+      - name: Build
+        run: pnpm turbo run build --filter=message-sender
+
+      - name: Some check on branch
+        id: branch_check
+        run: |
+          echo "Running on branch ${{ github.ref }}"
+          if [ "${{ github.ref }}" = "refs/heads/releases/main" ]; then
+            echo "::set-output name=env::prod"
+          else
+            echo "::set-output name=env::dev"
+          fi
+
+      - name: Publish
+        uses: cloudflare/wrangler-action@2
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          workingDirectory: "services/message-sender"
+          command: publish --env ${{ steps.branch_check.outputs.env }}
