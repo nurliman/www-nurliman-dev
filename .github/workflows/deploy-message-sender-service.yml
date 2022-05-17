@@ -44,9 +44,9 @@ jobs:
         run: |
           echo "Running on branch ${{ github.ref }}"
           if [ "${{ github.ref }}" = "refs/heads/releases/main" ]; then
-            echo "::set-output name=env::prod"
+            echo "::set-output name=env::production"
           else
-            echo "::set-output name=env::dev"
+            echo "::set-output name=env::staging"
           fi
 
       - name: Publish
