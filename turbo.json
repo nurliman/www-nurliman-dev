@@ -10,13 +10,16 @@
     },
     "dev": {
       "cache": false
+    },
+    "portfolio#build": {
+      "dependsOn": [
+        "$SENTRY_DSN",
+        "$NEXT_PUBLIC_SENTRY_DSN",
+        "$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY",
+        "$NEXT_PUBLIC_RECAPTCHA_KEY",
+        "@nurliman/gtm#build"
+      ]
     }
   },
-  "globalDependencies": [
-    ".env",
-    "$SENTRY_DSN",
-    "$NEXT_PUBLIC_SENTRY_DSN",
-    "$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY",
-    "$NEXT_PUBLIC_RECAPTCHA_KEY"
-  ]
+  "globalDependencies": [".env"]
 }
