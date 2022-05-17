@@ -56,3 +56,7 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: "services/message-sender"
           command: publish --env ${{ steps.branch_check.outputs.env }}
+          secrets: |
+            SENDGRID_API_KEY
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}

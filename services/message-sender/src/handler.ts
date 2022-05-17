@@ -1,5 +1,6 @@
 type Env = {
   ENVIRONMENT: "production" | "staging";
+  SENDGRID_API_KEY?: string;
 };
 
 export const handleRequest: ExportedHandlerFetchHandler<Env> = async (request) => {
