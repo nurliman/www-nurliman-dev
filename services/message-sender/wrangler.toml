@@ -1,4 +1,6 @@
 name = "message-sender"
 main = "./dist/worker.mjs"
-route = "message-sender-dev.nurliman.workers.dev/*"
 compatibility_date = "2022-05-17"
+
+[env.dev]
+workers_dev = true
