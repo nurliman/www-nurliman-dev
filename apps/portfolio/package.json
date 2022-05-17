@@ -20,7 +20,7 @@
     "@nurliman/gtm": "*",
     "@reduxjs/toolkit": "^1.8.1",
     "@rooks/use-boundingclientrect": "^4.11.2",
-    "bootstrap": "4.1.3",
+    "bootstrap": "4.6.1",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.2",
     "modern-normalize": "^1.1.0",

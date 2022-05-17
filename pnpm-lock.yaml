@@ -34,7 +34,7 @@ importers:
       '@types/react': '17'
       '@typescript-eslint/eslint-plugin': ^5.25.0
       '@typescript-eslint/parser': ^5.25.0
-      bootstrap: 4.1.3
+      bootstrap: 4.6.1
       clsx: ^1.1.1
       cross-env: ^7.0.3
       cssnano: ^5.1.8
@@ -73,7 +73,7 @@ importers:
       '@nurliman/gtm': link:../../packages/gtm
       '@reduxjs/toolkit': 1.8.1_bwtzzmtsiv5qf24ay56h3mm5hu
       '@rooks/use-boundingclientrect': 4.11.2_@preact+compat@17.0.3
-      bootstrap: 4.1.3
+      bootstrap: 4.6.1
       clsx: 1.1.1
       dayjs: 1.11.2
       modern-normalize: 1.1.0
@@ -1194,12 +1194,11 @@ packages:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
 
-  /bootstrap/4.1.3:
-    resolution: {integrity: sha512-rDFIzgXcof0jDyjNosjv4Sno77X4KuPeFxG2XZZv1/Kc8DRVGVADdoQyyOVDwPqL36DDmtCQbrpMCqvpPLJQ0w==}
-    engines: {node: '>=6'}
+  /bootstrap/4.6.1:
+    resolution: {integrity: sha512-0dj+VgI9Ecom+rvvpNZ4MUZJz8dcX7WCX+eTID9+/8HgOkv3dsRzi8BGeZJCQU6flWQVYxwTQnEZFrmJSEO7og==}
     peerDependencies:
       jquery: 1.9.1 - 3
-      popper.js: ^1.14.3
+      popper.js: ^1.16.1
     dev: false
 
   /brace-expansion/1.1.11:
