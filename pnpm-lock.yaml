@@ -135,7 +135,7 @@ importers:
   services/message-sender:
     specifiers:
       '@cloudflare/workers-types': ^3.10.0
-      '@sendgrid/mail': ^7.6.2
+      '@sendgrid/mail': ^7.7.0
       '@typescript-eslint/eslint-plugin': ^5.25.0
       '@typescript-eslint/parser': ^5.25.0
       eslint: ^8.15.0
@@ -143,7 +143,7 @@ importers:
       typescript: ^4.6.4
       wrangler: ^2.0.5
     dependencies:
-      '@sendgrid/mail': 7.6.2
+      '@sendgrid/mail': 7.7.0
       itty-router: 2.6.1
     devDependencies:
       '@cloudflare/workers-types': 3.10.0
@@ -786,29 +786,29 @@ packages:
     resolution: {integrity: sha512-WiBSI6JBIhC6LRIsB2Kwh8DsGTlbBU+mLRxJmAe3LjHTdkDpwIbEOZgoXBbZilk/vlfjK8i6nKRAvIRn1XaIMw==}
     dev: true
 
-  /@sendgrid/client/7.6.2:
-    resolution: {integrity: sha512-Yw3i3vPBBwfiIi+4i7+1f1rwQoLlLsu3qW16d1UuRp6RgX6H6yHYb2/PfqwNyCC0qzqIWGUKPWwYe5ggcr5Guw==}
+  /@sendgrid/client/7.7.0:
+    resolution: {integrity: sha512-SxH+y8jeAQSnDavrTD0uGDXYIIkFylCo+eDofVmZLQ0f862nnqbC3Vd1ej6b7Le7lboyzQF6F7Fodv02rYspuA==}
     engines: {node: 6.* || 8.* || >=10.*}
     dependencies:
-      '@sendgrid/helpers': 7.6.2
+      '@sendgrid/helpers': 7.7.0
       axios: 0.26.1
     transitivePeerDependencies:
       - debug
     dev: false
 
-  /@sendgrid/helpers/7.6.2:
-    resolution: {integrity: sha512-kGW0kM2AOHfXjcvB6Lgwa/nMv8IALu0KyNY9X4HSa3MtLohymuhbG9HgjrOh66+BkbsfA03H3bcT0+sPVJ0GKQ==}
+  /@sendgrid/helpers/7.7.0:
+    resolution: {integrity: sha512-3AsAxfN3GDBcXoZ/y1mzAAbKzTtUZ5+ZrHOmWQ279AuaFXUNCh9bPnRpN504bgveTqoW+11IzPg3I0WVgDINpw==}
     engines: {node: '>= 6.0.0'}
     dependencies:
       deepmerge: 4.2.2
     dev: false
 
-  /@sendgrid/mail/7.6.2:
-    resolution: {integrity: sha512-IHHZFvgU95aqb11AevQvAfautj2pb8iW8UCiUJ2ae9pRF37e6EkBmU9NgdFjbQ/8Xhhm+KDVDzn/JLxDN/GiBw==}
+  /@sendgrid/mail/7.7.0:
+    resolution: {integrity: sha512-5+nApPE9wINBvHSUxwOxkkQqM/IAAaBYoP9hw7WwgDNQPxraruVqHizeTitVtKGiqWCKm2mnjh4XGN3fvFLqaw==}
     engines: {node: 6.* || 8.* || >=10.*}
     dependencies:
-      '@sendgrid/client': 7.6.2
-      '@sendgrid/helpers': 7.6.2
+      '@sendgrid/client': 7.7.0
+      '@sendgrid/helpers': 7.7.0
     transitivePeerDependencies:
       - debug
     dev: false

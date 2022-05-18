@@ -8,7 +8,7 @@
     "lint": "eslint src/**/*.ts* --cache --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.6.2",
+    "@sendgrid/mail": "^7.7.0",
     "itty-router": "^2.6.1"
   },
   "devDependencies": {
