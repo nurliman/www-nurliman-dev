@@ -1,5 +1,5 @@
 import { Router } from "itty-router";
-import sendv0 from "./handlers/v0/send";
+import sendv0 from "@/handlers/v0/send";
 
 const router = Router();
 
