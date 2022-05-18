@@ -36,9 +36,6 @@ jobs:
       - name: Lint
         run: pnpm turbo run lint --filter=message-sender
 
-      - name: Build
-        run: pnpm turbo run build --filter=message-sender
-
       - name: Some check on branch
         id: branch_check
         run: |
