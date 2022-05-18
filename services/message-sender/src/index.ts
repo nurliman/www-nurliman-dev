@@ -1,5 +1,5 @@
-import { handleRequest } from "./handler";
+import router from "./router";
 
 export default {
-  fetch: handleRequest,
+  fetch: router.handle,
 };
