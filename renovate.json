@@ -8,6 +8,11 @@
       "matchPaths": ["packages/*/package.json"],
       "matchPackageNames": ["react"],
       "rangeStrategy": "widen"
+    },
+    {
+      "matchPaths": ["packages/portfolio/package.json"],
+      "matchPackageNames": ["bootstrap"],
+      "enabled": false
     }
   ]
 }
