@@ -2,6 +2,9 @@ import { Handler } from "@/types";
 
 const send: Handler = async (request, env) => {
   const url = new URL(request.url);
+  const headers = {
+    "Content-Type": "application/json",
+  };
 
   try {
     if (!env.SENDGRID_API_KEY) {
@@ -15,10 +18,11 @@ const send: Handler = async (request, env) => {
         path: url.pathname,
       });
 
-      return new Response(body, { status: 500 });
+      return new Response(body, { status: 500, headers });
     }
 
-    return new Response(JSON.stringify({ name: "send", version: "0.0.1" }));
+    const body = JSON.stringify({ name: "send", version: "0.0.1" });
+    return new Response(body, { headers });
   } catch (error: any) {
     console.error(error);
 
@@ -30,7 +34,7 @@ const send: Handler = async (request, env) => {
       path: url.pathname,
     });
 
-    return new Response(body, { status: 500 });
+    return new Response(body, { status: 500, headers });
   }
 };
 
