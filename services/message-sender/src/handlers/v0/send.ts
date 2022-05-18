@@ -11,7 +11,7 @@ const send: Handler = async (request, env) => {
         timestamp: new Date(),
         status: 500,
         error: "Internal Server Error",
-        message: "No message available",
+        message: "Some environment variables is not provided.",
         path: url.pathname,
       });
 
@@ -19,14 +19,14 @@ const send: Handler = async (request, env) => {
     }
 
     return new Response(JSON.stringify({ name: "send", version: "0.0.1" }));
-  } catch (error) {
+  } catch (error: any) {
     console.error(error);
 
     const body = JSON.stringify({
       timestamp: new Date(),
       status: 500,
       error: "Internal Server Error",
-      message: "No message available",
+      message: error?.message || "No message available",
       path: url.pathname,
     });
 
