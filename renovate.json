@@ -10,6 +10,10 @@
       "rangeStrategy": "widen"
     },
     {
+      "matchPackageNames": ["@types/react"],
+      "allowedVersions": "<=17"
+    },
+    {
       "matchPaths": ["packages/portfolio/package.json"],
       "matchPackageNames": ["bootstrap"],
       "enabled": false
