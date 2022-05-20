@@ -61,7 +61,7 @@ importers:
       react-redux: ^8.0.1
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
       reset-css: ^5.0.1
-      sass: ^1.51.0
+      sass: ^1.52.0
       typescript: ^4.6.4
       use-media: ^1.4.0
     dependencies:
@@ -99,7 +99,7 @@ importers:
       cssnano: 5.1.8_postcss@8.4.14
       eslint: 8.15.0
       eslint-config-next: 12.1.6_4pilrt7e6u36xhwb5x36gtamfi
-      next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+      next: 12.1.5_tpmz6wyqsz7pv43rqg2iqulzby
       next-build-id: 3.0.0
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
@@ -110,7 +110,7 @@ importers:
       postcss-preset-env: 7.6.0_postcss@8.4.14
       preact-render-to-string: 5.2.0_preact@10.7.2
       react-ssr-prepass: /preact-ssr-prepass/1.2.0_preact@10.7.2
-      sass: 1.51.0
+      sass: 1.52.0
       typescript: 4.6.4
 
   packages/gtm:
@@ -743,7 +743,7 @@ packages:
       '@prefresh/core': 1.3.4_preact@10.7.2
       '@prefresh/utils': 1.1.3
       '@prefresh/webpack': 3.3.3_fnbzkotnchvg7janrumiyunt5m
-      next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+      next: 12.1.5_tpmz6wyqsz7pv43rqg2iqulzby
       preact: 10.7.2
     dev: true
 
@@ -893,7 +893,7 @@ packages:
       '@sentry/tracing': 6.19.7
       '@sentry/utils': 6.19.7
       '@sentry/webpack-plugin': 1.18.8
-      next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+      next: 12.1.5_tpmz6wyqsz7pv43rqg2iqulzby
       react: /@preact/compat/17.0.3_preact@10.7.2
       tslib: 1.14.1
     transitivePeerDependencies:
@@ -2387,7 +2387,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.15.0
       eslint-plugin-react: 7.29.4_eslint@8.15.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.15.0
-      next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+      next: 12.1.5_tpmz6wyqsz7pv43rqg2iqulzby
       typescript: 4.6.4
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -3548,7 +3548,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+      next: 12.1.5_tpmz6wyqsz7pv43rqg2iqulzby
       react: /@preact/compat/17.0.3_preact@10.7.2
       react-dom: /@preact/compat/17.0.3_preact@10.7.2
     dev: false
@@ -3562,10 +3562,10 @@ packages:
     dependencies:
       '@corex/deepmerge': 2.6.148
       minimist: 1.2.6
-      next: 12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m
+      next: 12.1.5_tpmz6wyqsz7pv43rqg2iqulzby
     dev: true
 
-  /next/12.1.5_yvvtswp2zc6a7ijcxeyq4rag6m:
+  /next/12.1.5_tpmz6wyqsz7pv43rqg2iqulzby:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -3588,7 +3588,7 @@ packages:
       postcss: 8.4.5
       react: /@preact/compat/17.0.3_preact@10.7.2
       react-dom: /@preact/compat/17.0.3_preact@10.7.2
-      sass: 1.51.0
+      sass: 1.52.0
       styled-jsx: 5.0.1_@preact+compat@17.0.3
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.5
@@ -4820,8 +4820,8 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
 
-  /sass/1.51.0:
-    resolution: {integrity: sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==}
+  /sass/1.52.0:
+    resolution: {integrity: sha512-6EnTglag2oVD8sNJCxUi2Jd3ICH9tJ5Mqudt/gIZNBR2uKJUBZuTpW9O1t04SkDLP7VFa76FCWTV2rwchqM8Kw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
