@@ -134,7 +134,7 @@ importers:
 
   services/message-sender:
     specifiers:
-      '@cloudflare/workers-types': ^3.10.0
+      '@cloudflare/workers-types': ^3.11.0
       '@typescript-eslint/eslint-plugin': ^5.25.0
       '@typescript-eslint/parser': ^5.25.0
       eslint: ^8.16.0
@@ -144,7 +144,7 @@ importers:
     dependencies:
       itty-router: 2.6.1
     devDependencies:
-      '@cloudflare/workers-types': 3.10.0
+      '@cloudflare/workers-types': 3.11.0
       '@typescript-eslint/eslint-plugin': 5.25.0_jorowkvdqu6pwramweg5le7ncu
       '@typescript-eslint/parser': 5.25.0_utdtartgf6fqqgkivzeynh76la
       eslint: 8.16.0
@@ -172,8 +172,8 @@ packages:
     hasBin: true
     dev: false
 
-  /@cloudflare/workers-types/3.10.0:
-    resolution: {integrity: sha512-gn+H5Ps9yV1VYz8FJ08bMfXLW8ubNblRF9Z+m+0ctNMyl3CdoZmUfH1pMTxYE8SMUJbLxuNvpdlZhwLDoGFXaw==}
+  /@cloudflare/workers-types/3.11.0:
+    resolution: {integrity: sha512-XmKgZZHrCdPsoVQkdd365R7GvwTwDVJsMyEG3Dq/Tgxz6vgrps2c8PXBqEutguwvl0zDAF0AL0e2Z8WG9Dffjw==}
     dev: true
 
   /@corex/deepmerge/2.6.148:
