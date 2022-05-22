@@ -7,7 +7,7 @@ WORKERS_RS_VERSION = "0.0.9"
 ENVIRONMENT = "development"
 
 [build]
-command = "cargo install -q worker-build && worker-build --release"
+command = "worker-build --release"
 
 [env.staging]
 name = "message-sender-staging"
