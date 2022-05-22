@@ -1,4 +1,8 @@
-dist
-node_modules
-transpiled
-/.idea/
+/node_modules
+
+**/*.rs.bk
+wasm-pack.log
+
+build/
+/target
+/dist

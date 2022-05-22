@@ -134,21 +134,8 @@ importers:
 
   services/message-sender:
     specifiers:
-      '@cloudflare/workers-types': ^3.11.0
-      '@typescript-eslint/eslint-plugin': ^5.25.0
-      '@typescript-eslint/parser': ^5.25.0
-      eslint: ^8.16.0
-      itty-router: ^2.6.1
-      typescript: ^4.6.4
       wrangler: ^2.0.6
-    dependencies:
-      itty-router: 2.6.1
     devDependencies:
-      '@cloudflare/workers-types': 3.11.0
-      '@typescript-eslint/eslint-plugin': 5.25.0_jorowkvdqu6pwramweg5le7ncu
-      '@typescript-eslint/parser': 5.25.0_utdtartgf6fqqgkivzeynh76la
-      eslint: 8.16.0
-      typescript: 4.6.4
       wrangler: 2.0.6
 
 packages:
@@ -171,10 +158,6 @@ packages:
     resolution: {integrity: sha512-qnikpQgi30AS01aFlNQV6l8/qdZIcP76mp90ti+u4rucXHsn4afSKivQXApqxvrQG9+Ibv45STyvHizvxef/7A==}
     hasBin: true
     dev: false
-
-  /@cloudflare/workers-types/3.11.0:
-    resolution: {integrity: sha512-XmKgZZHrCdPsoVQkdd365R7GvwTwDVJsMyEG3Dq/Tgxz6vgrps2c8PXBqEutguwvl0zDAF0AL0e2Z8WG9Dffjw==}
-    dev: true
 
   /@corex/deepmerge/2.6.148:
     resolution: {integrity: sha512-6QMz0/2h5C3ua51iAnXMPWFbb1QOU1UvSM4bKBw5mzdT+WtLgjbETBBIQZ+Sh9WvEcGwlAt/DEdRpIC3XlDBMA==}
@@ -3132,10 +3115,6 @@ packages:
   /isexe/2.0.0:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: true
-
-  /itty-router/2.6.1:
-    resolution: {integrity: sha512-l9gxWe5TOLUESYnBn85Jxd6tIZLWdRX5YKkHIBfSgbNQ7UFPNUGuWihRV+LlEbfJJIzgLmhwAbaWRi5yWJm8kg==}
-    dev: false
 
   /joycon/3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}

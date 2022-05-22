@@ -19,23 +19,6 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 7
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Lint
-        run: pnpm turbo run lint --filter=message-sender
-
       - name: Some check on branch
         id: branch_check
         run: |

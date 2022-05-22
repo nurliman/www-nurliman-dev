@@ -1,11 +1,17 @@
 name = "message-sender"
-main = "./src/index.ts"
+main = "build/worker/shim.mjs"
 compatibility_date = "2022-05-17"
+
+[vars]
+WORKERS_RS_VERSION = "0.0.9"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
 
 [env.staging]
 name = "message-sender-staging"
-vars = { ENVIRONMENT = "staging" }
+vars = { WORKERS_RS_VERSION = "0.0.9", ENVIRONMENT = "staging" }
 
 [env.production]
 name = "message-sender"
-vars = { ENVIRONMENT = "production" }
+vars = { WORKERS_RS_VERSION = "0.0.9", ENVIRONMENT = "production" }
