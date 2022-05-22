@@ -44,12 +44,6 @@ jobs:
             echo "::set-output name=env::staging"
           fi
 
-      - uses: actions-rs/toolchain@v1
-        with:
-          default: true
-          toolchain: stable
-          profile: minimal
-
       - name: Install worker-build
         uses: actions-rs/install@v0.1
         with:
