@@ -19,6 +19,21 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 7
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "pnpm"
+
+      - name: Install dependencies
+        working-directory: services/message-sender
+        run: pnpm install --frozen-lockfile
+
       - name: Some check on branch
         id: branch_check
         run: |
@@ -35,14 +50,15 @@ jobs:
           toolchain: stable
           profile: minimal
 
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
+      - name: Install worker-build
+        uses: actions-rs/install@v0.1
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          workingDirectory: "services/message-sender"
-          command: publish --env ${{ steps.branch_check.outputs.env }}
-          secrets: |
-            SENDGRID_API_KEY
+          crate: worker-build
+
+      - name: Publish
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        working-directory: services/message-sender
+        run: pnpm wrangler publish --env ${{ steps.branch_check.outputs.env }}
