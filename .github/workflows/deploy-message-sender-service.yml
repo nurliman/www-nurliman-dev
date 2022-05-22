@@ -54,6 +54,7 @@ jobs:
         uses: actions-rs/install@v0.1
         with:
           crate: worker-build
+          use-tool-cache: true
 
       - name: Publish
         env:
