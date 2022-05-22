@@ -29,6 +29,12 @@ jobs:
             echo "::set-output name=env::staging"
           fi
 
+      - uses: actions-rs/toolchain@v1
+        with:
+          default: true
+          toolchain: stable
+          profile: minimal
+
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
