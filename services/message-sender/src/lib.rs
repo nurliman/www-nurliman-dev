@@ -25,7 +25,7 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
         .get("/", |_, _| {
             Response::from_json(&json!({
              "name": "message-sender",
-             "version": "0.0.1",
+             "version": "0.1.0",
              "status": "online",
             }))
         })
@@ -48,7 +48,7 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
                 // send error response
                 return Ok(res?.with_status(500));
             }
-            Response::from_json(&json!({ "name": "send", "version": "0.0.1" }))
+            Response::from_json(&json!({ "name": "send", "version": "0.1.0" }))
         })
         .get("/worker-version", |_, ctx| {
             let version = ctx.var("WORKERS_RS_VERSION")?.to_string();
