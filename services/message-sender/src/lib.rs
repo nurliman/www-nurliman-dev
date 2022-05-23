@@ -22,7 +22,13 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     let router = Router::new();
 
     router
-        .get("/", |_, _| Response::ok("Hello from Workers!"))
+        .get("/", |_, _| {
+            Response::from_json(&json!({
+             "name": "message-sender",
+             "version": "0.0.1",
+             "status": "online",
+            }))
+        })
         .get("/v0/send", |_, ctx| {
             let sg_api_key = match ctx.secret("SENDGRID_API_KEY") {
                 Ok(value) => value.to_string(),
