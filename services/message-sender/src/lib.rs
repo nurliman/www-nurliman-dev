@@ -1,6 +1,7 @@
 use serde_json::json;
-use worker::*;
+use worker::{console_log, Date, Env, Request, Response, Result, Router};
 
+mod handlers;
 mod utils;
 
 fn log_request(req: &Request) {
@@ -13,7 +14,7 @@ fn log_request(req: &Request) {
     );
 }
 
-#[event(fetch)]
+#[worker::event(fetch)]
 pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Response> {
     log_request(&req);
 
@@ -29,27 +30,7 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
              "status": "online",
             }))
         })
-        .get("/v0/send", |req, ctx| {
-            let sendgrid_api_key = match ctx.secret("SENDGRID_API_KEY") {
-                Ok(value) => value.to_string(),
-                Err(_) => String::new(),
-            };
-            // check SENDGRID_API_KEY
-            if sendgrid_api_key.is_empty() {
-                console_log!("Error: Please provide env.SENDGRID_API_KEY");
-
-                // init error response body
-                let res = Response::from_json(&json!({
-                    "error": "Internal Server Error",
-                    "message": "Some environment variables is not provided.",
-                    "path": req.path(),
-                }));
-
-                // send error response
-                return Ok(res?.with_status(500));
-            }
-            Response::from_json(&json!({ "name": "send", "version": "0.1.0" }))
-        })
+        .get("/v0/send", handlers::v0::send::send_message)
         .get("/worker-version", |_, ctx| {
             let version = ctx.var("WORKERS_RS_VERSION")?.to_string();
             Response::ok(version)
