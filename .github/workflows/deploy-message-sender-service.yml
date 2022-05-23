@@ -32,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: services/message-sender
-        run: pnpm install --frozen-lockfile
+        run: pnpm --filter=message-sender install --frozen-lockfile
 
       - name: Some check on branch
         id: branch_check
