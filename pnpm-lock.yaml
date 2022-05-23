@@ -61,6 +61,7 @@ importers:
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
       reset-css: ^5.0.1
       sass: ^1.52.1
+      ssr-window: ^4.0.2
       typescript: ^4.6.4
       use-media: ^1.4.0
     dependencies:
@@ -83,6 +84,7 @@ importers:
       react-hook-form: 7.31.2_@preact+compat@17.0.3
       react-redux: 8.0.1_dzl6ii26agvct7fpsvcyyvftpa
       reset-css: 5.0.1
+      ssr-window: 4.0.2
       use-media: 1.4.0_@preact+compat@17.0.3
     devDependencies:
       '@fullhuman/postcss-purgecss': 4.1.3_postcss@8.4.14
@@ -4561,6 +4563,10 @@ packages:
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: true
+
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
 
   /stable/0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
