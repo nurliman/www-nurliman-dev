@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { Partytown } from "@builder.io/partytown/react";
-import { GTMScript, GTMNoScript } from "@nurliman/gtm";
+import { GTMScript, GTMNoScript } from "libs/gtm";
 
 const GTM_ID = "GTM-KR8STT3";
 

@@ -17,7 +17,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@nurliman/gtm": "*",
     "@reduxjs/toolkit": "^1.8.1",
     "@rooks/use-boundingclientrect": "^4.11.2",
     "bootstrap": "4.1.3",
