@@ -2,6 +2,7 @@ use serde_json::json;
 use worker::{console_log, Date, Env, Request, Response, Result, Router};
 
 mod handlers;
+mod sendgrid_client;
 mod utils;
 
 fn log_request(req: &Request) {
@@ -30,7 +31,7 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
              "status": "online",
             }))
         })
-        .get("/v0/send", handlers::v0::send::send_message)
+        .get_async("/v0/send", handlers::v0::send::send_message)
         .get("/worker-version", |_, ctx| {
             let version = ctx.var("WORKERS_RS_VERSION")?.to_string();
             Response::ok(version)
