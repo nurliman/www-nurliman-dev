@@ -1,3 +1,4 @@
+use crate::sendgrid_client::{EmailRecipientSender, SendgridClient};
 use serde::Deserialize;
 use serde_json::json;
 use validator::Validate;
@@ -60,5 +61,30 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
         return Ok(res?.with_status(400));
     }
 
-    Response::from_json(&json!({ "name": "send", "version": "0.1.0" }))
+    let sendgrid_client = SendgridClient::new(&sendgrid_api_key);
+
+    // send email
+    sendgrid_client
+        .send_email(
+            EmailRecipientSender {
+                // to
+                email: ctx.var("MESSAGE_RECIPIENT_EMAIL")?.to_string(),
+                name: ctx.var("MESSAGE_RECIPIENT_NAME")?.to_string(),
+            },
+            EmailRecipientSender {
+                // from
+                email: ctx.secret("MAIL_SENDER_EMAIL")?.to_string(),
+                name: "Message Sender Service".to_string(),
+            },
+            EmailRecipientSender {
+                // reply to
+                email: req_body.email,
+                name: req_body.name,
+            },
+            &req_body.subject, // subject
+            &req_body.message, // message
+        )
+        .await;
+
+    Response::from_json(&json!({ "message": "Message sent!" }))
 }

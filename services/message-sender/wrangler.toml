@@ -3,6 +3,8 @@ main = "build/worker/shim.mjs"
 compatibility_date = "2022-05-17"
 
 [vars]
+MESSAGE_RECIPIENT_EMAIL = "nurlimand@gmail.com"
+MESSAGE_RECIPIENT_NAME = "Nurliman Diara A"
 WORKERS_RS_VERSION = "0.0.9"
 ENVIRONMENT = "development"
 
@@ -11,8 +13,18 @@ command = "worker-build --release"
 
 [env.staging]
 name = "message-sender-staging"
-vars = { WORKERS_RS_VERSION = "0.0.9", ENVIRONMENT = "staging" }
+
+[env.staging.vars]
+MESSAGE_RECIPIENT_EMAIL = "nurlimand@gmail.com"
+MESSAGE_RECIPIENT_NAME = "Nurliman Diara A"
+WORKERS_RS_VERSION = "0.0.9"
+ENVIRONMENT = "staging"
 
 [env.production]
 name = "message-sender"
-vars = { WORKERS_RS_VERSION = "0.0.9", ENVIRONMENT = "production" }
+
+[env.production.vars]
+MESSAGE_RECIPIENT_EMAIL = "nurlimandiara@gmail.com"
+MESSAGE_RECIPIENT_NAME = "Nurliman Diara A"
+WORKERS_RS_VERSION = "0.0.9"
+ENVIRONMENT = "production"
