@@ -48,7 +48,7 @@ impl SendgridClient {
         reply_to: EmailRecipientSender,
         subject: &str,
         message: &str,
-    ) {
+    ) -> Result<reqwest::Response, reqwest::Error> {
         let client = reqwest::Client::new();
         let mut headers = HeaderMap::new();
         let authorisation_header_value = format!("Bearer {}", self.api_key);
@@ -68,19 +68,12 @@ impl SendgridClient {
             from,
             reply_to,
         };
-        match client
+
+        return client
             .post(&self.base_url)
             .headers(headers)
             .json(&data)
             .send()
-            .await
-        {
-            Ok(_response) => {
-                console_log!("Email sent")
-            }
-            Err(error) => {
-                console_log!("Error sending email: {error}")
-            }
-        };
+            .await;
     }
 }

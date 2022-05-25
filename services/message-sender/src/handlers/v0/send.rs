@@ -85,7 +85,7 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
     let sendgrid_client = SendgridClient::new(&sendgrid_api_key);
 
     // send email
-    sendgrid_client
+    let sendgrid_res = sendgrid_client
         .send_email(
             EmailRecipientSender {
                 // to
@@ -106,6 +106,16 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             &req_body.message, // message
         )
         .await;
+
+    if let Err(error) = sendgrid_res {
+        let res = Response::from_json(&json!({
+            "error": error.to_string(),
+            "message": "Error while sending email",
+            "path": req.path(),
+        }));
+
+        return Ok(res?.with_status(500));
+    }
 
     Response::from_json(&json!({ "message": "Message sent!" }))
 }
