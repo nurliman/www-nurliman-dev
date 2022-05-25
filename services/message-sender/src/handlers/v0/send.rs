@@ -21,9 +21,30 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
         Ok(value) => value.to_string(),
         Err(_) => String::new(),
     };
+
     // check SENDGRID_API_KEY
     if sendgrid_api_key.is_empty() {
         console_log!("Error: Please provide env.SENDGRID_API_KEY");
+
+        // init error response body
+        let res = Response::from_json(&json!({
+            "error": "Internal Server Error",
+            "message": "Some environment variables is not provided.",
+            "path": req.path(),
+        }));
+
+        // send error response
+        return Ok(res?.with_status(500));
+    }
+
+    let mail_sender_email = match ctx.secret("MAIL_SENDER_EMAIL") {
+        Ok(value) => value.to_string(),
+        Err(_) => String::new(),
+    };
+
+    // check SENDGRID_API_KEY
+    if mail_sender_email.is_empty() {
+        console_log!("Error: Please provide env.MAIL_SENDER_EMAIL");
 
         // init error response body
         let res = Response::from_json(&json!({
@@ -73,7 +94,7 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             },
             EmailRecipientSender {
                 // from
-                email: ctx.secret("MAIL_SENDER_EMAIL")?.to_string(),
+                email: mail_sender_email,
                 name: "Message Sender Service".to_string(),
             },
             EmailRecipientSender {
