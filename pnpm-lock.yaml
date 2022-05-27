@@ -47,7 +47,7 @@ importers:
       next-optimized-classnames: npm:@nurliman/next-optimized-classnames@^1.0.4
       next-plugin-preact: ^3.0.6
       next-seo: ^5.4.0
-      next-sitemap: ^2.5.25
+      next-sitemap: ^2.5.26
       perfect-scrollbar: ^1.5.5
       postcss: ^8.4.14
       postcss-flexbugs-fixes: ^5.0.2
@@ -104,7 +104,7 @@ importers:
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
       next-plugin-preact: 3.0.6_d3vk2obvgunbro5d25wglvq4py
-      next-sitemap: 2.5.25_next@12.1.5
+      next-sitemap: 2.5.26_next@12.1.5
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.14
       postcss-preset-env: 7.6.0_postcss@8.4.14
@@ -3216,8 +3216,8 @@ packages:
       react-dom: /@preact/compat/17.0.3_preact@10.7.2
     dev: false
 
-  /next-sitemap/2.5.25_next@12.1.5:
-    resolution: {integrity: sha512-0YB6VnawGxXu9B/pppJ35vwGUQb6T004zVtAsfxb/KrDPXo/BM6QtuZO25WDmCL56HSlSvgPOderPKdsgLYqZg==}
+  /next-sitemap/2.5.26_next@12.1.5:
+    resolution: {integrity: sha512-ojW0ncbusBANyjuaaZhJtV/M4MIbKkxkuq/EM9ftBfqAC34UuIhbluTHXKIrEGCSql4RJow9EhkYh627ycBZ6g==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
