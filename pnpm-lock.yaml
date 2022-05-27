@@ -56,7 +56,7 @@ importers:
       preact-render-to-string: ^5.2.0
       react: npm:@preact/compat@^17.0.3
       react-dom: npm:@preact/compat@^17.0.3
-      react-hook-form: ^7.31.2
+      react-hook-form: ^7.31.3
       react-redux: ^8.0.2
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
       reset-css: ^5.0.1
@@ -81,7 +81,7 @@ importers:
       preact: 10.7.2
       react: /@preact/compat/17.0.3_preact@10.7.2
       react-dom: /@preact/compat/17.0.3_preact@10.7.2
-      react-hook-form: 7.31.2_@preact+compat@17.0.3
+      react-hook-form: 7.31.3_@preact+compat@17.0.3
       react-redux: 8.0.2_dzl6ii26agvct7fpsvcyyvftpa
       reset-css: 5.0.1
       ssr-window: 4.0.2
@@ -4255,8 +4255,8 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-hook-form/7.31.2_@preact+compat@17.0.3:
-    resolution: {integrity: sha512-oPudn3YuyzWg//IsT9z2cMEjWocAgHWX/bmueDT8cmsYQnGY5h7/njjvMDfLVv3mbdhYBjslTRnII2MIT7eNCA==}
+  /react-hook-form/7.31.3_@preact+compat@17.0.3:
+    resolution: {integrity: sha512-NVZdCWViIWXXXlQ3jxVQH0NuNfwPf8A/0KvuCxrM9qxtP1qYosfR2ZudarziFrVOC7eTUbWbm1T4OyYCwv9oSQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
