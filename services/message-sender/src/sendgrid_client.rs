@@ -1,6 +1,5 @@
 use reqwest::header::{HeaderMap, HeaderValue, AUTHORIZATION};
 use serde::Serialize;
-use worker::console_log;
 
 #[derive(Serialize)]
 pub struct EmailRecipientSender {
