@@ -28,7 +28,7 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
         .get("/", |_, _| {
             Response::from_json(&json!({
              "name": "message-sender",
-             "version": "0.1.0",
+             "version": "0.2.0",
              "status": "online",
             }))
         })
