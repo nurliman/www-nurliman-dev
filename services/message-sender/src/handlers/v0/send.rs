@@ -8,7 +8,7 @@ use worker::{console_log, Request, Response, Result, RouteContext};
 struct RequestBody {
     #[validate(email)]
     email: String,
-    #[validate(length(min = 3))]
+    #[validate(length(min = 2))]
     name: String,
     #[validate(length(min = 4))]
     subject: String,
