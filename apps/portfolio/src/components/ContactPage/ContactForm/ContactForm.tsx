@@ -1,9 +1,11 @@
-import React, { ComponentProps, useCallback, useEffect } from "react";
+import React, { ComponentProps, useCallback, useEffect, useState } from "react";
 import clsx from "clsx";
 import { useForm, SubmitHandler } from "libs/react-hook-form";
 import InputComponent from "./InputComponent";
 import Captcha from "components/Captcha";
 import styles from "./ContactForm.module.scss";
+
+const MESSAGE_SENDER_SERVICE_HOST = process.env.NEXT_PUBLIC_MESSAGE_SENDER_SERVICE_HOST;
 
 type Props = ComponentProps<"form">;
 
@@ -23,10 +25,17 @@ const ContactForm: React.FC<Props> = ({ className }) => {
     resetField,
     clearErrors,
     handleSubmit,
-    formState: { errors },
+    formState: { isSubmitting, errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = useCallback((data) => console.log(data), []);
+  const onSubmit: SubmitHandler<Inputs> = useCallback((data) => {
+    const url = MESSAGE_SENDER_SERVICE_HOST + "/v0/send";
+    return fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  }, []);
 
   const onVerifyCaptcha = useCallback((token: string) => {
     clearErrors("captchaToken");
@@ -78,6 +87,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         errorMessage={errors?.captchaToken?.message}
       />
       <input
+        disabled={isSubmitting}
         type="submit"
         className={clsx("button", "btn-send", styles.spanRow)}
         value="Send message"
