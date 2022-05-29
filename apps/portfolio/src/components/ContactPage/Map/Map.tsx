@@ -45,7 +45,7 @@ const Map: React.FC<Props> = ({ className }) => {
         width="100%"
         height="100%"
         style={{ border: 0 }}
-        loading="lazy"
+        loading="eager"
         allowFullScreen
         referrerPolicy="no-referrer-when-downgrade"
         src={mapUrl}
