@@ -1,4 +1,4 @@
-use crate::cors::DEFAULT_CORS;
+use crate::cors::DefaultCors;
 use crate::sendgrid_client::{EmailRecipientSender, SendgridClient};
 use serde::Deserialize;
 use serde_json::json;
@@ -18,6 +18,11 @@ struct RequestBody {
 }
 
 pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Response> {
+    let cors = match ctx.var("ENVIRONMENT")?.to_string().as_str() {
+        "production" => DefaultCors::Prod.to_cors(),
+        _ => DefaultCors::Dev.to_cors(),
+    };
+
     let sendgrid_api_key = match ctx.secret("SENDGRID_API_KEY") {
         Ok(value) => value.to_string(),
         Err(_) => String::new(),
@@ -33,7 +38,7 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "message": "Some environment variables is not provided.",
             "path": req.path(),
         }))?
-        .with_cors(&DEFAULT_CORS)?
+        .with_cors(&cors)?
         .with_status(500);
 
         // send error response
@@ -55,7 +60,7 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "message": "Some environment variables is not provided.",
             "path": req.path(),
         }))?
-        .with_cors(&DEFAULT_CORS)?
+        .with_cors(&cors)?
         .with_status(500);
 
         // send error response
@@ -71,7 +76,7 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
                 "message": "Failed to parse request to JSON",
                 "path": req.path(),
             }))?
-            .with_cors(&DEFAULT_CORS)?
+            .with_cors(&cors)?
             .with_status(400);
 
             return Ok(res);
@@ -85,7 +90,7 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "message": "Failed to validate request",
             "path": req.path(),
         }))?
-        .with_cors(&DEFAULT_CORS)?
+        .with_cors(&cors)?
         .with_status(400);
 
         return Ok(res);
@@ -122,11 +127,11 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "message": "Error while sending email",
             "path": req.path(),
         }))?
-        .with_cors(&DEFAULT_CORS)?
+        .with_cors(&cors)?
         .with_status(500);
 
         return Ok(res);
     }
 
-    Response::from_json(&json!({ "message": "Message sent!" }))?.with_cors(&DEFAULT_CORS)
+    Response::from_json(&json!({ "message": "Message sent!" }))?.with_cors(&cors)
 }
