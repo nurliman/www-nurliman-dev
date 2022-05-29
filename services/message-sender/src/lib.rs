@@ -2,6 +2,7 @@ use serde_json::json;
 use worker::{console_log, Date, Env, Request, Response, Result, Router};
 
 mod handlers;
+mod cors;
 mod sendgrid_client;
 mod utils;
 

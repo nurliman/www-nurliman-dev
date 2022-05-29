@@ -1,3 +1,4 @@
+use crate::cors::DEFAULT_CORS;
 use crate::sendgrid_client::{EmailRecipientSender, SendgridClient};
 use serde::Deserialize;
 use serde_json::json;
@@ -31,10 +32,12 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "error": "Internal Server Error",
             "message": "Some environment variables is not provided.",
             "path": req.path(),
-        }));
+        }))?
+        .with_cors(&DEFAULT_CORS)?
+        .with_status(500);
 
         // send error response
-        return Ok(res?.with_status(500));
+        return Ok(res);
     }
 
     let mail_sender_email = match ctx.secret("MAIL_SENDER_EMAIL") {
@@ -51,10 +54,12 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "error": "Internal Server Error",
             "message": "Some environment variables is not provided.",
             "path": req.path(),
-        }));
+        }))?
+        .with_cors(&DEFAULT_CORS)?
+        .with_status(500);
 
         // send error response
-        return Ok(res?.with_status(500));
+        return Ok(res);
     }
 
     // parse request body
@@ -65,9 +70,11 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
                 "error": error.to_string(),
                 "message": "Failed to parse request to JSON",
                 "path": req.path(),
-            }));
+            }))?
+            .with_cors(&DEFAULT_CORS)?
+            .with_status(400);
 
-            return Ok(res?.with_status(400));
+            return Ok(res);
         }
     };
 
@@ -77,9 +84,11 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "error": error.to_string(),
             "message": "Failed to validate request",
             "path": req.path(),
-        }));
+        }))?
+        .with_cors(&DEFAULT_CORS)?
+        .with_status(400);
 
-        return Ok(res?.with_status(400));
+        return Ok(res);
     }
 
     let sendgrid_client = SendgridClient::new(&sendgrid_api_key);
@@ -112,10 +121,12 @@ pub async fn send_message(mut req: Request, ctx: RouteContext<()>) -> Result<Res
             "error": error.to_string(),
             "message": "Error while sending email",
             "path": req.path(),
-        }));
+        }))?
+        .with_cors(&DEFAULT_CORS)?
+        .with_status(500);
 
-        return Ok(res?.with_status(500));
+        return Ok(res);
     }
 
-    Response::from_json(&json!({ "message": "Message sent!" }))
+    Response::from_json(&json!({ "message": "Message sent!" }))?.with_cors(&DEFAULT_CORS)
 }
