@@ -6,6 +6,8 @@ import Captcha from "components/Captcha";
 import styles from "./ContactForm.module.scss";
 
 const MESSAGE_SENDER_SERVICE_HOST = process.env.NEXT_PUBLIC_MESSAGE_SENDER_SERVICE_HOST;
+const EMAIL_REGEXP =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 type Props = ComponentProps<"form">;
 
@@ -56,20 +58,38 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         control={control}
         name="name"
         label="Full Name"
-        rules={{ required: "Name is required." }}
+        rules={{
+          required: "Name is required.",
+          minLength: {
+            value: 2,
+            message: "The name must have at least 2 characters.",
+          },
+        }}
       />
       <InputComponent
         control={control}
         name="email"
         label="Email Address"
         inputProps={{ type: "email" }}
-        rules={{ required: "Valid email is required." }}
+        rules={{
+          required: "Valid email is required.",
+          pattern: {
+            value: EMAIL_REGEXP,
+            message: "Invalid email address",
+          },
+        }}
       />
       <InputComponent
         control={control}
         name="subject"
         label="Subject"
-        rules={{ required: "Subject is required." }}
+        rules={{
+          required: "Subject is required.",
+          minLength: {
+            value: 4,
+            message: "The subject must have at least 4 characters.",
+          },
+        }}
       />
       <InputComponent
         control={control}
@@ -78,7 +98,13 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         className={styles.msgBox}
         inputElement="textarea"
         inputProps={{ rows: 7 }}
-        rules={{ required: "Please, leave me a message." }}
+        rules={{
+          required: "Please, leave me a message.",
+          minLength: {
+            value: 4,
+            message: "The message must have at least 4 characters.",
+          },
+        }}
       />
       <Captcha
         containerClassName={styles.spanRow}
