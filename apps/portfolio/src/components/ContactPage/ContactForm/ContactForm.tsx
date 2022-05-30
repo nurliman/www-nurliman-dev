@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { useForm, SubmitHandler } from "libs/react-hook-form";
 import InputComponent from "./InputComponent";
 import Captcha from "components/Captcha";
+import Spinner from "components/Spinner";
 import styles from "./ContactForm.module.scss";
 
 const MESSAGE_SENDER_SERVICE_HOST = process.env.NEXT_PUBLIC_MESSAGE_SENDER_SERVICE_HOST;
@@ -112,12 +113,14 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         onExpire={clearCaptchaToken}
         errorMessage={errors?.captchaToken?.message}
       />
-      <input
+      <button
         disabled={isSubmitting}
         type="submit"
-        className={clsx("button", "btn-send", styles.spanRow)}
-        value="Send message"
-      />
+        className={clsx("button", "btn-send", styles.submitButton, styles.spanRow)}
+      >
+        {isSubmitting ? <Spinner containerClassName={styles.spinner} theme="light" /> : null}
+        <span>Send message</span>
+      </button>
     </form>
   );
 };
