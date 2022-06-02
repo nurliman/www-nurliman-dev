@@ -1,6 +1,7 @@
 import React, { ComponentProps, useCallback, useEffect } from "react";
 import clsx from "clsx";
 import { useForm, SubmitHandler } from "libs/react-hook-form";
+import { toast } from "react-toastify";
 import InputComponent from "./InputComponent";
 import Captcha from "components/Captcha";
 import Spinner from "components/Spinner";
@@ -29,6 +30,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
     clearErrors,
     handleSubmit,
     formState: { isSubmitting, errors },
+    reset,
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = useCallback((data) => {
@@ -37,6 +39,11 @@ const ContactForm: React.FC<Props> = ({ className }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
+    }).then((res) => {
+      if (res.status === 200) {
+        toast("Message sent!");
+        reset(null, { keepValues: false });
+      }
     });
   }, []);
 
