@@ -10,6 +10,7 @@ import styles from "./ContactForm.module.scss";
 const MESSAGE_SENDER_SERVICE_HOST = process.env.NEXT_PUBLIC_MESSAGE_SENDER_SERVICE_HOST;
 const EMAIL_REGEXP =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const ERROR_MESSAGE = "An error occurred while sending message.";
 
 type Props = ComponentProps<"form">;
 
@@ -33,18 +34,26 @@ const ContactForm: React.FC<Props> = ({ className }) => {
     reset,
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = useCallback((data) => {
-    const url = MESSAGE_SENDER_SERVICE_HOST + "/v0/send";
-    return fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      if (res.status === 200) {
-        toast("Message sent!");
-        reset(null, { keepValues: false });
+  const onSubmit: SubmitHandler<Inputs> = useCallback(async (data) => {
+    try {
+      const url = MESSAGE_SENDER_SERVICE_HOST + "/v0/send";
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.status !== 200) {
+        const resJson = await res.json();
+        toast.error(resJson?.message || ERROR_MESSAGE);
+        return;
       }
-    });
+
+      toast("Message sent!");
+      reset(null, { keepValues: false });
+    } catch (error) {
+      toast.error(error?.message || ERROR_MESSAGE);
+    }
   }, []);
 
   const onVerifyCaptcha = useCallback((token: string) => {
