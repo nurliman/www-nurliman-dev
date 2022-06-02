@@ -1,12 +1,14 @@
 import { ReactElement } from "react";
 import { NextSeo } from "next-seo";
 import { useAppSelector } from "store";
+import { ToastContainer } from "react-toastify";
 import MainLayout from "components/Layouts/MainLayout";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
 import ContactForm from "components/ContactPage/ContactForm";
 import Map from "components/ContactPage/Map";
 import styles from "styles/ContactPage.module.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactPage = () => {
   const myAddress = useAppSelector((s) => s.me.address);
@@ -53,6 +55,11 @@ const ContactPage = () => {
   );
 };
 
-ContactPage.getLayout = (page: ReactElement) => <MainLayout>{page}</MainLayout>;
+ContactPage.getLayout = (page: ReactElement) => (
+  <>
+    <MainLayout>{page}</MainLayout>
+    <ToastContainer />
+  </>
+);
 
 export default ContactPage;
