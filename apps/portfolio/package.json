@@ -53,7 +53,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-optimized-classnames": "npm:@nurliman/next-optimized-classnames@^1.0.4",
     "next-plugin-preact": "^3.0.6",
-    "next-sitemap": "^3.0.3",
+    "next-sitemap": "^3.0.5",
     "postcss": "^8.4.14",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.7.1",
