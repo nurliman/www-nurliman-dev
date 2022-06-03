@@ -43,7 +43,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         body: JSON.stringify(data),
       });
 
-      if (res.status !== 200) {
+      if (!res.ok) {
         const resJson = await res.json();
         toast.error(resJson?.message || ERROR_MESSAGE);
         return;
