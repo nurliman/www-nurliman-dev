@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
+import dynamic from "next/dynamic";
 import { NextSeo } from "next-seo";
 import { useAppSelector } from "store";
-import { ToastContainer } from "react-toastify";
 import MainLayout from "components/Layouts/MainLayout";
 import PageTitle from "components/PageTitle";
 import BlockTitle from "components/BlockTitle";
@@ -9,6 +9,8 @@ import ContactForm from "components/ContactPage/ContactForm";
 import Map from "components/ContactPage/Map";
 import styles from "styles/ContactPage.module.scss";
 import "react-toastify/dist/ReactToastify.css";
+
+const ToastContainer = dynamic(() => import("libs/react-toastify/ToastContainer"), { ssr: false });
 
 const ContactPage = () => {
   const myAddress = useAppSelector((s) => s.me.address);
