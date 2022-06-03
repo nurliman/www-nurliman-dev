@@ -34,7 +34,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
     reset,
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = useCallback(async (data) => {
+  const onSubmit: SubmitHandler<Inputs> = useCallback(async (data, e) => {
     try {
       const url = MESSAGE_SENDER_SERVICE_HOST + "/v0/send";
       const res = await fetch(url, {
@@ -50,7 +50,12 @@ const ContactForm: React.FC<Props> = ({ className }) => {
       }
 
       toast("Message sent!");
-      reset(null, { keepValues: false });
+
+      if (typeof e?.target?.reset === "function") {
+        e.target.reset();
+      }
+
+      reset();
     } catch (error) {
       toast.error(error?.message || ERROR_MESSAGE);
     }
