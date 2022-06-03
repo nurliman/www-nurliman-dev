@@ -58,7 +58,7 @@ const ContactPage = () => {
 ContactPage.getLayout = (page: ReactElement) => (
   <>
     <MainLayout>{page}</MainLayout>
-    <ToastContainer />
+    <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
   </>
 );
 
