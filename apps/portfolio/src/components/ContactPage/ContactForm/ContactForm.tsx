@@ -55,6 +55,10 @@ const ContactForm: React.FC<Props> = ({ className }) => {
         e.target.reset();
       }
 
+      if (typeof window?.grecaptcha?.enterprise?.reset === "function") {
+        window.grecaptcha.enterprise.reset();
+      }
+
       reset();
     } catch (error) {
       toast.error(error?.message || ERROR_MESSAGE);
