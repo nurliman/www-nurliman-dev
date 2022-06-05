@@ -54,7 +54,7 @@ importers:
       postcss-preset-env: ^7.7.1
       preact: ^10.7.3
       preact-render-to-string: ^5.2.0
-      react: npm:@preact/compat@^17.0.3
+      react: npm:@preact/compat@^17.1.0
       react-dom: npm:@preact/compat@^17.0.3
       react-hook-form: ^7.31.3
       react-redux: ^8.0.2
@@ -70,28 +70,28 @@ importers:
       '@fortawesome/fontawesome-svg-core': 6.1.1
       '@fortawesome/free-brands-svg-icons': 6.1.1
       '@fortawesome/free-solid-svg-icons': 6.1.1
-      '@fortawesome/react-fontawesome': 0.1.18_jprulvct6cw2fodmbepfyaylli
-      '@reduxjs/toolkit': 1.8.2_eo34ckmm6qsnt4ezmeia3hyusi
-      '@rooks/use-boundingclientrect': 4.11.2_@preact+compat@17.0.3
+      '@fortawesome/react-fontawesome': 0.1.18_x5yubfeei43uliibh4in4d2uny
+      '@reduxjs/toolkit': 1.8.2_msriiil2wbq7gzxvuonx46tzfi
+      '@rooks/use-boundingclientrect': 4.11.2_@preact+compat@17.1.0
       bootstrap: 4.1.3
       clsx: 1.1.1
       dayjs: 1.11.2
       modern-normalize: 1.1.0
-      next-seo: 5.4.0_e6c3vvsl2efrnze5m2olvwol4q
+      next-seo: 5.4.0_ilehunf7tep433akotenktq6ie
       perfect-scrollbar: 1.5.5
       preact: 10.7.3
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
       react-dom: /@preact/compat/17.0.3_preact@10.7.3
-      react-hook-form: 7.31.3_@preact+compat@17.0.3
-      react-redux: 8.0.2_dzl6ii26agvct7fpsvcyyvftpa
-      react-toastify: 9.0.3_tp5llvuvk3nymhndaus7enixm4
+      react-hook-form: 7.31.3_@preact+compat@17.1.0
+      react-redux: 8.0.2_ccff5lwxdqodkolxlm52jztsde
+      react-toastify: 9.0.3_6qjur6tuknld764twz56k4alzy
       reset-css: 5.0.1
       ssr-window: 4.0.2
-      use-media: 1.4.0_@preact+compat@17.0.3
+      use-media: 1.4.0_@preact+compat@17.1.0
     devDependencies:
       '@fullhuman/postcss-purgecss': 4.1.3_postcss@8.4.14
       '@next/bundle-analyzer': 12.1.6
-      '@sentry/nextjs': 7.0.0_g3i6h7yncns6mkh7p6co6qzjpa
+      '@sentry/nextjs': 7.0.0_bgp4zcddza2wvujkh6sygbqj4q
       '@types/grecaptcha': 3.0.4
       '@types/node': 17.0.31
       '@types/react': 17.0.44
@@ -101,7 +101,7 @@ importers:
       cssnano: 5.1.11_postcss@8.4.14
       eslint: 8.17.0
       eslint-config-next: 12.1.6_keuvzia56c2dwqgyxcum6j2rie
-      next: 12.1.5_oola4lnmkwait3pmattgskxvam
+      next: 12.1.5_7ibc7oun5bvscs2dzs5kjigotm
       next-build-id: 3.0.0
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
@@ -346,7 +346,7 @@ packages:
       '@fortawesome/fontawesome-common-types': 6.1.1
     dev: false
 
-  /@fortawesome/react-fontawesome/0.1.18_jprulvct6cw2fodmbepfyaylli:
+  /@fortawesome/react-fontawesome/0.1.18_x5yubfeei43uliibh4in4d2uny:
     resolution: {integrity: sha512-RwLIB4TZw0M9gvy5u+TusAA0afbwM4JQIimNH/j3ygd6aIvYPQLqXMhC9ErY26J23rDPyDZldIfPq/HpTTJ/tQ==}
     peerDependencies:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
@@ -354,7 +354,7 @@ packages:
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.1.1
       prop-types: 15.8.1
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
     dev: false
 
   /@fullhuman/postcss-purgecss/4.1.3_postcss@8.4.14:
@@ -682,6 +682,13 @@ packages:
     dependencies:
       preact: 10.7.3
 
+  /@preact/compat/17.1.0_preact@10.7.3:
+    resolution: {integrity: sha512-2MZfaQZIvfgLs4c7AEqvWR/z/MnY+LriCTYkmjN1JHBDrTjhC0gnEVzJozZro7VR5zpqqIOZtAlIQQThCQvpOw==}
+    peerDependencies:
+      preact: '*'
+    dependencies:
+      preact: 10.7.3
+
   /@prefresh/babel-plugin/0.4.3:
     resolution: {integrity: sha512-fYAWbU1WDSLn108kKY4eDaaeUcnszFqXjgaGKYXNZ5NLulpRTpsrY+Sbfo9q8LDpWrBpqIgzjrwNnvglWI1xNQ==}
     dev: true
@@ -705,7 +712,7 @@ packages:
       '@prefresh/core': 1.3.4_preact@10.7.3
       '@prefresh/utils': 1.1.3
       '@prefresh/webpack': 3.3.3_ppkd7z2cgy3pifru6tavnjgsqm
-      next: 12.1.5_oola4lnmkwait3pmattgskxvam
+      next: 12.1.5_7ibc7oun5bvscs2dzs5kjigotm
       preact: 10.7.3
     dev: true
 
@@ -738,7 +745,7 @@ packages:
       preact: 10.7.3
     dev: true
 
-  /@reduxjs/toolkit/1.8.2_eo34ckmm6qsnt4ezmeia3hyusi:
+  /@reduxjs/toolkit/1.8.2_msriiil2wbq7gzxvuonx46tzfi:
     resolution: {integrity: sha512-CtPw5TkN1pHRigMFCOS/0qg3b/yfPV5qGCsltVnIz7bx4PKTJlGHYfIxm97qskLknMzuGfjExaYdXJ77QTL0vg==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18
@@ -750,19 +757,19 @@ packages:
         optional: true
     dependencies:
       immer: 9.0.12
-      react: /@preact/compat/17.0.3_preact@10.7.3
-      react-redux: 8.0.2_dzl6ii26agvct7fpsvcyyvftpa
+      react: /@preact/compat/17.1.0_preact@10.7.3
+      react-redux: 8.0.2_ccff5lwxdqodkolxlm52jztsde
       redux: 4.2.0
       redux-thunk: 2.4.1_redux@4.2.0
       reselect: 4.1.5
     dev: false
 
-  /@rooks/use-boundingclientrect/4.11.2_@preact+compat@17.0.3:
+  /@rooks/use-boundingclientrect/4.11.2_@preact+compat@17.1.0:
     resolution: {integrity: sha512-IsRgEWZLlmY8paD1TRtaZ1+LNBTIXSP6ad5L52nPqjGU1k97mUXQX5QaE6947Slz9jaXnkWTFhH4pKWhMyX+8Q==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
     dev: false
 
   /@rushstack/eslint-patch/1.1.3:
@@ -826,7 +833,7 @@ packages:
       tslib: 1.14.1
     dev: true
 
-  /@sentry/nextjs/7.0.0_g3i6h7yncns6mkh7p6co6qzjpa:
+  /@sentry/nextjs/7.0.0_bgp4zcddza2wvujkh6sygbqj4q:
     resolution: {integrity: sha512-H0cV1rnippq3jBqnIF22wZLOaJzyPS/N2FrNxuvNLn+pY38mmtPF8kNpdTweDoM/RD7V7z+LuFE/uD8V75zZKQ==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -841,13 +848,13 @@ packages:
       '@sentry/hub': 7.0.0
       '@sentry/integrations': 7.0.0
       '@sentry/node': 7.0.0
-      '@sentry/react': 7.0.0_@preact+compat@17.0.3
+      '@sentry/react': 7.0.0_@preact+compat@17.1.0
       '@sentry/tracing': 7.0.0
       '@sentry/types': 7.0.0
       '@sentry/utils': 7.0.0
       '@sentry/webpack-plugin': 1.18.9
-      next: 12.1.5_oola4lnmkwait3pmattgskxvam
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      next: 12.1.5_7ibc7oun5bvscs2dzs5kjigotm
+      react: /@preact/compat/17.1.0_preact@10.7.3
       tslib: 1.14.1
     transitivePeerDependencies:
       - encoding
@@ -870,7 +877,7 @@ packages:
       - supports-color
     dev: true
 
-  /@sentry/react/7.0.0_@preact+compat@17.0.3:
+  /@sentry/react/7.0.0_@preact+compat@17.1.0:
     resolution: {integrity: sha512-zF/fUjyWXAjycS6WEv4BntKpp/CzHr7Qv0qB1n1EITvdMAYWfJTOhXdIKF/U9Rq/OmM0Gd8SthFWaEAJWzCgZQ==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -880,7 +887,7 @@ packages:
       '@sentry/types': 7.0.0
       '@sentry/utils': 7.0.0
       hoist-non-react-statics: 3.3.2
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
       tslib: 1.14.1
     dev: true
 
@@ -2093,7 +2100,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
       eslint-plugin-react: 7.29.4_eslint@8.17.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
-      next: 12.1.5_oola4lnmkwait3pmattgskxvam
+      next: 12.1.5_7ibc7oun5bvscs2dzs5kjigotm
       typescript: 4.7.3
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -3202,15 +3209,15 @@ packages:
       - webpack
     dev: true
 
-  /next-seo/5.4.0_e6c3vvsl2efrnze5m2olvwol4q:
+  /next-seo/5.4.0_ilehunf7tep433akotenktq6ie:
     resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.5_oola4lnmkwait3pmattgskxvam
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      next: 12.1.5_7ibc7oun5bvscs2dzs5kjigotm
+      react: /@preact/compat/17.1.0_preact@10.7.3
       react-dom: /@preact/compat/17.0.3_preact@10.7.3
     dev: false
 
@@ -3224,10 +3231,10 @@ packages:
     dependencies:
       '@corex/deepmerge': 4.0.14
       minimist: 1.2.6
-      next: 12.1.5_oola4lnmkwait3pmattgskxvam
+      next: 12.1.5_7ibc7oun5bvscs2dzs5kjigotm
     dev: true
 
-  /next/12.1.5_oola4lnmkwait3pmattgskxvam:
+  /next/12.1.5_7ibc7oun5bvscs2dzs5kjigotm:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -3248,10 +3255,10 @@ packages:
       '@next/env': 12.1.5
       caniuse-lite: 1.0.30001335
       postcss: 8.4.5
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
       react-dom: /@preact/compat/17.0.3_preact@10.7.3
       sass: 1.52.2
-      styled-jsx: 5.0.1_@preact+compat@17.0.3
+      styled-jsx: 5.0.1_@preact+compat@17.1.0
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.5
       '@next/swc-android-arm64': 12.1.5
@@ -4280,13 +4287,13 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-hook-form/7.31.3_@preact+compat@17.0.3:
+  /react-hook-form/7.31.3_@preact+compat@17.1.0:
     resolution: {integrity: sha512-NVZdCWViIWXXXlQ3jxVQH0NuNfwPf8A/0KvuCxrM9qxtP1qYosfR2ZudarziFrVOC7eTUbWbm1T4OyYCwv9oSQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
     dependencies:
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
     dev: false
 
   /react-is/16.13.1:
@@ -4296,7 +4303,7 @@ packages:
     resolution: {integrity: sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==}
     dev: false
 
-  /react-redux/8.0.2_dzl6ii26agvct7fpsvcyyvftpa:
+  /react-redux/8.0.2_ccff5lwxdqodkolxlm52jztsde:
     resolution: {integrity: sha512-nBwiscMw3NoP59NFCXFf02f8xdo+vSHT/uZ1ldDwF7XaTpzm+Phk97VT4urYBl5TYAPNVaFm12UHAEyzkpNzRA==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0
@@ -4322,20 +4329,20 @@ packages:
       '@types/react': 17.0.44
       '@types/use-sync-external-store': 0.0.3
       hoist-non-react-statics: 3.3.2
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
       react-dom: /@preact/compat/17.0.3_preact@10.7.3
       react-is: 18.1.0
-      use-sync-external-store: 1.1.0_@preact+compat@17.0.3
+      use-sync-external-store: 1.1.0_@preact+compat@17.1.0
     dev: false
 
-  /react-toastify/9.0.3_tp5llvuvk3nymhndaus7enixm4:
+  /react-toastify/9.0.3_6qjur6tuknld764twz56k4alzy:
     resolution: {integrity: sha512-0QZJk0SqYBxouRBGCFU3ymvjlwimRRhVH7SzqGRiVrQ001KSoUNbGKx9Yq42aoPv18n45yJzEFG82zqv3HnASg==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
       clsx: 1.1.1
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
       react-dom: /@preact/compat/17.0.3_preact@10.7.3
     dev: false
 
@@ -4729,7 +4736,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /styled-jsx/5.0.1_@preact+compat@17.0.3:
+  /styled-jsx/5.0.1_@preact+compat@17.1.0:
     resolution: {integrity: sha512-+PIZ/6Uk40mphiQJJI1202b+/dYeTVd9ZnMPR80pgiWbjIwvN2zIp4r9et0BgqBuShh48I0gttPlAXA7WVvBxw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -4742,7 +4749,7 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
 
   /stylehacks/5.1.0_postcss@8.4.14:
     resolution: {integrity: sha512-SzLmvHQTrIWfSgljkQCw2++C9+Ne91d/6Sp92I8c5uHTcy/PgeHamwITIbBW9wnFTY/3ZfSXR9HIL6Ikqmcu6Q==}
@@ -4998,20 +5005,20 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-media/1.4.0_@preact+compat@17.0.3:
+  /use-media/1.4.0_@preact+compat@17.1.0:
     resolution: {integrity: sha512-XsgyUAf3nhzZmEfhc5MqLHwyaPjs78bgytpVJ/xDl0TF4Bptf3vEpBNBBT/EIKOmsOc8UbuECq3mrP3mt1QANA==}
     peerDependencies:
       react: ^16.8.1
     dependencies:
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
     dev: false
 
-  /use-sync-external-store/1.1.0_@preact+compat@17.0.3:
+  /use-sync-external-store/1.1.0_@preact+compat@17.1.0:
     resolution: {integrity: sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: /@preact/compat/17.0.3_preact@10.7.3
+      react: /@preact/compat/17.1.0_preact@10.7.3
     dev: false
 
   /util-deprecate/1.0.2:
