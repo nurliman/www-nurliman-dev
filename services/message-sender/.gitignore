@@ -6,3 +6,4 @@ wasm-pack.log
 build/
 /target
 /dist
+.vercel
