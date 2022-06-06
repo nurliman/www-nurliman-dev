@@ -55,7 +55,7 @@ importers:
       preact: ^10.7.3
       preact-render-to-string: ^5.2.0
       react: npm:@preact/compat@^17.1.0
-      react-dom: npm:@preact/compat@^17.1.0
+      react-dom: npm:@preact/compat@^17.1.1
       react-hook-form: ^7.31.3
       react-redux: ^8.0.2
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
@@ -77,14 +77,14 @@ importers:
       clsx: 1.1.1
       dayjs: 1.11.3
       modern-normalize: 1.1.0
-      next-seo: 5.4.0_fjgvmn2zdsi43piqgtz7xm2ca4
+      next-seo: 5.4.0_dqmi5ezi7weg3ozeiyck5d7ufe
       perfect-scrollbar: 1.5.5
       preact: 10.7.3
       react: /@preact/compat/17.1.0_preact@10.7.3
-      react-dom: /@preact/compat/17.1.0_preact@10.7.3
+      react-dom: /@preact/compat/17.1.1_preact@10.7.3
       react-hook-form: 7.31.3_@preact+compat@17.1.0
-      react-redux: 8.0.2_wrt2havlywx6cuzskl3ozto7va
-      react-toastify: 9.0.3_lonhjgco4xnhrzzgjg2mqrieza
+      react-redux: 8.0.2_6to3bo4vfmklbzvwtqgmjgazg4
+      react-toastify: 9.0.3_pffmifykyxbrrjey6a6rv2rnvu
       reset-css: 5.0.1
       ssr-window: 4.0.2
       use-media: 1.4.0_@preact+compat@17.1.0
@@ -101,7 +101,7 @@ importers:
       cssnano: 5.1.11_postcss@8.4.14
       eslint: 8.17.0
       eslint-config-next: 12.1.6_keuvzia56c2dwqgyxcum6j2rie
-      next: 12.1.5_qr7rztxc2tlasitnlililnxtui
+      next: 12.1.5_iof4hsrbwdjbbmddk7wekkzala
       next-build-id: 3.0.0
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
@@ -702,6 +702,13 @@ packages:
     dependencies:
       preact: 10.7.3
 
+  /@preact/compat/17.1.1_preact@10.7.3:
+    resolution: {integrity: sha512-OjQJ6oVcjFTiKWs4MIoE/cORFFGhqnt1RO0uxGNAFUglBMPNahMDJyX5w+qEOEaOpaNTLM1L3ixc2bFEpxgs3A==}
+    peerDependencies:
+      preact: '*'
+    dependencies:
+      preact: 10.7.3
+
   /@prefresh/babel-plugin/0.4.3:
     resolution: {integrity: sha512-fYAWbU1WDSLn108kKY4eDaaeUcnszFqXjgaGKYXNZ5NLulpRTpsrY+Sbfo9q8LDpWrBpqIgzjrwNnvglWI1xNQ==}
     dev: true
@@ -725,7 +732,7 @@ packages:
       '@prefresh/core': 1.3.4_preact@10.7.3
       '@prefresh/utils': 1.1.3
       '@prefresh/webpack': 3.3.3_ppkd7z2cgy3pifru6tavnjgsqm
-      next: 12.1.5_qr7rztxc2tlasitnlililnxtui
+      next: 12.1.5_iof4hsrbwdjbbmddk7wekkzala
       preact: 10.7.3
     dev: true
 
@@ -771,7 +778,7 @@ packages:
     dependencies:
       immer: 9.0.12
       react: /@preact/compat/17.1.0_preact@10.7.3
-      react-redux: 8.0.2_wrt2havlywx6cuzskl3ozto7va
+      react-redux: 8.0.2_6to3bo4vfmklbzvwtqgmjgazg4
       redux: 4.2.0
       redux-thunk: 2.4.1_redux@4.2.0
       reselect: 4.1.5
@@ -913,7 +920,7 @@ packages:
       '@sentry/types': 7.0.0
       '@sentry/utils': 7.0.0
       '@sentry/webpack-plugin': 1.18.9
-      next: 12.1.5_qr7rztxc2tlasitnlililnxtui
+      next: 12.1.5_iof4hsrbwdjbbmddk7wekkzala
       react: /@preact/compat/17.1.0_preact@10.7.3
       tslib: 1.14.1
     transitivePeerDependencies:
@@ -2542,7 +2549,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
       eslint-plugin-react: 7.29.4_eslint@8.17.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
-      next: 12.1.5_qr7rztxc2tlasitnlililnxtui
+      next: 12.1.5_iof4hsrbwdjbbmddk7wekkzala
       typescript: 4.7.3
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -3972,16 +3979,16 @@ packages:
       - webpack
     dev: true
 
-  /next-seo/5.4.0_fjgvmn2zdsi43piqgtz7xm2ca4:
+  /next-seo/5.4.0_dqmi5ezi7weg3ozeiyck5d7ufe:
     resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.1.5_qr7rztxc2tlasitnlililnxtui
+      next: 12.1.5_iof4hsrbwdjbbmddk7wekkzala
       react: /@preact/compat/17.1.0_preact@10.7.3
-      react-dom: /@preact/compat/17.1.0_preact@10.7.3
+      react-dom: /@preact/compat/17.1.1_preact@10.7.3
     dev: false
 
   /next-sitemap/3.0.5_next@12.1.5:
@@ -3994,10 +4001,10 @@ packages:
     dependencies:
       '@corex/deepmerge': 4.0.14
       minimist: 1.2.6
-      next: 12.1.5_qr7rztxc2tlasitnlililnxtui
+      next: 12.1.5_iof4hsrbwdjbbmddk7wekkzala
     dev: true
 
-  /next/12.1.5_qr7rztxc2tlasitnlililnxtui:
+  /next/12.1.5_iof4hsrbwdjbbmddk7wekkzala:
     resolution: {integrity: sha512-YGHDpyfgCfnT5GZObsKepmRnne7Kzp7nGrac07dikhutWQug7hHg85/+sPJ4ZW5Q2pDkb+n0FnmLkmd44htIJQ==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -4019,7 +4026,7 @@ packages:
       caniuse-lite: 1.0.30001335
       postcss: 8.4.5
       react: /@preact/compat/17.1.0_preact@10.7.3
-      react-dom: /@preact/compat/17.1.0_preact@10.7.3
+      react-dom: /@preact/compat/17.1.1_preact@10.7.3
       sass: 1.52.2
       styled-jsx: 5.0.1_@preact+compat@17.1.0
     optionalDependencies:
@@ -5196,7 +5203,7 @@ packages:
     resolution: {integrity: sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==}
     dev: false
 
-  /react-redux/8.0.2_wrt2havlywx6cuzskl3ozto7va:
+  /react-redux/8.0.2_6to3bo4vfmklbzvwtqgmjgazg4:
     resolution: {integrity: sha512-nBwiscMw3NoP59NFCXFf02f8xdo+vSHT/uZ1ldDwF7XaTpzm+Phk97VT4urYBl5TYAPNVaFm12UHAEyzkpNzRA==}
     peerDependencies:
       '@types/react': ^16.8 || ^17.0 || ^18.0
@@ -5223,7 +5230,7 @@ packages:
       '@types/use-sync-external-store': 0.0.3
       hoist-non-react-statics: 3.3.2
       react: /@preact/compat/17.1.0_preact@10.7.3
-      react-dom: /@preact/compat/17.1.0_preact@10.7.3
+      react-dom: /@preact/compat/17.1.1_preact@10.7.3
       react-is: 18.1.0
       use-sync-external-store: 1.1.0_@preact+compat@17.1.0
     dev: false
@@ -5246,7 +5253,7 @@ packages:
       history: 5.3.0
     dev: true
 
-  /react-toastify/9.0.3_lonhjgco4xnhrzzgjg2mqrieza:
+  /react-toastify/9.0.3_pffmifykyxbrrjey6a6rv2rnvu:
     resolution: {integrity: sha512-0QZJk0SqYBxouRBGCFU3ymvjlwimRRhVH7SzqGRiVrQ001KSoUNbGKx9Yq42aoPv18n45yJzEFG82zqv3HnASg==}
     peerDependencies:
       react: '>=16'
@@ -5254,7 +5261,7 @@ packages:
     dependencies:
       clsx: 1.1.1
       react: /@preact/compat/17.1.0_preact@10.7.3
-      react-dom: /@preact/compat/17.1.0_preact@10.7.3
+      react-dom: /@preact/compat/17.1.1_preact@10.7.3
     dev: false
 
   /readable-stream/2.3.7:
