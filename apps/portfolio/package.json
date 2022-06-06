@@ -27,7 +27,7 @@
     "perfect-scrollbar": "^1.5.5",
     "preact": "^10.7.3",
     "react": "npm:@preact/compat@^17.1.0",
-    "react-dom": "npm:@preact/compat@^17.0.3",
+    "react-dom": "npm:@preact/compat@^17.1.0",
     "react-hook-form": "^7.31.3",
     "react-redux": "^8.0.2",
     "react-toastify": "^9.0.3",
