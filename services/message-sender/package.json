@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "wrangler dev --local"
   },
-  "dependencies": {},
   "devDependencies": {
+    "vercel": "^25.0.1",
     "wrangler": "^2.0.7"
   }
 }
