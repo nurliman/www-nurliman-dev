@@ -45,7 +45,7 @@ importers:
       next-build-id: ^3.0.0
       next-compose-plugins: ^2.2.1
       next-optimized-classnames: npm:@nurliman/next-optimized-classnames@^1.0.4
-      next-plugin-preact: ^3.0.6
+      next-plugin-preact: ^3.0.7
       next-seo: ^5.4.0
       next-sitemap: ^3.0.5
       perfect-scrollbar: ^1.5.5
@@ -105,7 +105,7 @@ importers:
       next-build-id: 3.0.0
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
-      next-plugin-preact: 3.0.6_m27vfszu2cmd4ckj32gdasdale
+      next-plugin-preact: 3.0.7_m27vfszu2cmd4ckj32gdasdale
       next-sitemap: 3.0.5_next@12.1.6
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.14
@@ -3953,8 +3953,8 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: true
 
-  /next-plugin-preact/3.0.6_m27vfszu2cmd4ckj32gdasdale:
-    resolution: {integrity: sha512-Ze8c8h0jaCPbG0X9T5jJpSDtrfvU9NLlt+DJWtxOu2fn6qPbNU3s61F1hTcldZb3IbpXkp5iGnhPCdgGZEGrCQ==}
+  /next-plugin-preact/3.0.7_m27vfszu2cmd4ckj32gdasdale:
+    resolution: {integrity: sha512-8Xl+SJT3FCZHS7R/6Gana6e95o09UpiyCsK0cw8P/KW2M+lQcYIwIt4ZLZd+K9TW3JZx6KJDLqVbq0Kd6KZsIg==}
     requiresBuild: true
     peerDependencies:
       preact: '>=10'
