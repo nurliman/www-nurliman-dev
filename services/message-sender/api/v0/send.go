@@ -30,6 +30,12 @@ func getEnvDefault(key string, def string) string {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "OPTIONS" {
+		w.WriteHeader(200)
+		w.Write([]byte{})
+		return
+	}
+
 	if r.Method != "POST" {
 		w.WriteHeader(404)
 		w.Write([]byte("Not Found!"))
