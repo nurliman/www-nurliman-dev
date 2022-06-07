@@ -36,7 +36,7 @@ const ContactForm: React.FC<Props> = ({ className }) => {
 
   const onSubmit: SubmitHandler<Inputs> = useCallback(async (data, e) => {
     try {
-      const url = MESSAGE_SENDER_SERVICE_HOST + "/v0/send";
+      const url = MESSAGE_SENDER_SERVICE_HOST + "/api/v0/send";
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
