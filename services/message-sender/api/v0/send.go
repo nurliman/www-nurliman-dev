@@ -54,6 +54,24 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	senderEmail := os.Getenv("SENDER_EMAIL")
+
+	if senderEmail == "" {
+		log.Panicln("Error: Please provide env.SENDER_EMAIL")
+
+		payload := map[string]string{
+			"error":   "Internal Server Error",
+			"message": "Some environment variables is not provided.",
+		}
+
+		payloadJson, _ := json.Marshal(payload)
+
+		w.WriteHeader(500)
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(payloadJson)
+		return
+	}
+
 	recipientEmail := getEnvDefault("RECIPIENT_EMAIL", "nurlimand@gmail.com")
 
 	body := new(RequestBody)
@@ -93,7 +111,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	from := mail.NewEmail(body.Name, "test@example.com")
+	from := mail.NewEmail(body.Name, senderEmail)
 	to := mail.NewEmail("Nurliman Diara Aria", recipientEmail)
 	replyTo := mail.NewEmail(body.Name, body.Email)
 	htmlContent := fmt.Sprintf("<p>%s</p>", body.Message)
