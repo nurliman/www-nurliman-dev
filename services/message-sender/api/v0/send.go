@@ -54,7 +54,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	myEmail := getEnvDefault("MY_EMAIL", "nurlimand@gmail.com")
+	recipientEmail := getEnvDefault("RECIPIENT_EMAIL", "nurlimand@gmail.com")
 
 	body := new(RequestBody)
 	err := json.NewDecoder(r.Body).Decode(&body)
@@ -94,7 +94,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	from := mail.NewEmail(body.Name, "test@example.com")
-	to := mail.NewEmail("Nurliman Diara Aria", myEmail)
+	to := mail.NewEmail("Nurliman Diara Aria", recipientEmail)
 	replyTo := mail.NewEmail(body.Name, body.Email)
 	htmlContent := fmt.Sprintf("<p>%s</p>", body.Message)
 	message := mail.NewSingleEmail(from, body.Subject, to, body.Message, htmlContent).SetReplyTo(replyTo)
