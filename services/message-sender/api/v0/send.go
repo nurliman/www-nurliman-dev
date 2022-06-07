@@ -21,6 +21,14 @@ type RequestBody struct {
 
 var Validator = validator.New()
 
+func getEnvDefault(key string, def string) string {
+	val, ok := os.LookupEnv(key)
+	if !ok {
+		return def
+	}
+	return val
+}
+
 func Handler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(404)
@@ -45,6 +53,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		w.Write(payloadJson)
 		return
 	}
+
+	myEmail := getEnvDefault("MY_EMAIL", "nurlimand@gmail.com")
 
 	body := new(RequestBody)
 	err := json.NewDecoder(r.Body).Decode(&body)
@@ -84,7 +94,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	from := mail.NewEmail(body.Name, "test@example.com")
-	to := mail.NewEmail("Nurliman Diara Aria", "nurlimandiara@gmail.com")
+	to := mail.NewEmail("Nurliman Diara Aria", myEmail)
 	replyTo := mail.NewEmail(body.Name, body.Email)
 	htmlContent := fmt.Sprintf("<p>%s</p>", body.Message)
 	message := mail.NewSingleEmail(from, body.Subject, to, body.Message, htmlContent).SetReplyTo(replyTo)
