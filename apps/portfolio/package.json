@@ -48,7 +48,7 @@
     "cssnano": "^5.1.11",
     "eslint": "^8.17.0",
     "eslint-config-next": "^12.1.6",
-    "next": "12.1.5",
+    "next": "12.1.6",
     "next-build-id": "^3.0.0",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-classnames": "npm:@nurliman/next-optimized-classnames@^1.0.4",
