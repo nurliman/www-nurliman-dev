@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/go-playground/validator/v10"
+	"github.com/nurliman/www-nurliman-dev/message-sender/utils"
 	"github.com/sendgrid/sendgrid-go"
 	"github.com/sendgrid/sendgrid-go/helpers/mail"
 )
@@ -20,14 +21,6 @@ type RequestBody struct {
 }
 
 var Validator = validator.New()
-
-func getEnvDefault(key string, def string) string {
-	val, ok := os.LookupEnv(key)
-	if !ok {
-		return def
-	}
-	return val
-}
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "OPTIONS" {
@@ -78,7 +71,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	recipientEmail := getEnvDefault("RECIPIENT_EMAIL", "nurlimand@gmail.com")
+	recipientEmail := utils.GetEnvDefault("RECIPIENT_EMAIL", "nurlimand@gmail.com")
 
 	body := new(RequestBody)
 	err := json.NewDecoder(r.Body).Decode(&body)
