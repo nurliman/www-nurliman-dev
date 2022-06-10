@@ -56,7 +56,7 @@ importers:
       preact-render-to-string: ^5.2.0
       react: npm:@preact/compat@^17.1.1
       react-dom: npm:@preact/compat@^17.1.1
-      react-hook-form: ^7.31.3
+      react-hook-form: ^7.32.0
       react-redux: ^8.0.2
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
       react-toastify: ^9.0.4
@@ -82,7 +82,7 @@ importers:
       preact: 10.7.3
       react: /@preact/compat/17.1.1_preact@10.7.3
       react-dom: /@preact/compat/17.1.1_preact@10.7.3
-      react-hook-form: 7.31.3_@preact+compat@17.1.1
+      react-hook-form: 7.32.0_@preact+compat@17.1.1
       react-redux: 8.0.2_dgna2jgn5afipjszhe2y4fm6du
       react-toastify: 9.0.4_dmmjpkrptnkrz2kzqikv5vt4mi
       reset-css: 5.0.1
@@ -4719,8 +4719,8 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
-  /react-hook-form/7.31.3_@preact+compat@17.1.1:
-    resolution: {integrity: sha512-NVZdCWViIWXXXlQ3jxVQH0NuNfwPf8A/0KvuCxrM9qxtP1qYosfR2ZudarziFrVOC7eTUbWbm1T4OyYCwv9oSQ==}
+  /react-hook-form/7.32.0_@preact+compat@17.1.1:
+    resolution: {integrity: sha512-AFUwl9MwVVnZZsFZW7Egc8PVyWem6c6/9FBq29Acsikm+8ecJCkqOn2Tl48GApFnXBgoBBEHC3zosjYvPfsGNg==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
