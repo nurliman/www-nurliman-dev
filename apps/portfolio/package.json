@@ -28,7 +28,7 @@
     "preact": "^10.7.3",
     "react": "npm:@preact/compat@^17.1.1",
     "react-dom": "npm:@preact/compat@^17.1.1",
-    "react-hook-form": "^7.32.0",
+    "react-hook-form": "^7.32.1",
     "react-redux": "^8.0.2",
     "react-toastify": "^9.0.4",
     "reset-css": "^5.0.1",
