@@ -5,13 +5,13 @@ importers:
   .:
     specifiers:
       husky: ^8.0.1
-      lint-staged: ^13.0.1
+      lint-staged: ^13.0.2
       prettier: ^2.7.0
       pretty-quick: ^3.1.3
       turbo: ^1.2.16
     devDependencies:
       husky: 8.0.1
-      lint-staged: 13.0.1
+      lint-staged: 13.0.2
       prettier: 2.7.0
       pretty-quick: 3.1.3_prettier@2.7.0
       turbo: 1.2.16
@@ -3115,7 +3115,7 @@ packages:
     dev: true
 
   /isexe/2.0.0:
-    resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
+    resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
   /js-tokens/4.0.0:
@@ -3203,8 +3203,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /lint-staged/13.0.1:
-    resolution: {integrity: sha512-Ykaf4QTi0a02BF7cnq7JIPGOJxH4TkNMWhSlJdH9wOekd0X+gog47Jfh/0L31DqZe5AiydLGC7LkPqpaNm+Kvg==}
+  /lint-staged/13.0.2:
+    resolution: {integrity: sha512-qQLfLTh9z34eMzfEHENC+QBskZfxjomrf+snF3xJ4BzilORbD989NLqQ00ughsF/A+PT41e87+WsMFabf9++pQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -5313,7 +5313,7 @@ packages:
     dev: true
 
   /through/2.3.8:
-    resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=}
+    resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
     dev: true
 
   /to-readable-stream/1.0.0:
