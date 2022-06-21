@@ -59,7 +59,7 @@ importers:
       react-hook-form: ^7.32.1
       react-redux: ^8.0.2
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
-      react-toastify: ^9.0.4
+      react-toastify: ^9.0.5
       reset-css: ^5.0.1
       sass: ^1.52.3
       ssr-window: ^4.0.2
@@ -84,7 +84,7 @@ importers:
       react-dom: /@preact/compat/17.1.1_preact@10.8.1
       react-hook-form: 7.32.1_@preact+compat@17.1.1
       react-redux: 8.0.2_dgna2jgn5afipjszhe2y4fm6du
-      react-toastify: 9.0.4_dmmjpkrptnkrz2kzqikv5vt4mi
+      react-toastify: 9.0.5_dmmjpkrptnkrz2kzqikv5vt4mi
       reset-css: 5.0.1
       ssr-window: 4.0.2
       use-media: 1.4.0_@preact+compat@17.1.1
@@ -4785,8 +4785,8 @@ packages:
       history: 5.3.0
     dev: true
 
-  /react-toastify/9.0.4_dmmjpkrptnkrz2kzqikv5vt4mi:
-    resolution: {integrity: sha512-MYmJ1V5F6DEU+TFxBb+pGGsveFPt4tjr4yK+TopXkU3sXPD9F2tFhX+G2HBLZpqObT2O6Z9jbXSg3JpaxuWtWw==}
+  /react-toastify/9.0.5_dmmjpkrptnkrz2kzqikv5vt4mi:
+    resolution: {integrity: sha512-dszPCeQINY+Nm6HmsiAXT/7wsazPqv0S/RuhIYLAW+fTKcd3T1iRjZG0XqrN9nvAzqaE5J6uxMaiBrOevxjY8g==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
