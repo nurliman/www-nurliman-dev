@@ -25,7 +25,7 @@
     "modern-normalize": "^1.1.0",
     "next-seo": "^5.4.0",
     "perfect-scrollbar": "^1.5.5",
-    "preact": "^10.8.1",
+    "preact": "^10.8.2",
     "react": "npm:@preact/compat@^17.1.1",
     "react-dom": "npm:@preact/compat@^17.1.1",
     "react-hook-form": "^7.32.2",
