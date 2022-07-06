@@ -34,7 +34,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.30.0
       '@typescript-eslint/parser': ^5.30.0
       bootstrap: 4.1.3
-      clsx: ^1.1.1
+      clsx: ^1.2.1
       cross-env: ^7.0.3
       cssnano: ^5.1.12
       dayjs: ^1.11.3
@@ -74,7 +74,7 @@ importers:
       '@reduxjs/toolkit': 1.8.2_zif3n4hbcrsef6yakwe2z3yz2a
       '@rooks/use-boundingclientrect': 4.11.2_@preact+compat@17.1.1
       bootstrap: 4.1.3
-      clsx: 1.1.1
+      clsx: 1.2.1
       dayjs: 1.11.3
       modern-normalize: 1.1.0
       next-seo: 5.4.0_yt7rdcz67nexoa4mw7qcsushuq
@@ -1587,8 +1587,8 @@ packages:
       mimic-response: 1.0.1
     dev: true
 
-  /clsx/1.1.1:
-    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
     engines: {node: '>=6'}
     dev: false
 
@@ -4795,7 +4795,7 @@ packages:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      clsx: 1.1.1
+      clsx: 1.2.1
       react: /@preact/compat/17.1.1_preact@10.8.2
       react-dom: /@preact/compat/17.1.1_preact@10.8.2
     dev: false
