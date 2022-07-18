@@ -59,7 +59,7 @@ importers:
       react-hook-form: ^7.33.1
       react-redux: ^8.0.2
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
-      react-toastify: ^9.0.5
+      react-toastify: ^9.0.6
       reset-css: ^5.0.1
       sass: ^1.53.0
       ssr-window: ^4.0.2
@@ -84,7 +84,7 @@ importers:
       react-dom: /@preact/compat/17.1.1_preact@10.8.2
       react-hook-form: 7.33.1_@preact+compat@17.1.1
       react-redux: 8.0.2_dgna2jgn5afipjszhe2y4fm6du
-      react-toastify: 9.0.5_dmmjpkrptnkrz2kzqikv5vt4mi
+      react-toastify: 9.0.6_dmmjpkrptnkrz2kzqikv5vt4mi
       reset-css: 5.0.1
       ssr-window: 4.0.2
       use-media: 1.4.0_@preact+compat@17.1.1
@@ -4750,8 +4750,8 @@ packages:
       use-sync-external-store: 1.1.0_@preact+compat@17.1.1
     dev: false
 
-  /react-toastify/9.0.5_dmmjpkrptnkrz2kzqikv5vt4mi:
-    resolution: {integrity: sha512-dszPCeQINY+Nm6HmsiAXT/7wsazPqv0S/RuhIYLAW+fTKcd3T1iRjZG0XqrN9nvAzqaE5J6uxMaiBrOevxjY8g==}
+  /react-toastify/9.0.6_dmmjpkrptnkrz2kzqikv5vt4mi:
+    resolution: {integrity: sha512-ISwZx8o+FmlT9mHuK/vJP3m3K6VOZR3i9W40xod/xxxNutIJHRBPE1AZa5lJFjzwMUURXnkHg1F1E672fJMNJA==}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
