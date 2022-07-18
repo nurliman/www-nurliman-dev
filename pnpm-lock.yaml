@@ -47,7 +47,7 @@ importers:
       next-optimized-classnames: npm:@nurliman/next-optimized-classnames@^1.0.4
       next-plugin-preact: ^3.0.7
       next-seo: ^5.4.0
-      next-sitemap: ^3.1.7
+      next-sitemap: ^3.1.11
       perfect-scrollbar: ^1.5.5
       postcss: ^8.4.14
       postcss-flexbugs-fixes: ^5.0.2
@@ -106,7 +106,7 @@ importers:
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
       next-plugin-preact: 3.0.7_axjr7mdp46p7bgawxov3pt5x3q
-      next-sitemap: 3.1.7_next@12.1.6
+      next-sitemap: 3.1.11_next@12.1.6
       postcss: 8.4.14
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.14
       postcss-preset-env: 7.7.2_postcss@8.4.14
@@ -142,8 +142,8 @@ packages:
     hasBin: true
     dev: false
 
-  /@corex/deepmerge/4.0.26:
-    resolution: {integrity: sha512-Tp0u2/h45uWbZhsjazK9W6WwwTVBqCIY+1qJHfy6QWN0qUw6vCWLnJhB+Gg9dpQZ26q3ygd6aj49DtXUDq56JQ==}
+  /@corex/deepmerge/4.0.29:
+    resolution: {integrity: sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==}
     dev: true
 
   /@csstools/postcss-cascade-layers/1.0.4_postcss@8.4.14:
@@ -3550,15 +3550,15 @@ packages:
       react-dom: /@preact/compat/17.1.1_preact@10.8.2
     dev: false
 
-  /next-sitemap/3.1.7_next@12.1.6:
-    resolution: {integrity: sha512-8o+rUftEtZ7d3s2BedBLeN0HZHPAtcvliA/YesP/2o7Llb5svvM/pqVBde17MgTEuGMZpHz6nqruHKGCt53G3Q==}
+  /next-sitemap/3.1.11_next@12.1.6:
+    resolution: {integrity: sha512-qHq/nVzqEL3Sd5N+1ZnqoY2xN4BSmgEkIlvCjFOtMMIyl8Tr/xmVZgVau/8aZsDtxoXPKG/NzdonZssvpK4Jdw==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       '@next/env': '*'
       next: '*'
     dependencies:
-      '@corex/deepmerge': 4.0.26
+      '@corex/deepmerge': 4.0.29
       minimist: 1.2.6
       next: 12.1.6_fq6qtyvuzj7wzizluknp3nxma4
     dev: true
