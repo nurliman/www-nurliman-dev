@@ -59,7 +59,7 @@ const initialState = {
     { name: "Node.js", value: 0.93 },
     { name: "HTML/CSS", value: 0.88 },
     { name: "Git/Github", value: 0.85 },
-    { name: "Go", value: 0.77 },
+    { name: "Go", value: 0.85 },
     { name: "Wordpress", value: 0.9 },
   ],
   otherSkills: [
