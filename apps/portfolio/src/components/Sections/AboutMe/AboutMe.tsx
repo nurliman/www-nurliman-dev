@@ -112,7 +112,7 @@ export default function AboutMeSection() {
           <div className={styles.whatIDoText}>
             <h4>Cloud Development</h4>
             <p>
-              Build and Manage VMs, Cloud Databases, Cloud Computing, Cloud Storage, Cloud Network,
+              Build and Manage Kubernetes, VMs, Cloud Databases, Cloud Computing, Cloud Storage, Cloud Network,
               Load Balancers etc with Google Cloud Platform.
             </p>
           </div>

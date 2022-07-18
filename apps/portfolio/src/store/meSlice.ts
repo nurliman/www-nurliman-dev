@@ -51,6 +51,7 @@ const initialState = {
     },
   ],
   programmingSkills: [
+    { name: "Kubernetes", value:0.77 },
     { name: "JavaScript/TypeScript", value: 0.97 },
     { name: "React", value: 0.94 },
     { name: "React Native", value: 0.89 },
@@ -79,6 +80,7 @@ const initialState = {
     "Serverless",
     "Jamstack",
     "SEO",
+    "Kubernetes",
     "Monorepo",
     "Microservice",
     "REST API",
