@@ -30,7 +30,7 @@
     "react-dom": "npm:@preact/compat@^17.1.1",
     "react-hook-form": "^7.33.1",
     "react-redux": "^8.0.2",
-    "react-toastify": "^9.0.6",
+    "react-toastify": "^9.0.7",
     "reset-css": "^5.0.1",
     "ssr-window": "^4.0.2",
     "use-media": "^1.4.0"
