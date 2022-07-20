@@ -46,7 +46,7 @@ importers:
       next-compose-plugins: ^2.2.1
       next-optimized-classnames: npm:@nurliman/next-optimized-classnames@^1.0.4
       next-plugin-preact: ^3.0.7
-      next-seo: ^5.4.0
+      next-seo: ^5.5.0
       next-sitemap: ^3.1.11
       perfect-scrollbar: ^1.5.5
       postcss: ^8.4.14
@@ -77,7 +77,7 @@ importers:
       clsx: 1.2.1
       dayjs: 1.11.3
       modern-normalize: 1.1.0
-      next-seo: 5.4.0_yt7rdcz67nexoa4mw7qcsushuq
+      next-seo: 5.5.0_yt7rdcz67nexoa4mw7qcsushuq
       perfect-scrollbar: 1.5.5
       preact: 10.8.2
       react: /@preact/compat/17.1.1_preact@10.8.2
@@ -3538,8 +3538,8 @@ packages:
       - webpack
     dev: true
 
-  /next-seo/5.4.0_yt7rdcz67nexoa4mw7qcsushuq:
-    resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
+  /next-seo/5.5.0_yt7rdcz67nexoa4mw7qcsushuq:
+    resolution: {integrity: sha512-5ouBHFtx8YrSDW44lj0qIEQ+oMcz6stgoITB+SqHUZbhgizoJsyLmq73gJ0lxtEKpcN8vG2QgRIJfdb8OAPChw==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
