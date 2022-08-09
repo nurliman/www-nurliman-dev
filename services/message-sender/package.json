@@ -5,6 +5,6 @@
   "main": "index.js",
   "scripts": {},
   "devDependencies": {
-    "vercel": "^27.1.5"
+    "vercel": "^27.4.0"
   }
 }
