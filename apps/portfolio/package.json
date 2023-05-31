@@ -45,7 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.1.12",
+    "cssnano": "^5.1.15",
     "eslint": "^8.20.0",
     "eslint-config-next": "^12.2.2",
     "next": "12.2.2",
