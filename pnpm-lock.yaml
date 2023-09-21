@@ -61,7 +61,7 @@ importers:
       react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
       react-toastify: ^9.0.7
       reset-css: ^5.0.1
-      sass: ^1.53.0
+      sass: ^1.68.0
       ssr-window: ^4.0.2
       typescript: ^4.7.4
       use-media: ^1.4.0
@@ -101,7 +101,7 @@ importers:
       cssnano: 5.1.12_postcss@8.4.14
       eslint: 8.20.0
       eslint-config-next: 12.2.2_he2ccbldppg44uulnyq4rwocfa
-      next: 12.2.2_fq6qtyvuzj7wzizluknp3nxma4
+      next: 12.2.2_yozl2wyb2u2xqmfxypmw6lg3zm
       next-build-id: 3.0.0
       next-compose-plugins: 2.2.1
       next-optimized-classnames: /@nurliman/next-optimized-classnames/1.0.4
@@ -112,7 +112,7 @@ importers:
       postcss-preset-env: 7.7.2_postcss@8.4.14
       preact-render-to-string: 5.2.1_preact@10.10.0
       react-ssr-prepass: /preact-ssr-prepass/1.2.0_preact@10.10.0
-      sass: 1.53.0
+      sass: 1.68.0
       typescript: 4.7.4
 
   services/message-sender:
@@ -579,7 +579,7 @@ packages:
       '@prefresh/core': 1.3.4_preact@10.10.0
       '@prefresh/utils': 1.1.3
       '@prefresh/webpack': 3.3.3_2gmpy544mb5sundx5pqfxap2tq
-      next: 12.2.2_fq6qtyvuzj7wzizluknp3nxma4
+      next: 12.2.2_yozl2wyb2u2xqmfxypmw6lg3zm
       preact: 10.10.0
     dev: true
 
@@ -720,7 +720,7 @@ packages:
       '@sentry/types': 7.7.0
       '@sentry/utils': 7.7.0
       '@sentry/webpack-plugin': 1.18.9
-      next: 12.2.2_fq6qtyvuzj7wzizluknp3nxma4
+      next: 12.2.2_yozl2wyb2u2xqmfxypmw6lg3zm
       react: /@preact/compat/17.1.1_preact@10.10.0
       tslib: 1.14.1
     transitivePeerDependencies:
@@ -3531,7 +3531,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.2.2_fq6qtyvuzj7wzizluknp3nxma4
+      next: 12.2.2_yozl2wyb2u2xqmfxypmw6lg3zm
       react: /@preact/compat/17.1.1_preact@10.10.0
       react-dom: /@preact/compat/17.1.1_preact@10.10.0
     dev: false
@@ -3546,10 +3546,10 @@ packages:
     dependencies:
       '@corex/deepmerge': 4.0.29
       minimist: 1.2.6
-      next: 12.2.2_fq6qtyvuzj7wzizluknp3nxma4
+      next: 12.2.2_yozl2wyb2u2xqmfxypmw6lg3zm
     dev: true
 
-  /next/12.2.2_fq6qtyvuzj7wzizluknp3nxma4:
+  /next/12.2.2_yozl2wyb2u2xqmfxypmw6lg3zm:
     resolution: {integrity: sha512-zAYFY45aBry/PlKONqtlloRFqU/We3zWYdn2NoGvDZkoYUYQSJC8WMcalS5C19MxbCZLUVCX7D7a6gTGgl2yLg==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -3573,7 +3573,7 @@ packages:
       postcss: 8.4.5
       react: /@preact/compat/17.1.1_preact@10.10.0
       react-dom: /@preact/compat/17.1.1_preact@10.10.0
-      sass: 1.53.0
+      sass: 1.68.0
       styled-jsx: 5.0.2_@preact+compat@17.1.1
       use-sync-external-store: 1.1.0_@preact+compat@17.1.1
     optionalDependencies:
@@ -4909,9 +4909,9 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
 
-  /sass/1.53.0:
-    resolution: {integrity: sha512-zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==}
-    engines: {node: '>=12.0.0'}
+  /sass/1.68.0:
+    resolution: {integrity: sha512-Lmj9lM/fef0nQswm1J2HJcEsBUba4wgNx2fea6yJHODREoMFnwRpZydBnX/RjyXw2REIwdkbqE4hrTo4qfDBUA==}
+    engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
