@@ -1,0 +1,10 @@
+{
+  "extends": ["@tsconfig/node18/tsconfig.json"],
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "composite": true,
+    "esModuleInterop": true
+  },
+  "include": ["tailwind.config.ts"]
+}
