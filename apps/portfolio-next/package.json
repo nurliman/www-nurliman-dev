@@ -11,11 +11,11 @@
     "lint": "eslint --cache --fix ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.3.1",
     "@astrojs/tailwind": "^5.0.2",
     "astro": "^3.5.5"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.3.1",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
     "eslint": "^8.53.0",
