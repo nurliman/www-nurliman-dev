@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ."
+    "lint": "eslint --cache --fix ."
   },
   "dependencies": {
     "astro": "^3.5.5"
