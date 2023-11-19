@@ -32,7 +32,8 @@
 <button
   type="button"
   class="fixed inset-0 z-10 bg-black opacity-0"
-  style:pointer-events={menuOpened ? "auto" : "none"}
+  class:pointer-events-auto={menuOpened}
+  class:pointer-events-none={!menuOpened}
   style:opacity={$backdropOpacity}
   on:click={toggleMenu}
 />
