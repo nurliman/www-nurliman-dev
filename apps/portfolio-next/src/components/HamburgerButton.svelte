@@ -8,15 +8,17 @@
     alt="Menu"
     height="24px"
     width="24px"
-    class="absolute-center opacity-1 transition-opacity"
-    class:!opacity-0={isOpen}
+    class="absolute-center transition-opacity"
+    class:opacity-0={isOpen}
+    class:opacity-100={!isOpen}
   />
   <img
     src="/assets/menu-close.svg"
     alt="Close"
     height="24px"
     width="24px"
-    class="absolute-center opacity-0 transition-opacity"
-    class:!opacity-100={isOpen}
+    class="absolute-center transition-opacity"
+    class:opacity-0={!isOpen}
+    class:opacity-100={isOpen}
   />
 </button>
