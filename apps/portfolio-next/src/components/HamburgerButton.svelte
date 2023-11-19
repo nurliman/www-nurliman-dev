@@ -2,7 +2,7 @@
   export let isOpen: boolean;
 </script>
 
-<button class="relative h-auto min-h-[3rem] w-12 border-r" on:click>
+<button class="flex-center relative h-auto min-h-[3rem] w-12 border-r" on:click>
   <img
     src="/assets/menu-burger.svg"
     alt="Menu"

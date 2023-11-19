@@ -19,6 +19,11 @@ export default {
           left: "50%",
           transform: "translate(-50%, -50%)",
         },
+        ".flex-center": {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        },
       });
     }),
   ],

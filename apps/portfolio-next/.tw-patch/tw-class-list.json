@@ -9,6 +9,7 @@
   "contents",
   "fixed",
   "flex",
+  "flex-center",
   "flex-col",
   "h-auto",
   "inset-0",
