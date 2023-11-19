@@ -1,4 +1,6 @@
 ---
+import "@/fonts/transducer/plain.css";
+
 type Props = {
   title?: string;
   description?: string;
@@ -24,3 +26,9 @@ const {
     <slot />
   </body>
 </html>
+
+<style>
+  body {
+    font-family: "Transducer", sans-serif;
+  }
+</style>
