@@ -8,7 +8,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:astro/recommended"
+    "plugin:astro/recommended",
+    "plugin:svelte/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
@@ -21,6 +22,17 @@
         "extraFileExtensions": [".astro"]
       },
       "rules": {}
+    },
+    {
+      "files": ["*.svelte"],
+      "parser": "svelte-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".svelte"]
+      },
+      "rules": {
+        "svelte/valid-compile": "warn"
+      }
     }
   ]
 }
