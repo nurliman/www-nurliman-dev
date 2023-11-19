@@ -199,6 +199,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^6.11.0
         version: 6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      autoprefixer:
+        specifier: ^10.4.16
+        version: 10.4.16(postcss@8.4.30)
       eslint:
         specifier: ^8.54.0
         version: 8.54.0
@@ -208,6 +211,15 @@ importers:
       eslint-plugin-svelte:
         specifier: ^2.35.0
         version: 2.35.0(eslint@8.54.0)(svelte@5.0.0-next.8)
+      postcss:
+        specifier: ^8.4.30
+        version: 8.4.30
+      postcss-flexbugs-fixes:
+        specifier: ^5.0.2
+        version: 5.0.2(postcss@8.4.30)
+      postcss-preset-env:
+        specifier: ^9.1.4
+        version: 9.1.4(postcss@8.4.30)
       tailwindcss:
         specifier: ^3.3.5
         version: 3.3.5
@@ -6936,11 +6948,6 @@ packages:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  /nanoid@3.3.4:
-    resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -8190,7 +8197,7 @@ packages:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
-      nanoid: 3.3.4
+      nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
