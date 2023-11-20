@@ -7,6 +7,11 @@ import utwm from "unplugin-tailwindcss-mangle/vite";
 export default defineConfig({
   integrations: [tailwind({ applyBaseStyles: false }), svelte()],
   vite: {
-    plugins: [utwm()],
+    plugins: [
+      {
+        ...utwm(),
+        apply: "build",
+      },
+    ],
   },
 });
