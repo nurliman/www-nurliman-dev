@@ -22,9 +22,23 @@ export default {
     plugin(({ addBase, addComponents, addUtilities, theme }) => {
       addBase({
         body: {
-          fontFamily: theme("fontFamily.transducer"),
           padding: "0",
           margin: "0",
+          fontFamily: `
+            ${theme("fontFamily.transducer")},
+            -apple-system,
+            BlinkMacSystemFont,
+            Segoe UI,
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            Fira Sans,
+            Droid Sans,
+            Helvetica Neue
+          `,
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
         },
       });
 
