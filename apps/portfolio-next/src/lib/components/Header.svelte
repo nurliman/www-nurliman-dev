@@ -14,14 +14,22 @@
     duration: 300,
     easing: cubicOut,
   });
+  const openMenu = () => {
+    menuX.set(0);
+    backdropOpacity.set(0.5);
+    menuOpened = true;
+  };
+  const closeMenu = () => {
+    menuX.set(-100);
+    backdropOpacity.set(0);
+    menuOpened = false;
+  };
   const toggleMenu = () => {
-    menuX.set(menuOpened ? -100 : 0, {
-      delay: menuOpened ? 0 : 80,
-    });
-    backdropOpacity.set(menuOpened ? 0 : 0.5, {
-      delay: menuOpened ? 80 : 0,
-    });
-    menuOpened = !menuOpened;
+    if (menuOpened) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   };
 </script>
 
@@ -48,7 +56,7 @@
     <ul class="flex flex-col text-xs">
       {#each sections as section (section.id)}
         <li class="contents">
-          <a href={section.link} class="the-white-button border-b px-8 py-3">
+          <a href={section.link} class="the-white-button border-b px-8 py-3" on:click={closeMenu}>
             {section.name}
           </a>
         </li>
