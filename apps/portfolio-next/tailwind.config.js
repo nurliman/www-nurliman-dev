@@ -5,9 +5,9 @@ export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     extend: {
-      borderColor: {
-        DEFAULT: "colors.black",
-      },
+      borderColor: (theme) => ({
+        DEFAULT: theme("colors.black"),
+      }),
       fontFamily: {
         transducer: [`"Transducer"`, "sans-serif"],
         "transducer-condensed": [`"TransducerCondensed"`, "sans-serif"],
