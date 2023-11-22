@@ -48,7 +48,7 @@
     <ul class="flex flex-col text-xs">
       {#each sections as section (section.id)}
         <li class="contents">
-          <a href={section.link} class="border-b px-8 py-3">
+          <a href={section.link} class="the-white-button border-b px-8 py-3">
             {section.name}
           </a>
         </li>

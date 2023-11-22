@@ -11,7 +11,21 @@ export default {
     },
   },
   plugins: [
-    plugin(({ addUtilities }) => {
+    plugin(({ addComponents, addUtilities, theme }) => {
+      addComponents({
+        ".the-white-button": {
+          color: theme("colors.black"),
+          backgroundColor: theme("colors.white"),
+          transition: "background-color 150ms ease-in-out",
+          "&:hover": {
+            backgroundColor: theme("colors.zinc.100"),
+          },
+          "&:active": {
+            backgroundColor: theme("colors.zinc.200"),
+          },
+        },
+      });
+
       addUtilities({
         ".absolute-center": {
           position: "absolute",
