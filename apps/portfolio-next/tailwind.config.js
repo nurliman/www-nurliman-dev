@@ -8,10 +8,26 @@ export default {
       borderColor: {
         DEFAULT: "colors.black",
       },
+      fontFamily: {
+        transducer: [`"Transducer"`, "sans-serif"],
+        "transducer-condensed": [`"TransducerCondensed"`, "sans-serif"],
+        "transducer-condensed-oblique": [`"TransducerCondensedOblique"`, "sans-serif"],
+        "transducer-extended": [`"TransducerExtended"`, "sans-serif"],
+        "transducer-extended-oblique": [`"TransducerExtendedOblique"`, "sans-serif"],
+        "transducer-oblique": [`"TransducerOblique"`, "sans-serif"],
+      },
     },
   },
   plugins: [
-    plugin(({ addComponents, addUtilities, theme }) => {
+    plugin(({ addBase, addComponents, addUtilities, theme }) => {
+      addBase({
+        body: {
+          fontFamily: theme("fontFamily.transducer"),
+          padding: "0",
+          margin: "0",
+        },
+      });
+
       addComponents({
         ".the-white-button": {
           color: theme("colors.black"),
