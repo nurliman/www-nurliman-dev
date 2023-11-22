@@ -53,10 +53,14 @@
   style:top={headerHeight + "px"}
 >
   <nav class="contents">
-    <ul class="flex flex-col text-xs">
+    <ul class="flex flex-col text-xs uppercase">
       {#each sections as section (section.id)}
         <li class="contents">
-          <a href={section.link} class="the-white-button border-b px-8 py-3" on:click={closeMenu}>
+          <a
+            href={section.link}
+            class="the-white-button border-b px-8 py-3 hover:font-semibold"
+            on:click={closeMenu}
+          >
             {section.name}
           </a>
         </li>
