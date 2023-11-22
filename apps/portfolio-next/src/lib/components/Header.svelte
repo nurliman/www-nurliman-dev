@@ -1,7 +1,7 @@
 <script lang="ts">
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
-  import { sections } from "@/data/sections";
+  import { sections } from "$lib/data/sections";
   import HamburgerButton from "./HamburgerButton.svelte";
 
   let headerHeight = 50;

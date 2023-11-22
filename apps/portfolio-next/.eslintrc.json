@@ -8,30 +8,21 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:astro/recommended",
     "plugin:svelte/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "extraFileExtensions": [".svelte"]
+  },
   "overrides": [
-    {
-      "files": ["*.astro"],
-      "parser": "astro-eslint-parser",
-      "parserOptions": {
-        "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
-      },
-      "rules": {}
-    },
     {
       "files": ["*.svelte"],
       "parser": "svelte-eslint-parser",
       "parserOptions": {
-        "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".svelte"]
-      },
-      "rules": {
-        "svelte/valid-compile": "warn"
+        "parser": "@typescript-eslint/parser"
       }
     }
   ]
