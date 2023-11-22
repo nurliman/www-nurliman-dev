@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Transducer";
+  font-family: "TransducerCondensed";
   src:
     url("Transducer-HairlineCondensed.woff2") format("woff2"),
     url("Transducer-HairlineCondensed.woff") format("woff");
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: "Transducer";
+  font-family: "TransducerCondensed";
   src:
     url("Transducer-Condensed.woff2") format("woff2"),
     url("Transducer-Condensed.woff") format("woff");
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-  font-family: "Transducer";
+  font-family: "TransducerCondensed";
   src:
     url("Transducer-MediumCondensed.woff2") format("woff2"),
     url("Transducer-MediumCondensed.woff") format("woff");
@@ -29,7 +29,7 @@
 }
 
 @font-face {
-  font-family: "Transducer";
+  font-family: "TransducerCondensed";
   src:
     url("Transducer-BoldCondensed.woff2") format("woff2"),
     url("Transducer-BoldCondensed.woff") format("woff");
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-  font-family: "Transducer";
+  font-family: "TransducerCondensed";
   src:
     url("Transducer-BlackCondensed.woff2") format("woff2"),
     url("Transducer-BlackCondensed.woff") format("woff");
