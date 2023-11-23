@@ -1,0 +1,139 @@
+diff --git a/dist/parsers/importDeclaration.js b/dist/parsers/importDeclaration.js
+index aa87ce059ad631acfa73c09c8ccaac6703630043..9fdea2812589186b6e09271ee264373171ee8ca5 100644
+--- a/dist/parsers/importDeclaration.js
++++ b/dist/parsers/importDeclaration.js
+@@ -26,6 +26,7 @@ const path_1 = __importDefault(require("path"));
+ const fs_1 = __importStar(require("fs"));
+ const magic_string_1 = __importDefault(require("magic-string"));
+ const compiler_1 = require("svelte/compiler");
++const estree_walker_1 = require("estree-walker");
+ exports.default = (processor) => {
+     const ast = processor.ast;
+     const backup = {
+@@ -33,7 +34,7 @@ exports.default = (processor) => {
+         magicContent: processor.magicContent,
+     };
+     let importedContent = '';
+-    compiler_1.walk(ast, {
++    estree_walker_1.walk(ast, {
+         enter(baseNode) {
+             const node = baseNode;
+             if (node.type === 'Style' || node.type === 'Fragment') {
+diff --git a/dist/parsers/importDeclaration.mjs b/dist/parsers/importDeclaration.mjs
+index 4229f1223f02c49de3a242f390648943bf6215f7..070142e0fd35c4286fa67a9fe036e24e8c998db0 100644
+--- a/dist/parsers/importDeclaration.mjs
++++ b/dist/parsers/importDeclaration.mjs
+@@ -1,7 +1,8 @@
+ import path from 'path';
+ import fs, { constants } from 'fs';
+ import MagicString from 'magic-string';
+-import { parse, walk } from 'svelte/compiler';
++import { parse } from 'svelte/compiler';
++import { walk } from 'estree-walker';
+ export default (processor) => {
+     const ast = processor.ast;
+     const backup = {
+diff --git a/dist/parsers/template.js b/dist/parsers/template.js
+index 1791304f6b252c859467576ac0282baa23ea7838..20b16c72eea6f29feb9b6e81732c97f8fda08ab1 100644
+--- a/dist/parsers/template.js
++++ b/dist/parsers/template.js
+@@ -1,6 +1,6 @@
+ "use strict";
+ Object.defineProperty(exports, "__esModule", { value: true });
+-const compiler_1 = require("svelte/compiler");
++const compiler_1 = require("estree-walker");
+ const updateMultipleClasses = (processor, classNames) => {
+     const classes = classNames.split(' ');
+     const generatedClassNames = classes.reduce((accumulator, currentValue, currentIndex) => {
+diff --git a/dist/parsers/template.mjs b/dist/parsers/template.mjs
+index c77566240c711c359462b9c5b47a21857bb3401a..bf99770d0614eb9a52ca57326d05683425dbb63a 100644
+--- a/dist/parsers/template.mjs
++++ b/dist/parsers/template.mjs
+@@ -1,4 +1,4 @@
+-import { walk } from 'svelte/compiler';
++import { walk } from 'estree-walker';
+ const updateMultipleClasses = (processor, classNames) => {
+     const classes = classNames.split(' ');
+     const generatedClassNames = classes.reduce((accumulator, currentValue, currentIndex) => {
+diff --git a/dist/processors/mixed.js b/dist/processors/mixed.js
+index 210d9f3541362eeaaebb3b526f3475dfbeea3fcf..687214561423ef3f0fb77e38ca63dfe87add7e7b 100644
+--- a/dist/processors/mixed.js
++++ b/dist/processors/mixed.js
+@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+     return (mod && mod.__esModule) ? mod : { "default": mod };
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+-const compiler_1 = require("svelte/compiler");
++const compiler_1 = require("estree-walker");
+ const processor_1 = __importDefault(require("./processor"));
+ const updateSelectorBoundaries = (boundaries, start, end) => {
+     var _a;
+diff --git a/dist/processors/mixed.mjs b/dist/processors/mixed.mjs
+index 04ce1ad277706304209b33e907e14570c47e9b78..a2b1727726072d124c2d5312e287d227b75ae515 100644
+--- a/dist/processors/mixed.mjs
++++ b/dist/processors/mixed.mjs
+@@ -1,4 +1,4 @@
+-import { walk } from 'svelte/compiler';
++import { walk } from 'estree-walker';
+ import Processor from './processor.mjs';
+ const updateSelectorBoundaries = (boundaries, start, end) => {
+     const selectorBoundaries = boundaries;
+diff --git a/dist/processors/native.js b/dist/processors/native.js
+index 3f4820daa5af2677a2900442794c824d2cedf7d5..f4568e74d184cf723e42ae4014c4fb9eb27d1ee4 100644
+--- a/dist/processors/native.js
++++ b/dist/processors/native.js
+@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+     return (mod && mod.__esModule) ? mod : { "default": mod };
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+-const compiler_1 = require("svelte/compiler");
++const compiler_1 = require("estree-walker");
+ const processor_1 = __importDefault(require("./processor"));
+ const updateSelectorBoundaries = (boundaries, start, end) => {
+     var _a;
+diff --git a/dist/processors/native.mjs b/dist/processors/native.mjs
+index c299d410f0f5f37abbb205b5df6bd8124c09120e..23fb4880233a39114660c1c8e370f210c86f63f7 100644
+--- a/dist/processors/native.mjs
++++ b/dist/processors/native.mjs
+@@ -1,4 +1,4 @@
+-import { walk } from 'svelte/compiler';
++import { walk } from 'estree-walker';
+ import Processor from './processor.mjs';
+ const updateSelectorBoundaries = (boundaries, start, end) => {
+     const selectorBoundaries = boundaries;
+diff --git a/dist/processors/scoped.js b/dist/processors/scoped.js
+index ff02b800ea11e2e70ead3242bf3e6ca52598eede..e4b2570ddc386a889901092698ff81c9890a095d 100644
+--- a/dist/processors/scoped.js
++++ b/dist/processors/scoped.js
+@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
+     return (mod && mod.__esModule) ? mod : { "default": mod };
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+-const compiler_1 = require("svelte/compiler");
++const compiler_1 = require("estree-walker");
+ const processor_1 = __importDefault(require("./processor"));
+ const parser = (processor) => {
+     const ast = processor.ast;
+diff --git a/dist/processors/scoped.mjs b/dist/processors/scoped.mjs
+index 6be2a1448462be98298aecca140423c645a95086..cc12c08d3250d6aa1703d90109df3da9915277df 100644
+--- a/dist/processors/scoped.mjs
++++ b/dist/processors/scoped.mjs
+@@ -1,4 +1,4 @@
+-import { walk } from 'svelte/compiler';
++import { walk } from 'estree-walker';
+ import Processor from './processor.mjs';
+ const parser = (processor) => {
+     const ast = processor.ast;
+diff --git a/package.json b/package.json
+index 366fd592365d63dff88e583c24270e934aac7ee5..0085c49d37299c20e520f723a181a100c27f1074 100644
+--- a/package.json
++++ b/package.json
+@@ -67,7 +67,7 @@
+     "eslint-config-airbnb-base": "^14.2.0",
+     "eslint-config-prettier": "^6.15.0",
+     "eslint-plugin-import": "^2.22.1",
+-    "estree-walker": "^3.0.0",
++    "estree-walker": "^3.0.3",
+     "husky": "^4.3.0",
+     "jest": "^26.0.1",
+     "lint-staged": "^10.5.1",
