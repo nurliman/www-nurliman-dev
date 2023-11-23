@@ -3,6 +3,7 @@
   import { cubicOut } from "svelte/easing";
   import { sections } from "$lib/data/sections";
   import HamburgerButton from "./HamburgerButton.svelte";
+  import ThemeSwithcerButton from "./ThemeSwithcerButton.svelte";
 
   let headerHeight = 50;
   let menuOpened = false;
@@ -33,8 +34,10 @@
   };
 </script>
 
-<header class="sticky top-0 z-30 flex border-b-2 bg-white p-0">
+<header class="sticky top-0 z-30 flex items-center justify-between border-b-2 bg-white p-0">
   <HamburgerButton isOpen={menuOpened} on:click={toggleMenu} />
+  <div class="font-racing-sans absolute-center text-2xl md:text-4xl">nurliman.</div>
+  <ThemeSwithcerButton />
 </header>
 
 <button
