@@ -24,8 +24,8 @@
   <img
     src="/assets/sun.svg"
     alt="Sun"
-    height="26px"
-    width="26px"
+    height="27px"
+    width="27px"
     class="absolute-center transition-opacity"
     class:opacity-0={currentTheme === "light"}
     class:opacity-100={currentTheme !== "light"}
