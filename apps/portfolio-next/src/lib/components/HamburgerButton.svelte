@@ -6,8 +6,8 @@
   <img
     src="/assets/menu-burger.svg"
     alt="Menu"
-    height="24px"
-    width="24px"
+    height="28px"
+    width="28px"
     class="absolute-center transition-opacity"
     class:opacity-0={isOpen}
     class:opacity-100={!isOpen}
@@ -15,8 +15,8 @@
   <img
     src="/assets/menu-close.svg"
     alt="Close"
-    height="24px"
-    width="24px"
+    height="28px"
+    width="28px"
     class="absolute-center transition-opacity"
     class:opacity-0={!isOpen}
     class:opacity-100={isOpen}
