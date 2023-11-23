@@ -15,6 +15,7 @@ export default {
         "transducer-extended": [`"TransducerExtended"`, "sans-serif"],
         "transducer-extended-oblique": [`"TransducerExtendedOblique"`, "sans-serif"],
         "transducer-oblique": [`"TransducerOblique"`, "sans-serif"],
+        "racing-sans": [`"Racing Sans One"`, "sans-serif"],
       },
     },
   },

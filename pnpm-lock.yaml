@@ -173,6 +173,10 @@ importers:
         version: 5.2.2
 
   apps/portfolio-next:
+    dependencies:
+      '@fontsource/racing-sans-one':
+        specifier: ^5.0.17
+        version: 5.0.17
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.1.1
@@ -1592,6 +1596,10 @@ packages:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
     dev: true
+
+  /@fontsource/racing-sans-one@5.0.17:
+    resolution: {integrity: sha512-OCLmWE4+Vg9NYQrP2DinpQDhtAoZOlnnZ4fxTYJl1ZItDOjhShI26UGwuFMyquPjDwergU58CoLjLzedYXHrhg==}
+    dev: false
 
   /@fortawesome/fontawesome-common-types@6.4.2:
     resolution: {integrity: sha512-1DgP7f+XQIJbLFCTX1V2QnxVmpLdKdzzo2k8EmvDOePfchaIGQ9eCHj2up3/jNEbZuBqel5OxiaOJf37TWauRA==}
