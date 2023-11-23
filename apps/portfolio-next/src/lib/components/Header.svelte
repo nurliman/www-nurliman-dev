@@ -36,7 +36,7 @@
 
 <header class="sticky top-0 z-30 flex items-center justify-between border-b-2 bg-white p-0">
   <HamburgerButton isOpen={menuOpened} on:click={toggleMenu} />
-  <div class="font-racing-sans absolute-center text-2xl md:text-4xl">nurliman.</div>
+  <div class="font-racing-sans absolute-center text-[1.75rem] md:text-4xl">nurliman.</div>
   <ThemeSwithcerButton />
 </header>
 
