@@ -1,6 +1,6 @@
 <script lang="ts">
   import { clsx } from "clsx";
-  let isOpen: boolean;
+  let isSidebarOpen: boolean;
   let className: string | undefined = undefined;
   export { className as class, isOpen };
 </script>
@@ -19,8 +19,8 @@
     height="28px"
     width="28px"
     class="absolute-center transition-opacity"
-    class:opacity-0={isOpen}
-    class:opacity-100={!isOpen}
+    class:opacity-0={isSidebarOpen}
+    class:opacity-100={!isSidebarOpen}
   />
   <img
     src="/assets/menu-close.svg"
@@ -28,7 +28,7 @@
     height="28px"
     width="28px"
     class="absolute-center transition-opacity"
-    class:opacity-0={!isOpen}
-    class:opacity-100={isOpen}
+    class:opacity-0={!isSidebarOpen}
+    class:opacity-100={isSidebarOpen}
   />
 </button>
