@@ -13,6 +13,10 @@
     "format": "prettier --write .",
     "prepare": "tw-patch install"
   },
+  "dependencies": {
+    "@fontsource/racing-sans-one": "^5.0.17",
+    "clsx": "^2.0.0"
+  },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.1.1",
     "@sveltejs/kit": "^1.27.6",
@@ -47,8 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "dependencies": {
-    "@fontsource/racing-sans-one": "^5.0.17"
   }
 }
