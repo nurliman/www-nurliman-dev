@@ -1,8 +1,18 @@
 <script lang="ts">
-  export let isOpen: boolean;
+  import { clsx } from "clsx";
+  let isOpen: boolean;
+  let className: string | undefined = undefined;
+  export { className as class, isOpen };
 </script>
 
-<button class="flex-center the-white-button relative h-auto min-h-[3rem] w-12 border-r" on:click>
+<button
+  class={clsx(
+    "flex-center the-white-button relative",
+    "h-auto min-h-[3rem] w-12 border-r",
+    className,
+  )}
+  on:click
+>
   <img
     src="/assets/menu-burger.svg"
     alt="Menu"

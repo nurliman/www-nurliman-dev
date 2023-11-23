@@ -34,15 +34,33 @@
   };
 </script>
 
-<header class="sticky top-0 z-30 flex items-center justify-between border-b-2 bg-white p-0">
-  <HamburgerButton isOpen={menuOpened} on:click={toggleMenu} />
-  <div class="font-racing-sans absolute-center text-[1.75rem] md:text-4xl">nurliman.</div>
-  <ThemeSwithcerButton />
+<header class="sticky top-0 z-30 overflow-hidden border-b-2 bg-white p-0">
+  <div class="mx-auto flex max-w-[90rem] items-center justify-between">
+    <HamburgerButton class="md:hidden" isOpen={menuOpened} on:click={toggleMenu} />
+    <div class="logo">nurliman.</div>
+    <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
+    <nav class="hidden md:contents">
+      <ul class="flex flex-1 flex-row px-3 text-xs uppercase">
+        {#each sections as section (section.id)}
+          <li class="contents">
+            <a
+              href={section.link}
+              class="the-white-button rounded-full px-3 py-1.5"
+              on:click={closeMenu}
+            >
+              {section.name}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </nav>
+    <ThemeSwithcerButton />
+  </div>
 </header>
 
 <button
   type="button"
-  class="fixed inset-0 z-10 bg-black opacity-0"
+  class="fixed inset-0 z-10 bg-black opacity-0 md:hidden"
   class:pointer-events-auto={menuOpened}
   class:pointer-events-none={!menuOpened}
   style:opacity={$backdropOpacity}
@@ -50,7 +68,7 @@
 />
 
 <div
-  class="absolute z-40 w-screen border-r bg-white shadow md:max-w-xs"
+  class="absolute z-40 w-screen border-r bg-white shadow sm:max-w-xs md:hidden"
   style:height={`calc(100vh - ${headerHeight}px)`}
   style:transform="translate3d({$menuX}%,0,0)"
   style:top={headerHeight + "px"}
@@ -71,3 +89,12 @@
     </ul>
   </nav>
 </div>
+
+<style lang="postcss" module>
+  .logo {
+    @apply font-racing-sans text-[1.75rem];
+    @apply max-md:absolute-center;
+    @apply md:text-3xl;
+    @apply md:px-4 md:py-2;
+  }
+</style>
