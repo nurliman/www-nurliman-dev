@@ -14,7 +14,7 @@
 <button class="the-white-button relative mr-2 h-10 w-10 rounded-lg" on:click={switchTheme}>
   <img
     src="/assets/moon.svg"
-    alt="Menu"
+    alt="Moon"
     height="24px"
     width="24px"
     class="absolute-center transition-opacity"
@@ -23,7 +23,7 @@
   />
   <img
     src="/assets/sun.svg"
-    alt="Close"
+    alt="Sun"
     height="26px"
     width="26px"
     class="absolute-center transition-opacity"
