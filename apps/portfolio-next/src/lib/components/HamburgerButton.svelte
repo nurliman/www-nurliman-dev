@@ -2,7 +2,7 @@
   import { clsx } from "clsx";
   let isSidebarOpen: boolean;
   let className: string | undefined = undefined;
-  export { className as class, isOpen };
+  export { className as class, isSidebarOpen };
 </script>
 
 <button

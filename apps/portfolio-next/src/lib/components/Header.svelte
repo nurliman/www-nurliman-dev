@@ -33,7 +33,11 @@
 
 <header class="sticky top-0 z-30 overflow-hidden border-b-2 bg-white p-0">
   <div class="mx-auto flex max-w-[90rem] items-center justify-between">
-    <HamburgerButton class="md:hidden" isOpen={sidebarOpened} on:click={() => changeMenuOpened()} />
+    <HamburgerButton
+      class="md:hidden"
+      isSidebarOpen={sidebarOpened}
+      on:click={() => changeMenuOpened()}
+    />
     <div
       class={clsx(
         "font-racing-sans text-[1.75rem]",
