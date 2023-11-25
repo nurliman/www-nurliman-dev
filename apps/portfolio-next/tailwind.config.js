@@ -41,6 +41,23 @@ export default {
           WebkitFontSmoothing: "antialiased",
           MozOsxFontSmoothing: "grayscale",
         },
+        img: {
+          // no drag
+          "-webkit-user-drag": "none",
+          "-khtml-user-drag": "none",
+          "-moz-user-drag": "none",
+          "-o-user-drag": "none",
+          "-ms-user-drag": "none",
+          "user-drag": "none",
+
+          // no select
+          "-webkit-user-select": "none",
+          "-khtml-user-select": "none",
+          "-moz-user-select": "none",
+          "-o-user-select": "none",
+          "-ms-user-select": "none",
+          "user-select": "none",
+        },
       });
 
       addComponents({
