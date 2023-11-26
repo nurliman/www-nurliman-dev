@@ -107,6 +107,28 @@ export default {
             backgroundColor: theme("colors.zinc.200"),
           },
         },
+        ".the-zinc-button": {
+          color: theme("colors.black"),
+          backgroundColor: theme("colors.zinc.200"),
+          transition: "background-color 150ms ease-in-out",
+          "&:hover": {
+            backgroundColor: theme("colors.zinc.300"),
+          },
+          "&:active": {
+            backgroundColor: theme("colors.zinc.400"),
+          },
+        },
+        ".the-teal-button": {
+          color: theme("colors.white"),
+          backgroundColor: theme("colors.the-teal.500"),
+          transition: "background-color 150ms ease-in-out",
+          "&:hover": {
+            backgroundColor: theme("colors.the-teal.600"),
+          },
+          "&:active": {
+            backgroundColor: theme("colors.the-teal.700"),
+          },
+        },
       });
 
       addUtilities({
