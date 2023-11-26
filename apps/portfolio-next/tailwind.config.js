@@ -22,6 +22,11 @@ export default {
   plugins: [
     plugin(({ addBase, addComponents, addUtilities, theme }) => {
       addBase({
+        ":root,html,body": {
+          minHeight: "100vh",
+          height: "100%",
+          scrollBehavior: "smooth",
+        },
         body: {
           padding: "0",
           margin: "0",
