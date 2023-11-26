@@ -107,6 +107,17 @@ export default {
             backgroundColor: theme("colors.zinc.200"),
           },
         },
+        ".the-white-pink-button": {
+          color: theme("colors.black"),
+          backgroundColor: theme("colors.white"),
+          transition: "background-color 150ms ease-in-out",
+          "&:hover": {
+            backgroundColor: theme("colors.the-pink.300"),
+          },
+          "&:active": {
+            backgroundColor: theme("colors.the-pink.200"),
+          },
+        },
         ".the-zinc-button": {
           color: theme("colors.black"),
           backgroundColor: theme("colors.zinc.200"),
