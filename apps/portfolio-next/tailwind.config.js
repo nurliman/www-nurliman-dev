@@ -141,7 +141,6 @@ export default {
           },
         },
       });
-
       addUtilities({
         ".absolute-center": {
           position: "absolute",
@@ -159,6 +158,18 @@ export default {
         },
         ".brutal-shadow-md": {
           boxShadow: "4px 4px 0px rgba(0,0,0,1)",
+        },
+        ".brutal-btn-sm": {
+          "&:active": {
+            transform: "translate3d(1px, 1px, 0px)",
+            boxShadow: "1px 1px 0px rgba(0,0,0,1)",
+          },
+        },
+        ".brutal-btn-md": {
+          "&:active": {
+            transform: "translate3d(3px, 3px, 0px)",
+            boxShadow: "1px 1px 0px rgba(0,0,0,1)",
+          },
         },
       });
     }),
