@@ -31,7 +31,7 @@
   };
 </script>
 
-<header class="sticky top-0 z-30 overflow-hidden border-b-2 bg-white p-0">
+<header class="fixed top-0 z-30 w-full overflow-hidden border-b-2 bg-white p-0">
   <div class="mx-auto flex max-w-[90rem] items-center justify-between">
     <HamburgerButton
       class="md:hidden"
@@ -75,3 +75,5 @@
   headerHeight={50}
   on:change={(e) => changeMenuOpened(e.detail.isOpen)}
 />
+
+
