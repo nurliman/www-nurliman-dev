@@ -91,6 +91,12 @@ export default {
           alignItems: "center",
           justifyContent: "center",
         },
+        ".brutal-shadow-sm": {
+          boxShadow: "2px 2px 0px rgba(0,0,0,1)",
+        },
+        ".brutal-shadow-md": {
+          boxShadow: "4px 4px 0px rgba(0,0,0,1)",
+        },
       });
     }),
   ],
