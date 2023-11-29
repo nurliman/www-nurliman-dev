@@ -1,9 +1,8 @@
 <script lang="ts">
-  import "@/fonts/transducer/extended.css";
 </script>
 
 <div class="container">
-  <h1 class="heading">
+  <h1 class="font-transducer-extended">
     <span class="heading-name">
       <span>Nurliman Diara</span>
       <span class="absolute text-transparent">:</span>
@@ -40,10 +39,6 @@
     @apply flex-center flex-1 flex-col;
     @apply relative -top-14;
     @apply text-center;
-  }
-
-  .heading {
-    @apply font-transducer-extended;
   }
 
   .heading-name {
