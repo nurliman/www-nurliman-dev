@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Transducer";
+  src:
+    url("/fonts/transducer/Hairline.woff2") format("woff2"),
+    url("/fonts/transducer/Hairline.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transducer";
+  src:
+    url("/fonts/transducer/Regular.woff2") format("woff2"),
+    url("/fonts/transducer/Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transducer";
+  src:
+    url("/fonts/transducer/Medium.woff2") format("woff2"),
+    url("/fonts/transducer/Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transducer";
+  src:
+    url("/fonts/transducer/Bold.woff2") format("woff2"),
+    url("/fonts/transducer/Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transducer";
+  src:
+    url("/fonts/transducer/Black.woff2") format("woff2"),
+    url("/fonts/transducer/Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

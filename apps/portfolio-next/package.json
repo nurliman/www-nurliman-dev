@@ -1,46 +1,36 @@
 {
   "name": "portfolio-next",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "prebuild": "concurrently \"npm run check\" \"tw-patch extract\"",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint --cache --fix .",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
     "format": "prettier --write .",
-    "prepare": "tw-patch install"
+    "lint": "prettier --check . && eslint --cache --fix ."
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.17",
-    "clsx": "^2.0.0",
-    "marqueeck": "npm:@arisbh/marqueeck@^0.4.4"
+    "animejs": "^3.2.2",
+    "lodash-es": "^4.17.21",
+    "vue3-marquee": "^4.1.0"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.1.1",
-    "@sveltejs/adapter-static": "^2.0.3",
-    "@sveltejs/kit": "^1.27.6",
-    "@types/cookie": "^0.6.0",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
+    "@nuxt/devtools": "latest",
+    "@types/animejs": "^3.1.12",
+    "@types/lodash-es": "^4.17.12",
     "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.2",
-    "eslint": "^8.54.0",
-    "eslint-plugin-svelte": "^2.35.1",
-    "postcss": "^8.4.31",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "nuxt": "^3.8.2",
+    "postcss": "^8.4.32",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.3.0",
-    "svelte": "^5.0.0-next.15",
-    "svelte-check": "^3.6.2",
-    "svelte-preprocess-cssmodules": "^2.2.4",
     "tailwindcss": "^3.3.5",
-    "tailwindcss-patch": "^2.2.2",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.2",
-    "unplugin-tailwindcss-mangle": "^2.2.2",
-    "vite": "^4.5.0"
+    "vue": "^3.3.9",
+    "vue-router": "^4.2.5"
   },
   "browserslist": {
     "production": [

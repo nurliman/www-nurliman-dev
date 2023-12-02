@@ -1,0 +1,41 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+type Theme = "light" | "dark";
+const currentTheme = ref<Theme>("light");
+
+const switchTheme = () => {
+  if (currentTheme.value === "light") {
+    currentTheme.value = "dark";
+  } else {
+    currentTheme.value = "light";
+  }
+};
+</script>
+
+<template>
+  <button class="the-white-button relative mr-2 h-10 w-10 rounded-lg" @click="switchTheme">
+    <img
+      src="/assets/moon.svg"
+      alt="Moon"
+      height="24px"
+      width="24px"
+      class="absolute-center transition-opacity"
+      :class="{
+        'opacity-0': currentTheme === 'dark',
+        'opacity-100': currentTheme !== 'dark',
+      }"
+    />
+    <img
+      src="/assets/sun.svg"
+      alt="Sun"
+      height="27px"
+      width="27px"
+      class="absolute-center transition-opacity"
+      :class="{
+        'opacity-0': currentTheme === 'light',
+        'opacity-100': currentTheme !== 'light',
+      }"
+    />
+  </button>
+</template>

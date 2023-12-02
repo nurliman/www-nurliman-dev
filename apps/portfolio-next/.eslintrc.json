@@ -8,21 +8,24 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:svelte/recommended"
+    "plugin:vue/vue3-essential"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020,
-    "extraFileExtensions": [".svelte"]
+    "extraFileExtensions": [".vue"]
   },
   "overrides": [
     {
-      "files": ["*.svelte"],
-      "parser": "svelte-eslint-parser",
+      "files": ["*.vue"],
+      "parser": "vue-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser"
+      },
+      "rules": {
+        "vue/multi-word-component-names": "off"
       }
     }
   ]
