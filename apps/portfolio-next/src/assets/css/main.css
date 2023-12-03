@@ -5,3 +5,8 @@
 #__nuxt {
   @apply contents;
 }
+
+.router-link-active {
+  @apply underline underline-offset-2;
+  @apply font-medium;
+}
