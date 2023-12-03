@@ -17,7 +17,7 @@ const emit = defineEmits<{
     ]"
     @click="emit('click')"
   >
-    <NuxtImg
+    <img
       src="/assets/menu-burger.svg"
       alt="Menu"
       height="28px"
@@ -26,7 +26,7 @@ const emit = defineEmits<{
       class="absolute-center transition-opacity"
       :class="{ 'opacity-0': isSidebarOpen, 'opacity-100': !isSidebarOpen }"
     />
-    <NuxtImg
+    <img
       src="/assets/menu-close.svg"
       alt="Close"
       height="28px"

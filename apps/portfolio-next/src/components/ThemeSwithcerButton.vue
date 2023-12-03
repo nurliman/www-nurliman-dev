@@ -15,7 +15,7 @@ const switchTheme = () => {
 
 <template>
   <button class="the-white-button relative mr-2 h-10 w-10 rounded-lg" @click="switchTheme">
-    <NuxtImg
+    <img
       src="/assets/moon.svg"
       alt="Moon"
       height="24px"
@@ -27,7 +27,7 @@ const switchTheme = () => {
         'opacity-100': currentTheme !== 'dark',
       }"
     />
-    <NuxtImg
+    <img
       src="/assets/sun.svg"
       alt="Sun"
       height="27px"
