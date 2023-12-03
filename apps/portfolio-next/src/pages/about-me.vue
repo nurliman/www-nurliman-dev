@@ -110,10 +110,6 @@ const info = readonly([
         </Vue3Marquee>
       </div>
     </client-only>
-
-    <div class="mb-16" />
-
-    <div>x</div>
   </div>
 </template>
 
