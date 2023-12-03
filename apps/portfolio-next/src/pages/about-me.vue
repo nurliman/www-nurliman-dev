@@ -1,15 +1,41 @@
 <script setup lang="ts">
-import keys from "lodash-es/keys";
-import { ref } from "vue";
+import { readonly } from "vue";
 import { Vue3Marquee } from "vue3-marquee";
 
-const info = ref({
-  Age: "25",
-  Residence: "Indonesia",
-  Address: "Ujungberung, Bandung",
-  "e-mail": "nurlimandiara@gmail.com",
-  Phone: "+62 821-3325-8511",
-});
+const thingsIDo = readonly([
+  {
+    title: "Front-End Development",
+    description:
+      "I utilize modern JavaScript/TypeScript to craft high-performance User Interfaces that are optimized for cross-browser and multi-platform compatibility.",
+    icon: "/assets/whatido-frontend.svg",
+  },
+  {
+    title: "Back-End Development",
+    description:
+      "My focus is on writing maintainable, testable, and efficient Web Backends using various languages and frameworks, always keeping performance in mind.",
+    icon: "/assets/whatido-backend.svg",
+  },
+  {
+    title: "Cloud Development",
+    description:
+      "I specialize in building and managing Kubernetes, VMs, Cloud Databases, Cloud Computing, Cloud Storage, Cloud Network, Load Balancers, and more, leveraging the capabilities of the Google Cloud Platform.",
+    icon: "/assets/whatido-cloud.svg",
+  },
+  {
+    title: "Graphic Design",
+    description:
+      "I excel in creating user flows, wireframes, prototypes, and mockups. My ability to translate requirements into style guides, design systems, design patterns, and aesthetically pleasing user interfaces sets me apart.",
+    icon: "/assets/whatido-design.svg",
+  },
+]);
+
+const info = readonly([
+  ["Age", "25"],
+  ["Residence", "Indonesia"],
+  ["Address", "Ujungberung, Bandung"],
+  ["e-mail", "nurlimandiara@gmail.com"],
+  ["Phone", "+62 821-3325-8511"],
+]);
 </script>
 
 <template>
@@ -57,71 +83,13 @@ const info = ref({
     <div class="mb-4" />
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2" :class="$style.container">
-      <div :class="$style.card">
-        <NuxtImg
-          src="/assets/whatido-frontend.svg"
-          alt="Front-End Development"
-          width="84px"
-          height="84px"
-          loading="lazy"
-        />
+      <div v-for="thing in thingsIDo" :key="thing.title" :class="$style.card">
+        <NuxtImg :src="thing.icon" :alt="thing.title" width="84px" height="84px" loading="lazy" />
         <div class="mb-4" />
-        <h3 :class="$style.heading3">Front-End Development</h3>
+        <h3 :class="$style.heading3">{{ thing.title }}</h3>
         <div class="mb-1.5" />
         <p class="text-sm lg:text-base">
-          I utilize modern JavaScript/TypeScript to craft high-performance User Interfaces that are
-          optimized for cross-browser and multi-platform compatibility.
-        </p>
-      </div>
-      <div :class="$style.card">
-        <NuxtImg
-          src="/assets/whatido-backend.svg"
-          alt="Back-End Development"
-          width="84px"
-          height="84px"
-          loading="lazy"
-        />
-        <div class="mb-4" />
-        <h3 :class="$style.heading3">Back-End Development</h3>
-        <div class="mb-1.5" />
-        <p class="text-sm lg:text-base">
-          My focus is on writing maintainable, testable, and efficient Web Backends using various
-          languages and frameworks, always keeping performance in mind.
-        </p>
-      </div>
-
-      <div :class="$style.card">
-        <NuxtImg
-          src="/assets/whatido-cloud.svg"
-          alt="Cloud Development"
-          width="84px"
-          height="84px"
-          loading="lazy"
-        />
-        <div class="mb-4" />
-        <h3 :class="$style.heading3">Cloud Development</h3>
-        <div class="mb-1.5" />
-        <p class="text-sm lg:text-base">
-          I specialize in building and managing Kubernetes, VMs, Cloud Databases, Cloud Computing,
-          Cloud Storage, Cloud Network, Load Balancers, and more, leveraging the capabilities of the
-          Google Cloud Platform.
-        </p>
-      </div>
-      <div :class="$style.card">
-        <NuxtImg
-          src="/assets/whatido-design.svg"
-          alt="Graphic Design"
-          width="84px"
-          height="84px"
-          loading="lazy"
-        />
-        <div class="mb-4" />
-        <h3 :class="$style.heading3">Graphic Design</h3>
-        <div class="mb-1.5" />
-        <p class="text-sm lg:text-base">
-          I excel in creating user flows, wireframes, prototypes, and mockups. My ability to
-          translate requirements into style guides, design systems, design patterns, and
-          aesthetically pleasing user interfaces sets me apart.
+          {{ thing.description }}
         </p>
       </div>
     </div>
@@ -132,10 +100,10 @@ const info = ref({
       <div class="border-y-2 bg-zinc-200 py-2">
         <Vue3Marquee clone>
           <ul class="flex text-xs">
-            <li v-for="(value, key, index) in info" :key="key">
+            <li v-for="([key, value], index) in info" :key="key + value">
               <span>{{ key }}&nbsp;</span>
               <span class="font-bold">{{ value }}</span>
-              <span v-if="index < keys(info).length - 1">&nbsp;|&nbsp;</span>
+              <span v-if="index < info.length - 1">&nbsp;|&nbsp;</span>
             </li>
             <li class="mx-4">&#8226;</li>
           </ul>
