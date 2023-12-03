@@ -68,7 +68,7 @@ const info = ref({
         <div class="mb-4" />
         <h3 :class="$style.heading3">Front-End Development</h3>
         <div class="mb-1.5" />
-        <p class="text-sm md:text-base">
+        <p class="text-sm lg:text-base">
           I utilize modern JavaScript/TypeScript to craft high-performance User Interfaces that are
           optimized for cross-browser and multi-platform compatibility.
         </p>
@@ -84,7 +84,7 @@ const info = ref({
         <div class="mb-4" />
         <h3 :class="$style.heading3">Back-End Development</h3>
         <div class="mb-1.5" />
-        <p class="text-sm md:text-base">
+        <p class="text-sm lg:text-base">
           My focus is on writing maintainable, testable, and efficient Web Backends using various
           languages and frameworks, always keeping performance in mind.
         </p>
@@ -101,7 +101,7 @@ const info = ref({
         <div class="mb-4" />
         <h3 :class="$style.heading3">Cloud Development</h3>
         <div class="mb-1.5" />
-        <p class="text-sm md:text-base">
+        <p class="text-sm lg:text-base">
           I specialize in building and managing Kubernetes, VMs, Cloud Databases, Cloud Computing,
           Cloud Storage, Cloud Network, Load Balancers, and more, leveraging the capabilities of the
           Google Cloud Platform.
@@ -118,7 +118,7 @@ const info = ref({
         <div class="mb-4" />
         <h3 :class="$style.heading3">Graphic Design</h3>
         <div class="mb-1.5" />
-        <p class="text-sm md:text-base">
+        <p class="text-sm lg:text-base">
           I excel in creating user flows, wireframes, prototypes, and mockups. My ability to
           translate requirements into style guides, design systems, design patterns, and
           aesthetically pleasing user interfaces sets me apart.
