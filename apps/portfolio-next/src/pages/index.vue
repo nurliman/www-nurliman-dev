@@ -18,8 +18,8 @@
     </p>
     <div class="h-8 md:h-10" />
     <div class="flex flex-row items-center space-x-4 md:space-x-6">
-      <a href="/about-me" class="the-teal-button" :class="$style.btn">Explore</a>
-      <a href="/contact" class="the-white-button" :class="$style.btn">Contact</a>
+      <NuxtLink to="/about-me" class="the-teal-button" :class="$style.btn">Explore</NuxtLink>
+      <NuxtLink to="/contact" class="the-white-button" :class="$style.btn">Contact</NuxtLink>
     </div>
   </div>
 </template>

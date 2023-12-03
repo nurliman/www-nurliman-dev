@@ -64,13 +64,13 @@ const changeMenuOpened = (isOpen?: boolean) => {
       <nav class="hidden md:contents">
         <ul class="flex flex-1 flex-row px-3 text-xs uppercase">
           <li v-for="section in sections" :key="section.id" class="contents">
-            <a
-              :href="section.link"
+            <NuxtLink
+              :to="section.link"
               class="the-white-button rounded-full px-3 py-1.5"
               @click="changeMenuOpened(false)"
             >
               {{ section.name }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
