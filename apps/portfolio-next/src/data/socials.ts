@@ -6,17 +6,17 @@ export type Social = {
 
 export const socials = [
   {
-    name: "github",
+    name: "Github",
     link: "https://github.com/nurliman",
     iconUrl: "/assets/github.svg",
   },
   {
-    name: "linkedin",
+    name: "LinkedIn",
     link: "https://www.linkedin.com/in/nurliman",
     iconUrl: "/assets/linkedin.svg",
   },
   {
-    name: "whatsapp",
+    name: "WhatsApp",
     link: "https://wa.me/6282133258511",
     iconUrl: "/assets/whatsapp.svg",
   },
