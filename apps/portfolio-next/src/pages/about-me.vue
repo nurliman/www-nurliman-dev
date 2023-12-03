@@ -58,11 +58,12 @@ const info = ref({
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2" :class="$style.container">
       <div :class="$style.card">
-        <img
+        <NuxtImg
           src="/assets/whatido-frontend.svg"
           alt="Front-End Development"
           width="84px"
           height="84px"
+          loading="lazy"
         />
         <div class="mb-4" />
         <h3 :class="$style.heading3">Front-End Development</h3>
@@ -73,11 +74,12 @@ const info = ref({
         </p>
       </div>
       <div :class="$style.card">
-        <img
+        <NuxtImg
           src="/assets/whatido-backend.svg"
           alt="Back-End Development"
           width="84px"
           height="84px"
+          loading="lazy"
         />
         <div class="mb-4" />
         <h3 :class="$style.heading3">Back-End Development</h3>
@@ -89,7 +91,13 @@ const info = ref({
       </div>
 
       <div :class="$style.card">
-        <img src="/assets/whatido-cloud.svg" alt="Cloud Development" width="84px" height="84px" />
+        <NuxtImg
+          src="/assets/whatido-cloud.svg"
+          alt="Cloud Development"
+          width="84px"
+          height="84px"
+          loading="lazy"
+        />
         <div class="mb-4" />
         <h3 :class="$style.heading3">Cloud Development</h3>
         <div class="mb-1.5" />
@@ -100,7 +108,13 @@ const info = ref({
         </p>
       </div>
       <div :class="$style.card">
-        <img src="/assets/whatido-design.svg" alt="Graphic Design" width="84px" height="84px" />
+        <NuxtImg
+          src="/assets/whatido-design.svg"
+          alt="Graphic Design"
+          width="84px"
+          height="84px"
+          loading="lazy"
+        />
         <div class="mb-4" />
         <h3 :class="$style.heading3">Graphic Design</h3>
         <div class="mb-1.5" />

@@ -17,19 +17,21 @@ const emit = defineEmits<{
     ]"
     @click="emit('click')"
   >
-    <img
+    <NuxtImg
       src="/assets/menu-burger.svg"
       alt="Menu"
       height="28px"
       width="28px"
+      loading="lazy"
       class="absolute-center transition-opacity"
       :class="{ 'opacity-0': isSidebarOpen, 'opacity-100': !isSidebarOpen }"
     />
-    <img
+    <NuxtImg
       src="/assets/menu-close.svg"
       alt="Close"
       height="28px"
       width="28px"
+      loading="lazy"
       class="absolute-center transition-opacity"
       :class="{ 'opacity-0': !isSidebarOpen, 'opacity-100': isSidebarOpen }"
     />

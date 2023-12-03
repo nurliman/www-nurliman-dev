@@ -15,22 +15,24 @@ const switchTheme = () => {
 
 <template>
   <button class="the-white-button relative mr-2 h-10 w-10 rounded-lg" @click="switchTheme">
-    <img
+    <NuxtImg
       src="/assets/moon.svg"
       alt="Moon"
       height="24px"
       width="24px"
+      loading="lazy"
       class="absolute-center transition-opacity"
       :class="{
         'opacity-0': currentTheme === 'dark',
         'opacity-100': currentTheme !== 'dark',
       }"
     />
-    <img
+    <NuxtImg
       src="/assets/sun.svg"
       alt="Sun"
       height="27px"
       width="27px"
+      loading="lazy"
       class="absolute-center transition-opacity"
       :class="{
         'opacity-0': currentTheme === 'light',

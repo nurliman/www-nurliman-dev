@@ -2,12 +2,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: "src/",
+
   css: [
     "~/assets/css/fonts/transducer/plain.css",
     "~/assets/css/fonts/transducer/extended.css",
     "@fontsource/racing-sans-one/latin.css",
     "~/assets/css/main.css",
   ],
+
   app: {
     head: {
       title:
@@ -49,6 +51,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   postcss: {
     plugins: {
       "tailwindcss/nesting": {},
@@ -66,7 +69,10 @@ export default defineNuxtConfig({
       },
     },
   },
+
   experimental: {
     inlineSSRStyles: false,
   },
+
+  modules: ["@nuxt/image"],
 });

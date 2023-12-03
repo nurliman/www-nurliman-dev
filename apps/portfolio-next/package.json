@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.1.0",
     "@types/animejs": "^3.1.12",
     "@types/lodash-es": "^4.17.12",
     "autoprefixer": "^10.4.16",

@@ -66,7 +66,12 @@ defineExpose({
             target="_blank"
             class="rounded border p-1.5 hover:bg-zinc-200"
           >
-            <img :src="social.iconUrl" :alt="social.name" class="h-[18px] w-[18px]" />
+            <NuxtImg
+              :src="social.iconUrl"
+              :alt="social.name"
+              loading="lazy"
+              class="h-[18px] w-[18px]"
+            />
           </NuxtLink>
         </li>
       </ul>
