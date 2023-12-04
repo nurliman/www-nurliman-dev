@@ -17,9 +17,11 @@ watch(
 <template>
   <Header />
 
-  <main class="flex min-h-full pt-[50px] md:pt-14">
-    <slot />
-  </main>
+  <div class="flex min-h-full flex-col pt-[50px] md:pt-14">
+    <main class="flex flex-1 flex-col">
+      <slot />
+    </main>
 
-  <Footer v-if="!isHome" />
+    <Footer v-if="!isHome" />
+  </div>
 </template>
