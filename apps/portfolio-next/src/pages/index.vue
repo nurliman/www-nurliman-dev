@@ -36,7 +36,7 @@
 .container {
   @apply p-4;
   @apply flex-center flex-1 flex-col;
-  @apply relative -top-14;
+  @apply relative -top-4;
   @apply text-center;
 }
 
