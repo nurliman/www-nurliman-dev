@@ -22,8 +22,8 @@
     "turbo": "^1.10.16"
   },
   "lint-staged": {
-    "**/*.+(js|mjs|cjs|jsx|ts|tsx)": "eslint --cache --fix",
-    "**/*.+(js|mjs|cjs|jsx|ts|tsx|css|scss|json|yml|yaml)": "prettier --write --ignore-path .gitignore --ignore-path .prettierignore"
+    "**/*.+(js|mjs|cjs|jsx|ts|tsx|vue)": "eslint --cache --fix",
+    "**/*.+(js|mjs|cjs|jsx|ts|tsx|vue|css|scss|json|yml|yaml)": "prettier --write --ignore-path .gitignore --ignore-path .prettierignore"
   },
   "packageManager": "pnpm@8.11.0"
 }
