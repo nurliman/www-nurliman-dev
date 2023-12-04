@@ -50,16 +50,18 @@ const changeMenuOpened = (isOpen?: boolean) => {
         :is-sidebar-open="sidebarOpened"
         @click="changeMenuOpened"
       />
-      <div
-        :class="[
-          'font-racing-sans text-[1.75rem]',
-          'max-md:absolute-center',
-          'md:text-3xl',
-          'md:px-4 md:py-2',
-        ]"
-      >
-        nurliman.
-      </div>
+      <NuxtLink to="/" class="contents">
+        <div
+          :class="[
+            'font-racing-sans text-[1.75rem]',
+            'max-md:absolute-center',
+            'md:text-3xl',
+            'md:px-4 md:py-2',
+          ]"
+        >
+          nurliman.
+        </div>
+      </NuxtLink>
       <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
       <nav class="hidden md:contents">
         <ul class="flex flex-1 flex-row px-3 text-xs uppercase">
