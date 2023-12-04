@@ -40,6 +40,10 @@ const changeMenuOpened = (isOpen?: boolean) => {
 
   sidebarOpened.value = isOpen;
 };
+
+const closeMenu = () => {
+  sidebarOpened.value && changeMenuOpened(false);
+};
 </script>
 
 <template>
@@ -50,7 +54,7 @@ const changeMenuOpened = (isOpen?: boolean) => {
         :is-sidebar-open="sidebarOpened"
         @click="changeMenuOpened"
       />
-      <NuxtLink to="/" class="contents">
+      <NuxtLink to="/" class="contents" @click="closeMenu">
         <div
           :class="[
             'font-racing-sans text-[1.75rem]',
@@ -69,7 +73,7 @@ const changeMenuOpened = (isOpen?: boolean) => {
             <NuxtLink
               :to="section.link"
               class="the-white-button rounded-full px-3 py-1.5"
-              @click="changeMenuOpened(false)"
+              @click="closeMenu"
             >
               {{ section.name }}
             </NuxtLink>
