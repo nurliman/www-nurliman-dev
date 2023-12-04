@@ -180,6 +180,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      vue-uid:
+        specifier: npm:@shimyshack/uid@^0.1.9
+        version: /@shimyshack/uid@0.1.9
       vue3-marquee:
         specifier: ^4.1.0
         version: 4.1.0(vue@3.3.9)
@@ -3178,6 +3181,14 @@ packages:
       - encoding
       - supports-color
     dev: true
+
+  /@shimyshack/uid@0.1.9:
+    resolution: {integrity: sha512-J3sZ7mh/FjhsKWg8T8Pb5nxQkqoCiWvm7CQqG5pMhVN3asJbrkAeP/gqJujLZt4CPEpX1pWmkJihIt3/YFsQrg==}
+    dependencies:
+      vue: 3.3.9
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /@sigstore/bundle@2.1.0:
     resolution: {integrity: sha512-89uOo6yh/oxaU8AeOUnVrTdVMcGk9Q1hJa7Hkvalc6G3Z3CupWk4Xe9djSgJm9fMkH69s0P0cVHUoKSOemLdng==}
