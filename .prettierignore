@@ -3,6 +3,7 @@ public/
 .DS_Store
 node_modules
 build/
+dist/
 .astro/
 .svelte-kit/
 .nuxt/
