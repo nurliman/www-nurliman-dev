@@ -1,4 +1,5 @@
-import plugin from "tailwindcss/plugin";
+import twPlugin from "tailwindcss/plugin";
+import nurlimanTailwind from "@nurliman.dev/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -42,9 +43,6 @@ export default {
           950: "#082b2a",
         },
       },
-      borderColor: (theme) => ({
-        DEFAULT: theme("colors.black"),
-      }),
       fontFamily: {
         transducer: [`"Transducer"`, "sans-serif"],
         "transducer-condensed": [`"TransducerCondensed"`, "sans-serif"],
@@ -57,7 +55,8 @@ export default {
     },
   },
   plugins: [
-    plugin(({ addBase, addComponents, addUtilities, theme }) => {
+    nurlimanTailwind(),
+    twPlugin(({ addBase, addComponents, addUtilities, theme }) => {
       addBase({
         ":root,html,body": {
           minHeight: "100vh",

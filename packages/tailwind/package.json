@@ -1,0 +1,48 @@
+{
+  "name": "@nurliman.dev/tailwind",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "npm run build:jss && npm run build:js",
+    "build:jss": "npx -y tsx scripts/build-jss.ts",
+    "build:js": "tsup --config tsup.config.ts",
+    "dev": "tsup --config tsup.config.ts --watch",
+    "clean": "npx -y concurrently \"npm:clean:*\"",
+    "clean:turbo": "npx -y del-cli .turbo",
+    "clean:node_modules": "npx -y del-cli node_modules",
+    "clean:dist": "npx -y del-cli dist",
+    "format": "prettier --write --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
+    "lint": "npm run format && eslint --cache --fix ."
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^18",
+    "@types/postcss-import": "^14.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "postcss": "^8.4.32",
+    "postcss-import": "^15.1.0",
+    "postcss-js": "^4.0.1",
+    "slash": "^5.1.0",
+    "tailwindcss": "^3.3.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  }
+}

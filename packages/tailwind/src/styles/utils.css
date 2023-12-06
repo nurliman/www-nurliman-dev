@@ -1,0 +1,22 @@
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.brutal {
+  &-shadow {
+    &-sm {
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    }
+
+    & {
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    }
+  }
+}

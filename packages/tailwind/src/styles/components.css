@@ -1,0 +1,66 @@
+@import "tailwind.css";
+
+@layer components {
+  .brutal {
+    &-btn {
+      @apply transition-[background-color];
+
+      /* Button colors */
+      &,
+      &-white {
+        @apply bg-white text-black;
+        @apply hover:bg-zinc-100;
+        @apply active:bg-zinc-200;
+      }
+
+      &-white-pink {
+        @apply bg-white text-black;
+        @apply hover:bg-pink-300;
+        @apply active:bg-pink-200;
+      }
+
+      &-zinc {
+        @apply bg-zinc-200 text-white;
+        @apply hover:bg-zinc-300;
+        @apply active:bg-zinc-400;
+      }
+
+      &-teal {
+        @apply bg-teal-500 text-white;
+        @apply hover:bg-teal-600;
+        @apply active:bg-teal-700;
+      }
+      /* End button colors */
+
+      /* Button borders */
+      &-bordered-sm {
+        border: 1px solid rgba(0, 0, 0, 1);
+      }
+
+      &-bordered {
+        border: 2px solid rgba(0, 0, 0, 1);
+      }
+      /* End button borders */
+
+      /* Button shadows */
+      &-shadow-sm {
+        @apply brutal-shadow-sm;
+
+        &:active {
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+          transform: translate3d(1px, 1px, 0px);
+        }
+      }
+
+      &-shadow {
+        @apply brutal-shadow;
+
+        &:active {
+          box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+          transform: translate3d(3px, 3px, 0px);
+        }
+      }
+      /* End button shadows */
+    }
+  }
+}
