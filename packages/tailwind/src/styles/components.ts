@@ -7,7 +7,7 @@
  */
 const styles: any = {
   ".brutal-btn": {
-    "transitionProperty": "background-color",
+    "transitionProperty": "background-color,transform",
     "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
     "transitionDuration": "150ms"
   },

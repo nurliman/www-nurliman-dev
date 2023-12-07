@@ -3,7 +3,7 @@
 @layer components {
   .brutal {
     &-btn {
-      @apply transition-[background-color];
+      @apply transition-[background-color,transform];
 
       /* Button colors */
       &,
