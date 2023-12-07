@@ -13,36 +13,6 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        "the-pink": {
-          DEFAULT: "#ff90e8",
-          50: "#fff4fd",
-          100: "#ffe7fb",
-          200: "#ffcef7",
-          300: "#ff90e8",
-          400: "#fe74e0",
-          500: "#f540cc",
-          600: "#d920ab",
-          700: "#b4178a",
-          800: "#93156f",
-          900: "#78175b",
-          950: "#51013a",
-        },
-        "the-teal": {
-          DEFAULT: "#23a094",
-          50: "#f1fcf9",
-          100: "#d1f6ef",
-          200: "#a2eddf",
-          300: "#6cdccc",
-          400: "#3ec3b4",
-          500: "#23a094",
-          600: "#1b867e",
-          700: "#196c66",
-          800: "#195653",
-          900: "#194846",
-          950: "#082b2a",
-        },
-      },
       fontFamily: {
         transducer: [`"Transducer"`, "sans-serif"],
         "transducer-condensed": [`"TransducerCondensed"`, "sans-serif"],
