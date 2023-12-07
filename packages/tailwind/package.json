@@ -43,6 +43,6 @@
     "slash": "^5.1.0",
     "tailwindcss": "^3.3.6",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   }
 }
