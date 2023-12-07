@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TheButton from "~/components/TheButton";
+import TheButton from "~/components/TheButton.vue";
 
 const { isSidebarOpen } = defineProps<{
   isSidebarOpen: boolean;

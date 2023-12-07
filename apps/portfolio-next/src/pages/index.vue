@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NuxtLink from "#app/components/nuxt-link";
-import TheButton from "~/components/TheButton";
+import TheButton from "~/components/TheButton.vue";
 </script>
 
 <template>

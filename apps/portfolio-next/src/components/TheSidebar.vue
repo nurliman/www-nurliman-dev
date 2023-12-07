@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { sections } from "~/data/sections";
 import { socials } from "~/data/socials";
 import NuxtLink from "#app/components/nuxt-link";
-import TheButton from "~/components/TheButton";
+import TheButton from "~/components/TheButton.vue";
 
 const backdropRef = ref<HTMLElement | null>(null);
 const modalRef = ref<HTMLElement | null>(null);

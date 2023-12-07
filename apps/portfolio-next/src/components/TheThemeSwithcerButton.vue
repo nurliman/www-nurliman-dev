@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import TheButton from "~/components/TheButton";
+import TheButton from "~/components/TheButton.vue";
 
 type Theme = "light" | "dark";
 const currentTheme = ref<Theme>("light");

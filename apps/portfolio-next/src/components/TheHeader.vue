@@ -4,7 +4,7 @@ import { sections } from "~/data/sections";
 import reverse from "lodash-es/reverse";
 import anime from "animejs/lib/anime.es.js";
 import NuxtLink from "#app/components/nuxt-link";
-import TheButton from "~/components/TheButton";
+import TheButton from "~/components/TheButton.vue";
 import TheHamburgerButton from "~/components/TheHamburgerButton.vue";
 import TheThemeSwithcerButton from "~/components/TheThemeSwithcerButton.vue";
 import TheSidebar from "~/components/TheSidebar.vue";
