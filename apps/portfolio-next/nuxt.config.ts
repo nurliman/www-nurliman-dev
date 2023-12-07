@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   ],
 
   app: {
+    rootId: "www-nurliman-dev",
     head: {
       title:
         "Nurliman Diara Aria | Web Developer Portfolio - Crafting Digital Experiences with Excellence",

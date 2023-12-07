@@ -21,10 +21,10 @@
   img {
     @apply no-drag no-select;
   }
-}
 
-#__nuxt {
-  @apply contents;
+  #www-nurliman-dev {
+    @apply contents;
+  }
 }
 
 .router-link-active {
