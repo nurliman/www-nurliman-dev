@@ -13,8 +13,8 @@ const buttonVariant = cva({
       teal: "brutal-btn-teal",
     },
     border: {
-      sm: "brutal-btn-bordered-sm",
-      true: "brutal-btn-bordered",
+      sm: "brutal-btn-border-sm",
+      true: "brutal-btn-border",
     },
     shadow: {
       sm: "brutal-btn-shadow-sm",

@@ -33,11 +33,11 @@
       /* End button colors */
 
       /* Button borders */
-      &-bordered-sm {
+      &-border-sm {
         border: 1px solid rgba(0, 0, 0, 1);
       }
 
-      &-bordered {
+      &-border {
         border: 2px solid rgba(0, 0, 0, 1);
       }
       /* End button borders */

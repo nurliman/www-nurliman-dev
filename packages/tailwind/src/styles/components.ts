@@ -67,10 +67,10 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(25 108 102 / var(--tw-bg-opacity))"
   },
-  ".brutal-btn-bordered-sm": {
+  ".brutal-btn-border-sm": {
     "border": "1px solid rgba(0, 0, 0, 1)"
   },
-  ".brutal-btn-bordered": {
+  ".brutal-btn-border": {
     "border": "2px solid rgba(0, 0, 0, 1)"
   },
   ".brutal-btn-shadow-sm": {
