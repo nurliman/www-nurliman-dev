@@ -5,12 +5,12 @@ import reverse from "lodash-es/reverse";
 import anime from "animejs/lib/anime.es.js";
 import NuxtLink from "#app/components/nuxt-link";
 import TheButton from "~/components/TheButton";
-import HamburgerButton from "~/components/HamburgerButton.vue";
-import ThemeSwithcerButton from "~/components/ThemeSwithcerButton.vue";
-import Sidebar from "~/components/Sidebar.vue";
+import TheHamburgerButton from "~/components/TheHamburgerButton.vue";
+import TheThemeSwithcerButton from "~/components/TheThemeSwithcerButton.vue";
+import TheSidebar from "~/components/TheSidebar.vue";
 
 const sidebarOpened = ref(false);
-const sidebarRef = ref<InstanceType<typeof Sidebar> | null>(null);
+const sidebarRef = ref<InstanceType<typeof TheSidebar> | null>(null);
 
 const changeMenuOpened = (isOpen?: boolean) => {
   if (!sidebarRef.value) return;
@@ -51,7 +51,7 @@ const closeMenu = () => {
 <template>
   <header class="fixed top-0 z-30 w-full overflow-hidden border-b-2 bg-white p-0">
     <div class="mx-auto flex max-w-[90rem] items-center justify-between">
-      <HamburgerButton
+      <TheHamburgerButton
         class="md:hidden"
         :is-sidebar-open="sidebarOpened"
         @click="changeMenuOpened"
@@ -83,12 +83,12 @@ const closeMenu = () => {
           </li>
         </ul>
       </nav>
-      <ThemeSwithcerButton />
+      <TheThemeSwithcerButton />
     </div>
   </header>
 
   <client-only>
-    <Sidebar
+    <TheSidebar
       ref="sidebarRef"
       :is-open="sidebarOpened"
       :header-height="50"
