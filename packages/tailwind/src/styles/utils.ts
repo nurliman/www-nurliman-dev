@@ -20,6 +20,22 @@ const styles: any = {
   ".brutal-shadow": {
     boxShadow: "4px 4px 0px rgba(0, 0, 0, 1)",
   },
+  ".no-drag": {
+    WebkitUserDrag: "none",
+    KhtmlUserDrag: "none",
+    MozUserDrag: "none",
+    OUserDrag: "none",
+    msUserDrag: "none",
+    userDrag: "none",
+  },
+  ".no-select": {
+    WebkitUserSelect: "none",
+    KhtmlUserSelect: "none",
+    MozUserSelect: "none",
+    OUserSelect: "none",
+    msUserSelect: "none",
+    userSelect: "none",
+  },
 };
 
 export default styles;
