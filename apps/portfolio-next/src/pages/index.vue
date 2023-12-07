@@ -61,7 +61,7 @@ import TheButton from "~/components/TheButton";
   @apply px-2.5 py-px md:px-3.5 md:py-0.5;
   @apply text-sm md:text-base;
   @apply rounded-full border bg-zinc-200 md:border-2;
-  @apply brutal-shadow-sm md:brutal-shadow-md;
+  @apply brutal-shadow-sm md:brutal-shadow;
 }
 
 .headingText {

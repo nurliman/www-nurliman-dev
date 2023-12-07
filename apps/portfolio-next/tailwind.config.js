@@ -26,7 +26,7 @@ export default {
   },
   plugins: [
     nurlimanTailwind(),
-    twPlugin(({ addBase, addUtilities, theme }) => {
+    twPlugin(({ addBase, theme }) => {
       addBase({
         ":root,html,body": {
           minHeight: "100vh",
@@ -68,27 +68,6 @@ export default {
           "-o-user-select": "none",
           "-ms-user-select": "none",
           "user-select": "none",
-        },
-      });
-
-      addUtilities({
-        ".brutal-shadow-sm": {
-          boxShadow: "2px 2px 0px rgba(0,0,0,1)",
-        },
-        ".brutal-shadow-md": {
-          boxShadow: "4px 4px 0px rgba(0,0,0,1)",
-        },
-        ".brutal-btn-sm": {
-          "&:active": {
-            transform: "translate3d(1px, 1px, 0px)",
-            boxShadow: "1px 1px 0px rgba(0,0,0,1)",
-          },
-        },
-        ".brutal-btn-md": {
-          "&:active": {
-            transform: "translate3d(3px, 3px, 0px)",
-            boxShadow: "1px 1px 0px rgba(0,0,0,1)",
-          },
         },
       });
     }),
