@@ -4,7 +4,7 @@ import nurlimanTailwind from "@nurliman.dev/tailwind";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./src/components/**/*.{js,vue,ts}",
+    "./src/components/**/*.{js,vue,ts,jsx,tsx}",
     "./src/layouts/**/*.vue",
     "./src/pages/**/*.vue",
     "./src/plugins/**/*.{js,ts}",
@@ -56,7 +56,7 @@ export default {
   },
   plugins: [
     nurlimanTailwind(),
-    twPlugin(({ addBase, addComponents, addUtilities, theme }) => {
+    twPlugin(({ addBase, addUtilities, theme }) => {
       addBase({
         ":root,html,body": {
           minHeight: "100vh",
@@ -101,52 +101,6 @@ export default {
         },
       });
 
-      addComponents({
-        ".the-white-button": {
-          color: theme("colors.black"),
-          backgroundColor: theme("colors.white"),
-          transition: "background-color 150ms ease-in-out",
-          "&:hover": {
-            backgroundColor: theme("colors.zinc.100"),
-          },
-          "&:active": {
-            backgroundColor: theme("colors.zinc.200"),
-          },
-        },
-        ".the-white-pink-button": {
-          color: theme("colors.black"),
-          backgroundColor: theme("colors.white"),
-          transition: "background-color 150ms ease-in-out",
-          "&:hover": {
-            backgroundColor: theme("colors.the-pink.300"),
-          },
-          "&:active": {
-            backgroundColor: theme("colors.the-pink.200"),
-          },
-        },
-        ".the-zinc-button": {
-          color: theme("colors.black"),
-          backgroundColor: theme("colors.zinc.200"),
-          transition: "background-color 150ms ease-in-out",
-          "&:hover": {
-            backgroundColor: theme("colors.zinc.300"),
-          },
-          "&:active": {
-            backgroundColor: theme("colors.zinc.400"),
-          },
-        },
-        ".the-teal-button": {
-          color: theme("colors.white"),
-          backgroundColor: theme("colors.the-teal.500"),
-          transition: "background-color 150ms ease-in-out",
-          "&:hover": {
-            backgroundColor: theme("colors.the-teal.600"),
-          },
-          "&:active": {
-            backgroundColor: theme("colors.the-teal.700"),
-          },
-        },
-      });
       addUtilities({
         ".absolute-center": {
           position: "absolute",

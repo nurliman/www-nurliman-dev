@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const { isSidebarOpen, className } = defineProps<{
-  className?: string;
+import TheButton from "~/components/TheButton";
+
+const { isSidebarOpen } = defineProps<{
   isSidebarOpen: boolean;
 }>();
 const emit = defineEmits<{
@@ -9,12 +10,8 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <button
-    :class="[
-      'flex-center the-white-button relative',
-      'h-auto min-h-[3rem] w-12 border-r',
-      className,
-    ]"
+  <TheButton
+    :class="['flex-center relative', 'h-auto min-h-[3rem] w-12 border-r']"
     @click="emit('click')"
   >
     <img
@@ -35,5 +32,5 @@ const emit = defineEmits<{
       class="absolute-center transition-opacity"
       :class="{ 'opacity-0': !isSidebarOpen, 'opacity-100': isSidebarOpen }"
     />
-  </button>
+  </TheButton>
 </template>

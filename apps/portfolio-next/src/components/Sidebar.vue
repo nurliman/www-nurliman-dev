@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import { sections } from "~/data/sections";
 import { socials } from "~/data/socials";
+import NuxtLink from "#app/components/nuxt-link";
+import TheButton from "~/components/TheButton";
 
 const backdropRef = ref<HTMLElement | null>(null);
 const modalRef = ref<HTMLElement | null>(null);
@@ -47,13 +49,14 @@ defineExpose({
     <nav class="contents">
       <ul class="flex flex-col text-xs uppercase">
         <li v-for="section in sections" :key="section.id" class="contents">
-          <NuxtLink
+          <TheButton
+            :component="NuxtLink"
             :to="section.link"
-            class="the-white-button border-b px-8 py-3 hover:font-semibold"
+            class="border-b px-8 py-3 hover:font-semibold"
             @click="emit('change', { isOpen: false })"
           >
             {{ section.name }}
-          </NuxtLink>
+          </TheButton>
         </li>
       </ul>
     </nav>

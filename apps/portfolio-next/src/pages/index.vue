@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import NuxtLink from "#app/components/nuxt-link";
+import TheButton from "~/components/TheButton";
+</script>
+
 <template>
   <div :class="$style.container">
     <h1 class="font-transducer-extended">
@@ -18,8 +23,20 @@
     </p>
     <div class="h-8 md:h-10" />
     <div class="flex flex-row items-center space-x-4 md:space-x-6">
-      <NuxtLink to="/about-me" class="the-teal-button" :class="$style.btn">Explore</NuxtLink>
-      <NuxtLink to="/contact" class="the-white-button" :class="$style.btn">Contact</NuxtLink>
+      <TheButton
+        :component="NuxtLink"
+        :class="$style.btn"
+        border
+        shadow
+        color="teal"
+        to="/about-me"
+      >
+        Explore
+      </TheButton>
+      <TheButton :component="NuxtLink" border shadow to="/contact" :class="$style.btn">
+        Contact
+      </TheButton>
+      <button type="button"></button>
     </div>
   </div>
 </template>
@@ -27,7 +44,6 @@
 <style module>
 .btn {
   @apply p-2 md:p-2.5 lg:p-3;
-  @apply brutal-shadow-md brutal-btn-md border-2;
   @apply text-sm md:text-base;
   @apply min-w-[8rem] md:min-w-[12rem];
   @apply transition-all !important;

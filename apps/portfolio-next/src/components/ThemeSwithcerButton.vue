@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import TheButton from "~/components/TheButton";
 
 type Theme = "light" | "dark";
 const currentTheme = ref<Theme>("light");
@@ -14,7 +15,7 @@ const switchTheme = () => {
 </script>
 
 <template>
-  <button class="the-white-button relative mr-2 h-10 w-10 rounded-lg" @click="switchTheme">
+  <TheButton class="relative mr-2 h-10 w-10 rounded-lg" @click="switchTheme">
     <img
       src="/assets/moon.svg"
       alt="Moon"
@@ -39,5 +40,5 @@ const switchTheme = () => {
         'opacity-100': currentTheme !== 'light',
       }"
     />
-  </button>
+  </TheButton>
 </template>

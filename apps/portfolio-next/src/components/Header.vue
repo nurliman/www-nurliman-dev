@@ -3,6 +3,8 @@ import { ref } from "vue";
 import { sections } from "~/data/sections";
 import reverse from "lodash-es/reverse";
 import anime from "animejs/lib/anime.es.js";
+import NuxtLink from "#app/components/nuxt-link";
+import TheButton from "~/components/TheButton";
 import HamburgerButton from "~/components/HamburgerButton.vue";
 import ThemeSwithcerButton from "~/components/ThemeSwithcerButton.vue";
 import Sidebar from "~/components/Sidebar.vue";
@@ -68,15 +70,16 @@ const closeMenu = () => {
       </NuxtLink>
       <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
       <nav class="hidden md:contents">
-        <ul class="flex flex-1 flex-row px-3 text-xs uppercase">
+        <ul class="flex flex-1 flex-row px-3">
           <li v-for="section in sections" :key="section.id" class="contents">
-            <NuxtLink
+            <TheButton
+              :component="NuxtLink"
               :to="section.link"
-              class="the-white-button rounded-full px-3 py-1.5"
+              class="rounded-full px-3 py-1.5 text-xs uppercase"
               @click="closeMenu"
             >
               {{ section.name }}
-            </NuxtLink>
+            </TheButton>
           </li>
         </ul>
       </nav>

@@ -14,6 +14,7 @@
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.17",
     "animejs": "^3.2.2",
+    "cva": "1.0.0-beta.1",
     "lodash-es": "^4.17.21",
     "vue-uid": "npm:@shimyshack/uid@^0.1.9",
     "vue3-marquee": "^4.1.0"
