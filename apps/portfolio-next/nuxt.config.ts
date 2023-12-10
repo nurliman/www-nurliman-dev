@@ -28,6 +28,9 @@ export default defineNuxtConfig({
           content: "ie=edge",
         },
       ],
+      htmlAttrs: {
+        lang: "en",
+      },
       link: [
         {
           href: "/manifest.json",
