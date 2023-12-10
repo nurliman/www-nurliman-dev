@@ -46,7 +46,6 @@ import TheButton from "~/components/TheButton.vue";
   @apply p-2 md:p-2.5 lg:p-3;
   @apply text-sm md:text-base;
   @apply min-w-[8rem] md:min-w-[12rem];
-  @apply transition-all !important;
 }
 
 .container {
