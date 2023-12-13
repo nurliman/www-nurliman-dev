@@ -2,6 +2,7 @@ import { plugin } from "@nurliman.dev/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./src/components/**/*.{js,vue,ts,jsx,tsx}",
     "./src/layouts/**/*.vue",
