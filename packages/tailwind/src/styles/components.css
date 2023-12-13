@@ -20,7 +20,7 @@
       }
 
       &-zinc {
-        @apply bg-zinc-200 text-white;
+        @apply bg-zinc-200 text-black;
         @apply hover:bg-zinc-300;
         @apply active:bg-zinc-400;
       }

@@ -43,7 +43,7 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(228 228 231 / var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
-    "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   },
   ".brutal-btn-zinc:hover": {
     "--tw-bg-opacity": "1",
