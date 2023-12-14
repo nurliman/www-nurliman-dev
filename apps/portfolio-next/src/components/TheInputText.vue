@@ -42,27 +42,24 @@ defineProps({
 </script>
 
 <template>
-  <div :class="['flex flex-col space-y-px', $props.class]">
+  <div :class="['flex flex-col items-start space-y-px', $props.class]">
     <label v-if="!!label" :class="labelClass" :for="inputElement?.id">{{ label }}</label>
-    <div class="brutal-shadow-sm border-2 bg-white p-2.5" :class="inputContainerClass">
+    <label
+      class="brutal-shadow-sm w-full cursor-text border-2 bg-white p-2.5"
+      :class="inputContainerClass"
+      :for="inputElement?.id"
+    >
       <component
         v-uid
         ref="inputElement"
         :is="component"
         :type="component === 'input' ? type : undefined"
         :rows="component === 'textarea' ? rows : undefined"
-        :class="[$style.input, inputClass]"
+        :class="['h-full w-full focus:outline-none', inputClass]"
         :value="modelValue"
         v-bind="$attrs"
         @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
       />
-    </div>
+    </label>
   </div>
 </template>
-
-<style module>
-.input {
-  @apply h-full w-full;
-  @apply focus:outline-none;
-}
-</style>
