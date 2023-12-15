@@ -20,8 +20,6 @@ defineOptions({
   inheritAttrs: false,
 });
 
-defineEmits(["update:modelValue"]);
-
 defineProps({
   component: {
     type: String as PropType<InputTag>,
@@ -39,6 +37,17 @@ defineProps({
   labelClass: String,
   modelValue: String,
 });
+
+const emit = defineEmits(["update:modelValue", "focus"]);
+
+const onFocus = (e: FocusEvent) => {
+  (e.target as HTMLInputElement)?.select?.();
+  emit("focus", e);
+};
+
+const onInput = (e: InputEvent) => {
+  emit("update:modelValue", (e.target as HTMLInputElement)?.value);
+};
 </script>
 
 <template>
@@ -58,7 +67,8 @@ defineProps({
         :class="['h-full w-full focus:outline-none', inputClass]"
         :value="modelValue"
         v-bind="$attrs"
-        @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+        @focus="onFocus"
+        @input="onInput"
       />
     </label>
   </div>
