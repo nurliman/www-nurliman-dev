@@ -1,7 +1,46 @@
 <script setup lang="ts">
+import { useForm } from "vee-validate";
+import { toTypedSchema } from "@vee-validate/valibot";
+import {
+  string as vString,
+  object as vObject,
+  email as vEmail,
+  minLength as vMinLength,
+} from "valibot";
 import NuxtLink from "#app/components/nuxt-link";
 import TheInputText from "~/components/TheInputText.vue";
 import TheButton from "~/components/TheButton.vue";
+
+const schema = vObject({
+  name: vString([vMinLength(1, "Please enter your name")]),
+  email: vString([vMinLength(1, "Please enter your email"), vEmail("Please enter a valid email")]),
+  subject: vString([vMinLength(1, "Please enter a subject")]),
+  message: vString([vMinLength(1, "Please enter a message")]),
+});
+
+const { errors, defineField, handleSubmit } = useForm({
+  validationSchema: toTypedSchema(schema),
+  initialValues: {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  },
+});
+
+const [name, nameAttrs] = defineField("name");
+const [email, emailAttrs] = defineField("email");
+const [subject, subjectAttrs] = defineField("subject");
+const [message, messageAttrs] = defineField("message");
+
+const onSubmit = handleSubmit(
+  (values) => {
+    alert(JSON.stringify(values, null, 2));
+  },
+  () => {
+    alert("Please fill in the form correctly");
+  },
+);
 </script>
 
 <template>
@@ -38,13 +77,16 @@ import TheButton from "~/components/TheButton.vue";
 
       <div class="mb-5" />
 
-      <form class="z-[2] flex flex-col space-y-4">
+      <form @submit="onSubmit" class="z-[2] flex flex-col space-y-4">
         <TheInputText
           label-class="text-sm md:text-base"
           input-class="text-sm md:text-base"
           name="name"
           label="Full Name"
           placeholder="e.g. John Doe"
+          v-model="name"
+          v-bind="nameAttrs"
+          v-bind:error-message="errors.name"
         />
         <TheInputText
           label-class="text-sm md:text-base"
@@ -53,6 +95,9 @@ import TheButton from "~/components/TheButton.vue";
           type="email"
           label="Email Address"
           placeholder="e.g. example@email.com"
+          v-model="email"
+          v-bind="emailAttrs"
+          v-bind:error-message="errors.email"
         />
         <TheInputText
           label-class="text-sm md:text-base"
@@ -60,6 +105,9 @@ import TheButton from "~/components/TheButton.vue";
           name="subject"
           label="Subject"
           placeholder="Subject"
+          v-model="subject"
+          v-bind="subjectAttrs"
+          v-bind:error-message="errors.subject"
         />
         <TheInputText
           label-class="text-sm md:text-base"
@@ -69,6 +117,9 @@ import TheButton from "~/components/TheButton.vue";
           label="Message"
           placeholder="Message"
           rows="7"
+          v-model="message"
+          v-bind="messageAttrs"
+          v-bind:error-message="errors.message"
         />
         <div />
         <TheButton type="submit" color="teal" border shadow :class="$style.submitBtn"

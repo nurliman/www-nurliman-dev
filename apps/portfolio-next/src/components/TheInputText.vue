@@ -35,6 +35,7 @@ defineProps({
   inputClass: String,
   label: String,
   labelClass: String,
+  errorMessage: String,
   modelValue: String,
 });
 
@@ -51,11 +52,14 @@ const onInput = (e: InputEvent) => {
 </script>
 
 <template>
-  <div :class="['flex flex-col items-start space-y-px', $props.class]">
-    <label v-if="!!label" :class="labelClass" :for="inputElement?.id">{{ label }}</label>
+  <div :class="['flex flex-col items-start', $props.class]">
+    <label v-if="!!label" :class="['mb-px', labelClass]" :for="inputElement?.id">{{ label }}</label>
     <label
-      class="brutal-shadow-sm w-full cursor-text border-2 bg-white p-2.5"
-      :class="inputContainerClass"
+      :class="[
+        inputContainerClass,
+        $style.inputContainer,
+        !!errorMessage && $style.inputContainerError,
+      ]"
       :for="inputElement?.id"
     >
       <component
@@ -64,12 +68,49 @@ const onInput = (e: InputEvent) => {
         :is="component"
         :type="component === 'input' ? type : undefined"
         :rows="component === 'textarea' ? rows : undefined"
-        :class="['h-full w-full focus:outline-none', inputClass]"
+        :class="[$style.input, inputClass]"
         :value="modelValue"
         v-bind="$attrs"
         @focus="onFocus"
         @input="onInput"
       />
     </label>
+    <div v-if="!!errorMessage" class="text-xs text-red-500">{{ errorMessage }}</div>
   </div>
 </template>
+
+<style module>
+.inputContainer {
+  @apply mb-1.5 w-full border-2 p-2.5;
+  @apply brutal-shadow-sm;
+  @apply bg-white;
+  @apply cursor-text;
+  @apply focus-within:ring-2 focus-within:ring-purple-400;
+}
+
+.inputContainerError {
+  @apply ring-2 ring-red-400;
+}
+
+.input {
+  @apply h-full w-full;
+  @apply focus:outline-none;
+
+  &:-webkit-autofill {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: theme("colors.black");
+      box-shadow: 0 0 0px 1000px theme("colors.purple.100") inset;
+      font-family: theme("fontFamily.transducer");
+      transition: background-color 5000s ease-in-out 0s;
+
+      .inputContainer:has(&) {
+        @apply bg-purple-100;
+      }
+    }
+  }
+}
+</style>

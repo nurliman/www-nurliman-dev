@@ -25,5 +25,10 @@
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|vue)": "eslint --cache --fix",
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|vue|css|scss|json|yml|yaml)": "prettier --write --ignore-path .gitignore --ignore-path .prettierignore"
   },
-  "packageManager": "pnpm@8.12.1"
+  "packageManager": "pnpm@8.12.1",
+  "pnpm": {
+    "overrides": {
+      "@vee-validate/valibot>valibot": "latest"
+    }
+  }
 }

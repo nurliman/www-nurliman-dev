@@ -13,9 +13,12 @@
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.18",
+    "@vee-validate/valibot": "^4.12.3",
     "animejs": "^3.2.2",
-    "cva": "1.0.0-beta.1",
+    "cva": "^1.0.0-beta.1",
     "lodash-es": "^4.17.21",
+    "valibot": "^0.24.1",
+    "vee-validate": "^4.12.3",
     "vue-uid": "npm:@shimyshack/uid@^0.1.9",
     "vue3-marquee": "^4.1.0"
   },
