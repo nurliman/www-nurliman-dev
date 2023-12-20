@@ -1,0 +1,58 @@
+{
+  "name": "@nurliman.dev/env",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core.js",
+      "default": "./dist/core.cjs",
+      "require": "./dist/core.cjs",
+      "types": "./dist/core.d.ts"
+    },
+    "./nuxt": {
+      "import": "./dist/nuxt.js",
+      "default": "./dist/nuxt.cjs",
+      "require": "./dist/nuxt.cjs",
+      "types": "./dist/nuxt.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "dev": "tsup --config tsup.config.ts --watch",
+    "clean": "npx -y concurrently \"npm:clean:*\"",
+    "clean:turbo": "npx -y del-cli .turbo",
+    "clean:node_modules": "npx -y del-cli node_modules",
+    "clean:dist": "npx -y del-cli dist",
+    "format": "prettier --write --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
+    "lint": "npm run format && eslint --cache --fix ."
+  },
+  "devDependencies": {
+    "@swc/core": "^1.3.101",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "type-fest": "^4.8.3",
+    "typescript": "^5.3.3",
+    "valibot": "^0.24.1"
+  },
+  "peerDependencies": {
+    "valibot": ">=0"
+  }
+}
