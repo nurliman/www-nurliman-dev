@@ -34,14 +34,14 @@
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18",
     "@types/postcss-import": "^14.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "eslint": "^8.55.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
     "postcss": "^8.4.32",
     "postcss-import": "^15.1.0",
     "postcss-js": "^4.0.1",
     "slash": "^5.1.0",
-    "tailwindcss": "^3.3.6",
+    "tailwindcss": "^3.4.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   }
