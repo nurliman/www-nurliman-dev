@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.18",
+    "@nurliman.dev/env": "workspace:*",
     "@vee-validate/valibot": "^4.12.3",
     "animejs": "^3.2.2",
     "cva": "^1.0.0-beta.1",
