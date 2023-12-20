@@ -1,25 +1,13 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/valibot";
-import {
-  string as vString,
-  object as vObject,
-  email as vEmail,
-  minLength as vMinLength,
-} from "valibot";
+import { contactFormSchema } from "~/schemas";
 import NuxtLink from "#app/components/nuxt-link";
 import TheInputText from "~/components/TheInputText.vue";
 import TheButton from "~/components/TheButton.vue";
 
-const schema = vObject({
-  name: vString([vMinLength(1, "Please enter your name")]),
-  email: vString([vMinLength(1, "Please enter your email"), vEmail("Please enter a valid email")]),
-  subject: vString([vMinLength(1, "Please enter a subject")]),
-  message: vString([vMinLength(1, "Please enter a message")]),
-});
-
 const { errors, defineField, handleSubmit } = useForm({
-  validationSchema: toTypedSchema(schema),
+  validationSchema: toTypedSchema(contactFormSchema),
   initialValues: {
     name: "",
     email: "",
