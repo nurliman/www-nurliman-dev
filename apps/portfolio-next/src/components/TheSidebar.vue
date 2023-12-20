@@ -27,7 +27,7 @@ defineExpose({
   <button
     ref="backdropRef"
     type="button"
-    class="fixed inset-0 z-10 w-screen bg-black opacity-0 opacity-0 md:hidden"
+    class="fixed inset-0 z-10 w-screen bg-black opacity-0 md:hidden"
     :class="{
       'pointer-events-auto': isOpen,
       'pointer-events-none': !isOpen,
