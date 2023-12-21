@@ -1,10 +1,20 @@
 <script setup lang="ts">
+import { ref } from "vue";
+import { $fetch, FetchError } from "ofetch";
+import { toast, updateGlobalOptions } from "vue3-toastify";
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/valibot";
 import { contactFormSchema } from "~/schemas";
 import NuxtLink from "#app/components/nuxt-link";
 import TheInputText from "~/components/TheInputText.vue";
 import TheButton from "~/components/TheButton.vue";
+import "vue3-toastify/dist/index.css";
+
+updateGlobalOptions({
+  position: toast.POSITION.BOTTOM_RIGHT,
+  pauseOnHover: false,
+  autoClose: 3000,
+});
 
 const { errors, defineField, handleSubmit } = useForm({
   validationSchema: toTypedSchema(contactFormSchema),
@@ -21,12 +31,51 @@ const [email, emailAttrs] = defineField("email");
 const [subject, subjectAttrs] = defineField("subject");
 const [message, messageAttrs] = defineField("message");
 
+const submitLoading = ref(false);
 const onSubmit = handleSubmit(
-  (values) => {
-    alert(JSON.stringify(values, null, 2));
+  (body) => {
+    submitLoading.value = true;
+    const toastId = toast.loading("Sending message...");
+
+    $fetch("/api/messages", {
+      method: "post",
+      body,
+      timeout: 10000,
+    })
+      .then(() => {
+        toast.update(toastId, {
+          isLoading: false,
+          autoClose: true,
+          closeOnClick: true,
+          closeButton: true,
+          type: "success",
+          render: "Message sent successfully.",
+        });
+      })
+      .catch((error) => {
+        let message: string;
+        if (error instanceof FetchError) {
+          console.error(error.data);
+          message = `FetchError: ${error?.data?.message || "Something went wrong."}`;
+        } else {
+          console.error(error);
+          message = `UnknownError: ${error.message || "Something went wrong."}`;
+        }
+        toast.update(toastId, {
+          isLoading: false,
+          autoClose: true,
+          closeOnClick: true,
+          closeButton: true,
+          type: "error",
+          render: message,
+        });
+      })
+      .finally(() => {
+        submitLoading.value = false;
+      });
   },
   () => {
-    alert("Please fill in the form correctly");
+    toast.error("Please fill in the form correctly.");
   },
 );
 </script>
@@ -65,7 +114,7 @@ const onSubmit = handleSubmit(
 
       <div class="mb-5" />
 
-      <form @submit="onSubmit" class="z-[2] flex flex-col space-y-4">
+      <form @submit.prevent="onSubmit" class="z-[2] flex flex-col space-y-4">
         <TheInputText
           label-class="text-sm md:text-base"
           input-class="text-sm md:text-base"
@@ -110,7 +159,13 @@ const onSubmit = handleSubmit(
           v-bind:error-message="errors.message"
         />
         <div />
-        <TheButton type="submit" color="teal" border shadow :class="$style.submitBtn"
+        <TheButton
+          type="submit"
+          color="teal"
+          border
+          shadow
+          :class="$style.submitBtn"
+          :disabled="submitLoading"
           >Send</TheButton
         >
       </form>
