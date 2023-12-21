@@ -1,0 +1,51 @@
+{
+  "name": "@nurliman.dev/emails",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "email dev --skip-install --dir src/templates",
+    "build": "npm run build:templates && npm run build:scripts",
+    "build:scripts": "tsup --config tsup.config.ts",
+    "build:templates": "cross-env NODE_ENV=production tsx scripts/build.ts",
+    "format": "prettier --write --ignore-path ../../.prettierignore --ignore-path ./.gitignore .",
+    "lint": "npm run format && eslint --cache --fix .",
+    "prepare": "npm run build:templates"
+  },
+  "devDependencies": {
+    "@react-email/components": "^0.0.12",
+    "@react-email/render": "^0.0.10",
+    "@tsconfig/vite-react": "^3.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash-es": "^4.17.12",
+    "@types/lodash.unescape": "^4.0.9",
+    "@types/node": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.0",
+    "lodash-es": "^4.17.21",
+    "pupa": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-email": "1.10.0",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0"
+  }
+}

@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+/.generated
+/.react-email
+/dist
+.env
+.env.*
+!.env.example
