@@ -15,6 +15,7 @@
     "@fontsource/racing-sans-one": "^5.0.18",
     "@nurliman.dev/emails": "workspace:*",
     "@nurliman.dev/env": "workspace:*",
+    "@nurliman.dev/theme-script": "workspace:*",
     "@vee-validate/valibot": "^4.12.3",
     "animejs": "^3.2.2",
     "cva": "^1.0.0-beta.1",
