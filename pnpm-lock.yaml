@@ -353,9 +353,6 @@ importers:
 
   packages/env:
     devDependencies:
-      '@swc/core':
-        specifier: ^1.3.101
-        version: 1.3.101
       '@tsconfig/node18':
         specifier: ^18.2.2
         version: 18.2.2
