@@ -279,7 +279,17 @@ importers:
         version: 4.2.5(vue@3.3.13)
 
   packages/emails:
+    dependencies:
+      lodash.unescape:
+        specifier: ^4.0.1
+        version: 4.0.1
+      pupa:
+        specifier: ^3.1.0
+        version: 3.1.0
     devDependencies:
+      '@nurliman.dev/file-exists':
+        specifier: workspace:*
+        version: link:../file-exists
       '@react-email/components':
         specifier: ^0.0.12
         version: 0.0.12(react@18.2.0)
@@ -325,9 +335,6 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
-      pupa:
-        specifier: ^3.1.0
-        version: 3.1.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -6644,6 +6651,7 @@ packages:
   /escape-goat@4.0.0:
     resolution: {integrity: sha512-2Sd4ShcWxbx6OY1IHyla/CVNwvg7XwZVoXZHcSu9w9SReNP1EzzD5T8NWKIR38fIqEns9kDWKUQTXXAmlDrdPg==}
     engines: {node: '>=12'}
+    dev: false
 
   /escape-html@1.0.3:
     resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
@@ -11020,6 +11028,7 @@ packages:
     engines: {node: '>=12.20'}
     dependencies:
       escape-goat: 4.0.0
+    dev: false
 
   /purgecss@5.0.0:
     resolution: {integrity: sha512-RAnuxrGuVyLLTr8uMbKaxDRGWMgK5CCYDfRyUNNcaz5P3kGgD2b7ymQGYEyo2ST7Tl/ScwFgf5l3slKMxHSbrw==}

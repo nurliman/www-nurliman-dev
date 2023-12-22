@@ -42,7 +42,7 @@ const main = async () => {
     html = escape(html);
 
     const ts = `
-      import unescape from "lodash-es/unescape";
+      import unescape from "lodash.unescape";
       export const ${name}: string = unescape(\`${html}\`);
       export default ${name};
     `;
