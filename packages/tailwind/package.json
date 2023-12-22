@@ -28,8 +28,6 @@
     "format": "prettier --write --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
     "lint": "npm run format && eslint --cache --fix ."
   },
-  "keywords": [],
-  "author": "",
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18",
@@ -44,5 +42,8 @@
     "tailwindcss": "^3.4.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3"
   }
 }
