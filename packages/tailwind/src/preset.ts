@@ -4,8 +4,8 @@ export const preset = {
   content: [],
   theme: {
     extend: {
-      borderColor: ({ theme }) => ({
-        DEFAULT: theme("colors.black"),
+      borderColor: ({ colors }) => ({
+        DEFAULT: colors.black,
       }),
       colors: {
         pink: {
