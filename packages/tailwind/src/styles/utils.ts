@@ -23,7 +23,7 @@ const styles: any = {
     "--brutal-shadow": "var(--brutal-shadow-height) var(--brutal-shadow-height) 0",
     "boxShadow": "var(--brutal-shadow-color) var(--brutal-shadow)"
   },
-  ":where(html.dark) .brutal-shadow,\n    :where(html.dark) .brutal-shadow-sm": {
+  ":where(html.dark) .brutal-shadow, :where(html.dark) .brutal-shadow-sm": {
     "--brutal-shadow-color": "#27272a"
   },
   ".brutal-shadow-sm": {
@@ -55,11 +55,6 @@ const styles: any = {
     "OUserSelect": "none",
     "msUserSelect": "none",
     "userSelect": "none"
-  },
-  "@media (prefers-color-scheme: dark)": {
-    ":where(html:not(.light)) .brutal-shadow,\n    :where(html:not(.light)) .brutal-shadow-sm": {
-      "--brutal-shadow-color": "#27272a"
-    }
   }
 };
 

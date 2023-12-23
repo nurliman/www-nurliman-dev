@@ -16,12 +16,11 @@
       --brutal-shadow-height: 1px;
       --brutal-shadow-color: theme("colors.black");
       --brutal-shadow: var(--brutal-shadow-height) var(--brutal-shadow-height) 0;
+      box-shadow: var(--brutal-shadow-color) var(--brutal-shadow);
 
-      @media (prefers-color-scheme: dark) {
+      :where(html.dark) & {
         --brutal-shadow-color: theme("colors.zinc.800");
       }
-
-      box-shadow: var(--brutal-shadow-color) var(--brutal-shadow);
     }
 
     &-sm {
