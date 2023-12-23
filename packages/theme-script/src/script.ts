@@ -4,8 +4,8 @@
 function initializeTheme() {
   try {
     const htmlClassList = document.documentElement.classList;
-    const prefersDefault = window.matchMedia("(prefers-color-scheme: {{DEFAULT_THEME}})").matches;
-    const themeInLocalStorage = localStorage.getItem("{{THEME_LOCAL_STORAGE_KEY}}");
+    const prefersDefault = window.matchMedia("(prefers-color-scheme: {{defaultTheme}})").matches;
+    const themeInLocalStorage = localStorage.getItem("{{localStorageKey}}");
     let theme: string;
 
     // If user has a stored theme, use that
@@ -13,9 +13,9 @@ function initializeTheme() {
       theme = themeInLocalStorage;
     } else if (prefersDefault) {
       // If user has no stored theme, use their preferred default theme
-      theme = "{{DEFAULT_THEME}}";
+      theme = "{{defaultTheme}}";
     } else {
-      theme = "{{OPPOSITE_THEME}}";
+      theme = "{{oppositeTheme}}";
     }
 
     // Update the class for document.documentElement based on the theme
