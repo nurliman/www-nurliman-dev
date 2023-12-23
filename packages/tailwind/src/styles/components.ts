@@ -25,6 +25,20 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(228 228 231 / var(--tw-bg-opacity))"
   },
+  ":is(:where(.dark) .brutal-btn),:is(:where(.dark) \n      .brutal-btn-white)": {
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
+    "--tw-text-opacity": "1",
+    "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+  },
+  ":is(:where(.dark) .brutal-btn:hover),:is(:where(.dark) \n      .brutal-btn-white:hover)": {
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(24 24 27 / var(--tw-bg-opacity))"
+  },
+  ":is(:where(.dark) .brutal-btn:active),:is(:where(.dark) \n      .brutal-btn-white:active)": {
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(9 9 11 / var(--tw-bg-opacity))"
+  },
   ".brutal-btn-white-pink": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
@@ -53,6 +67,20 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(161 161 170 / var(--tw-bg-opacity))"
   },
+  ":is(:where(.dark) .brutal-btn-zinc)": {
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(24 24 27 / var(--tw-bg-opacity))",
+    "--tw-text-opacity": "1",
+    "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+  },
+  ":is(:where(.dark) .brutal-btn-zinc:hover)": {
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(9 9 11 / var(--tw-bg-opacity))"
+  },
+  ":is(:where(.dark) .brutal-btn-zinc:active)": {
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
+  },
   ".brutal-btn-teal": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(35 160 148 / var(--tw-bg-opacity))",
@@ -68,24 +96,12 @@ const styles: any = {
     "backgroundColor": "rgb(25 108 102 / var(--tw-bg-opacity))"
   },
   ".brutal-btn-border-sm": {
-    "border": "1px solid rgba(0, 0, 0, 1)"
+    "borderWidth": "1px",
+    "borderStyle": "solid"
   },
   ".brutal-btn-border": {
-    "border": "2px solid rgba(0, 0, 0, 1)"
-  },
-  ".brutal-btn-shadow-sm": {
-    "boxShadow": "2px 2px 0px rgba(0, 0, 0, 1)"
-  },
-  ".brutal-btn-shadow-sm:active": {
-    "boxShadow": "1px 1px 0px rgba(0, 0, 0, 1)",
-    "transform": "translate3d(1px, 1px, 0px)"
-  },
-  ".brutal-btn-shadow": {
-    "boxShadow": "4px 4px 0px rgba(0, 0, 0, 1)"
-  },
-  ".brutal-btn-shadow:active": {
-    "boxShadow": "1px 1px 0px rgba(0, 0, 0, 1)",
-    "transform": "translate3d(3px, 3px, 0px)"
+    "borderWidth": "2px",
+    "borderStyle": "solid"
   }
 };
 

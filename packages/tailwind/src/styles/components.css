@@ -11,6 +11,9 @@
         @apply bg-white text-black;
         @apply hover:bg-zinc-100;
         @apply active:bg-zinc-200;
+        @apply dark:bg-black dark:text-white;
+        @apply dark:hover:bg-zinc-900;
+        @apply dark:active:bg-zinc-950;
       }
 
       &-white-pink {
@@ -23,6 +26,9 @@
         @apply bg-zinc-200 text-black;
         @apply hover:bg-zinc-300;
         @apply active:bg-zinc-400;
+        @apply dark:bg-zinc-900 dark:text-white;
+        @apply dark:hover:bg-zinc-950;
+        @apply dark:active:bg-black;
       }
 
       &-teal {
@@ -34,33 +40,13 @@
 
       /* Button borders */
       &-border-sm {
-        border: 1px solid rgba(0, 0, 0, 1);
+        @apply border border-solid;
       }
 
       &-border {
-        border: 2px solid rgba(0, 0, 0, 1);
+        @apply border-2 border-solid;
       }
       /* End button borders */
-
-      /* Button shadows */
-      &-shadow-sm {
-        @apply brutal-shadow-sm;
-
-        &:active {
-          box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-          transform: translate3d(1px, 1px, 0px);
-        }
-      }
-
-      &-shadow {
-        @apply brutal-shadow;
-
-        &:active {
-          box-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-          transform: translate3d(3px, 3px, 0px);
-        }
-      }
-      /* End button shadows */
     }
   }
 }

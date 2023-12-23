@@ -90,7 +90,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <TheButton class="relative mr-2 h-10 w-10 rounded-lg" @click="switchTheme">
+  <TheButton class="relative mr-2 h-10 w-10 rounded-lg dark:border" @click="switchTheme">
     <img
       src="/assets/moon.svg"
       alt="Moon"

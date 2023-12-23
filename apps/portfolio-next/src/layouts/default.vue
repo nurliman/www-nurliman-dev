@@ -6,7 +6,13 @@ import TheFooter from "~/components/TheFooter.vue";
 <template>
   <TheHeader />
 
-  <div class="flex min-h-full flex-col pt-[50px] md:pt-14">
+  <div
+    :class="[
+      'flex min-h-full flex-col pt-[50px] md:pt-14',
+      'bg-white text-black',
+      'dark:bg-black dark:text-white',
+    ]"
+  >
     <main class="flex flex-1 flex-col">
       <slot />
     </main>

@@ -41,7 +41,7 @@ const info = readonly([
 <template>
   <div class="flex w-full flex-col text-left">
     <client-only>
-      <div class="relative border-b-2 bg-zinc-200 py-1 md:-top-[2px]">
+      <div class="relative border-b-2 bg-zinc-200 py-1 md:-top-[2px] dark:bg-zinc-900">
         <Vue3Marquee clone>
           <div class="font-transducer-extended inline-flex text-[10px] font-bold">
             <span>NURLIMAN DIARA ARIA</span>
@@ -84,7 +84,14 @@ const info = readonly([
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2" :class="$style.container">
       <div v-for="thing in thingsIDo" :key="thing.title" :class="$style.card">
-        <NuxtImg :src="thing.icon" :alt="thing.title" width="84px" height="84px" loading="lazy" />
+        <img
+          :src="thing.icon"
+          :alt="thing.title"
+          class="bg-white"
+          width="84px"
+          height="84px"
+          loading="lazy"
+        />
         <div class="mb-4" />
         <h3 :class="$style.heading3">{{ thing.title }}</h3>
         <div class="mb-1.5" />
@@ -97,7 +104,7 @@ const info = readonly([
     <div class="mb-14" />
 
     <client-only>
-      <div class="border-y-2 bg-zinc-200 py-2">
+      <div class="border-y-2 bg-zinc-200 py-2 dark:bg-zinc-950">
         <Vue3Marquee clone>
           <ul class="flex text-xs">
             <li v-for="([key, value], index) in info" :key="key + value">

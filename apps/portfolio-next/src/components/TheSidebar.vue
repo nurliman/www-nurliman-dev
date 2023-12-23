@@ -38,7 +38,8 @@ defineExpose({
   <div
     ref="modalRef"
     :class="[
-      'fixed z-40 flex w-screen flex-col border-r bg-white sm:max-w-xs md:hidden',
+      'fixed z-40 flex w-screen flex-col border-r sm:max-w-xs md:hidden',
+      'bg-white dark:bg-black',
       '-translate-x-full will-change-transform',
     ]"
     :style="{
@@ -61,21 +62,28 @@ defineExpose({
       </ul>
     </nav>
     <div class="h-px w-px flex-1" />
-    <div class="flex border-t bg-white p-5">
+    <div class="flex border-t bg-white p-5 dark:bg-black">
       <ul class="flex flex-row space-x-3.5">
         <li v-for="social in socials" :key="social.link + social.name" class="flex">
-          <NuxtLink
+          <TheButton
+            :component="NuxtLink"
             :to="social.link"
             target="_blank"
-            class="rounded border p-1.5 hover:bg-zinc-200"
+            class="rounded border p-1.5"
           >
             <img
               :src="social.iconUrl"
               :alt="social.name"
               loading="lazy"
-              class="h-[18px] w-[18px]"
+              class="h-[18px] w-[18px] dark:hidden"
             />
-          </NuxtLink>
+            <img
+              :src="social.iconDarkUrl"
+              :alt="social.name"
+              loading="lazy"
+              class="hidden h-[18px] w-[18px] dark:block"
+            />
+          </TheButton>
         </li>
       </ul>
     </div>

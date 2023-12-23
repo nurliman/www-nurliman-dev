@@ -83,9 +83,16 @@ const onInput = (e: InputEvent) => {
 .inputContainer {
   @apply mb-1.5 w-full border-2 p-2.5;
   @apply brutal-shadow-sm;
-  @apply bg-white;
   @apply cursor-text;
   @apply focus-within:ring-2 focus-within:ring-purple-400;
+
+  &,
+  & > .input {
+    @apply bg-white;
+    :where(html:global(.dark)) & {
+      @apply bg-black;
+    }
+  }
 }
 
 .inputContainerError {
@@ -95,6 +102,10 @@ const onInput = (e: InputEvent) => {
 .input {
   @apply h-full w-full;
   @apply focus:outline-none;
+
+  :where(html:global(.dark)) & {
+    @apply placeholder:text-zinc-400;
+  }
 
   &:-webkit-autofill {
     &,

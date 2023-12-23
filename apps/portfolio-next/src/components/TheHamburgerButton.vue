@@ -20,7 +20,7 @@ const emit = defineEmits<{
       height="28px"
       width="28px"
       loading="lazy"
-      class="absolute-center transition-opacity"
+      class="absolute-center transition-opacity dark:hidden"
       :class="{ 'opacity-0': isSidebarOpen, 'opacity-100': !isSidebarOpen }"
     />
     <img
@@ -29,7 +29,25 @@ const emit = defineEmits<{
       height="28px"
       width="28px"
       loading="lazy"
-      class="absolute-center transition-opacity"
+      class="absolute-center transition-opacity dark:hidden"
+      :class="{ 'opacity-0': !isSidebarOpen, 'opacity-100': isSidebarOpen }"
+    />
+    <img
+      src="/assets/menu-burger-dark.svg"
+      alt="Menu"
+      height="28px"
+      width="28px"
+      loading="lazy"
+      class="absolute-center hidden transition-opacity dark:block"
+      :class="{ 'opacity-0': isSidebarOpen, 'opacity-100': !isSidebarOpen }"
+    />
+    <img
+      src="/assets/menu-close-dark.svg"
+      alt="Close"
+      height="28px"
+      width="28px"
+      loading="lazy"
+      class="absolute-center hidden transition-opacity dark:block"
       :class="{ 'opacity-0': !isSidebarOpen, 'opacity-100': isSidebarOpen }"
     />
   </TheButton>

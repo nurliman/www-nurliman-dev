@@ -49,7 +49,12 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <header class="fixed top-0 z-30 w-full overflow-hidden border-b-2 bg-white p-0">
+  <header
+    :class="[
+      'fixed top-0 z-30 w-full overflow-hidden border-b-2 bg-white p-0',
+      'dark:bg-black dark:text-white',
+    ]"
+  >
     <div class="mx-auto flex max-w-[90rem] items-center justify-between">
       <TheHamburgerButton
         class="md:hidden"

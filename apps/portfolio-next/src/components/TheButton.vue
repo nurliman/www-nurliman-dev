@@ -17,8 +17,8 @@ const buttonVariant = cva({
       true: "brutal-btn-border",
     },
     shadow: {
-      sm: "brutal-btn-shadow-sm",
-      true: "brutal-btn-shadow",
+      sm: "brutal-shadow-sm activable",
+      true: "brutal-shadow activable",
     },
   },
 });

@@ -17,11 +17,28 @@ const styles: any = {
     "alignItems": "center",
     "justifyContent": "center"
   },
+  ".brutal-shadow,\n    .brutal-shadow-sm": {
+    "--brutal-shadow-height": "1px",
+    "--brutal-shadow-color": "#000",
+    "--brutal-shadow": "var(--brutal-shadow-height) var(--brutal-shadow-height) 0",
+    "boxShadow": "var(--brutal-shadow-color) var(--brutal-shadow)"
+  },
+  ":where(html.dark) .brutal-shadow,\n    :where(html.dark) .brutal-shadow-sm": {
+    "--brutal-shadow-color": "#27272a"
+  },
   ".brutal-shadow-sm": {
-    "boxShadow": "2px 2px 0px rgba(0, 0, 0, 1)"
+    "--brutal-shadow-height": "2px"
+  },
+  ".brutal-shadow-sm-active:active,\n      .brutal-shadow-sm.activable:active": {
+    "--brutal-shadow-height": "1px",
+    "transform": "translate3d(1px, 1px, 0px)"
   },
   ".brutal-shadow": {
-    "boxShadow": "4px 4px 0px rgba(0, 0, 0, 1)"
+    "--brutal-shadow-height": "4px"
+  },
+  ".brutal-shadow-active:active,\n      .brutal-shadow.activable:active": {
+    "--brutal-shadow-height": "1px",
+    "transform": "translate3d(3px, 3px, 0px)"
   },
   ".no-drag": {
     "WebkitUserDrag": "none",
@@ -38,6 +55,11 @@ const styles: any = {
     "OUserSelect": "none",
     "msUserSelect": "none",
     "userSelect": "none"
+  },
+  "@media (prefers-color-scheme: dark)": {
+    ":where(html:not(.light)) .brutal-shadow,\n    :where(html:not(.light)) .brutal-shadow-sm": {
+      "--brutal-shadow-color": "#27272a"
+    }
   }
 };
 

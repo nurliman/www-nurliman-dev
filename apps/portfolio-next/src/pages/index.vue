@@ -7,7 +7,14 @@ import TheButton from "~/components/TheButton.vue";
 <template>
   <div :class="$style.container">
     <h1 class="font-transducer-extended">
-      <TheBadge component="span" color="zinc" rounded :class="$style.headingName">
+      <TheBadge
+        component="span"
+        color="zinc"
+        border="sm"
+        shadow="sm"
+        rounded
+        :class="$style.headingName"
+      >
         <span>Nurliman Diara</span>
         <span class="absolute text-transparent">:</span>
       </TheBadge>
@@ -60,8 +67,8 @@ import TheButton from "~/components/TheButton.vue";
   @apply mb-5 inline-flex md:mb-6;
   @apply px-2.5 py-px md:px-3.5 md:py-0.5;
   @apply text-sm md:text-base;
-  @apply max-md:border;
-  @apply max-md:brutal-shadow-sm;
+  @apply md:border-2;
+  @apply md:brutal-shadow;
 }
 
 .headingText {
