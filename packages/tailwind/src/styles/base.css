@@ -3,7 +3,9 @@
 *,
 ::before,
 ::after {
-  @apply dark:border-zinc-800;
+  :where(html.dark) & {
+    border-color: theme("colors.zinc.800");
+  }
 }
 
 ::-moz-selection {
