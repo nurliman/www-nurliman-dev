@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import url from "node:url";
 import path from "node:path";
+import cssnano from "cssnano";
 import postcss from "postcss";
 import postcssJs, { type CssInJs } from "postcss-js";
 import postcssImport from "postcss-import";
@@ -49,9 +50,12 @@ const transpileCssToJs = async (cssEntryPath: string, plugins: Config["plugins"]
     plugins: [...plugins],
   } satisfies Config;
 
-  result = await postcss([tailwindcss(twConfig)]).process(result.css, {
-    from: cssEntryPath,
-  });
+  result = await postcss([tailwindcss(twConfig), cssnano({ preset: "default" })]).process(
+    result.css,
+    {
+      from: cssEntryPath,
+    },
+  );
 
   let jss: CssInJs;
   jss = postcssJs.objectify(result.root);
@@ -116,4 +120,5 @@ const main = async () => {
   }
 };
 
-main();
+console.time("build-jss");
+main().finally(() => console.timeEnd("build-jss"));

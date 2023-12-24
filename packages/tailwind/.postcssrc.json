@@ -2,6 +2,9 @@
   "plugins": {
     "postcss-import": {},
     "tailwindcss/nesting": {},
-    "tailwindcss": {}
+    "tailwindcss": {},
+    "cssnano": {
+      "preset": "default"
+    }
   }
 }
