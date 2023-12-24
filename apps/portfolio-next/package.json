@@ -31,7 +31,6 @@
     "@elasticemail/elasticemail-client-ts-axios": "^4.0.22",
     "@nurliman.dev/tailwind": "workspace:*",
     "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.1.0",
     "@types/animejs": "^3.1.12",
     "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^6.15.0",

@@ -77,6 +77,4 @@ export default defineNuxtConfig({
   experimental: {
     inlineSSRStyles: false,
   },
-
-  modules: ["@nuxt/image"],
 });
