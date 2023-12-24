@@ -3,8 +3,9 @@
  */
 function initializeTheme() {
   try {
+    const media = window.matchMedia;
     const htmlClassList = document.documentElement.classList;
-    const prefersDefault = window.matchMedia("(prefers-color-scheme: {{defaultTheme}})").matches;
+    const prefersDefault = !!media && media("(prefers-color-scheme:{{defaultTheme}})").matches;
     const themeInLocalStorage = localStorage.getItem("{{localStorageKey}}");
     let theme: string;
 
