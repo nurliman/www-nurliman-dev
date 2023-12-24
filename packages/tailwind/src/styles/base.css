@@ -5,3 +5,13 @@
 ::after {
   @apply dark:border-zinc-800;
 }
+
+::-moz-selection {
+  color: theme("colors.white");
+  background: theme("colors.pink.500");
+}
+
+::selection {
+  color: theme("colors.white");
+  background: theme("colors.pink.500");
+}

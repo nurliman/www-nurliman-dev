@@ -9,6 +9,14 @@ const styles: any = {
   ":is(:where(.dark) *),:is(:where(.dark) \n)::before,:is(:where(.dark) \n)::after": {
     "--tw-border-opacity": "1",
     "borderColor": "rgb(39 39 42 / var(--tw-border-opacity))"
+  },
+  "::-moz-selection": {
+    "color": "#fff",
+    "background": "#f540cc"
+  },
+  "::selection": {
+    "color": "#fff",
+    "background": "#f540cc"
   }
 };
 
