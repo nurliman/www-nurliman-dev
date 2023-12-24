@@ -5,6 +5,7 @@ import cssnano from "cssnano";
 import postcss from "postcss";
 import postcssJs, { type CssInJs } from "postcss-js";
 import postcssImport from "postcss-import";
+import postcssDarkThemeClass from "postcss-dark-theme-class";
 import tailwindcss, { type Config } from "tailwindcss";
 import tailwindcssNesting from "tailwindcss/nesting";
 import tailwindPlugin from "tailwindcss/plugin";
@@ -33,7 +34,11 @@ const transpileCssToJs = async (cssEntryPath: string, plugins: Config["plugins"]
 
   const css = await fs.readFile(cssEntryPath, "utf8");
 
-  let result = await postcss([postcssImport(), tailwindcssNesting()]).process(css, {
+  let result = await postcss([
+    postcssImport(),
+    tailwindcssNesting(),
+    postcssDarkThemeClass({ darkSelector: ".dark", lightSelector: ".light" }),
+  ]).process(css, {
     from: cssEntryPath,
   });
 

@@ -3,7 +3,7 @@
 *,
 ::before,
 ::after {
-  :where(html.dark) & {
+  @media (prefers-color-scheme: dark) {
     border-color: theme("colors.zinc.800");
   }
 }

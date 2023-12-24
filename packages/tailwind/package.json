@@ -38,6 +38,7 @@
     "cssnano": "^6.0.1",
     "eslint": "^8.56.0",
     "postcss": "^8.4.32",
+    "postcss-dark-theme-class": "^1.1.0",
     "postcss-import": "^15.1.0",
     "postcss-js": "^4.0.1",
     "slash": "^5.1.0",

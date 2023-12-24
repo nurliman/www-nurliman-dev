@@ -2,6 +2,10 @@
   "plugins": {
     "postcss-import": {},
     "tailwindcss/nesting": {},
+    "postcss-dark-theme-class": {
+      "darkSelector": ".dark",
+      "lightSelector": ".light"
+    },
     "tailwindcss": {},
     "cssnano": {
       "preset": "default"

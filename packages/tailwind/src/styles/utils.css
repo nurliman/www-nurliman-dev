@@ -18,7 +18,7 @@
       --brutal-shadow: var(--brutal-shadow-height) var(--brutal-shadow-height) 0;
       box-shadow: var(--brutal-shadow-color) var(--brutal-shadow);
 
-      :where(html.dark) & {
+      @media (prefers-color-scheme: dark) {
         --brutal-shadow-color: theme("colors.zinc.800");
       }
     }

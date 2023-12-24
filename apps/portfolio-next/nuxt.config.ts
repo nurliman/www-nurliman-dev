@@ -59,6 +59,10 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       "tailwindcss/nesting": {},
+      "postcss-dark-theme-class": {
+        darkSelector: ".dark",
+        lightSelector: ".light",
+      },
       tailwindcss: {},
       "postcss-flexbugs-fixes": {},
       "postcss-preset-env": {

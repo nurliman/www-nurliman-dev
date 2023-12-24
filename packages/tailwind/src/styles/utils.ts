@@ -55,6 +55,11 @@ const styles: any = {
     "OUserSelect": "none",
     "msUserSelect": "none",
     "userSelect": "none"
+  },
+  "@media (prefers-color-scheme:dark)": {
+    ":where(html:not(.light)) .brutal-shadow,:where(html:not(.light)) .brutal-shadow-sm": {
+      "--brutal-shadow-color": "#27272a"
+    }
   }
 };
 

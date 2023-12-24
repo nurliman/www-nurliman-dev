@@ -13,7 +13,7 @@ import TheButton from "~/components/TheButton.vue";
         border="sm"
         shadow="sm"
         rounded
-        :class="$style.headingName"
+        :class="[$style.headingName, 'md:brutal-shadow md:border-2']"
       >
         <span>Nurliman Diara</span>
         <span class="absolute text-transparent">:</span>
@@ -67,8 +67,6 @@ import TheButton from "~/components/TheButton.vue";
   @apply mb-5 inline-flex md:mb-6;
   @apply px-2.5 py-px md:px-3.5 md:py-0.5;
   @apply text-sm md:text-base;
-  @apply md:border-2;
-  @apply md:brutal-shadow;
 }
 
 .headingText {

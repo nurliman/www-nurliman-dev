@@ -83,7 +83,7 @@ const info = readonly([
     <div class="mb-4" />
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2" :class="$style.container">
-      <div v-for="thing in thingsIDo" :key="thing.title" :class="$style.card">
+      <div v-for="thing in thingsIDo" :key="thing.title" :class="[$style.card, 'brutal-shadow-sm']">
         <img
           :src="thing.icon"
           :alt="thing.title"
@@ -144,6 +144,5 @@ const info = readonly([
 .card {
   @apply flex flex-1 flex-col items-center rounded-lg border-2 p-8 text-center;
   @apply -translate-x-1 -translate-y-1;
-  @apply brutal-shadow-sm;
 }
 </style>

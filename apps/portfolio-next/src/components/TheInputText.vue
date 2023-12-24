@@ -56,6 +56,7 @@ const onInput = (e: InputEvent) => {
     <label v-if="!!label" :class="['mb-px', labelClass]" :for="inputElement?.id">{{ label }}</label>
     <label
       :class="[
+        'brutal-shadow-sm',
         inputContainerClass,
         $style.inputContainer,
         !!errorMessage && $style.inputContainerError,
@@ -82,15 +83,15 @@ const onInput = (e: InputEvent) => {
 <style module>
 .inputContainer {
   @apply mb-1.5 w-full border-2 p-2.5;
-  @apply brutal-shadow-sm;
   @apply cursor-text;
   @apply focus-within:ring-2 focus-within:ring-purple-400;
 
   &,
   & > .input {
-    @apply bg-white;
+    background-color: theme("colors.white");
+
     :where(html:global(.dark)) & {
-      @apply bg-black;
+      background-color: theme("colors.black");
     }
   }
 }
@@ -104,7 +105,9 @@ const onInput = (e: InputEvent) => {
   @apply focus:outline-none;
 
   :where(html:global(.dark)) & {
-    @apply placeholder:text-zinc-400;
+    &::placeholder {
+      color: theme("colors.zinc.400");
+    }
   }
 
   &:-webkit-autofill {
@@ -119,7 +122,7 @@ const onInput = (e: InputEvent) => {
       transition: background-color 5000s ease-in-out 0s;
 
       .inputContainer:has(&) {
-        @apply bg-purple-100;
+        background-color: theme("colors.purple.100");
       }
     }
   }

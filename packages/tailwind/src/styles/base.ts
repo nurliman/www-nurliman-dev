@@ -16,6 +16,11 @@ const styles: any = {
   "::selection": {
     "background": "#f540cc",
     "color": "#fff"
+  },
+  "@media (prefers-color-scheme:dark)": {
+    ":where(html:not(.light)) *,:where(html:not(.light)) :after,:where(html:not(.light)) :before": {
+      "borderColor": "#27272a"
+    }
   }
 };
 
