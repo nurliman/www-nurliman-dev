@@ -14,7 +14,8 @@
     ".": {
       "import": "./dist/index.js",
       "default": "./dist/index.cjs"
-    }
+    },
+    "./styles.css": "./styles.css"
   },
   "scripts": {
     "build": "npm run build:jss && npm run build:js",
