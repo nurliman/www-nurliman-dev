@@ -30,11 +30,10 @@
     "lint": "npm run format && eslint --cache --fix ."
   },
   "devDependencies": {
+    "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18",
     "@types/postcss-import": "^14.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
     "cssnano": "^6.0.1",
     "eslint": "^8.56.0",
     "postcss": "^8.4.32",

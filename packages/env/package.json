@@ -41,10 +41,9 @@
     "lint": "npm run format && eslint --cache --fix ."
   },
   "devDependencies": {
+    "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
     "eslint": "^8.56.0",
     "tsup": "^8.0.1",
     "type-fest": "^4.8.3",

@@ -1,41 +1,6 @@
 {
-  "$schema": "https://json.schemastore.org/eslintrc",
-  "env": {
-    "browser": true,
-    "es2017": true,
-    "node": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-essential"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 2020,
-    "extraFileExtensions": [".vue"]
-  },
-  "overrides": [
-    {
-      "files": ["*.vue"],
-      "parser": "vue-eslint-parser",
-      "parserOptions": {
-        "parser": "@typescript-eslint/parser"
-      }
-    }
-  ],
+  "extends": ["@nurliman.dev/eslint-config/vue.js"],
   "rules": {
-    "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_"
-      }
-    ],
-    "vue/multi-word-component-names": "warn"
+    "@typescript-eslint/no-explicit-any": "warn"
   }
 }

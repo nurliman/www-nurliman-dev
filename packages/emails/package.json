@@ -30,6 +30,7 @@
     "pupa": "^3.1.0"
   },
   "devDependencies": {
+    "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman.dev/file-exists": "workspace:*",
     "@react-email/components": "^0.0.12",
     "@react-email/render": "^0.0.10",
@@ -38,11 +39,8 @@
     "@types/lodash-es": "^4.17.12",
     "@types/lodash.unescape": "^4.0.9",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
     "fs-extra": "^11.2.0",
     "globby": "^14.0.0",
     "lodash-es": "^4.17.21",

@@ -1,0 +1,33 @@
+{
+  "name": "@nurliman.dev/eslint-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "index.js",
+  "files": [
+    "package.json",
+    "index.js",
+    "react.js",
+    "vue.js"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./react.js": "./react.js",
+    "./vue.js": "./vue.js"
+  },
+  "scripts": {
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore .",
+    "lint": "npm run format && eslint -c index.js --cache --fix ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-turbo": "^1.11.2",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-vue": "^9.19.2",
+    "vue-eslint-parser": "^9.3.2"
+  }
+}

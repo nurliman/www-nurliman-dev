@@ -18,6 +18,7 @@
     "meow": "^12.1.1"
   },
   "devDependencies": {
+    "@nurliman.dev/eslint-config": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "eslint": "^8.56.0"
   }

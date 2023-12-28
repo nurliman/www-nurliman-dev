@@ -15,6 +15,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@nurliman.dev/eslint-config": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.1.1",
@@ -25,7 +26,7 @@
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|vue)": "eslint --cache --fix",
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|vue|css|scss|json|yml|yaml)": "prettier --write --ignore-path .gitignore --ignore-path .prettierignore"
   },
-  "packageManager": "pnpm@8.12.1",
+  "packageManager": "pnpm@8.13.1",
   "pnpm": {
     "overrides": {
       "@vee-validate/valibot>valibot": "latest"
