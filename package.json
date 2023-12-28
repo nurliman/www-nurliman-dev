@@ -30,6 +30,9 @@
   "pnpm": {
     "overrides": {
       "@vee-validate/valibot>valibot": "latest"
+    },
+    "patchedDependencies": {
+      "@sentry/utils@7.91.0": "patches/@sentry__utils@7.91.0.patch"
     }
   }
 }

@@ -7,3 +7,6 @@ public/robots.txt
 
 # Sentry
 .sentryclirc
+
+# tsconfig
+tsconfig.tsbuildinfo

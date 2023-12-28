@@ -17,7 +17,7 @@ const defaultProps = {
 };
 
 function InputComponent<
-  TInputElementTag extends InputTextElementTag,
+  TInputElementTag extends InputTextElementTag = InputTextElementTag,
   TFieldValues extends FieldValues = FieldValues,
   TName extends Path<TFieldValues> = Path<TFieldValues>,
 >({
@@ -33,7 +33,7 @@ function InputComponent<
       render={({ field, fieldState: { error } }) => {
         return (
           <InputText
-            inputElement={inputElement}
+            inputElement={inputElement as InputTextElementTag}
             {...inputProps}
             {...field}
             label={label}
