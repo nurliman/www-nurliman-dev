@@ -32,9 +32,9 @@
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.2",
-    "@types/node": "^18",
+    "@types/node": "^20",
     "@types/postcss-import": "^14.0.3",
-    "cssnano": "^6.0.1",
+    "cssnano": "^6.0.2",
     "eslint": "^8.56.0",
     "postcss": "^8.4.32",
     "postcss-dark-theme-class": "^1.1.0",
