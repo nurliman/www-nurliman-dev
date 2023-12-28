@@ -6,17 +6,12 @@
     "amd": true,
     "node": true
   },
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "next/core-web-vitals"
-  ],
+  "extends": ["@nurliman.dev/eslint-config/react.js", "next/core-web-vitals"],
   "rules": {
     "@next/next/no-img-element": 0,
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "turbo/no-undeclared-env-vars": "warn"
   }
 }
