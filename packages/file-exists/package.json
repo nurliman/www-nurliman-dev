@@ -9,7 +9,7 @@
     "exists": "./index.js"
   },
   "scripts": {
-    "format": "prettier --write --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
     "lint": "npm run format && eslint --cache --fix ."
   },
   "dependencies": {

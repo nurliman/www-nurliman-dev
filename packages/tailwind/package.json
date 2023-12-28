@@ -26,7 +26,7 @@
     "clean:turbo": "npx -y del-cli .turbo",
     "clean:node_modules": "npx -y del-cli node_modules",
     "clean:dist": "npx -y del-cli dist",
-    "format": "prettier --write --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
     "lint": "npm run format && eslint --cache --fix ."
   },
   "devDependencies": {
