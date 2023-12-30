@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { readonly, ref } from "vue";
 import { $fetch, FetchError } from "ofetch";
 import { toast, updateGlobalOptions } from "vue3-toastify";
 import { useForm } from "vee-validate";
@@ -78,17 +78,23 @@ const onSubmit = handleSubmit(
     toast.error("Please fill in the form correctly.");
   },
 );
+
+const styles = readonly({
+  infoBtn: "rounded px-2.5 py-px text-sm md:text-base",
+});
 </script>
 
 <template>
-  <div :class="$style.container">
-    <div :class="$style.innerContainer">
+  <div class="relative mx-auto flex w-full max-w-[90rem] flex-col">
+    <div class="mx-auto flex w-full max-w-xl flex-col px-4 sm:px-6 lg:mx-0 lg:px-8">
       <div class="mb-6 md:mb-8" />
-      <h1 :class="$style.heading1">Get in touch</h1>
+      <h1 class="font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">
+        Get in touch
+      </h1>
       <div class="mb-5" />
 
       <div class="flex flex-col items-start space-y-2">
-        <TheButton border color="zinc" shadow="sm" :class="$style.infoBtn"
+        <TheButton border color="zinc" shadow="sm" :class="styles.infoBtn"
           >Residence: Bandung, Indonesia</TheButton
         >
         <TheButton
@@ -98,7 +104,7 @@ const onSubmit = handleSubmit(
           border
           color="zinc"
           shadow="sm"
-          :class="$style.infoBtn"
+          :class="styles.infoBtn"
           >Phone: +62 821-3325-8511</TheButton
         >
         <TheButton
@@ -107,7 +113,7 @@ const onSubmit = handleSubmit(
           border
           color="zinc"
           shadow="sm"
-          :class="$style.infoBtn"
+          :class="styles.infoBtn"
           >Email: nurlimandiara@gmail.com</TheButton
         >
       </div>
@@ -164,8 +170,13 @@ const onSubmit = handleSubmit(
           color="teal"
           border
           shadow
-          :class="$style.submitBtn"
           :disabled="submitLoading"
+          :class="[
+            'self-start',
+            'p-2 md:p-2.5 lg:p-3',
+            'text-sm md:text-base',
+            'min-w-[9rem] md:min-w-[12rem]',
+          ]"
           >Send</TheButton
         >
       </form>
@@ -183,37 +194,6 @@ const onSubmit = handleSubmit(
 </template>
 
 <style module>
-.container {
-  @apply relative;
-  @apply flex flex-col;
-  @apply mx-auto w-full max-w-[90rem];
-}
-
-.innerContainer {
-  @apply flex flex-col;
-  @apply w-full max-w-xl;
-  @apply mx-auto lg:mx-0;
-  @apply px-4 sm:px-6 lg:px-8;
-}
-
-.heading1 {
-  @apply font-transducer-extended font-semibold;
-  @apply text-3xl md:text-4xl lg:text-5xl;
-}
-
-.infoBtn {
-  @apply rounded;
-  @apply px-2.5 py-px;
-  @apply text-sm md:text-base;
-}
-
-.submitBtn {
-  @apply self-start;
-  @apply p-2 md:p-2.5 lg:p-3;
-  @apply text-sm md:text-base;
-  @apply min-w-[9rem] md:min-w-[12rem];
-}
-
 .img {
   @apply lg:absolute;
   @apply lg:top-1/2 lg:-translate-y-1/2;

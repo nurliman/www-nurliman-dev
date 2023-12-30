@@ -5,7 +5,7 @@ import TheButton from "~/components/TheButton.vue";
 </script>
 
 <template>
-  <div :class="$style.container">
+  <div class="flex-center relative -top-4 flex-1 flex-col p-4 text-center">
     <h1 class="font-transducer-extended">
       <TheBadge
         component="span"
@@ -13,15 +13,20 @@ import TheButton from "~/components/TheButton.vue";
         border="sm"
         shadow="sm"
         rounded
-        :class="[$style.headingName, 'md:brutal-shadow md:border-2']"
+        :class="[
+          'mb-5 inline-flex md:mb-6',
+          'px-2.5 py-px md:px-3.5 md:py-0.5',
+          'text-sm md:text-base',
+          'md:brutal-shadow md:border-2',
+        ]"
       >
         <span>Nurliman Diara</span>
         <span class="absolute text-transparent">:</span>
       </TheBadge>
       <br />
-      <span :class="$style.headingText">Crafting Digital</span>
+      <span :class="$style.hero">Crafting Digital</span>
       <br />
-      <span :class="$style.headingText">Experiences</span>
+      <span :class="$style.hero">Experiences</span>
     </h1>
     <div class="h-5 md:h-8" />
     <p class="text-sm sm:text-xl">
@@ -56,20 +61,7 @@ import TheButton from "~/components/TheButton.vue";
   @apply min-w-[8rem] md:min-w-[12rem];
 }
 
-.container {
-  @apply p-4;
-  @apply flex-center flex-1 flex-col;
-  @apply relative -top-4;
-  @apply text-center;
-}
-
-.headingName {
-  @apply mb-5 inline-flex md:mb-6;
-  @apply px-2.5 py-px md:px-3.5 md:py-0.5;
-  @apply text-sm md:text-base;
-}
-
-.headingText {
+.hero {
   @apply font-semibold;
   @apply text-3xl sm:text-5xl md:text-6xl lg:text-8xl;
 }

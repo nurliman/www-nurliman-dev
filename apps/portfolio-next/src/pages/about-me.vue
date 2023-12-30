@@ -36,6 +36,10 @@ const info = readonly([
   ["e-mail", "nurlimandiara@gmail.com"],
   ["Phone", "+62 821-3325-8511"],
 ]);
+
+const styles = readonly({
+  container: "mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8",
+});
 </script>
 
 <template>
@@ -53,9 +57,14 @@ const info = readonly([
 
     <div class="mb-6" />
 
-    <div :class="$style.container">
-      <h1 :class="$style.heading1">
-        <span :class="$style.aboutMe">
+    <div :class="styles.container">
+      <h1
+        :class="[
+          'font-transducer-extended font-semibold',
+          'text-xl sm:text-3xl md:text-4xl lg:text-5xl',
+        ]"
+      >
+        <span class="relative mb-2 inline-flex text-sm font-medium md:mb-4 md:text-lg">
           <span>About Me</span>
           <span class="absolute text-transparent">:</span>
         </span>
@@ -77,12 +86,12 @@ const info = readonly([
 
     <div class="mb-12" />
 
-    <div class="flex flex-col" :class="$style.container">
+    <div class="flex flex-col" :class="styles.container">
       <h2 class="font-transducer-extended text-xl font-bold">What I Do:</h2>
     </div>
     <div class="mb-4" />
 
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2" :class="$style.container">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2" :class="styles.container">
       <div v-for="thing in thingsIDo" :key="thing.title" :class="[$style.card, 'brutal-shadow-sm']">
         <img
           :src="thing.icon"
@@ -93,7 +102,7 @@ const info = readonly([
           loading="lazy"
         />
         <div class="mb-4" />
-        <h3 :class="$style.heading3">{{ thing.title }}</h3>
+        <h3 class="font-transducer-extended font-semibold">{{ thing.title }}</h3>
         <div class="mb-1.5" />
         <p class="text-sm lg:text-base">
           {{ thing.description }}
@@ -121,26 +130,6 @@ const info = readonly([
 </template>
 
 <style module>
-.container {
-  @apply mx-auto w-full max-w-[90rem];
-  @apply px-4 sm:px-6 lg:px-8;
-}
-
-.heading1 {
-  @apply font-transducer-extended font-semibold;
-  @apply text-xl sm:text-3xl md:text-4xl lg:text-5xl;
-}
-
-.aboutMe {
-  @apply relative inline-flex;
-  @apply mb-2 md:mb-4;
-  @apply text-sm font-medium md:text-lg;
-}
-
-.heading3 {
-  @apply font-transducer-extended font-semibold;
-}
-
 .card {
   @apply flex flex-1 flex-col items-center rounded-lg border-2 p-8 text-center;
   @apply -translate-x-1 -translate-y-1;
