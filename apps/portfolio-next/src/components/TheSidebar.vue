@@ -39,7 +39,7 @@ defineExpose({
     ref="modalRef"
     :class="[
       'fixed z-40 flex w-screen flex-col border-r sm:max-w-xs md:hidden',
-      'bg-white dark:bg-black',
+      'bg-white transition-colors dark:bg-black',
       '-translate-x-full will-change-transform',
     ]"
     :style="{
@@ -62,7 +62,7 @@ defineExpose({
       </ul>
     </nav>
     <div class="h-px w-px flex-1" />
-    <div class="flex border-t bg-white p-5 dark:bg-black">
+    <div class="flex border-t bg-white p-5 transition-colors dark:bg-black">
       <ul class="flex flex-row space-x-3.5">
         <li v-for="social in socials" :key="social.link + social.name" class="flex">
           <TheButton
