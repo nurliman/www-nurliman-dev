@@ -8,6 +8,7 @@ const badgeVariant = cva({
     color: {
       white: "bg-white text-black dark:bg-black dark:text-white",
       zinc: "bg-zinc-200 text-black dark:bg-zinc-900 dark:text-white",
+      teal: "bg-teal-600 text-white",
     },
     border: {
       sm: "border",
