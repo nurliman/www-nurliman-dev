@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 14.051 27.240999"
+   fill="none"
+   version="1.1"
+   id="svg57"
+   sodipodi:docname="Udemy_logo.svg"
+   width="14.051"
+   height="27.240999"
+   inkscape:version="1.1.2 (08b2f3d93c, 2022-04-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs61" />
+  <sodipodi:namedview
+     id="namedview59"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="12.67033"
+     inkscape:cx="42.02732"
+     inkscape:cy="15.153513"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g282" />
+  <g
+     id="g282">
+    <path
+       d="M 14.05,8.112 7.024,4.056 0,8.112 V 4.056 L 7.025,0 14.051,4.056 v 4.056 z"
+       fill="#a435f0"
+       id="path53" />
+    <path
+       d="m 0,11.518 h 3.68 v 8.941 c 0,2.31 1.725,3.436 3.345,3.436 1.634,0 3.346,-1.156 3.346,-3.467 v -8.91 h 3.68 v 9.154 c 0,2.128 -0.669,3.77 -2.007,4.896 -1.339,1.125 -3.011,1.673 -5.05,1.673 -2.037,0 -3.71,-0.547 -5.017,-1.673 C 0.669,24.443 0,22.862 0,20.763 Z"
+       fill="#000000"
+       id="path55"
+       sodipodi:nodetypes="ccsssccscscsc"
+       style="fill:#ffffff" />
+  </g>
+</svg>

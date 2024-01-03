@@ -48,7 +48,7 @@ export const me = {
         "Learn how to design and build computer and communication networks. Some topics covered include: Operating systems, Database administration, Networking, Security, Routing and cabling.",
     },
   ],
-  programmingSkills: [
+  technicalSkills: [
     { name: "Kubernetes", value: 0.77 },
     { name: "JavaScript/TypeScript", value: 0.97 },
     { name: "React", value: 0.94 },
@@ -67,7 +67,7 @@ export const me = {
     { name: "Github Actions", value: 0.84 },
     { name: "Google Cloud Platform", value: 0.9 },
     { name: "Computer Networking", value: 0.8 },
-    { name: "Linux (yes, i'm a linux user)", value: 0.9 },
+    { name: "Linux", value: 0.9 },
   ],
   knowledges: [
     "Containerization",
@@ -99,7 +99,8 @@ export const me = {
       name: "The Git & Github Bootcamp",
       organization: {
         name: "Udemy",
-        logoUrl: "/img/logos/udemy-logo.svg",
+        logoUrl: "/assets/udemy-logo.svg",
+        logoDarkUrl: "/assets/udemy-logo-dark.svg",
       },
       date: "September 2021",
       credential: {
@@ -111,7 +112,8 @@ export const me = {
       name: "Go: The Complete Developer's Guide (Golang)",
       organization: {
         name: "Udemy",
-        logoUrl: "/img/logos/udemy-logo.svg",
+        logoUrl: "/assets/udemy-logo.svg",
+        logoDarkUrl: "/assets/udemy-logo-dark.svg",
       },
       date: "August 2021",
       credential: {
@@ -123,7 +125,8 @@ export const me = {
       name: "Mastering Multithreading Programming with Go (Golang)",
       organization: {
         name: "Udemy",
-        logoUrl: "/img/logos/udemy-logo.svg",
+        logoUrl: "/assets/udemy-logo.svg",
+        logoDarkUrl: "/assets/udemy-logo-dark.svg",
       },
       date: "August 2021",
       credential: {
@@ -135,7 +138,8 @@ export const me = {
       name: "Web Authentication, Encryption, JWT, HMAC, & OAuth With Go",
       organization: {
         name: "Udemy",
-        logoUrl: "/img/logos/udemy-logo.svg",
+        logoUrl: "/assets/udemy-logo.svg",
+        logoDarkUrl: "/assets/udemy-logo-dark.svg",
       },
       date: "August 2021",
       credential: {
@@ -147,7 +151,8 @@ export const me = {
       name: "gRPC [Golang] Master Class: Build Modern API & Microservices",
       organization: {
         name: "Udemy",
-        logoUrl: "/img/logos/udemy-logo.svg",
+        logoUrl: "/assets/udemy-logo.svg",
+        logoDarkUrl: "/assets/udemy-logo-dark.svg",
       },
       date: "August 2021",
       credential: {
