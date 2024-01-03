@@ -74,7 +74,7 @@ const styles = readonly({
 
       <div class="mb-4 md:mb-6" />
 
-      <p class="md:text-lg">
+      <p class="max-md:text-sm">
         I am a proficient Javascript/Typescript programmer with over 4 years of experience as a Web
         Developer. My expertise extends across Backend, Frontend, and DevOps technologies.
         Currently, I am actively seeking employment as a Programmer at any technology-based company.
@@ -101,10 +101,10 @@ const styles = readonly({
           height="84px"
           loading="lazy"
         />
-        <div class="mb-4" />
+        <div class="mb-6" />
         <h3 class="font-transducer-extended font-semibold">{{ thing.title }}</h3>
-        <div class="mb-1.5" />
-        <p class="text-sm lg:text-base">
+        <div class="mb-3" />
+        <p class="text-sm md:text-[15px]">
           {{ thing.description }}
         </p>
       </div>
@@ -131,7 +131,15 @@ const styles = readonly({
 
 <style module>
 .card {
-  @apply flex flex-1 flex-col items-center rounded-lg border-2 p-8 text-center;
-  @apply -translate-x-1 -translate-y-1;
+  @apply flex flex-1 flex-col items-center;
+  @apply rounded-lg border-2 text-center;
+  @apply p-8 md:p-10 lg:p-12;
+
+  transform: translate3d(-1px, -1px, 0);
+
+  :where(html:global(.dark)) & {
+    box-shadow: 0 0 #0000;
+    transform: translate3d(0, 0, 0);
+  }
 }
 </style>
