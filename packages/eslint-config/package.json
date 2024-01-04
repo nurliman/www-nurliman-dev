@@ -14,6 +14,7 @@
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json",
+    "./astro.js": "./astro.js",
     "./react.js": "./react.js",
     "./vue.js": "./vue.js"
   },
@@ -25,6 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
     "eslint-config-turbo": "^1.11.2",
+    "eslint-plugin-astro": "^0.31.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-vue": "^9.19.2",
     "vue-eslint-parser": "^9.3.2"

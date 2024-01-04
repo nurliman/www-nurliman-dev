@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import { sections } from "~/data/sections";
 import { socials } from "~/data/socials";
-import NuxtLink from "#app/components/nuxt-link";
 import TheButton from "~/components/TheButton.vue";
 
 const backdropRef = ref<HTMLElement | null>(null);
@@ -51,8 +50,8 @@ defineExpose({
       <ul class="flex flex-col text-xs uppercase">
         <li v-for="section in sections" :key="section.id" class="contents">
           <TheButton
-            :component="NuxtLink"
-            :to="section.link"
+            component="a"
+            :href="section.link"
             class="border-b px-8 py-3 hover:font-semibold"
             @click="emit('change', { isOpen: false })"
           >
@@ -65,12 +64,7 @@ defineExpose({
     <div class="flex border-t bg-white p-5 transition-colors dark:bg-black">
       <ul class="flex flex-row space-x-3.5">
         <li v-for="social in socials" :key="social.link + social.name" class="flex">
-          <TheButton
-            :component="NuxtLink"
-            :to="social.link"
-            target="_blank"
-            class="rounded border p-1.5"
-          >
+          <TheButton component="a" :href="social.link" target="_blank" class="rounded border p-1.5">
             <img
               :src="social.iconUrl"
               :alt="social.name"

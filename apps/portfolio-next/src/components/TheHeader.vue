@@ -2,8 +2,7 @@
 import { ref } from "vue";
 import { sections } from "~/data/sections";
 import reverse from "lodash-es/reverse";
-import anime from "animejs/lib/anime.es.js";
-import NuxtLink from "#app/components/nuxt-link";
+import anime from "animejs";
 import TheButton from "~/components/TheButton.vue";
 import TheHamburgerButton from "~/components/TheHamburgerButton.vue";
 import TheThemeSwithcerButton from "~/components/TheThemeSwithcerButton.vue";
@@ -62,7 +61,7 @@ const closeMenu = () => {
         :is-sidebar-open="sidebarOpened"
         @click="changeMenuOpened"
       />
-      <NuxtLink to="/" class="contents" @click="closeMenu">
+      <a href="/" class="contents" @click="closeMenu">
         <div
           :class="[
             'font-racing-sans text-[1.75rem]',
@@ -73,14 +72,14 @@ const closeMenu = () => {
         >
           nurliman.
         </div>
-      </NuxtLink>
+      </a>
       <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
       <nav class="hidden md:contents">
         <ul class="flex flex-1 flex-row px-3">
           <li v-for="section in sections" :key="section.id" class="contents">
             <TheButton
-              :component="NuxtLink"
-              :to="section.link"
+              component="a"
+              :href="section.link"
               class="rounded-full px-3 py-1.5 text-xs uppercase"
               @click="closeMenu"
             >
@@ -93,12 +92,10 @@ const closeMenu = () => {
     </div>
   </header>
 
-  <client-only>
-    <TheSidebar
-      ref="sidebarRef"
-      :is-open="sidebarOpened"
-      :header-height="50"
-      @change="({ isOpen }) => changeMenuOpened(isOpen)"
-    />
-  </client-only>
+  <TheSidebar
+    ref="sidebarRef"
+    :is-open="sidebarOpened"
+    :header-height="50"
+    @change="({ isOpen }) => changeMenuOpened(isOpen)"
+  />
 </template>

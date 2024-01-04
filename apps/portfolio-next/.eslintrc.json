@@ -1,5 +1,5 @@
 {
-  "extends": ["@nurliman.dev/eslint-config/vue.js"],
+  "extends": ["@nurliman.dev/eslint-config/astro.js"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "warn"
   }

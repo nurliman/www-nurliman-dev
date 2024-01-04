@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "TransducerCondensed";
+  src:
+    url("./files/HairlineCondensed.woff2") format("woff2"),
+    url("./files/HairlineCondensed.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerCondensed";
+  src:
+    url("./files/Condensed.woff2") format("woff2"),
+    url("./files/Condensed.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerCondensed";
+  src:
+    url("./files/MediumCondensed.woff2") format("woff2"),
+    url("./files/MediumCondensed.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerCondensed";
+  src:
+    url("./files/BoldCondensed.woff2") format("woff2"),
+    url("./files/BoldCondensed.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerCondensed";
+  src:
+    url("./files/BlackCondensed.woff2") format("woff2"),
+    url("./files/BlackCondensed.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

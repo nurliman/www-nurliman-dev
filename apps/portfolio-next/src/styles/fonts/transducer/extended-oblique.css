@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "TransducerExtendedOblique";
+  src:
+    url("./files/HairlineExtendedOblique.woff2") format("woff2"),
+    url("./files/HairlineExtendedOblique.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerExtendedOblique";
+  src:
+    url("./files/ExtendedOblique.woff2") format("woff2"),
+    url("./files/ExtendedOblique.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerExtendedOblique";
+  src:
+    url("./files/MediumExtendedOblique.woff2") format("woff2"),
+    url("./files/MediumExtendedOblique.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerExtendedOblique";
+  src:
+    url("./files/BoldExtendedOblique.woff2") format("woff2"),
+    url("./files/BoldExtendedOblique.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TransducerExtendedOblique";
+  src:
+    url("./files/BlackExtendedOblique.woff2") format("woff2"),
+    url("./files/BlackExtendedOblique.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

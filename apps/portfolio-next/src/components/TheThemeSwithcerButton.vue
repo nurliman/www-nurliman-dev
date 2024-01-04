@@ -1,33 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import { useServerHead, useState } from "#imports";
-import { createThemeScript } from "@nurliman.dev/theme-script";
+import { THEME_LOCAL_STORAGE_KEY } from "~/constants";
+import type { Theme } from "~/types";
 import TheButton from "~/components/TheButton.vue";
 
-export type Theme = "light" | "dark";
-
-/** Key for storing theme in local storage */
-const THEME_LOCAL_STORAGE_KEY = "theme" as const;
-const DEFAULT_THEME = "light" as const satisfies Theme;
-const OPPOSITE_THEME: Theme = DEFAULT_THEME === "light" ? "dark" : "light";
-
-useServerHead({
-  htmlAttrs: {
-    class: DEFAULT_THEME,
-  },
-  script: [
-    {
-      innerHTML: createThemeScript({
-        defaultTheme: DEFAULT_THEME,
-        oppositeTheme: OPPOSITE_THEME,
-        localStorageKey: THEME_LOCAL_STORAGE_KEY,
-      }),
-    },
-  ],
-});
-
 /** State for the current theme */
-const currentThemeState = useState<Theme | null>("theme", () => null);
+const currentThemeState = ref<Theme | null>(null);
 /** Reference for the media query */
 const mediaQuery = ref<MediaQueryList | null>(null);
 

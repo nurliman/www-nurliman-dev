@@ -5,7 +5,6 @@ import { toast, updateGlobalOptions } from "vue3-toastify";
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/valibot";
 import { contactFormSchema } from "~/schemas";
-import NuxtLink from "#app/components/nuxt-link";
 import TheInputText from "~/components/TheInputText.vue";
 import TheButton from "~/components/TheButton.vue";
 import "vue3-toastify/dist/index.css";
@@ -98,8 +97,8 @@ const styles = readonly({
           >Residence: Bandung, Indonesia</TheButton
         >
         <TheButton
-          :component="NuxtLink"
-          to="https://wa.me/6282133258511"
+          component="a"
+          href="https://wa.me/6282133258511"
           target="_blank"
           border
           color="zinc"
@@ -108,8 +107,8 @@ const styles = readonly({
           >Phone: +62 821-3325-8511</TheButton
         >
         <TheButton
-          :component="NuxtLink"
-          to="mailto:nurlimandiara@gmail.com"
+          component="a"
+          href="mailto:nurlimandiara@gmail.com"
           border
           color="zinc"
           shadow="sm"

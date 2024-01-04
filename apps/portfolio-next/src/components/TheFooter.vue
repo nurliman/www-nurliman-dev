@@ -22,13 +22,13 @@ onMounted(() => {
       <div class="h-6 md:h-0" />
       <div class="flex-center flex-row">
         <div v-for="(social, index) in socials" :key="social.link + social.name">
-          <NuxtLink
-            :to="social.link"
+          <a
+            :href="social.link"
             class="underline underline-offset-2 hover:text-zinc-100"
             target="_blank"
           >
             {{ social.name }}
-          </NuxtLink>
+          </a>
           <span v-if="index < socials.length - 1">&nbsp;|&nbsp;</span>
         </div>
       </div>

@@ -1,15 +1,15 @@
 {
-  "name": "@nurliman.dev/portfolio",
-  "private": true,
+  "name": "@nurliman.dev/portfolio-astro",
   "type": "module",
+  "version": "0.1.0",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "format": "prettier --write --cache .",
-    "lint": "prettier --check --cache . && eslint --cache --fix ."
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore .",
+    "lint": "npm run format && eslint --cache --fix ."
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.18",
@@ -28,34 +28,22 @@
     "vue3-toastify": "^0.2.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.3.4",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.0.7",
     "@elasticemail/elasticemail-client-ts-axios": "^4.0.22",
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman.dev/tailwind": "workspace:*",
-    "@nuxt/devtools": "latest",
     "@types/animejs": "^3.1.12",
     "@types/lodash-es": "^4.17.12",
+    "astro": "^4.1.0",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.56.0",
-    "nuxt": "^3.9.0",
     "postcss": "^8.4.32",
     "postcss-dark-theme-class": "^1.1.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.3.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3",
-    "vue": "^3.3.13",
-    "vue-router": "^4.2.5"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "vue": "^3.4.5"
   }
 }

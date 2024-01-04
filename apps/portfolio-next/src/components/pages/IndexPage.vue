@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import NuxtLink from "#app/components/nuxt-link";
 import TheBadge from "~/components/TheBadge.vue";
 import TheButton from "~/components/TheButton.vue";
 </script>
@@ -36,17 +35,10 @@ import TheButton from "~/components/TheButton.vue";
     </p>
     <div class="h-8 md:h-10" />
     <div class="flex flex-row items-center space-x-4 md:space-x-6">
-      <TheButton
-        :component="NuxtLink"
-        :class="$style.btn"
-        border
-        shadow
-        color="teal"
-        to="/about-me"
-      >
+      <TheButton component="a" :class="$style.btn" border shadow color="teal" href="/about-me">
         Explore
       </TheButton>
-      <TheButton :component="NuxtLink" border shadow to="/contact" :class="$style.btn">
+      <TheButton component="a" border shadow href="/contact" :class="$style.btn">
         Contact
       </TheButton>
       <button type="button"></button>

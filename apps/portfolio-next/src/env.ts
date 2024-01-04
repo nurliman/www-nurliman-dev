@@ -1,4 +1,4 @@
-import { createEnv } from "@nurliman.dev/env/nuxt";
+import { createEnv } from "@nurliman.dev/env";
 import { string as vString, email as vEmail, minLength as vMinLength } from "valibot";
 
 export const env = createEnv({
@@ -7,5 +7,8 @@ export const env = createEnv({
     SENDER_EMAIL: vString([vMinLength(1), vEmail()]),
     ELASTIC_EMAIL_API_KEY: vString([vMinLength(1)]),
   },
+  clientPrefix: "PUBLIC_",
   client: {},
+  runtimeEnv: import.meta.env,
+  emptyStringAsUndefined: true,
 });

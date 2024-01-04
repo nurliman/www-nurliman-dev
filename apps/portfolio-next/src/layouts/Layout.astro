@@ -1,0 +1,58 @@
+---
+import TheHeader from "~/components/TheHeader.vue";
+import TheFooter from "~/components/TheFooter.vue";
+import { createThemeScript } from "@nurliman.dev/theme-script";
+import { DEFAULT_THEME, OPPOSITE_THEME, THEME_LOCAL_STORAGE_KEY } from "~/constants";
+import "~/styles/fonts/transducer/plain.css";
+import "~/styles/fonts/transducer/extended.css";
+import "@fontsource/racing-sans-one/latin.css";
+import "~/styles/main.css";
+
+interface Props {
+  title?: string;
+}
+
+const {
+  title = "Nurliman Diara Aria | Web Developer Portfolio - Crafting Digital Experiences with Excellence",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="manifest" href="/manifest.json" />
+    <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
+    <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+    <title>{title}</title>
+    <script
+      set:html={createThemeScript({
+        defaultTheme: DEFAULT_THEME,
+        oppositeTheme: OPPOSITE_THEME,
+        localStorageKey: THEME_LOCAL_STORAGE_KEY,
+      })}
+    />
+  </head>
+  <body>
+    <div class="contents">
+      <TheHeader client:load />
+
+      <div
+        class:list={[
+          "flex min-h-full flex-col pt-[50px] md:pt-14",
+          "bg-white text-black",
+          "dark:bg-black dark:text-white",
+        ]}
+      >
+        <main class="flex flex-1 flex-col">
+          <slot />
+        </main>
+
+        {Astro.url.pathname === "/" ? null : <TheFooter client:load />}
+      </div>
+    </div>
+  </body>
+</html>

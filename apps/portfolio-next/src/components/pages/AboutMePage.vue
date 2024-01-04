@@ -44,16 +44,14 @@ const styles = readonly({
 
 <template>
   <div class="flex w-full flex-col text-left">
-    <client-only>
-      <div class="relative border-b-2 bg-zinc-200 py-1 md:-top-[2px] dark:bg-zinc-900">
-        <Vue3Marquee clone>
-          <div class="font-transducer-extended inline-flex text-[10px] font-bold">
-            <span>NURLIMAN DIARA ARIA</span>
-            <span class="mx-2.5">&#8226;</span>
-          </div>
-        </Vue3Marquee>
-      </div>
-    </client-only>
+    <div class="relative border-b-2 bg-zinc-200 py-1 md:-top-[2px] dark:bg-zinc-900">
+      <Vue3Marquee clone>
+        <div class="font-transducer-extended inline-flex text-[10px] font-bold">
+          <span>NURLIMAN DIARA ARIA</span>
+          <span class="mx-2.5">&#8226;</span>
+        </div>
+      </Vue3Marquee>
+    </div>
 
     <div class="mb-6" />
 
@@ -112,20 +110,18 @@ const styles = readonly({
 
     <div class="mb-14" />
 
-    <client-only>
-      <div class="border-y-2 bg-zinc-200 py-2 dark:bg-zinc-950">
-        <Vue3Marquee clone>
-          <ul class="flex text-xs">
-            <li v-for="([key, value], index) in info" :key="key + value">
-              <span>{{ key }}&nbsp;</span>
-              <span class="font-bold">{{ value }}</span>
-              <span v-if="index < info.length - 1">&nbsp;|&nbsp;</span>
-            </li>
-            <li class="mx-4">&#8226;</li>
-          </ul>
-        </Vue3Marquee>
-      </div>
-    </client-only>
+    <div class="border-y-2 bg-zinc-200 py-2 dark:bg-zinc-950">
+      <Vue3Marquee clone>
+        <ul class="flex text-xs">
+          <li v-for="([key, value], index) in info" :key="key + value">
+            <span>{{ key }}&nbsp;</span>
+            <span class="font-bold">{{ value }}</span>
+            <span v-if="index < info.length - 1">&nbsp;|&nbsp;</span>
+          </li>
+          <li class="mx-4">&#8226;</li>
+        </ul>
+      </Vue3Marquee>
+    </div>
   </div>
 </template>
 
