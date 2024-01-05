@@ -3,7 +3,8 @@
   "compilerOptions": {
     "types": ["astro/client"],
     "jsx": "preserve",
-    "baseUrl": ".",
+    "jsxImportSource": "solid-js",
+    "baseUrl": "./",
     "paths": {
       "~/*": ["./src/*"]
     }
