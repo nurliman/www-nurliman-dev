@@ -1,0 +1,10 @@
+.btn {
+  @apply p-2 md:p-2.5 lg:p-3;
+  @apply text-sm md:text-base;
+  @apply min-w-[8rem] md:min-w-[12rem];
+}
+
+.hero {
+  @apply font-semibold;
+  @apply text-3xl sm:text-5xl md:text-6xl lg:text-8xl;
+}
