@@ -1,6 +1,6 @@
 ---
 import TheHeader from "~/components/TheHeader.vue";
-import TheFooter from "~/components/TheFooter.vue";
+import TheFooter from "~/components/TheFooter";
 import { createThemeScript } from "@nurliman.dev/theme-script";
 import { DEFAULT_THEME, OPPOSITE_THEME, THEME_LOCAL_STORAGE_KEY } from "~/constants";
 import "~/styles/fonts/transducer/plain.css";
@@ -51,7 +51,7 @@ const {
           <slot />
         </main>
 
-        {Astro.url.pathname === "/" ? null : <TheFooter client:load />}
+        {Astro.url.pathname === "/" ? null : <TheFooter client:visible />}
       </div>
     </div>
   </body>
