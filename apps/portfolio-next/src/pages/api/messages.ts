@@ -13,6 +13,7 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error }), {
       status: 400,
       statusText: "Request body is invalid",
+      headers: { "Content-Type": "application/json" },
     });
   }
 
@@ -31,12 +32,14 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ message: "Message sent successfully" }), {
       status: 200,
       statusText: "Message sent successfully",
+      headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
     console.error("Failed to send message", error);
     return new Response(JSON.stringify({ error }), {
       status: 500,
       statusText: "Failed to send message",
+      headers: { "Content-Type": "application/json" },
     });
   }
 };
