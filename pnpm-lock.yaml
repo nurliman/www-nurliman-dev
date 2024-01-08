@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@vee-validate/valibot>valibot': latest
-
 patchedDependencies:
   '@sentry/utils@7.91.0':
     hash: n5kgqgwoo3kg6ck2e4kopa4x7y
@@ -200,9 +197,12 @@ importers:
       '@nurliman.dev/theme-script':
         specifier: workspace:*
         version: link:../../packages/theme-script
-      '@vee-validate/valibot':
-        specifier: ^4.12.4
-        version: 4.12.4(vue@3.4.5)
+      '@tanstack/solid-form':
+        specifier: ^0.13.1
+        version: 0.13.1(solid-js@1.8.8)
+      '@tanstack/valibot-form-adapter':
+        specifier: ^0.13.1
+        version: 0.13.1(valibot@0.25.0)
       animejs:
         specifier: ^3.2.2
         version: 3.2.2
@@ -221,21 +221,15 @@ importers:
       solid-js:
         specifier: ^1.8.8
         version: 1.8.8
+      solid-sonner:
+        specifier: ^0.2.2
+        version: 0.2.2(solid-js@1.8.8)
       valibot:
         specifier: ^0.25.0
         version: 0.25.0
-      vee-validate:
-        specifier: ^4.12.4
-        version: 4.12.4(vue@3.4.5)
-      vue-uid:
-        specifier: npm:@shimyshack/uid@^0.1.9
-        version: /@shimyshack/uid@0.1.9(typescript@5.3.3)
       vue3-marquee:
         specifier: ^4.1.0
         version: 4.1.0(vue@3.4.5)
-      vue3-toastify:
-        specifier: ^0.2.1
-        version: 0.2.1(vue@3.4.5)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.3.4
@@ -3213,14 +3207,6 @@ packages:
       - supports-color
     dev: false
 
-  /@shimyshack/uid@0.1.9(typescript@5.3.3):
-    resolution: {integrity: sha512-J3sZ7mh/FjhsKWg8T8Pb5nxQkqoCiWvm7CQqG5pMhVN3asJbrkAeP/gqJujLZt4CPEpX1pWmkJihIt3/YFsQrg==}
-    dependencies:
-      vue: 3.4.5(typescript@5.3.3)
-    transitivePeerDependencies:
-      - typescript
-    dev: false
-
   /@sindresorhus/is@0.14.0:
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
     engines: {node: '>=6'}
@@ -3365,6 +3351,44 @@ packages:
     dependencies:
       defer-to-connect: 1.1.3
     dev: true
+
+  /@tanstack/form-core@0.13.1:
+    resolution: {integrity: sha512-Cm/PC5hNwswbDsiRZ0+QWc0KdrO0fMCtvD6uAV6qG4Tc8iybC3qHPfjymRK+V9wYKHwF7VDje539jR0QRJNDQg==}
+    dependencies:
+      '@tanstack/store': 0.1.3
+    dev: false
+
+  /@tanstack/solid-form@0.13.1(solid-js@1.8.8):
+    resolution: {integrity: sha512-sFWXxAuaGht8LZuQ9jdZ4VTnDZ90X2Ypmz+XcTX4ANf8UUXMvd0p0nxr6skAlrTo+ZnG8PrMEWO+uU8ItJeBBQ==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      '@tanstack/form-core': 0.13.1
+      '@tanstack/solid-store': 0.2.1(solid-js@1.8.8)
+      solid-js: 1.8.8
+    dev: false
+
+  /@tanstack/solid-store@0.2.1(solid-js@1.8.8):
+    resolution: {integrity: sha512-lyRpOaubr7OY09tlpLGoMi7/dpNal51wbG72X7RIECu1Ocbo7dVyX/JSqqbu2mdO1pg/r0GCjjOQBwd5NWi7PQ==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      '@tanstack/store': 0.1.3
+      solid-js: 1.8.8
+    dev: false
+
+  /@tanstack/store@0.1.3:
+    resolution: {integrity: sha512-GnolmC8Fr4mvsHE1fGQmR3Nm0eBO3KnZjDU0a+P3TeQNM/dDscFGxtA7p31NplQNW3KwBw4t1RVFmz0VeKLxcw==}
+    dev: false
+
+  /@tanstack/valibot-form-adapter@0.13.1(valibot@0.25.0):
+    resolution: {integrity: sha512-bcMsZYy3iD2e1EqTPFPHnhslKGtpfoTmp1NBAI/2bgxx3PdMfj9LWraCZVPqz3qbjm9fOp2Mn37IvRpJQudsMw==}
+    peerDependencies:
+      valibot: ^0.x
+    dependencies:
+      '@tanstack/form-core': 0.13.1
+      valibot: 0.25.0
+    dev: false
 
   /@trysound/sax@0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -3739,16 +3763,6 @@ packages:
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  /@vee-validate/valibot@4.12.4(vue@3.4.5):
-    resolution: {integrity: sha512-kgTx68hftweJwXY9LY1y60DS/GCmgak+vsEbBEyhpcg7Kvghbs8ZncgI5jaPDqsE5FMT3RmejRYOfO7exIyk6Q==}
-    dependencies:
-      type-fest: 4.9.0
-      valibot: 0.25.0
-      vee-validate: 4.12.4(vue@3.4.5)
-    transitivePeerDependencies:
-      - vue
-    dev: false
-
   /@vercel/build-utils@5.3.0:
     resolution: {integrity: sha512-l6FWKyayVN1W8RlKMn42vWdqqcF84O8i8hArGg+O4RUqW2bNjis/cO5OU/UE9rUTp9R9oMyeMoUep+6xmT/7JQ==}
     dev: true
@@ -4008,10 +4022,6 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.4.5
       '@vue/shared': 3.4.5
-
-  /@vue/devtools-api@6.5.1:
-    resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
-    dev: false
 
   /@vue/reactivity@3.4.5:
     resolution: {integrity: sha512-BcWkKvjdvqJwb7BhhFkXPLDCecX4d4a6GATvCduJQDLv21PkPowAE5GKuIE5p6RC07/Lp9FMkkq4AYCTVF5KlQ==}
@@ -10693,6 +10703,14 @@ packages:
       solid-js: 1.8.8
     dev: true
 
+  /solid-sonner@0.2.2(solid-js@1.8.8):
+    resolution: {integrity: sha512-kPmnGDE2VKFrhbs+/ZAxlEyLYDNcf22nJzTrgd3GdztR0iNwDraF5vYbx/3FUEVV1lfR/R5N47i+NfoPZ9kYcg==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      solid-js: 1.8.8
+    dev: false
+
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -11434,6 +11452,7 @@ packages:
   /type-fest@4.9.0:
     resolution: {integrity: sha512-KS/6lh/ynPGiHD/LnAobrEFq3Ad4pBzOlJ1wAnJx9N4EYoqFhMfLIBjUT2UEx4wg5ZE+cC1ob6DCSpppVo+rtg==}
     engines: {node: '>=16'}
+    dev: true
 
   /typed-array-buffer@1.0.0:
     resolution: {integrity: sha512-Y8KTSIglk9OZEr8zywiIHG/kmQ7KWyjseXs1CbSo8vC42w7hg2HgYTxSWwP0+is7bWDc1H+Fo026CpHFwm8tkw==}
@@ -11710,16 +11729,6 @@ packages:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
     dev: true
-
-  /vee-validate@4.12.4(vue@3.4.5):
-    resolution: {integrity: sha512-rqSjMdl0l/RiGKywKhkXttUKwDlQOoxTxe31uMQiMlwK4Hbtlvr3OcQvpREp/qPTARxNKudKWCUVW/mfzuxUVQ==}
-    peerDependencies:
-      vue: ^3.3.11
-    dependencies:
-      '@vue/devtools-api': 6.5.1
-      type-fest: 4.9.0
-      vue: 3.4.5(typescript@5.3.3)
-    dev: false
 
   /vercel@27.4.0:
     resolution: {integrity: sha512-HUDbq5L9ja4gXtS2orfjQYQG6VLN4FOym9dJ8AGZzTrKt5crIKTHpiR6eLB3k4QqATPggORGW7mS6lsmhpnjbQ==}
@@ -12010,18 +12019,6 @@ packages:
     engines: {node: '>=12'}
     peerDependencies:
       vue: ^3.2
-    dependencies:
-      vue: 3.4.5(typescript@5.3.3)
-    dev: false
-
-  /vue3-toastify@0.2.1(vue@3.4.5):
-    resolution: {integrity: sha512-u4i5LCu1q5qs4L4Kbjb4u8NipCS8ox1fCHQ6XFS62676xnA6Q/AJRpZEkAurTMp723LeH6eQX6k9+24bKf1T4Q==}
-    engines: {node: '>=16', npm: '>=7'}
-    peerDependencies:
-      vue: '>=3.2.0'
-    peerDependenciesMeta:
-      vue:
-        optional: true
     dependencies:
       vue: 3.4.5(typescript@5.3.3)
     dev: false

@@ -1,8 +1,62 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import ContactPage from "~/components/pages/ContactPage.vue";
+import TheButton from "~/components/TheButton";
+import TheContactForm from "~/components/TheContactForm";
+import styles from "./contact.module.css";
 ---
 
 <Layout>
-  <ContactPage client:load />
+  <div class="relative mx-auto flex w-full max-w-[90rem] flex-col">
+    <div class="mx-auto flex w-full max-w-xl flex-col px-4 sm:px-6 lg:mx-0 lg:px-8">
+      <div class="mb-6 md:mb-8"></div>
+
+      <h1 class="font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">
+        Get in touch
+      </h1>
+
+      <div class="mb-5"></div>
+
+      <div class={styles.infoContainer}>
+        <TheButton client:load border color="zinc" shadow="sm" class={styles.infoButton}>
+          Residence: Bandung, Indonesia
+        </TheButton>
+        <TheButton
+          client:load
+          component="a"
+          href="https://wa.me/6282133258511"
+          target="_blank"
+          border
+          color="zinc"
+          shadow="sm"
+          class={styles.infoButton}
+        >
+          Phone: +62 821-3325-8511
+        </TheButton>
+        <TheButton
+          client:load
+          component="a"
+          href="mailto:nurlimandiara@gmail.com"
+          border
+          color="zinc"
+          shadow="sm"
+          class={styles.infoButton}
+        >
+          Email: nurlimandiara@gmail.com
+        </TheButton>
+      </div>
+
+      <div class="mb-5"></div>
+
+      <TheContactForm client:load />
+
+      <div class="mb-16"></div>
+
+      <img
+        class={styles.img}
+        src="/assets/undraw_digital_nomad_re_w8uy.svg"
+        alt="Digital Nomad"
+        loading="lazy"
+      />
+    </div>
+  </div>
 </Layout>

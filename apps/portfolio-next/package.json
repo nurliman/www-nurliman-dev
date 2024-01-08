@@ -16,18 +16,17 @@
     "@nurliman.dev/emails": "workspace:*",
     "@nurliman.dev/env": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
-    "@vee-validate/valibot": "^4.12.4",
+    "@tanstack/solid-form": "^0.13.1",
+    "@tanstack/valibot-form-adapter": "^0.13.1",
     "animejs": "^3.2.2",
     "clsx": "^2.0.0",
     "cva": "^1.0.0-beta.1",
     "lodash-es": "^4.17.21",
     "ofetch": "^1.3.3",
     "solid-js": "^1.8.8",
+    "solid-sonner": "^0.2.2",
     "valibot": "^0.25.0",
-    "vee-validate": "^4.12.4",
-    "vue-uid": "npm:@shimyshack/uid@^0.1.9",
-    "vue3-marquee": "^4.1.0",
-    "vue3-toastify": "^0.2.1"
+    "vue3-marquee": "^4.1.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.3.4",
