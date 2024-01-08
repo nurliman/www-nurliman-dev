@@ -1,6 +1,6 @@
 import { createSignal, onCleanup, onMount } from "solid-js";
 
-export default function ComingSoon() {
+export default function TheComingSoonPage() {
   const [dots, setDots] = createSignal("...");
 
   onMount(() => {
