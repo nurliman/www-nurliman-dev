@@ -36,6 +36,8 @@ export default function ContactFormEmail() {
           }}
         >
           <Container className="mx-auto my-0 max-w-2xl">
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore: For some reason, Headings are not recognized as valid JSX elements */}
             <Heading
               className="mx-0 my-[30px] p-0 text-4xl font-bold leading-10 text-[#1d1c1d]"
               dangerouslySetInnerHTML={{ __html: TITLE }}
