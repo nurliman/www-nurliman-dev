@@ -23,13 +23,13 @@
     "lint": "npm run format && eslint -c index.js --cache --fix ."
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "eslint-config-turbo": "^1.11.2",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint-config-turbo": "^1.11.3",
     "eslint-plugin-astro": "^0.31.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-vue": "^9.19.2",
-    "vue-eslint-parser": "^9.3.2"
+    "vue-eslint-parser": "^9.4.0"
   },
   "devDependencies": {
     "eslint": "^8.56.0"
