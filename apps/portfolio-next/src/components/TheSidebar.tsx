@@ -1,10 +1,10 @@
 import type { Accessor } from "solid-js";
-import { For, createEffect, on } from "solid-js";
+import { For, createMemo } from "solid-js";
+import { createTween } from "@solid-primitives/tween";
 import { clsx } from "clsx";
 import { sections } from "~/data/sections";
 import { socials } from "~/data/socials";
-import reverse from "lodash-es/reverse";
-import anime from "animejs";
+import { easeInCirc } from "~/utils/easeInCirc";
 import TheButton from "~/components/TheButton";
 
 export type TheSidebarProps = {
@@ -14,58 +14,25 @@ export type TheSidebarProps = {
 };
 
 export default function TheSidebar(props: TheSidebarProps) {
-  let backdropRef: HTMLButtonElement | undefined;
-  let modalRef: HTMLDivElement | undefined;
-
-  createEffect(
-    on(
-      props.isOpen,
-      (isOpen) => {
-        if (!backdropRef) return;
-        if (!modalRef) return;
-
-        let modalX = ["-100%", "0%"];
-        let backdropOpacity = [0, 0.5];
-
-        if (!isOpen) {
-          modalX = reverse(modalX);
-          backdropOpacity = reverse(backdropOpacity);
-        }
-
-        anime({
-          targets: backdropRef,
-          duration: 300,
-          easing: "easeInOutQuad",
-          opacity: backdropOpacity,
-          translateZ: 0,
-        });
-
-        anime({
-          targets: modalRef,
-          duration: 200,
-          easing: "easeInOutQuad",
-          translateX: modalX,
-          translateZ: 0,
-        });
-      },
-      { defer: true },
-    ),
-  );
+  const modalX = createMemo<number>(() => (props.isOpen() ? 0 : -100));
+  const tweenedModalX = createTween(modalX, {
+    duration: 250,
+    ease: easeInCirc,
+  });
 
   return (
     <>
       <button
-        ref={backdropRef}
         type="button"
         class={clsx(
-          "fixed inset-0 z-10 w-screen bg-black opacity-0 md:hidden",
-          props.isOpen() ? "pointer-events-auto" : "pointer-events-none",
+          "fixed inset-0 z-10 w-screen bg-black transition-opacity duration-300 md:hidden",
+          props.isOpen() ? "pointer-events-auto opacity-50" : "pointer-events-none opacity-0",
         )}
+        style={{ transform: "translateZ(0)" }}
         onClick={() => props.onChange?.(false)}
       />
 
       <div
-        ref={modalRef}
         class={clsx(
           "fixed z-40 flex w-screen flex-col border-r sm:max-w-xs md:hidden",
           "bg-white transition-colors dark:bg-black",
@@ -74,6 +41,7 @@ export default function TheSidebar(props: TheSidebarProps) {
         style={{
           height: `calc(100vh - ${props.headerHeight}px)`,
           top: `${props.headerHeight}px`,
+          transform: `translate3d(${tweenedModalX()}%, 0, 0)`,
         }}
       >
         <nav class="contents">

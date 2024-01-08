@@ -1,5 +1,6 @@
-import { For, createSignal } from "solid-js";
 import { clsx } from "clsx";
+import { For, Show, createSignal } from "solid-js";
+import { createPresence } from "@solid-primitives/presence";
 import { sections } from "~/data/sections";
 import TheButton from "~/components/TheButton";
 import TheHamburgerButton from "~/components/TheHamburgerButton";
@@ -8,6 +9,7 @@ import TheSidebar from "~/components/TheSidebar";
 
 export default function TheHeader() {
   const [sidebarOpened, setSidebarOpened] = createSignal(false);
+  const sidebarPresence = createPresence(sidebarOpened, { transitionDuration: 300 });
 
   const changeMenuOpened = (isOpen?: boolean) => {
     setSidebarOpened((sidebarOpened) => (isOpen ??= !sidebarOpened));
@@ -67,11 +69,13 @@ export default function TheHeader() {
         </div>
       </header>
 
-      <TheSidebar
-        isOpen={sidebarOpened}
-        headerHeight={50}
-        onChange={(isOpen) => changeMenuOpened(isOpen)}
-      />
+      <Show when={sidebarPresence.isMounted()}>
+        <TheSidebar
+          isOpen={sidebarPresence.isVisible}
+          headerHeight={50}
+          onChange={(isOpen) => changeMenuOpened(isOpen)}
+        />
+      </Show>
     </>
   );
 }
