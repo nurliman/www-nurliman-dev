@@ -38,7 +38,7 @@ const {
   </head>
   <body>
     <div class="contents">
-      <TheHeader client:load />
+      <TheHeader client:load currentPath={Astro.url.pathname} />
 
       <div
         class:list={[

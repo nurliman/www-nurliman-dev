@@ -5,6 +5,7 @@ import { clsx } from "clsx";
 import { sections } from "~/data/sections";
 import { socials } from "~/data/socials";
 import { easeInCirc } from "~/utils/easeInCirc";
+import { isActivePath } from "~/utils/isActivePath";
 import TheButton from "~/components/TheButton";
 
 export type TheSidebarProps = {
@@ -52,7 +53,10 @@ export default function TheSidebar(props: TheSidebarProps) {
                   <TheButton
                     component="a"
                     href={section.link}
-                    class="border-b px-8 py-3 hover:font-semibold"
+                    class={clsx(
+                      "border-b px-8 py-3 hover:font-semibold",
+                      isActivePath(section.link) && "link-active",
+                    )}
                     onClick={() => props.onChange?.(false)}
                   >
                     {section.name}

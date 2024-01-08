@@ -2,12 +2,17 @@ import { clsx } from "clsx";
 import { For, Show, createSignal } from "solid-js";
 import { createPresence } from "@solid-primitives/presence";
 import { sections } from "~/data/sections";
+import { isActivePath } from "~/utils/isActivePath";
 import TheButton from "~/components/TheButton";
 import TheHamburgerButton from "~/components/TheHamburgerButton";
 import TheThemeSwithcerButton from "~/components/TheThemeSwithcerButton";
 import TheSidebar from "~/components/TheSidebar";
 
-export default function TheHeader() {
+export type TheHeaderProps = {
+  currentPath: string;
+};
+
+export default function TheHeader(props: TheHeaderProps) {
   const [sidebarOpened, setSidebarOpened] = createSignal(false);
   const sidebarPresence = createPresence(sidebarOpened, { transitionDuration: 300 });
 
@@ -55,7 +60,10 @@ export default function TheHeader() {
                     <TheButton
                       component="a"
                       href={section.link}
-                      class="rounded-full px-3 py-1.5 text-xs uppercase"
+                      class={clsx(
+                        "rounded-full px-3 py-1.5 text-xs uppercase",
+                        isActivePath(section.link, props.currentPath) && "link-active",
+                      )}
                       onClick={() => closeMenu()}
                     >
                       {section.name}

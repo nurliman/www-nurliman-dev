@@ -27,7 +27,7 @@
   }
 }
 
-.router-link-active {
+.link-active {
   @apply underline underline-offset-2;
   @apply font-medium;
 }
