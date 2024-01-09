@@ -11,31 +11,31 @@ const styles: any = {
     "transitionProperty": "background-color,box-shadow,transform",
     "transitionTimingFunction": "cubic-bezier(.4,0,.2,1)"
   },
-  ".brutal-btn,.brutal-btn-white": {
+  ".brutal-btn-white": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(255 255 255/var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(0 0 0/var(--tw-text-opacity))"
   },
-  ".brutal-btn-white:hover,.brutal-btn:hover": {
+  ".brutal-btn-white:hover": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(244 244 245/var(--tw-bg-opacity))"
   },
-  ".brutal-btn-white:active,.brutal-btn:active": {
+  ".brutal-btn-white:active": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(228 228 231/var(--tw-bg-opacity))"
   },
-  ":is(:where(.dark) .brutal-btn),:is(:where(.dark) .brutal-btn-white)": {
+  ":is(.dark .brutal-btn-white)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(0 0 0/var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255/var(--tw-text-opacity))"
   },
-  ":is(:where(.dark) .brutal-btn-white:hover),:is(:where(.dark) .brutal-btn:hover)": {
+  ":is(.dark .brutal-btn-white:hover)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(24 24 27/var(--tw-bg-opacity))"
   },
-  ":is(:where(.dark) .brutal-btn-white:active),:is(:where(.dark) .brutal-btn:active)": {
+  ":is(.dark .brutal-btn-white:active)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(9 9 11/var(--tw-bg-opacity))"
   },
@@ -67,17 +67,17 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(161 161 170/var(--tw-bg-opacity))"
   },
-  ":is(:where(.dark) .brutal-btn-zinc)": {
+  ":is(.dark .brutal-btn-zinc)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(24 24 27/var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255/var(--tw-text-opacity))"
   },
-  ":is(:where(.dark) .brutal-btn-zinc:hover)": {
+  ":is(.dark .brutal-btn-zinc:hover)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(9 9 11/var(--tw-bg-opacity))"
   },
-  ":is(:where(.dark) .brutal-btn-zinc:active)": {
+  ":is(.dark .brutal-btn-zinc:active)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(0 0 0/var(--tw-bg-opacity))"
   },

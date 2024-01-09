@@ -5,6 +5,9 @@ import { cva, cx, type VariantProps } from "cva";
 
 const buttonVariant = cva({
   base: "brutal-btn",
+  defaultVariants: {
+    color: "white",
+  },
   variants: {
     color: {
       "white-pink": "brutal-btn-white-pink",

@@ -5,7 +5,6 @@
     @apply transition-[background-color,box-shadow,transform];
 
     /* Button colors */
-    &,
     &-white {
       @apply bg-white text-black;
       @apply hover:bg-zinc-100;
