@@ -1,5 +1,6 @@
 ---
-import { Vue3Marquee } from "vue3-marquee";
+import TheNurlimanMarquee from "~/components/TheNurlimanMarquee";
+import TheContactInfoMarquee from "~/components/TheContactInfoMarquee";
 import Layout from "~/layouts/Layout.astro";
 import styles from "./about-me.module.css";
 
@@ -30,26 +31,13 @@ const thingsIDo = [
   },
 ] as const;
 
-const info = [
-  ["Age", "25"],
-  ["Residence", "Indonesia"],
-  ["Address", "Ujungberung, Bandung"],
-  ["e-mail", "nurlimandiara@gmail.com"],
-  ["Phone", "+62 821-3325-8511"],
-] as const;
-
 const containerClass = "mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8";
 ---
 
 <Layout>
   <div class="flex w-full flex-col text-left">
     <div class="relative border-b-2 bg-zinc-200 py-1 md:-top-[2px] dark:bg-zinc-900 min-h-[25px]">
-      <Vue3Marquee client:only="vue" clone>
-        <div class="font-transducer-extended inline-flex text-[10px] font-bold">
-          <span>NURLIMAN DIARA ARIA</span>
-          <span class="mx-2.5">&#8226;</span>
-        </div>
-      </Vue3Marquee>
+      <TheNurlimanMarquee client:only="solid-js" />
     </div>
 
     <div class="mb-6"></div>
@@ -112,22 +100,7 @@ const containerClass = "mx-auto w-full max-w-[90rem] px-4 sm:px-6 lg:px-8";
     <div class="mb-14"></div>
 
     <div class="border-y-2 bg-zinc-200 py-2 dark:bg-zinc-950 min-h-9">
-      <Vue3Marquee client:only="vue" clone>
-        <ul class="flex text-xs">
-          {
-            info.map(([key, value], index) => (
-              <Fragment>
-                <li>
-                  <span>{key}&nbsp;</span>
-                  <span class="font-bold">{value}</span>
-                  {index < info.length - 1 ? <span>&nbsp;|&nbsp;</span> : null}
-                </li>
-              </Fragment>
-            ))
-          }
-          <li class="mx-4">&#8226;</li>
-        </ul>
-      </Vue3Marquee>
+      <TheContactInfoMarquee client:only="solid-js" />
     </div>
   </div>
 </Layout>

@@ -1,0 +1,124 @@
+.container {
+  display: flex !important;
+  position: relative;
+}
+
+.container.horizontal {
+  overflow-x: hidden !important;
+  flex-direction: row !important;
+  width: 100%;
+  height: max-content;
+}
+
+.container.vertical {
+  overflow-y: hidden !important;
+  flex-direction: column !important;
+  height: 100%;
+  width: max-content;
+}
+
+.container:hover div {
+  animation-play-state: var(--marquee-pause-on-hover);
+}
+
+.container:active div {
+  animation-play-state: var(--marquee-pause-on-click);
+}
+
+.container > .marquee {
+  flex: 0 0 auto;
+  min-width: var(--marquee-min-width);
+  min-height: var(--marquee-min-height);
+  z-index: 1;
+
+  animation: var(--marquee-orientation) var(--marquee-duration) linear var(--marquee-delay)
+    var(--marquee-loops);
+  animation-play-state: var(--marquee-pause-animation);
+  animation-direction: var(--marquee-direction);
+}
+
+.container.horizontal > .marquee {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container.vertical > .marquee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollY {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.container > .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container > .transparentOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container > .overlay::before,
+.container > .overlay::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+}
+
+.container.horizontal > .overlay::before,
+.container.horizontal > .overlay::after {
+  background: linear-gradient(to right, var(--marquee-gradient-color));
+  height: 100%;
+  width: var(--marquee-gradient-length);
+}
+
+.container.vertical > .overlay::before,
+.container.vertical > .overlay::after {
+  background: linear-gradient(to bottom, var(--marquee-gradient-color));
+  height: var(--marquee-gradient-length);
+  width: 100%;
+}
+
+.container.horizontal > .overlay::after {
+  transform: rotateZ(180deg);
+}
+
+.container.vertical > .overlay::after {
+  transform: rotateZ(-180deg);
+}
+
+.container > .overlay::before {
+  left: 0;
+  top: 0;
+}
+
+.container.horizontal > .overlay::after {
+  right: 0;
+  top: 0;
+}
+
+.container.vertical > .overlay::after {
+  left: 0;
+  bottom: 0;
+}
