@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { For, Show, createSignal } from "solid-js";
+import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { createPresence } from "@solid-primitives/presence";
 import { sections } from "~/data/sections";
 import { isActivePath } from "~/utils/isActivePath";
@@ -13,6 +13,7 @@ export type TheHeaderProps = {
 };
 
 export default function TheHeader(props: TheHeaderProps) {
+  const [currentPath, setCurrentPath] = createSignal(props.currentPath);
   const [sidebarOpened, setSidebarOpened] = createSignal(false);
   const sidebarPresence = createPresence(sidebarOpened, { transitionDuration: 300 });
 
@@ -23,6 +24,20 @@ export default function TheHeader(props: TheHeaderProps) {
   const closeMenu = () => {
     sidebarOpened() && changeMenuOpened(false);
   };
+
+  onMount(() => {
+    const setPath = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    setPath();
+
+    document.addEventListener("astro:after-swap", setPath);
+
+    onCleanup(() => {
+      document.removeEventListener("astro:after-swap", setPath);
+    });
+  });
 
   return (
     <>
@@ -62,7 +77,7 @@ export default function TheHeader(props: TheHeaderProps) {
                       href={section.link}
                       class={clsx(
                         "rounded-full px-3 py-1.5 text-xs uppercase",
-                        isActivePath(section.link, props.currentPath) && "link-active",
+                        isActivePath(section.link, currentPath()) && "link-active",
                       )}
                       onClick={() => closeMenu()}
                     >
