@@ -2,6 +2,7 @@
   "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
+    "types": ["astro/client"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],

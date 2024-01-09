@@ -1,10 +1,10 @@
 /**
  * This script is used to initialize the theme based on the user's preference.
  */
-function initializeTheme() {
+function initializeTheme(doc = document) {
   try {
     const media = window.matchMedia;
-    const htmlClassList = document.documentElement.classList;
+    const htmlClassList = doc.documentElement.classList;
     const prefersDefault = !!media && media("(prefers-color-scheme:{{defaultTheme}})").matches;
     const themeInLocalStorage = localStorage.getItem("{{localStorageKey}}");
     let theme: string;
@@ -28,3 +28,10 @@ function initializeTheme() {
 }
 
 initializeTheme();
+
+document.addEventListener("astro:before-swap", function (event) {
+  type Event = import("astro:transitions/client").TransitionBeforeSwapEvent;
+
+  // Pass the incoming document to set the theme on it
+  initializeTheme((event as Event)?.newDocument);
+});
