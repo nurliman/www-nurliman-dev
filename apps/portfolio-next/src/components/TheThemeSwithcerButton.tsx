@@ -38,24 +38,27 @@ export default function TheThemeSwithcerButton() {
     setTheme(currentThemeState() === "light" ? "dark" : "light");
   };
 
-  /** Handle changes in localStorage, specifically for theme changes */
-  const handleStorageChange = (event: StorageEvent) => {
-    if (event.key !== THEME_LOCAL_STORAGE_KEY) return;
-    setTheme(event.newValue as Theme);
-  };
-
-  /** Function to handle changes in media query */
-  const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-    setTheme(event.matches ? "dark" : "light");
-  };
-
   onMount(() => {
+    /** Handle changes in localStorage, specifically for theme changes */
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key !== THEME_LOCAL_STORAGE_KEY) return;
+      setTheme(event.newValue as Theme);
+    };
+
+    /** Function to handle changes in media query */
+    const handleMediaQueryChange = (event: MediaQueryListEvent) => {
+      setTheme(event.matches ? "dark" : "light");
+    };
+
+    /** Get the theme from local storage and set it */
+    const setupTheme = () => {
+      const theme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY) as Theme;
+      setTheme(theme);
+    };
+
     // Set up media query for dark mode preference
     setMediaQuery(window.matchMedia("(prefers-color-scheme: dark)"));
-
-    // Get the theme from local storage and set it
-    const theme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY) as Theme;
-    setTheme(theme);
+    setupTheme();
 
     window.addEventListener("storage", handleStorageChange);
     mediaQuery()?.addEventListener?.("change", handleMediaQueryChange);
