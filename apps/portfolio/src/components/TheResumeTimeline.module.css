@@ -72,7 +72,7 @@
 
 .description {
   & ul {
-    @apply list-disc pl-5;
+    @apply list-disc pl-4;
     @apply space-y-1.5;
   }
 
