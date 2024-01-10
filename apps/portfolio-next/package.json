@@ -34,6 +34,7 @@
     "@astrojs/check": "^0.4.1",
     "@astrojs/solid-js": "^4.0.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^6.1.3",
     "@elasticemail/elasticemail-client-ts-axios": "^4.0.22",
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman.dev/tailwind": "workspace:*",
