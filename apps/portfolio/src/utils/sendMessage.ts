@@ -3,7 +3,7 @@ import type {
   EmailSend,
 } from "@elasticemail/elasticemail-client-ts-axios";
 import { renderContactFormHtml } from "@nurliman.dev/emails";
-import { $fetch } from "ofetch";
+import { ofetch } from "ofetch";
 import { env } from "~/env";
 
 const ELASTIC_EMAIL_API_URL = "https://api.elasticemail.com/v4/emails/transactional";
@@ -18,7 +18,7 @@ export type SendEmailArgs = {
 };
 
 export const sendMessage = async ({ sender, subject, message }: SendEmailArgs) => {
-  return $fetch<EmailSend>(ELASTIC_EMAIL_API_URL, {
+  return ofetch<EmailSend>(ELASTIC_EMAIL_API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
