@@ -15,7 +15,6 @@
     "@fontsource/racing-sans-one": "^5.0.18",
     "@nurliman.dev/env": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
-    "@sentry/astro": "^7.93.0",
     "@solid-primitives/keyed": "^1.2.0",
     "@solid-primitives/presence": "^0.0.3",
     "@solid-primitives/tween": "^1.2.6",
