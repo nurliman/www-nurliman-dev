@@ -1,14 +1,12 @@
 import { createEnv } from "@nurliman.dev/env";
-import { string as vString, email as vEmail, minLength as vMinLength } from "valibot";
+import { string as vString, url as vUrl } from "valibot";
 
 export const env = createEnv({
-  server: {
-    MY_EMAIL: vString([vMinLength(1), vEmail()]),
-    SENDER_EMAIL: vString([vMinLength(1), vEmail()]),
-    ELASTIC_EMAIL_API_KEY: vString([vMinLength(1)]),
-  },
+  server: {},
   clientPrefix: "PUBLIC_",
-  client: {},
+  client: {
+    PUBLIC_MESSAGE_SENDER_SERVICE_HOST: vString([vUrl()]),
+  },
   runtimeEnv: import.meta.env,
   emptyStringAsUndefined: true,
 });

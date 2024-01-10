@@ -6,6 +6,7 @@ import { Toaster, toast } from "solid-sonner";
 import { createForm } from "@tanstack/solid-form";
 import { valibotValidator } from "@tanstack/valibot-form-adapter";
 import { contactFormSchema, type ContactForm } from "~/schemas";
+import { env } from "~/env";
 import TheButton from "~/components/TheButton";
 import TheInputText from "~/components/TheInputText";
 import "solid-sonner.css";
@@ -31,6 +32,7 @@ export default function TheContactForm() {
         async () => {
           setSubmitLoading(true);
           return ofetch("/api/messages", {
+            baseURL: env.PUBLIC_MESSAGE_SENDER_SERVICE_HOST,
             method: "post",
             body: value,
             timeout: 10000,

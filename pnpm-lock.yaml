@@ -84,9 +84,6 @@ importers:
       '@fontsource/racing-sans-one':
         specifier: ^5.0.18
         version: 5.0.18
-      '@nurliman.dev/emails':
-        specifier: workspace:*
-        version: link:../../packages/emails
       '@nurliman.dev/env':
         specifier: workspace:*
         version: link:../../packages/env
@@ -145,9 +142,6 @@ importers:
       '@astrojs/vercel':
         specifier: ^6.1.3
         version: 6.1.3(astro@4.1.1)
-      '@elasticemail/elasticemail-client-ts-axios':
-        specifier: ^4.0.22
-        version: 4.0.22
       '@nurliman.dev/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
