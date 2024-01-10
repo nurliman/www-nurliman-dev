@@ -69,3 +69,14 @@
     box-shadow: 0 0 0 4px var(--shadow-pulse-color);
   }
 }
+
+.description {
+  & ul {
+    @apply list-disc pl-5;
+    @apply space-y-1.5;
+  }
+
+  & > strong {
+    @apply leading-8;
+  }
+}

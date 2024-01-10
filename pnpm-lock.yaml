@@ -224,6 +224,9 @@ importers:
       ofetch:
         specifier: ^1.3.3
         version: 1.3.3
+      snarkdown:
+        specifier: ^2.0.0
+        version: 2.0.0
       solid-js:
         specifier: ^1.8.10
         version: 1.8.10
@@ -11741,6 +11744,10 @@ packages:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 5.0.0
     dev: true
+
+  /snarkdown@2.0.0:
+    resolution: {integrity: sha512-MgL/7k/AZdXCTJiNgrO7chgDqaB9FGM/1Tvlcenenb7div6obaDATzs16JhFyHHBGodHT3B7RzRc5qk8pFhg3A==}
+    dev: false
 
   /solid-js@1.8.10:
     resolution: {integrity: sha512-YTT2Py/M+f8sArdkZsTtqpXeYWo6Mtj5XbeLN39yMTRoOzlntT9cPGBkaemjwxRCN95gDKSh80ypxebUYVeKYg==}

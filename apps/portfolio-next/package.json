@@ -25,6 +25,7 @@
     "cva": "^1.0.0-beta.1",
     "is-relative-url": "^4.0.0",
     "ofetch": "^1.3.3",
+    "snarkdown": "^2.0.0",
     "solid-js": "^1.8.10",
     "solid-sonner": "^0.2.2",
     "valibot": "^0.25.0"

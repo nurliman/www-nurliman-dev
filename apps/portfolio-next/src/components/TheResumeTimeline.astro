@@ -1,5 +1,7 @@
 ---
 import type { TimelineItem } from "~/types";
+import { clsx } from "clsx";
+import snarkdown from "snarkdown";
 import styles from "./TheResumeTimeline.module.css";
 
 type Props = {
@@ -19,7 +21,10 @@ const { data } = Astro.props;
         </div>
         <div class="mb-1 text-sm text-zinc-700 dark:text-zinc-400">{item.institution}</div>
         <div class="font-transducer mb-1.5 text-lg font-bold">{item.title}</div>
-        <div class="text-sm md:text-[15px]">{item.description}</div>
+        <div
+          class={clsx(styles.description, "text-sm md:text-[15px]")}
+          set:html={snarkdown(item.description)}
+        />
         <div class={styles.line}>
           <div class={styles.bullet} />
         </div>
