@@ -65,8 +65,6 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
   const [gradientLength, setGradientLength] = createSignal("200px");
   const [ready, setReady] = createSignal(false);
 
-  const cloneAmountArr = createMemo(() => [...Array(cloneAmount()).keys()]);
-
   let marqueeContent: HTMLDivElement | undefined;
   let marqueeOverlayContainer: HTMLDivElement | undefined;
 
@@ -184,27 +182,22 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
     const cssVariables = {
       "--marquee-duration": `${props.duration}s`,
       "--marquee-delay": `${props.delay}s`,
-      "--marquee-direction": `${props.direction}`,
-      "--marquee-pause-on-hover": `${props.pauseOnHover ? "paused" : "running"}`,
-      "--marquee-pause-on-click": `${props.pauseOnClick ? "paused" : "running"}`,
-      "--marquee-pause-animation": `${
-        (props.vertical && verticalAnimationPause()) || props.pause ? "paused" : "running"
-      }`,
-      "--marquee-loops": `${props.loop === 0 ? "infinite" : props.loop}`,
-      "--marquee-gradient-color": `rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 1), rgba(${props.gradientColor[0]}, ${props.gradientColor[1]}, ${props.gradientColor[2]}, 0)`,
-      "--marquee-gradient-length": `${gradientLength()}`,
-      "--marquee-min-width": `${minWidth()}`,
-      "--marquee-min-height": `${minHeight()}`,
-    };
+      "--marquee-direction": props.direction,
+      "--marquee-pause-on-hover": props.pauseOnHover ? "paused" : "running",
+      "--marquee-pause-on-click": props.pauseOnClick ? "paused" : "running",
+      "--marquee-pause-animation":
+        (props.vertical && verticalAnimationPause()) || props.pause ? "paused" : "running",
+      "--marquee-loops": props.loop === 0 ? "infinite" : props.loop + "",
+      "--marquee-gradient-color": `rgba(${props.gradientColor[0]},${props.gradientColor[1]},${props.gradientColor[2]},1),rgba(${props.gradientColor[0]},${props.gradientColor[1]},${props.gradientColor[2]},0)`,
+      "--marquee-gradient-length": gradientLength(),
+      "--marquee-min-width": minWidth(),
+      "--marquee-min-height": minHeight(),
+    } satisfies Record<string, string>;
 
     const animationStyles = {
-      "--marquee-orientation": styles.scrollX,
+      "--marquee-orientation": props.vertical ? styles.scrollY : styles.scrollX,
       orientation: "horizontal",
-    };
-
-    if (props.vertical) {
-      animationStyles["--marquee-orientation"] = styles.scrollY;
-    }
+    } satisfies Record<string, string>;
 
     const currentStyles = {
       ...cssVariables,
@@ -215,10 +208,7 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
   });
 
   const showGradient = createMemo(() => {
-    if (props.gradient) {
-      return true;
-    }
-    return false;
+    return !!props.gradient;
   });
 
   const setupMarquee = async () => {
@@ -298,7 +288,7 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
             {props.children}
           </div>
 
-          <For each={cloneAmountArr()}>
+          <For each={[...Array(cloneAmount()).keys()]}>
             {() => (
               <div aria-hidden="true" class={clsx(styles.marquee, "cloned")}>
                 {props.children}
