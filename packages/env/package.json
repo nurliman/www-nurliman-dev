@@ -28,6 +28,12 @@
       "default": "./dist/nuxt.cjs",
       "require": "./dist/nuxt.cjs",
       "types": "./dist/nuxt.d.ts"
+    },
+    "./nextjs": {
+      "import": "./dist/nextjs.js",
+      "default": "./dist/nextjs.cjs",
+      "require": "./dist/nextjs.cjs",
+      "types": "./dist/nextjs.d.ts"
     }
   },
   "scripts": {
