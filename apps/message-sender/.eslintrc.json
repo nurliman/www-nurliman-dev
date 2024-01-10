@@ -1,0 +1,6 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "turbo/no-undeclared-env-vars": "warn"
+  }
+}
