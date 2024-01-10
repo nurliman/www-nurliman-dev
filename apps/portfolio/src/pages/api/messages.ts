@@ -4,7 +4,17 @@ import { contactFormSchema } from "~/schemas";
 import { sendMessage } from "~/utils/sendMessage";
 
 export const POST: APIRoute = async ({ request }) => {
-  const body = await request.json();
+  let body;
+  try {
+    body = await request.json();
+  } catch (e) {
+    body = null;
+    return new Response(null, {
+      status: 400,
+      statusText: "Invalid JSON",
+    });
+  }
+
   const parseResult = safeParse(contactFormSchema, body);
 
   if (!parseResult.success) {
