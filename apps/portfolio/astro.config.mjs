@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +11,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-  output: "hybrid",
+  output: "static",
   adapter: vercel(),
 });
