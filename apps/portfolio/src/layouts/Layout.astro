@@ -16,6 +16,8 @@ interface Props {
 const {
   title = "Nurliman Diara Aria | Web Developer Portfolio - Crafting Digital Experiences with Excellence",
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -28,6 +30,7 @@ const {
     <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
     <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
     <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <script
       set:html={createThemeScript({
