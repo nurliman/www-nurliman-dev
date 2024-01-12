@@ -11,10 +11,13 @@ import "~/styles/main.css";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Nurliman Diara Aria | Crafting Digital Experiences with Excellence" } =
-  Astro.props;
+const {
+  title = "Nurliman Diara Aria | Software Engineer",
+  description = "Crafting Digital Experiences with Excellence",
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -31,6 +34,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
+    {description ? <meta name="description" content={description} /> : null}
+    {description ? <meta property="og:description" content={description} /> : null}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content={title?.split?.(" | ")?.[0] || title} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content="https://nurliman.dev/assets/og-image.svg" />
     <script
       set:html={createThemeScript({
         defaultTheme: DEFAULT_THEME,
