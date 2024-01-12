@@ -1,8 +1,8 @@
 @font-face {
   font-family: "TransducerCondensedOblique";
   src:
-    url("./files/HairlineCondensedOblique.woff2") format("woff2"),
-    url("./files/HairlineCondensedOblique.woff") format("woff");
+    url("/fonts/transducer/HairlineCondensedOblique.woff2") format("woff2"),
+    url("/fonts/transducer/HairlineCondensedOblique.woff") format("woff");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -11,8 +11,8 @@
 @font-face {
   font-family: "TransducerCondensedOblique";
   src:
-    url("./files/CondensedOblique.woff2") format("woff2"),
-    url("./files/CondensedOblique.woff") format("woff");
+    url("/fonts/transducer/CondensedOblique.woff2") format("woff2"),
+    url("/fonts/transducer/CondensedOblique.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -21,8 +21,8 @@
 @font-face {
   font-family: "TransducerCondensedOblique";
   src:
-    url("./files/MediumCondensedOblique.woff2") format("woff2"),
-    url("./files/MediumCondensedOblique.woff") format("woff");
+    url("/fonts/transducer/MediumCondensedOblique.woff2") format("woff2"),
+    url("/fonts/transducer/MediumCondensedOblique.woff") format("woff");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -31,8 +31,8 @@
 @font-face {
   font-family: "TransducerCondensedOblique";
   src:
-    url("./files/BoldCondensedOblique.woff2") format("woff2"),
-    url("./files/BoldCondensedOblique.woff") format("woff");
+    url("/fonts/transducer/BoldCondensedOblique.woff2") format("woff2"),
+    url("/fonts/transducer/BoldCondensedOblique.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -41,8 +41,8 @@
 @font-face {
   font-family: "TransducerCondensedOblique";
   src:
-    url("./files/BlackCondensedOblique.woff2") format("woff2"),
-    url("./files/BlackCondensedOblique.woff") format("woff");
+    url("/fonts/transducer/BlackCondensedOblique.woff2") format("woff2"),
+    url("/fonts/transducer/BlackCondensedOblique.woff") format("woff");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
