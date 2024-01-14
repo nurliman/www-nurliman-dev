@@ -2,6 +2,7 @@ import NProgress, { type NProgressOptions } from "nprogress";
 import type { TransitionBeforePreparationEvent } from "astro:transitions/client";
 import { createEffect, createSignal, mergeProps, onCleanup, splitProps } from "solid-js";
 import { makeEventListener } from "@solid-primitives/event-listener";
+import styles from "./NProgress.module.css";
 
 export type TheNProgressBaseProps = NProgressOptions & {
   height?: number | string;
@@ -33,6 +34,14 @@ export default function TheNProgress(props: TheNProgressProps) {
       delay: 0,
       disableSameRoute: false,
       showSpinner: false,
+      template: `
+        <div class="${styles.bar}" role="bar">
+          <div class="${styles.peg}"></div>
+        </div>
+        <div class="${styles.spinner}" role="spinner">
+          <div class="${styles.spinnerIcon}"></div>
+        </div>
+      `,
     } as const satisfies Partial<TheNProgressProps>,
     props,
   );

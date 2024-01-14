@@ -1,5 +1,5 @@
 /* Make clicks pass-through */
-#nprogress {
+:global(#nprogress) {
   @apply pointer-events-none;
 
   & .bar {
@@ -22,7 +22,7 @@
     @apply fixed right-[15px] top-[15px] z-[9999] block;
   }
 
-  & .spinner-icon {
+  & .spinnerIcon {
     @apply box-border h-[18px] w-[18px];
     @apply animate-spin duration-[400ms];
 
@@ -33,11 +33,11 @@
   }
 }
 
-.nprogress-custom-parent {
+:global(.nprogress-custom-parent) {
   @apply relative overflow-hidden;
 
-  & #nprogress .spinner,
-  & #nprogress .bar {
+  & :global(#nprogress) .spinner,
+  & :global(#nprogress) .bar {
     @apply absolute;
   }
 }
