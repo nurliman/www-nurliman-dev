@@ -4,12 +4,12 @@ module.exports = {
     es2017: true,
     node: true,
   },
-  extends: [require.resolve("./index"), "plugin:astro/recommended", "plugin:vue/vue3-essential"],
+  extends: [require.resolve("./index"), "plugin:astro/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2020,
-    extraFileExtensions: [".astro", ".vue"],
+    extraFileExtensions: [".astro"],
   },
   overrides: [
     {
@@ -18,14 +18,6 @@ module.exports = {
       parserOptions: {
         parser: "@typescript-eslint/parser",
         extraFileExtensions: [".astro"],
-      },
-    },
-    {
-      files: ["*.vue"],
-      parser: "vue-eslint-parser",
-      parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".vue"],
       },
     },
   ],

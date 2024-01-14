@@ -8,15 +8,13 @@
   "files": [
     "package.json",
     "index.js",
-    "react.js",
-    "vue.js"
+    "react.js"
   ],
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json",
     "./astro.js": "./astro.js",
-    "./react.js": "./react.js",
-    "./vue.js": "./vue.js"
+    "./react.js": "./react.js"
   },
   "scripts": {
     "format": "prettier --write --cache --ignore-path ../../.prettierignore .",
@@ -27,9 +25,7 @@
     "@typescript-eslint/parser": "^6.18.1",
     "eslint-config-turbo": "^1.11.3",
     "eslint-plugin-astro": "^0.31.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-vue": "^9.20.0",
-    "vue-eslint-parser": "^9.4.0"
+    "eslint-plugin-react": "^7.33.2"
   },
   "devDependencies": {
     "eslint": "^8.56.0"
