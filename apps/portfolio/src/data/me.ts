@@ -13,8 +13,8 @@ export const me = {
   address: "Ujungberung, Bandung",
   email: "nurlimandiara@gmail.com",
   phone: {
-    display: "+62 821-3325-8511",
-    value: 6282133258511,
+    display: "+62 851-7447-4227",
+    value: 6285174474227,
   },
   experiences: [
     {

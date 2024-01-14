@@ -7,7 +7,7 @@ export default function TheContactInfoMarquee() {
     ["Residence", "Indonesia"],
     ["Address", "Ujungberung, Bandung"],
     ["e-mail", "nurlimandiara@gmail.com"],
-    ["Phone", "+62 821-3325-8511"],
+    ["Phone", "+62 851-7447-4227"],
   ] as const;
 
   return (

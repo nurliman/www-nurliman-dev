@@ -20,7 +20,7 @@ export const socials = [
   },
   {
     name: "WhatsApp",
-    link: "https://wa.me/6282133258511",
+    link: "https://wa.me/6285174474227",
     iconUrl: "/assets/whatsapp.svg",
     iconDarkUrl: "/assets/whatsapp-dark.svg",
   },
