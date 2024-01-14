@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "license": "MIT",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -13,26 +14,22 @@
     "./package.json": "./package.json",
     ".": {
       "import": "./dist/index.js",
-      "default": "./dist/index.cjs",
-      "require": "./dist/index.cjs",
+      "default": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
     "./core": {
       "import": "./dist/core.js",
-      "default": "./dist/core.cjs",
-      "require": "./dist/core.cjs",
+      "default": "./dist/core.js",
       "types": "./dist/core.d.ts"
     },
     "./nuxt": {
       "import": "./dist/nuxt.js",
-      "default": "./dist/nuxt.cjs",
-      "require": "./dist/nuxt.cjs",
+      "default": "./dist/nuxt.js",
       "types": "./dist/nuxt.d.ts"
     },
     "./nextjs": {
       "import": "./dist/nextjs.js",
-      "default": "./dist/nextjs.cjs",
-      "require": "./dist/nextjs.cjs",
+      "default": "./dist/nextjs.js",
       "types": "./dist/nextjs.d.ts"
     }
   },
