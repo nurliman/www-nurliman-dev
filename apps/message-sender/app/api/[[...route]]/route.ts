@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { handle } from "hono/vercel";
 import { cors } from "hono/cors";
 import { flatten, safeParse } from "valibot";
-import { contactFormSchema } from "./schemas";
+import { contactFormSchema } from "@nurliman.dev/schemas";
 import { sendMessage } from "./sendMessage";
 import { verifyCaptcha } from "./verifyCaptcha";
 

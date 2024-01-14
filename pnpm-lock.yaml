@@ -38,6 +38,9 @@ importers:
       '@nurliman.dev/env':
         specifier: workspace:*
         version: link:../../packages/env
+      '@nurliman.dev/schemas':
+        specifier: workspace:*
+        version: link:../../packages/schemas
       hono:
         specifier: ^3.12.2
         version: 3.12.2
@@ -87,6 +90,9 @@ importers:
       '@nurliman.dev/env':
         specifier: workspace:*
         version: link:../../packages/env
+      '@nurliman.dev/schemas':
+        specifier: workspace:*
+        version: link:../../packages/schemas
       '@nurliman.dev/theme-script':
         specifier: workspace:*
         version: link:../../packages/theme-script
@@ -334,6 +340,27 @@ importers:
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
+
+  packages/schemas:
+    devDependencies:
+      '@nurliman.dev/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@tsconfig/node18':
+        specifier: ^18.2.2
+        version: 18.2.2
+      eslint:
+        specifier: ^8.56.0
+        version: 8.56.0
+      tsup:
+        specifier: ^8.0.1
+        version: 8.0.1(@swc/core@1.3.102)(typescript@5.3.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+      valibot:
+        specifier: ^0.25.0
+        version: 0.25.0
 
   packages/tailwind:
     devDependencies:

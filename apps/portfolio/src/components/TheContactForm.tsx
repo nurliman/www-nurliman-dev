@@ -5,7 +5,7 @@ import { Portal } from "solid-js/web";
 import { Toaster, toast } from "solid-sonner";
 import { createForm } from "@tanstack/solid-form";
 import { valibotValidator } from "@tanstack/valibot-form-adapter";
-import { contactFormSchema, type ContactForm } from "~/schemas";
+import { contactFormSchema, type ContactForm } from "@nurliman.dev/schemas";
 import { env } from "~/env";
 import Turnstile, { type TurnstileRef } from "~/components/Turnstile";
 import TheButton from "~/components/TheButton";

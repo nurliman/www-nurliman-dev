@@ -1,0 +1,42 @@
+{
+  "name": "@nurliman.dev/schemas",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "dev": "tsup --config tsup.config.ts --watch",
+    "clean": "npx -y concurrently \"npm:clean:*\"",
+    "clean:turbo": "npx -y del-cli .turbo",
+    "clean:node_modules": "npx -y del-cli node_modules",
+    "clean:dist": "npx -y del-cli dist",
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
+    "lint": "npm run format && eslint --cache --fix ."
+  },
+  "devDependencies": {
+    "@nurliman.dev/eslint-config": "workspace:*",
+    "@tsconfig/node18": "^18.2.2",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "valibot": "^0.25.0"
+  },
+  "peerDependencies": {
+    "valibot": ">=0"
+  }
+}
