@@ -1,12 +1,13 @@
 import { clsx } from "clsx";
 import { ofetch, FetchError } from "ofetch";
-import { createSignal } from "solid-js";
+import { Show, createSignal } from "solid-js";
 import { Portal } from "solid-js/web";
 import { Toaster, toast } from "solid-sonner";
 import { createForm } from "@tanstack/solid-form";
 import { valibotValidator } from "@tanstack/valibot-form-adapter";
 import { contactFormSchema, type ContactForm } from "~/schemas";
 import { env } from "~/env";
+import Turnstile, { type TurnstileRef } from "~/components/Turnstile";
 import TheButton from "~/components/TheButton";
 import TheInputText from "~/components/TheInputText";
 import "solid-sonner.css";
@@ -14,6 +15,7 @@ import "solid-sonner.css";
 const DEFAULT_ERROR_MESSAGE = "Something went wrong.";
 
 export default function TheContactForm() {
+  let turnstileRef: TurnstileRef | undefined;
   const [submitLoading, setSubmitLoading] = createSignal(false);
 
   const form = createForm(() => ({
@@ -22,6 +24,7 @@ export default function TheContactForm() {
       email: "",
       subject: "",
       message: "",
+      captchaToken: "",
     } satisfies ContactForm,
     onSubmitInvalid: () => {
       console.error("Invalid form");
@@ -50,6 +53,7 @@ export default function TheContactForm() {
             })
             .finally(() => {
               setSubmitLoading(false);
+              turnstileRef?.reset?.();
             });
         },
         {
@@ -158,7 +162,32 @@ export default function TheContactForm() {
           )}
         />
 
-        <div></div>
+        <form.Field
+          name="captchaToken"
+          validators={{
+            onChange: contactFormSchema.entries.captchaToken,
+          }}
+          children={(field) => (
+            <div>
+              <Turnstile
+                ref={turnstileRef}
+                sitekey={env.PUBLIC_CF_TURNSTILE_SITE_KEY}
+                theme="auto"
+                retry="auto"
+                refreshExpired="auto"
+                onVerify={(token) => field().handleChange(token)}
+                onError={() => field().handleChange("")}
+                onExpire={() => field().handleChange("")}
+                onTimeout={() => field().handleChange("")}
+                onUnsupported={() => field().handleChange("")}
+              />
+              <Show when={!!field().state.meta.errors?.[0]}>
+                <div class="mt-1.5 text-xs text-red-500">{field().state.meta.errors[0]}</div>
+              </Show>
+            </div>
+          )}
+        />
+
         <TheButton
           type="submit"
           color="teal"

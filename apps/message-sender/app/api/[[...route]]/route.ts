@@ -4,6 +4,7 @@ import { cors } from "hono/cors";
 import { flatten, safeParse } from "valibot";
 import { contactFormSchema } from "./schemas";
 import { sendMessage } from "./sendMessage";
+import { verifyCaptcha } from "./verifyCaptcha";
 
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
@@ -28,6 +29,13 @@ app.post("/messages", async (c) => {
   }
 
   const parsed = parseResult.output;
+
+  try {
+    await verifyCaptcha(parsed.captchaToken);
+  } catch (error) {
+    console.error("Failed to verify captcha", error);
+    return c.json({ error, message: "Failed to verify captcha" }, 400);
+  }
 
   try {
     await sendMessage({

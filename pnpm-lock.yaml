@@ -172,6 +172,12 @@ importers:
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.1
+      turnstile-types:
+        specifier: ^1.2.0
+        version: 1.2.0
+      type-fest:
+        specifier: ^4.9.0
+        version: 4.9.0
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -9522,6 +9528,10 @@ packages:
       turbo-linux-arm64: 1.11.3
       turbo-windows-64: 1.11.3
       turbo-windows-arm64: 1.11.3
+    dev: true
+
+  /turnstile-types@1.2.0:
+    resolution: {integrity: sha512-cTtNEtCYpcXeXR5AOD0YR0xZpXk1iZeTOuXT5vAGNowGGdgapC+k6m/lOVSkmDOUopZmPtmu311XeULIro4gUA==}
     dev: true
 
   /type-check@0.4.0:
