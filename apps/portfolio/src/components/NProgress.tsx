@@ -69,6 +69,7 @@ export default function TheNProgress(props: TheNProgressProps) {
 
   const start = (event: TransitionBeforePreparationEvent) => {
     clearTimeout(timer());
+    clearInterval(incInterval());
     if (localProps.disableSameRoute && event.from.pathname === event.to.pathname) return;
     setTimer(setTimeout(() => NProgress.start(), localProps.delay));
     setIncInterval(setInterval(NProgress.inc, 1000));
