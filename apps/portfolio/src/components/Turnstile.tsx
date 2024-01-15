@@ -96,7 +96,7 @@ export default function Turnstile(props: TurnstileProps) {
     document.body.appendChild(scriptEl);
 
     onCleanup(() => {
-      document.body.removeChild(scriptEl);
+      document.getElementById(SCRIPT_ID)?.remove?.();
       delete (window as any).onloadTurnstileCallback;
       element && turnstile()?.remove?.(element);
     });
