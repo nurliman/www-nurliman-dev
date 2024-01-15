@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "eslint-config-turbo": "^1.11.3",
-    "eslint-plugin-astro": "^0.31.0",
+    "eslint-plugin-astro": "^0.31.1",
     "eslint-plugin-react": "^7.33.2"
   },
   "devDependencies": {
