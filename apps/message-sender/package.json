@@ -13,7 +13,7 @@
     "@nurliman.dev/emails": "workspace:*",
     "@nurliman.dev/env": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
-    "hono": "^3.12.4",
+    "hono": "^3.12.5",
     "next": "14.0.4",
     "ofetch": "^1.3.3",
     "react": "^18",
