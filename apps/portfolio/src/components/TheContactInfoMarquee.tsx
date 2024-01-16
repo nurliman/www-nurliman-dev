@@ -11,21 +11,23 @@ export default function TheContactInfoMarquee() {
   ] as const;
 
   return (
-    <TheMarquee clone>
-      <ul class="flex text-xs">
-        <For each={info}>
-          {([key, value], index) => (
-            <li>
-              <span>{key}&nbsp;</span>
-              <span class="font-bold">{value}</span>
-              <Show when={index() < info.length - 1}>
-                <span>&nbsp;|&nbsp;</span>
-              </Show>
-            </li>
-          )}
-        </For>
-        <li class="mx-4">&#8226;</li>
-      </ul>
-    </TheMarquee>
+    <a href="/contact" class="block">
+      <TheMarquee clone>
+        <ul class="flex text-xs">
+          <For each={info}>
+            {([key, value], index) => (
+              <li>
+                <span>{key}&nbsp;</span>
+                <span class="font-bold">{value}</span>
+                <Show when={index() < info.length - 1}>
+                  <span>&nbsp;|&nbsp;</span>
+                </Show>
+              </li>
+            )}
+          </For>
+          <li class="mx-4">&#8226;</li>
+        </ul>
+      </TheMarquee>
+    </a>
   );
 }
