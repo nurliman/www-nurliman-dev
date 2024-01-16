@@ -1,4 +1,4 @@
-import TheMarquee from "~/components/TheMarquee";
+import TheMarquee from "@/components/TheMarquee";
 
 export default function TheNurlimanMarquee() {
   return (

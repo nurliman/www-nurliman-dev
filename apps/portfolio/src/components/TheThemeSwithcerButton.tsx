@@ -1,7 +1,7 @@
-import type { Theme } from "~/types";
+import type { Theme } from "@/types";
 import { createSignal, onMount, onCleanup } from "solid-js";
-import { THEME_LOCAL_STORAGE_KEY } from "~/constants";
-import TheButton from "~/components/TheButton";
+import { THEME_LOCAL_STORAGE_KEY } from "@/constants";
+import TheButton from "@/components/TheButton";
 
 export default function TheThemeSwithcerButton() {
   /** State for the current theme */

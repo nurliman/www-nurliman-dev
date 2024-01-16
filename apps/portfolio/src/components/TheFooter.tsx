@@ -1,6 +1,6 @@
 import { For, Show, createSignal, onMount } from "solid-js";
 import { clsx } from "clsx";
-import { socials } from "~/data/socials";
+import { socials } from "@/data/socials";
 
 export default function TheFooter() {
   const [currentYear, setCurrentYear] = createSignal(new Date().getFullYear());

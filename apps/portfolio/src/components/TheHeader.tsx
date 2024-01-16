@@ -1,12 +1,12 @@
 import { clsx } from "clsx";
 import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
 import { createPresence } from "@solid-primitives/presence";
-import { sections } from "~/data/sections";
-import { isActivePath } from "~/utils/isActivePath";
-import TheButton from "~/components/TheButton";
-import TheHamburgerButton from "~/components/TheHamburgerButton";
-import TheThemeSwithcerButton from "~/components/TheThemeSwithcerButton";
-import TheSidebar from "~/components/TheSidebar";
+import { sections } from "@/data/sections";
+import { isActivePath } from "@/utils/isActivePath";
+import TheButton from "@/components/TheButton";
+import TheHamburgerButton from "@/components/TheHamburgerButton";
+import TheThemeSwithcerButton from "@/components/TheThemeSwithcerButton";
+import TheSidebar from "@/components/TheSidebar";
 
 export type TheHeaderProps = {
   currentPath: string;

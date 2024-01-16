@@ -1,7 +1,7 @@
 import type { Accessor, ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { clsx } from "clsx";
-import TheButton from "~/components/TheButton";
+import TheButton from "@/components/TheButton";
 
 export type TheHamburgerButtonProps = {
   isSidebarOpen: Accessor<boolean>;

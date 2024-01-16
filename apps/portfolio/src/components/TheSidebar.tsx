@@ -2,11 +2,11 @@ import type { Accessor } from "solid-js";
 import { For, createMemo } from "solid-js";
 import { createTween } from "@solid-primitives/tween";
 import { clsx } from "clsx";
-import { sections } from "~/data/sections";
-import { socials } from "~/data/socials";
-import { easeInCirc } from "~/utils/easeInCirc";
-import { isActivePath } from "~/utils/isActivePath";
-import TheButton from "~/components/TheButton";
+import { sections } from "@/data/sections";
+import { socials } from "@/data/socials";
+import { easeInCirc } from "@/utils/easeInCirc";
+import { isActivePath } from "@/utils/isActivePath";
+import TheButton from "@/components/TheButton";
 
 export type TheSidebarProps = {
   isOpen: Accessor<boolean>;

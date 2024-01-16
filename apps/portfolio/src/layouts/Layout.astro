@@ -1,14 +1,14 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { createThemeScript } from "@nurliman.dev/theme-script";
-import { DEFAULT_THEME, OPPOSITE_THEME, THEME_LOCAL_STORAGE_KEY } from "~/constants";
-import TheHeader from "~/components/TheHeader";
-import TheFooter from "~/components/TheFooter";
-import NProgress from "~/components/NProgress";
-import "~/styles/fonts/transducer/plain.css";
-import "~/styles/fonts/transducer/extended.css";
+import { DEFAULT_THEME, OPPOSITE_THEME, THEME_LOCAL_STORAGE_KEY } from "@/constants";
+import TheHeader from "@/components/TheHeader";
+import TheFooter from "@/components/TheFooter";
+import NProgress from "@/components/NProgress";
+import "@/styles/fonts/transducer/plain.css";
+import "@/styles/fonts/transducer/extended.css";
 import "@fontsource/racing-sans-one/latin.css";
-import "~/styles/main.css";
+import "@/styles/main.css";
 
 interface Props {
   title?: string;

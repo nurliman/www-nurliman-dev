@@ -1,10 +1,10 @@
 ---
-import { me } from "~/data/me";
-import type { TimelineItem } from "~/types";
-import Layout from "~/layouts/Layout.astro";
-import TheBadge from "~/components/TheBadge";
-import TheResumeTimeline from "~/components/TheResumeTimeline.astro";
-import TheResumeSkills from "~/components/TheResumeSkills.astro";
+import { me } from "@/data/me";
+import type { TimelineItem } from "@/types";
+import Layout from "@/layouts/Layout.astro";
+import TheBadge from "@/components/TheBadge";
+import TheResumeTimeline from "@/components/TheResumeTimeline.astro";
+import TheResumeSkills from "@/components/TheResumeSkills.astro";
 
 const experiencesTimeline: TimelineItem[] = me.experiences.map((exp) => ({
   period: exp.period,

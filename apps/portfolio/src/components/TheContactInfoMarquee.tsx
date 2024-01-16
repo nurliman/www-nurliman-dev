@@ -1,5 +1,5 @@
 import { For, Show } from "solid-js";
-import TheMarquee from "~/components/TheMarquee";
+import TheMarquee from "@/components/TheMarquee";
 
 export default function TheContactInfoMarquee() {
   const info = [
