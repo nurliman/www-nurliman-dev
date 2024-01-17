@@ -166,6 +166,19 @@ As an IT Programmer/Web Developer at PT. Knitto Tekstil Indonesia, I played a pi
   ],
   certificates: [
     {
+      name: "Google Cloud Platform Fundamentals: Core Infrastructure",
+      organization: {
+        name: "Google",
+        logoUrl: "/assets/google-G-logo.svg",
+        logoDarkUrl: "/assets/google-G-logo.svg",
+      },
+      date: "November 2021",
+      credential: {
+        id: "E-Certificate",
+        url: "/assets/e-certificate-gcp-core-infrastructure.pdf",
+      },
+    },
+    {
       name: "The Git & Github Bootcamp",
       organization: {
         name: "Udemy",

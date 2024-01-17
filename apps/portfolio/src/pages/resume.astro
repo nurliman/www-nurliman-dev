@@ -97,7 +97,14 @@ const educationsTimeline: TimelineItem[] = me.educations.map((edu) => ({
                   <div class="font-transducer-extended text-sm font-semibold">{cert.name}</div>
                   {cert.credential ? (
                     <div class="text-xs font-medium text-zinc-700 dark:text-zinc-400">
-                      Credential ID: {cert.credential.id}
+                      {"Credential: "}
+                      <a
+                        href={cert.credential.url}
+                        target="_blank"
+                        class="underline underline-offset-2 hover:text-zinc-100"
+                      >
+                        {cert.credential.id}
+                      </a>
                     </div>
                   ) : null}
                   {cert.date ? (
