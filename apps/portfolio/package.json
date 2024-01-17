@@ -30,7 +30,7 @@
     "snarkdown": "^2.0.0",
     "solid-js": "^1.8.11",
     "solid-sonner": "^0.2.2",
-    "valibot": "^0.25.0"
+    "valibot": "^0.26.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.4.1",
