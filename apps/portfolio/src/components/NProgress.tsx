@@ -4,7 +4,7 @@ import { createEffect, createSignal, mergeProps, onCleanup, splitProps } from "s
 import { makeEventListener } from "@solid-primitives/event-listener";
 import styles from "./NProgress.module.css";
 
-export type TheNProgressBaseProps = NProgressOptions & {
+export type TheNProgressProps = NProgressOptions & {
   height?: number | string;
   color?: string;
   colorDark?: string;
@@ -14,9 +14,6 @@ export type TheNProgressBaseProps = NProgressOptions & {
   customGlobalCss?: string;
   disableSameRoute?: boolean;
 };
-
-export type TheNProgressProps = TheNProgressBaseProps &
-  Omit<NProgressOptions, keyof TheNProgressBaseProps>;
 
 /**
  * @param height Height of the progress bar.
@@ -100,11 +97,11 @@ export default function TheNProgress(props: TheNProgressProps) {
       nonce={localProps.nonce || ""}
       innerHTML={`
         :root {
-            --nprogress-color: ${localProps.color};
-            --nprogress-height: ${localProps.height};
+          --nprogress-color:${localProps.color};
+          --nprogress-height:${localProps.height};
         }
 
-        ${localProps.colorDark ? `:root.dark {--nprogress-color: ${localProps.colorDark};}` : ""}
+        ${localProps.colorDark ? `:root.dark{--nprogress-color:${localProps.colorDark};}` : ""}
       `}
     />
   );
