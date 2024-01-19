@@ -42,11 +42,11 @@ export default function TheHeader(props: TheHeaderProps) {
   return (
     <>
       <header
-        class={clsx([
-          "fixed top-0 z-30 w-full overflow-hidden border-b-2 bg-white p-0",
-          "dark:bg-black dark:text-white",
-          "transition-colors",
-        ])}
+        class={clsx(
+          "fixed top-0 z-30 w-full overflow-hidden border-b-2",
+          "bg-white transition-colors dark:bg-black dark:text-white",
+          "p-0 md:px-6",
+        )}
       >
         <div class="mx-auto flex max-w-[90rem] items-center justify-between">
           <TheHamburgerButton
