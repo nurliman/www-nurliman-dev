@@ -18,7 +18,7 @@ export const me = {
   },
   experiences: [
     {
-      period: "Jan 2023 - Jan 2024 (1 year)",
+      period: "Sep 2020 - Jan 2024 (3 years 5 months)",
       company: "PT. Knitto Tekstil Indonesia",
       title: "Lead Frontend & DevOps Engineer",
       description: `
