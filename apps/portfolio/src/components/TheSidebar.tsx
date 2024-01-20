@@ -1,10 +1,7 @@
-import type { Accessor } from "solid-js";
-import { For, createMemo } from "solid-js";
-import { createTween } from "@solid-primitives/tween";
+import { For, type Accessor } from "solid-js";
 import { clsx } from "clsx";
 import { sections } from "@/data/sections";
 import { socials } from "@/data/socials";
-import { easeInCirc } from "@/utils/easeInCirc";
 import { isActivePath } from "@/utils/isActivePath";
 import TheButton from "@/components/TheButton";
 
@@ -15,12 +12,6 @@ export type TheSidebarProps = {
 };
 
 export default function TheSidebar(props: TheSidebarProps) {
-  const modalX = createMemo<number>(() => (props.isOpen() ? 0 : -100));
-  const tweenedModalX = createTween(modalX, {
-    duration: 250,
-    ease: easeInCirc,
-  });
-
   return (
     <>
       <button
@@ -35,14 +26,14 @@ export default function TheSidebar(props: TheSidebarProps) {
 
       <div
         class={clsx(
-          "fixed z-40 flex w-screen flex-col border-r sm:max-w-xs md:hidden",
-          "bg-white transition-colors dark:bg-black",
-          "-translate-x-full will-change-transform",
+          "fixed z-40 flex flex-col will-change-transform md:hidden",
+          "w-screen border-r bg-white sm:max-w-xs dark:bg-black",
+          props.isOpen() ? "translate-x-0" : "-translate-x-full",
         )}
         style={{
           height: `calc(100vh - ${props.headerHeight}px)`,
           top: `${props.headerHeight}px`,
-          transform: `translate3d(${tweenedModalX()}%, 0, 0)`,
+          transition: "background-color .1s ease-in-out,transform .25s cubic-bezier(.55,0,1,.45)",
         }}
       >
         <nav class="contents">

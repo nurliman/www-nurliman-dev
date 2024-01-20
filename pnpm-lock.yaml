@@ -102,9 +102,6 @@ importers:
       '@solid-primitives/presence':
         specifier: ^0.0.4
         version: 0.0.4(solid-js@1.8.11)
-      '@solid-primitives/tween':
-        specifier: ^1.2.7
-        version: 1.2.7(solid-js@1.8.11)
       '@tanstack/solid-form':
         specifier: ^0.13.3
         version: 0.13.3(solid-js@1.8.11)
@@ -2571,14 +2568,6 @@ packages:
       solid-js: ^1.6.12
     dependencies:
       '@solid-primitives/utils': 6.2.2(solid-js@1.8.11)
-      solid-js: 1.8.11
-    dev: false
-
-  /@solid-primitives/tween@1.2.7(solid-js@1.8.11):
-    resolution: {integrity: sha512-X2TjN88GUI/0YyCWTrkGCmZMDppxVXEJUi8qxuE5z3KaaCkqcB5NEyDjtGpZUZ6qwMrEovLG99c9gC2HdwhcAQ==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
       solid-js: 1.8.11
     dev: false
 
