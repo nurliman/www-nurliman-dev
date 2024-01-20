@@ -96,9 +96,6 @@ importers:
       '@nurliman.dev/theme-script':
         specifier: workspace:*
         version: link:../../packages/theme-script
-      '@solid-primitives/event-listener':
-        specifier: ^2.3.1
-        version: 2.3.1(solid-js@1.8.11)
       '@solid-primitives/keyed':
         specifier: ^1.2.1
         version: 1.2.1(solid-js@1.8.11)
@@ -2559,15 +2556,6 @@ packages:
     resolution: {integrity: sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==}
     engines: {node: '>=18'}
     dev: true
-
-  /@solid-primitives/event-listener@2.3.1(solid-js@1.8.11):
-    resolution: {integrity: sha512-S1AfFYatOJ3g/ZUbGDoKplSGLTTfarQ3Mfd3F/fXb9SnzGtROtd+Y6yLkPVzK4AVw83r2wUSaS0GS6dg8izTEQ==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      '@solid-primitives/utils': 6.2.2(solid-js@1.8.11)
-      solid-js: 1.8.11
-    dev: false
 
   /@solid-primitives/keyed@1.2.1(solid-js@1.8.11):
     resolution: {integrity: sha512-fLZ3CX41IiG2kshCWFMDBq4LeSuuHpZ91UrWqcr6EFq3lGWE5iPswHyHilSiaeLWZLpbhZ/HAwrM/wlh2S1mYQ==}

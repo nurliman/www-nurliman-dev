@@ -16,7 +16,6 @@
     "@nurliman.dev/env": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
-    "@solid-primitives/event-listener": "^2.3.1",
     "@solid-primitives/keyed": "^1.2.1",
     "@solid-primitives/presence": "^0.0.4",
     "@solid-primitives/tween": "^1.2.7",

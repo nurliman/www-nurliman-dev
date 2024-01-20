@@ -4,7 +4,7 @@ import { createThemeScript } from "@nurliman.dev/theme-script";
 import { DEFAULT_THEME, OPPOSITE_THEME, THEME_LOCAL_STORAGE_KEY } from "@/constants";
 import TheHeader from "@/components/TheHeader";
 import TheFooter from "@/components/TheFooter";
-import NProgress from "@/components/NProgress";
+import NProgress from "@/components/NProgress.astro";
 import "@/styles/fonts/transducer/plain.css";
 import "@/styles/fonts/transducer/extended.css";
 import "@fontsource/racing-sans-one/latin.css";
@@ -62,7 +62,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <ViewTransitions />
   </head>
   <body>
-    <NProgress client:only="solid-js" transition:persist />
+    <NProgress transition:persist />
     <div class="contents">
       <TheHeader client:load transition:persist currentPath={Astro.url.pathname} />
 
