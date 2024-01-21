@@ -99,9 +99,9 @@ importers:
       '@solid-primitives/keyed':
         specifier: ^1.2.1
         version: 1.2.1(solid-js@1.8.11)
-      '@solid-primitives/presence':
-        specifier: ^0.0.4
-        version: 0.0.4(solid-js@1.8.11)
+      '@solid-primitives/media':
+        specifier: ^2.2.6
+        version: 2.2.6(solid-js@1.8.11)
       '@tanstack/solid-form':
         specifier: ^0.13.3
         version: 0.13.3(solid-js@1.8.11)
@@ -2554,6 +2554,15 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
+  /@solid-primitives/event-listener@2.3.1(solid-js@1.8.11):
+    resolution: {integrity: sha512-S1AfFYatOJ3g/ZUbGDoKplSGLTTfarQ3Mfd3F/fXb9SnzGtROtd+Y6yLkPVzK4AVw83r2wUSaS0GS6dg8izTEQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/utils': 6.2.2(solid-js@1.8.11)
+      solid-js: 1.8.11
+    dev: false
+
   /@solid-primitives/keyed@1.2.1(solid-js@1.8.11):
     resolution: {integrity: sha512-fLZ3CX41IiG2kshCWFMDBq4LeSuuHpZ91UrWqcr6EFq3lGWE5iPswHyHilSiaeLWZLpbhZ/HAwrM/wlh2S1mYQ==}
     peerDependencies:
@@ -2562,8 +2571,29 @@ packages:
       solid-js: 1.8.11
     dev: false
 
-  /@solid-primitives/presence@0.0.4(solid-js@1.8.11):
-    resolution: {integrity: sha512-tJsRmBR2aH1c/uNNgv/RIaC0YBjxXePVsFD3+Z2U8H8fvqIklbaOBCPrjUTNEGLcFyaozUdls4udnxrkMaLeBw==}
+  /@solid-primitives/media@2.2.6(solid-js@1.8.11):
+    resolution: {integrity: sha512-VopOSqoUZgmSFY4SNnwBzHYaoGG+7gQYcwX+RJ/qQtuZJgzOiC+PejZEwNJh+aBZ383HPwrypyd3zrYVm7EnpQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/event-listener': 2.3.1(solid-js@1.8.11)
+      '@solid-primitives/rootless': 1.4.3(solid-js@1.8.11)
+      '@solid-primitives/static-store': 0.0.6(solid-js@1.8.11)
+      '@solid-primitives/utils': 6.2.2(solid-js@1.8.11)
+      solid-js: 1.8.11
+    dev: false
+
+  /@solid-primitives/rootless@1.4.3(solid-js@1.8.11):
+    resolution: {integrity: sha512-IPsfUhKsqQOxLtRMQWK2EZAYbL9RKJMLBelLwpaXl9+oa1tl5aNvA6GHgrNrK+85oUhiYh7/OuogO18AuHepqQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/utils': 6.2.2(solid-js@1.8.11)
+      solid-js: 1.8.11
+    dev: false
+
+  /@solid-primitives/static-store@0.0.6(solid-js@1.8.11):
+    resolution: {integrity: sha512-PtvkbbucbjT+9p95pksOciG9gOnCtJz4IUyAKX1Ld7YwI+QgtPTo0Wuxs8gNbNtLtoDv5PNv5t4YRzUyl0fwdg==}
     peerDependencies:
       solid-js: ^1.6.12
     dependencies:

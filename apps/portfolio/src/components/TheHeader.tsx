@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
-import { createPresence } from "@solid-primitives/presence";
+import { createMediaQuery } from "@solid-primitives/media";
 import { sections } from "@/data/sections";
 import { isActivePath } from "@/utils/isActivePath";
 import TheButton from "@/components/TheButton";
@@ -13,9 +13,9 @@ export type TheHeaderProps = {
 };
 
 export default function TheHeader(props: TheHeaderProps) {
+  const isMobile = createMediaQuery("(max-width: 767px)", false);
   const [currentPath, setCurrentPath] = createSignal(props.currentPath);
   const [sidebarOpened, setSidebarOpened] = createSignal(false);
-  const sidebarPresence = createPresence(sidebarOpened, { transitionDuration: 300 });
 
   const changeMenuOpened = (isOpen?: boolean) => {
     setSidebarOpened((sidebarOpened) => (isOpen ??= !sidebarOpened));
@@ -92,9 +92,9 @@ export default function TheHeader(props: TheHeaderProps) {
         </div>
       </header>
 
-      <Show when={sidebarPresence.isMounted()}>
+      <Show when={isMobile()}>
         <TheSidebar
-          isOpen={sidebarPresence.isVisible}
+          isOpen={sidebarOpened}
           headerHeight={50}
           onChange={(isOpen) => changeMenuOpened(isOpen)}
         />

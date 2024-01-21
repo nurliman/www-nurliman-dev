@@ -17,7 +17,7 @@
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
     "@solid-primitives/keyed": "^1.2.1",
-    "@solid-primitives/presence": "^0.0.4",
+    "@solid-primitives/media": "^2.2.6",
     "@tanstack/solid-form": "^0.13.3",
     "@tanstack/valibot-form-adapter": "^0.13.3",
     "clsx": "^2.1.0",
