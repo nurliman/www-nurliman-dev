@@ -1,0 +1,5 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint-staged:
+      run: npm run lint-staged || npx -y lint-staged

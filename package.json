@@ -12,11 +12,11 @@
     "lint": "turbo run lint",
     "lint-staged": "lint-staged",
     "format": "prettier --write --cache \"**/*.+(js|mjs|cjs|jsx|ts|tsx|css|scss|md|json|yml|yaml)\" --ignore .gitignore --ignore .prettierignore",
-    "prepare": "husky install"
+    "prepare": "lefthook install"
   },
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
-    "husky": "^8.0.3",
+    "lefthook": "^1.5.7",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.12.3",
