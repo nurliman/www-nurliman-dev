@@ -7,6 +7,7 @@ import TheButton from "@/components/TheButton";
 
 export type TheSidebarProps = {
   isOpen: Accessor<boolean>;
+  currentPath: Accessor<string>;
   headerHeight: number;
   onChange?: (isOpen: boolean) => void;
 };
@@ -46,7 +47,7 @@ export default function TheSidebar(props: TheSidebarProps) {
                     href={section.link}
                     class={clsx(
                       "border-b px-8 py-3 hover:font-semibold",
-                      isActivePath(section.link) && "link-active",
+                      isActivePath(section.link, props.currentPath()) && "link-active",
                     )}
                     onClick={() => props.onChange?.(false)}
                   >

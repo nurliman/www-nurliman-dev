@@ -26,8 +26,10 @@ export default function TheHeader(props: TheHeaderProps) {
   };
 
   onMount(() => {
-    const setPath = () => {
-      setCurrentPath(window.location.pathname);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const setPath = (evt?: any) => {
+      const pathname = evt?.target?.location?.pathname || window.location.pathname;
+      setCurrentPath(pathname);
     };
 
     setPath();
@@ -95,6 +97,7 @@ export default function TheHeader(props: TheHeaderProps) {
       <Show when={isMobile()}>
         <TheSidebar
           isOpen={sidebarOpened}
+          currentPath={currentPath}
           headerHeight={50}
           onChange={(isOpen) => changeMenuOpened(isOpen)}
         />
