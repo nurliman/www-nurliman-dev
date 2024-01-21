@@ -28,11 +28,11 @@ export default function TheSidebar(props: TheSidebarProps) {
         class={clsx(
           "fixed z-40 flex flex-col will-change-transform md:hidden",
           "w-screen border-r bg-white sm:max-w-xs dark:bg-black",
-          props.isOpen() ? "translate-x-0" : "-translate-x-full",
         )}
         style={{
           height: `calc(100vh - ${props.headerHeight}px)`,
           top: `${props.headerHeight}px`,
+          transform: `translate3d(${props.isOpen() ? "0" : "-100%"},0,0)`,
           transition: "background-color .1s ease-in-out,transform .25s cubic-bezier(.55,0,1,.45)",
         }}
       >
