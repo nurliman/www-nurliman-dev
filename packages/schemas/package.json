@@ -32,9 +32,9 @@
     "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.2",
     "eslint": "^8.56.0",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3",
-    "valibot": "^0.26.0"
+    "valibot": "^0.28.1"
   },
   "peerDependencies": {
     "valibot": ">=0"
