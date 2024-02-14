@@ -10,7 +10,6 @@ import { env } from "@/env";
 import Turnstile, { type TurnstileRef } from "@/components/Turnstile";
 import TheButton from "@/components/TheButton";
 import TheInputText from "@/components/TheInputText";
-import "solid-sonner.css";
 
 const DEFAULT_ERROR_MESSAGE = "Something went wrong.";
 
