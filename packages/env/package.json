@@ -47,11 +47,11 @@
     "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.2",
     "@types/node": "^20",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "tsup": "^8.0.2",
-    "type-fest": "^4.10.2",
+    "type-fest": "^4.10.3",
     "typescript": "^5.3.3",
-    "valibot": "^0.28.1"
+    "valibot": "^0.29.0"
   },
   "peerDependencies": {
     "valibot": ">=0"

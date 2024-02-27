@@ -32,7 +32,7 @@
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman.dev/file-exists": "workspace:*",
-    "@react-email/components": "^0.0.14",
+    "@react-email/components": "^0.0.15",
     "@react-email/render": "^0.0.12",
     "@tsconfig/vite-react": "^3.0.0",
     "@types/fs-extra": "^11.0.4",
@@ -42,7 +42,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "cross-env": "^7.0.3",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "fs-extra": "^11.2.0",
     "globby": "^14.0.1",
     "lodash-es": "^4.17.21",
