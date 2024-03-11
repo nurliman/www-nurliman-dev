@@ -16,10 +16,10 @@
     "@nurliman.dev/env": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
-    "@solid-primitives/keyed": "^1.2.1",
-    "@solid-primitives/media": "^2.2.7",
-    "@tanstack/solid-form": "^0.13.6",
-    "@tanstack/valibot-form-adapter": "^0.13.6",
+    "@solid-primitives/keyed": "^1.2.2",
+    "@solid-primitives/media": "^2.2.8",
+    "@tanstack/solid-form": "^0.13.7",
+    "@tanstack/valibot-form-adapter": "^0.13.7",
     "clsx": "^2.1.0",
     "cva": "^1.0.0-beta.1",
     "is-relative-url": "^4.0.0",
@@ -28,27 +28,27 @@
     "snarkdown": "^2.0.0",
     "solid-js": "^1.8.15",
     "solid-sonner": "^0.2.5",
-    "valibot": "^0.29.0"
+    "valibot": "^0.30.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.5.6",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/solid-js": "^4.0.1",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.3.4",
+    "@astrojs/vercel": "^7.3.5",
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman.dev/tailwind": "workspace:*",
     "@types/nprogress": "^0.2.3",
-    "astro": "^4.4.9",
+    "astro": "^4.4.15",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
     "postcss-dark-theme-class": "^1.2.1",
     "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^9.4.0",
+    "postcss-preset-env": "^9.5.0",
     "tailwindcss": "^3.4.1",
     "turnstile-types": "^1.2.0",
-    "type-fest": "^4.10.3",
-    "typescript": "^5.3.3"
+    "type-fest": "^4.12.0",
+    "typescript": "^5.4.2"
   },
   "browserslist": {
     "production": [

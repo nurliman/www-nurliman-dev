@@ -1,5 +1,5 @@
 import type { Simplify } from "type-fest";
-import type { Input, ObjectSchema, ValiError } from "valibot";
+import type { Input, ObjectSchema, SchemaIssues } from "valibot";
 import {
   flatten as vFlatten,
   merge as vMerge,
@@ -30,7 +30,7 @@ export interface BaseOptions<TShared extends Record<string, AnySchema>> {
    * Called when validation fails. By default the error is logged,
    * and an error is thrown telling what environment variables are invalid.
    */
-  onValidationError?: (error: ValiError) => never;
+  onValidationError?: (error: SchemaIssues) => never;
 
   /**
    * Called when a server-side environment variable is accessed on the client.
@@ -205,7 +205,7 @@ export function createEnv<
 
   const onValidationError =
     opts.onValidationError ??
-    ((error: ValiError) => {
+    ((error: SchemaIssues) => {
       console.error("\u274C Invalid environment variables:", vFlatten(error).nested);
       throw new Error("Invalid environment variables");
     });
@@ -219,7 +219,7 @@ export function createEnv<
     });
 
   if (parsed.success === false) {
-    return onValidationError(parsed.error);
+    return onValidationError(parsed.issues);
   }
 
   const env = new Proxy(parsed.output, {
