@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.19",
-    "@nurliman.dev/env": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
+    "@nurliman/env-valibot": "^0.1.1",
     "@solid-primitives/keyed": "^1.2.2",
     "@solid-primitives/media": "^2.2.8",
     "@tanstack/solid-form": "^0.13.7",

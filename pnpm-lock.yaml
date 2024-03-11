@@ -35,12 +35,12 @@ importers:
       '@nurliman.dev/emails':
         specifier: workspace:*
         version: link:../../packages/emails
-      '@nurliman.dev/env':
-        specifier: workspace:*
-        version: link:../../packages/env
       '@nurliman.dev/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
+      '@nurliman/env-valibot':
+        specifier: ^0.1.1
+        version: 0.1.1(typescript@5.3.3)(valibot@0.30.0)
       hono:
         specifier: ^4.0.10
         version: 4.0.10
@@ -87,15 +87,15 @@ importers:
       '@fontsource/racing-sans-one':
         specifier: ^5.0.19
         version: 5.0.19
-      '@nurliman.dev/env':
-        specifier: workspace:*
-        version: link:../../packages/env
       '@nurliman.dev/schemas':
         specifier: workspace:*
         version: link:../../packages/schemas
       '@nurliman.dev/theme-script':
         specifier: workspace:*
         version: link:../../packages/theme-script
+      '@nurliman/env-valibot':
+        specifier: ^0.1.1
+        version: 0.1.1(typescript@5.4.2)(valibot@0.30.0)
       '@solid-primitives/keyed':
         specifier: ^1.2.2
         version: 1.2.2(solid-js@1.8.15)
@@ -266,33 +266,6 @@ importers:
       typescript:
         specifier: ^5.4.2
         version: 5.4.2
-
-  packages/env:
-    devDependencies:
-      '@nurliman.dev/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@tsconfig/node18':
-        specifier: ^18.2.2
-        version: 18.2.2
-      '@types/node':
-        specifier: ^20
-        version: 20.10.5
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(@swc/core@1.4.6)(typescript@5.4.2)
-      type-fest:
-        specifier: ^4.12.0
-        version: 4.12.0
-      typescript:
-        specifier: ^5.4.2
-        version: 5.4.2
-      valibot:
-        specifier: ^0.30.0
-        version: 0.30.0
 
   packages/eslint-config:
     dependencies:
@@ -2121,6 +2094,32 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
+
+  /@nurliman/env-valibot@0.1.1(typescript@5.3.3)(valibot@0.30.0):
+    resolution: {integrity: sha512-kRuJlt8BAxnOyooqo///qSREJ0+XhCnBfwBrOF4SJnR8iKRTC19SVbxzHDlfanvL59cbIZR39SGC7EpfeTbW5w==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      valibot: '>=0.30.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.3.3
+      valibot: 0.30.0
+    dev: false
+
+  /@nurliman/env-valibot@0.1.1(typescript@5.4.2)(valibot@0.30.0):
+    resolution: {integrity: sha512-kRuJlt8BAxnOyooqo///qSREJ0+XhCnBfwBrOF4SJnR8iKRTC19SVbxzHDlfanvL59cbIZR39SGC7EpfeTbW5w==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      valibot: '>=0.30.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.4.2
+      valibot: 0.30.0
+    dev: false
 
   /@octokit/auth-token@3.0.4:
     resolution: {integrity: sha512-TWFX7cZF2LXoCvdmJWY7XVPi74aSY0+FfBZNSXEXFkMpjcqsQwDSYVv5FhRFaI0V1ECnwbz4j59T/G+rXNWaIQ==}
@@ -10261,7 +10260,6 @@ packages:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /typescript@5.4.2:
     resolution: {integrity: sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==}
@@ -10439,6 +10437,7 @@ packages:
 
   /valibot@0.30.0:
     resolution: {integrity: sha512-5POBdbSkM+3nvJ6ZlyQHsggisfRtyT4tVTo1EIIShs6qCdXJnyWU5TJ68vr8iTg5zpOLjXLRiBqNx+9zwZz/rA==}
+    dev: false
 
   /validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}

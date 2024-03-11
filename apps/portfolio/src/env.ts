@@ -1,4 +1,4 @@
-import { createEnv } from "@nurliman.dev/env";
+import { createEnv } from "@nurliman/env-valibot";
 import { string as vString, url as vUrl, minLength as vMinLength } from "valibot";
 
 export const env = createEnv({
