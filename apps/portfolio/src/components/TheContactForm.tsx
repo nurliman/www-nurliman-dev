@@ -66,7 +66,7 @@ export default function TheContactForm() {
   }));
 
   return (
-    <form.Provider>
+    <>
       <Portal>
         <Toaster closeButton position="bottom-right" />
       </Portal>
@@ -203,6 +203,6 @@ export default function TheContactForm() {
           Send
         </TheButton>
       </form>
-    </form.Provider>
+    </>
   );
 }
