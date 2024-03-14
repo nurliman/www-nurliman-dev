@@ -103,11 +103,11 @@ importers:
         specifier: ^2.2.8
         version: 2.2.8(solid-js@1.8.15)
       '@tanstack/solid-form':
-        specifier: ^0.14.0
-        version: 0.14.0(solid-js@1.8.15)
+        specifier: ^0.13.7
+        version: 0.13.7(solid-js@1.8.15)
       '@tanstack/valibot-form-adapter':
-        specifier: ^0.14.0
-        version: 0.14.0(valibot@0.30.0)
+        specifier: ^0.13.7
+        version: 0.13.7(valibot@0.30.0)
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
@@ -658,7 +658,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.23.5
       '@babel/helper-validator-option': 7.23.5
-      browserslist: 4.22.2
+      browserslist: 4.23.0
       lru-cache: 5.1.1
       semver: 6.3.1
     dev: true
@@ -2820,18 +2820,18 @@ packages:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
     dev: true
 
-  /@tanstack/form-core@0.14.0:
-    resolution: {integrity: sha512-VlDKrWCr+47FopXcDsthj/hYFqIzyueAHEZvVOE8CYNWPMvrtK6+0H+IL39TFEv0n8J8Hf8jojPP/q1y7Ft9Uw==}
+  /@tanstack/form-core@0.13.7:
+    resolution: {integrity: sha512-rz5/CVmZ/QUQoFmmMGi6A6gkBYWRmENRwo+6Hxh0EWZNHR9OFNtEiHLILnT/iKKzSfjFkQOPJmVnPZzJ2kiT6Q==}
     dependencies:
       '@tanstack/store': 0.3.1
     dev: false
 
-  /@tanstack/solid-form@0.14.0(solid-js@1.8.15):
-    resolution: {integrity: sha512-yoFVRs3hSEi2Z6H6wPr8oYAeiirlcJ4O77y1fux+EPXFD/UWKJKa1aKfl5XMF4kejNHFsJqz0VojwAkif1v3bA==}
+  /@tanstack/solid-form@0.13.7(solid-js@1.8.15):
+    resolution: {integrity: sha512-tfd2CNHk9P/bJYnsrYQ5Q7Q0sGKkm+SxfAO7Noih2yk/HNhiY4SJtXKZYnXQqCY2/1EH5dTQJHwUwkJolJ9/Ig==}
     peerDependencies:
       solid-js: ^1.6.0
     dependencies:
-      '@tanstack/form-core': 0.14.0
+      '@tanstack/form-core': 0.13.7
       '@tanstack/solid-store': 0.3.1(solid-js@1.8.15)
       solid-js: 1.8.15
     dev: false
@@ -2849,12 +2849,12 @@ packages:
     resolution: {integrity: sha512-A49KN8SpLMWaNmZGPa9K982RQ81W+m7W6iStcQVeKeVS70JZRqkF0fDwKByREPq6qz9/kS0aQFOPQ0W6wIeU5g==}
     dev: false
 
-  /@tanstack/valibot-form-adapter@0.14.0(valibot@0.30.0):
-    resolution: {integrity: sha512-mXdGzMcM4uAORv8qCRLvtUmBxlwYPf7bhp/Pwhscasz0kXoU9BFMRJlc8T6GQXGn1ihfFc4XKMm/sON9aa3HOQ==}
+  /@tanstack/valibot-form-adapter@0.13.7(valibot@0.30.0):
+    resolution: {integrity: sha512-JqM9gLO3uCgjUWqsXa8ERNhMxQarjc++KHgQQMTL/NnUfEC8VA+/0H7wlyOBvhlXROD+MijX/3YTJGmrmzWzeA==}
     peerDependencies:
       valibot: ^0.x
     dependencies:
-      '@tanstack/form-core': 0.14.0
+      '@tanstack/form-core': 0.13.7
       valibot: 0.30.0
     dev: false
 
@@ -3914,17 +3914,6 @@ packages:
     dependencies:
       fill-range: 7.0.1
 
-  /browserslist@4.22.2:
-    resolution: {integrity: sha512-0UgcrvQmBDvZHFGdYUehrCNIazki7/lUP3kkoi/r3YB2amZbFM9J43ZRkJTXBUZK4gmx56+Sqk9+Vs9mwZx9+A==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-    dependencies:
-      caniuse-lite: 1.0.30001578
-      electron-to-chromium: 1.4.615
-      node-releases: 2.0.14
-      update-browserslist-db: 1.0.13(browserslist@4.22.2)
-    dev: true
-
   /browserslist@4.23.0:
     resolution: {integrity: sha512-QW8HiM1shhT2GuzkvklfjcKDiWFXHOeFCIA/huJPwHsslwcydgk7X+z2zXpEijP98UCY7HbubZt5J2Zgvf0CaQ==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -4025,10 +4014,6 @@ packages:
       caniuse-lite: 1.0.30001593
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
-    dev: true
-
-  /caniuse-lite@1.0.30001578:
-    resolution: {integrity: sha512-J/jkFgsQ3NEl4w2lCoM9ZPxrD+FoBNJ7uJUpGVjIg/j0OwJosWM36EPDv+Yyi0V4twBk9pPmlFS+PLykgEvUmg==}
     dev: true
 
   /caniuse-lite@1.0.30001589:
@@ -4696,10 +4681,6 @@ packages:
       commander: 10.0.1
       minimatch: 9.0.1
       semver: 7.5.4
-    dev: true
-
-  /electron-to-chromium@1.4.615:
-    resolution: {integrity: sha512-/bKPPcgZVUziECqDc+0HkT87+0zhaWSZHNXqF8FLd2lQcptpmUFwoCSWjCdOng9Gdq+afKArPdEg/0ZW461Eng==}
     dev: true
 
   /electron-to-chromium@1.4.682:
@@ -10426,17 +10407,6 @@ packages:
   /universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
-    dev: true
-
-  /update-browserslist-db@1.0.13(browserslist@4.22.2):
-    resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
-    hasBin: true
-    peerDependencies:
-      browserslist: '>= 4.21.0'
-    dependencies:
-      browserslist: 4.22.2
-      escalade: 3.1.1
-      picocolors: 1.0.0
     dev: true
 
   /update-browserslist-db@1.0.13(browserslist@4.23.0):
