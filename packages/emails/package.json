@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
-    "@nurliman/file-exists-cli": "^0.1.1",
+    "@nurliman/file-exists-cli": "^0.1.2",
     "@react-email/components": "^0.0.15",
     "@react-email/render": "^0.0.12",
     "@tsconfig/vite-react": "^3.0.1",
