@@ -33,7 +33,7 @@
     "@tsconfig/node18": "^18.2.4",
     "eslint": "^8",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.4",
+    "typescript": "^5.4.5",
     "valibot": "^0.29.0s"
   },
   "peerDependencies": {
