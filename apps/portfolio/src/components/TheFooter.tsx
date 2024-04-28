@@ -14,7 +14,7 @@ export default function TheFooter() {
       <div
         class={clsx([
           "flex flex-col-reverse items-center justify-between md:flex-row",
-          "mx-auto max-w-[90rem]",
+          "container mx-auto",
           "text-sm max-md:text-center",
         ])}
       >

@@ -50,7 +50,7 @@ export default function TheHeader(props: TheHeaderProps) {
           "p-0 md:px-6",
         )}
       >
-        <div class="mx-auto flex max-w-[90rem] items-center justify-between">
+        <div class="container mx-auto flex items-center justify-between">
           <TheHamburgerButton
             class="md:hidden"
             isSidebarOpen={sidebarOpened}
