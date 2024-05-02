@@ -32,8 +32,8 @@
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman/file-exists-cli": "^0.1.4",
-    "@react-email/components": "^0.0.16",
-    "@react-email/render": "^0.0.12",
+    "@react-email/components": "^0.0.17",
+    "@react-email/render": "^0.0.13",
     "@tsconfig/vite-react": "^3.0.2",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
@@ -50,7 +50,7 @@
     "react-dom": "^18.3.1",
     "react-email": "1.10.1",
     "tsup": "^8.0.2",
-    "tsx": "^4.7.3",
+    "tsx": "^4.8.2",
     "typescript": "^5.4.5"
   }
 }
