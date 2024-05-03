@@ -37,7 +37,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/lodash.unescape": "^4.0.9",
     "@types/node": "^20",
-    "astro": "^4.7.0",
+    "astro": "^4.7.1",
     "eslint": "^8",
     "fs-extra": "^11.2.0",
     "lodash-es": "^4.17.21",
