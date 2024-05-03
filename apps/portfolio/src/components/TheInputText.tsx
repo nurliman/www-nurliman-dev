@@ -49,15 +49,15 @@ function TheInputText<T extends InputTag = "input">(props: TheInputTextProps<T>)
   ]);
 
   return (
-    <div class={clsx("flex flex-col items-start", localProps.class, localProps.classList)}>
+    <label
+      for={localProps.id}
+      class={clsx("flex flex-col items-start", localProps.class, localProps.classList)}
+    >
       <Show when={!!localProps.label}>
-        <label for={localProps.id} class={clsx("mb-px", localProps.labelClass)}>
-          {localProps.label}
-        </label>
+        <div class={clsx("mb-px", localProps.labelClass)}>{localProps.label}</div>
       </Show>
 
-      <label
-        for={localProps.id}
+      <div
         class={clsx(
           "brutal-shadow-sm",
           localProps.inputContainerClass,
@@ -81,11 +81,11 @@ function TheInputText<T extends InputTag = "input">(props: TheInputTextProps<T>)
         >
           {localProps.children}
         </Dynamic>
-      </label>
+      </div>
       <Show when={!!localProps.errorMessage}>
         <div class="text-xs text-red-500">{localProps.errorMessage}</div>
       </Show>
-    </div>
+    </label>
   );
 }
 
