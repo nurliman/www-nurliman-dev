@@ -23,6 +23,9 @@ export default function TheSidebar(props: TheSidebarProps) {
         )}
         style={{ transform: "translateZ(0)" }}
         onClick={() => props.onChange?.(false)}
+        data-aria-hidden
+        aria-hidden
+        aria-label="Sidebar overlay"
       />
 
       <div
