@@ -20,7 +20,7 @@
     "dev": "email dev --skip-install --dir src/templates",
     "build": "npm run build:templates && npm run build:scripts",
     "build:scripts": "tsup --config tsup.config.ts",
-    "build:templates": "cross-env NODE_ENV=production tsx scripts/build.ts",
+    "build:templates": "cross-env NODE_ENV=production bun run scripts/build.ts",
     "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.gitignore .",
     "lint": "npm run format && eslint --cache --fix .",
     "prepare": "exists .generated/index.ts -s --onError \"npm run build:templates\""
@@ -47,7 +47,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-email": "1.10.1",
-    "tsup": "^8.0.2",
-    "tsx": "^4.9.3"
+    "tsup": "^8.0.2"
   }
 }

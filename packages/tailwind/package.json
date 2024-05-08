@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "npm run build:jss && npm run build:js",
-    "build:jss": "npx -y tsx scripts/build-jss.ts",
+    "build:jss": "bun run scripts/build-jss.ts",
     "build:js": "tsup --config tsup.config.ts",
     "dev": "tsup --config tsup.config.ts --watch",
     "clean": "npx -y concurrently \"npm:clean:*\"",
@@ -40,8 +40,7 @@
     "postcss-js": "^4.0.1",
     "slash": "^5.1.0",
     "tailwindcss": "^3.4.3",
-    "tsup": "^8.0.2",
-    "tsx": "^4.9.3"
+    "tsup": "^8.0.2"
   },
   "peerDependencies": {
     "tailwindcss": ">=3"
