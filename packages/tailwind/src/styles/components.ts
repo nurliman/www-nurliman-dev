@@ -25,17 +25,17 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(228 228 231/var(--tw-bg-opacity))"
   },
-  ":is(.dark .brutal-btn-white)": {
+  ".brutal-btn-white:is(.dark *)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(0 0 0/var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255/var(--tw-text-opacity))"
   },
-  ":is(.dark .brutal-btn-white:hover)": {
+  ".brutal-btn-white:hover:is(.dark *)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(24 24 27/var(--tw-bg-opacity))"
   },
-  ":is(.dark .brutal-btn-white:active)": {
+  ".brutal-btn-white:active:is(.dark *)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(9 9 11/var(--tw-bg-opacity))"
   },
@@ -67,17 +67,17 @@ const styles: any = {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(161 161 170/var(--tw-bg-opacity))"
   },
-  ":is(.dark .brutal-btn-zinc)": {
+  ".brutal-btn-zinc:is(.dark *)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(24 24 27/var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255/var(--tw-text-opacity))"
   },
-  ":is(.dark .brutal-btn-zinc:hover)": {
+  ".brutal-btn-zinc:hover:is(.dark *)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(9 9 11/var(--tw-bg-opacity))"
   },
-  ":is(.dark .brutal-btn-zinc:active)": {
+  ".brutal-btn-zinc:active:is(.dark *)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(0 0 0/var(--tw-bg-opacity))"
   },
