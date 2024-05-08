@@ -204,8 +204,8 @@ importers:
         specifier: workspace:*
         version: link:../eslint-config
       '@nurliman/file-exists-cli':
-        specifier: ^0.1.4
-        version: 0.1.4
+        specifier: ^0.1.5
+        version: 0.1.5
       '@react-email/components':
         specifier: ^0.0.17
         version: 0.0.17(@types/react@18.2.47)(react@18.3.1)
@@ -371,8 +371,8 @@ importers:
         specifier: workspace:*
         version: link:../eslint-config
       '@nurliman/file-exists-cli':
-        specifier: ^0.1.4
-        version: 0.1.4
+        specifier: ^0.1.5
+        version: 0.1.5
       '@swc/core':
         specifier: ^1.5.5
         version: 1.5.5(@swc/helpers@0.5.5)
@@ -1664,8 +1664,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nurliman/file-exists-cli@0.1.4':
-    resolution: {integrity: sha512-pdJoQ4oU8EhUIi4uthwjBXpwYFTvDqIiO8puwiz0AQCM3ZXkV+T+RfFcOpWJC5Ktq7R4mAf4ozqY1j8pkm/Bmw==}
+  '@nurliman/file-exists-cli@0.1.5':
+    resolution: {integrity: sha512-m0XDpbEYCBZzMYaddJiOzXcJ1Zwc82OxLhQgzmQp/ljFny4X2lsNOcwczLT8sCIYRw+WVYOdxLtsOWcUlaUu6Q==}
     hasBin: true
 
   '@octokit/auth-token@3.0.4':
@@ -7402,7 +7402,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.16.0
 
-  '@nurliman/file-exists-cli@0.1.4':
+  '@nurliman/file-exists-cli@0.1.5':
     dependencies:
       execa: 8.0.1
       meow: 13.2.0

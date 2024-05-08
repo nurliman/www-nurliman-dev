@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
-    "@nurliman/file-exists-cli": "^0.1.4",
+    "@nurliman/file-exists-cli": "^0.1.5",
     "@swc/core": "^1.5.5",
     "@tsconfig/recommended": "^1.0.6",
     "@types/fs-extra": "^11.0.4",
