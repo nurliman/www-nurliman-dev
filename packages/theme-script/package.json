@@ -31,7 +31,7 @@
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman/file-exists-cli": "^0.1.4",
-    "@swc/core": "^1.4.17",
+    "@swc/core": "^1.5.5",
     "@tsconfig/recommended": "^1.0.6",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
@@ -42,7 +42,7 @@
     "fs-extra": "^11.2.0",
     "lodash-es": "^4.17.21",
     "tsup": "^8.0.2",
-    "tsx": "^4.8.2",
+    "tsx": "^4.9.3",
     "typescript": "^5.4.5"
   }
 }

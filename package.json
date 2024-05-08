@@ -27,5 +27,5 @@
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|astro|vue)": "eslint --cache --fix",
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|astro|vue|css|scss|json|yml|yaml)": "prettier --write --cache --ignore-path .gitignore --ignore-path .prettierignore"
   },
-  "packageManager": "pnpm@9.0.6"
+  "packageManager": "pnpm@9.1.0"
 }

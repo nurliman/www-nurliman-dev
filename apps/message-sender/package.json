@@ -12,13 +12,13 @@
   "dependencies": {
     "@nurliman.dev/emails": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
-    "@nurliman/env-valibot": "^0.2.0",
-    "hono": "^4.2.9",
+    "@nurliman/env-valibot": "npm:@jsr/nurliman__env-valibot@^0.4.2",
+    "hono": "^4.3.3",
     "next": "14.2.3",
     "ofetch": "^1.3.4",
     "react": "^18",
     "react-dom": "^18",
-    "valibot": "^0.30.0"
+    "valibot": "npm:@jsr/valibot__valibot@^0.30.0"
   },
   "devDependencies": {
     "@types/node": "^20",

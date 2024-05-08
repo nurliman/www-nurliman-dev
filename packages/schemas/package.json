@@ -34,9 +34,9 @@
     "eslint": "^8",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "valibot": "^0.29.0s"
+    "valibot": "npm:@jsr/valibot__valibot@^0.30.0"
   },
   "peerDependencies": {
-    "valibot": ">=0"
+    "valibot": "*"
   }
 }
