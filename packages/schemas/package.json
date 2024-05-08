@@ -31,7 +31,6 @@
   "devDependencies": {
     "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.4",
-    "tsup": "^8.0.2",
     "valibot": "npm:@jsr/valibot__valibot@^0.30.0"
   },
   "peerDependencies": {
