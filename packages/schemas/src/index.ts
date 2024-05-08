@@ -4,7 +4,7 @@ import {
   email as vEmail,
   minLength as vMinLength,
   type Input as VInput,
-} from "valibot";
+} from "@valibot/valibot";
 
 export const contactFormSchema = vObject({
   name: vString([vMinLength(1, "Please enter your name")]),

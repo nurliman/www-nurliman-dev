@@ -15,11 +15,12 @@
     "@fontsource/racing-sans-one": "^5.0.20",
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman.dev/theme-script": "workspace:*",
-    "@nurliman/env-valibot": "npm:@jsr/nurliman__env-valibot@^0.4.2",
+    "@nurliman/env-valibot": "npm:@jsr/nurliman__env-valibot@^0.5.2",
     "@solid-primitives/keyed": "^1.2.2",
     "@solid-primitives/media": "^2.2.9",
     "@tanstack/solid-form": "0.13.7",
     "@tanstack/valibot-form-adapter": "0.13.7",
+    "@valibot/valibot": "npm:@jsr/valibot__valibot@^0.30.0",
     "clsx": "^2.1.1",
     "cva": "^1.0.0-beta.1",
     "is-relative-url": "^4.0.0",
@@ -27,8 +28,7 @@
     "ofetch": "^1.3.4",
     "snarkdown": "^2.0.0",
     "solid-js": "^1.8.17",
-    "solid-sonner": "^0.2.6",
-    "valibot": "npm:@jsr/valibot__valibot@^0.30.0"
+    "solid-sonner": "^0.2.6"
   },
   "devDependencies": {
     "@astrojs/check": "^0.6.0",
