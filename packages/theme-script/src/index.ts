@@ -9,6 +9,6 @@ export type CreateThemeScriptArgs = {
   localStorageKey: string;
 };
 
-export const createThemeScript = (args: CreateThemeScriptArgs) => {
+export function createThemeScript(args: CreateThemeScriptArgs): string {
   return pupa(script, args);
-};
+}

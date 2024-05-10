@@ -29,7 +29,7 @@ function initializeTheme(doc = document) {
 
 initializeTheme();
 
-document.addEventListener("astro:before-swap", function (event) {
+document.addEventListener("astro:before-swap", (event) => {
   type Event = import("astro:transitions/client").TransitionBeforeSwapEvent;
 
   // Pass the incoming document to set the theme on it
