@@ -1,4 +1,4 @@
-import escape from "lodash-es/escape";
+import lodashEscape from "lodash-es/escape";
 import {
   Body,
   Container,
@@ -10,9 +10,9 @@ import {
   Text,
 } from "@react-email/components";
 
-const PREVIEW = escape("Email from {{senderName}}");
-const TITLE = escape("{{title}}");
-const HEADING = escape("Email from {{senderName}} <{{senderEmail}}>");
+const PREVIEW = lodashEscape("Email from {{senderName}}");
+const TITLE = lodashEscape("{{title}}");
+const HEADING = lodashEscape("Email from {{senderName}} <{{senderEmail}}>");
 const MESSAGE = "{{message}}";
 
 export type ContactFormEmailProps = {

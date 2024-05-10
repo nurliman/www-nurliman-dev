@@ -1,19 +1,20 @@
 import path from "node:path";
 import fse from "fs-extra";
-import escape from "lodash-es/escape";
-import camelCase from "lodash-es/camelCase";
-import map from "lodash-es/map";
+import lodashEscape from "lodash-es/escape";
+import lodashCamelCase from "lodash-es/camelCase";
+import lodashMap from "lodash-es/map";
+import dedent from "dedent";
 import { globby } from "globby";
 import { render } from "@react-email/render";
 
 const OUTPUT_DIR = path.join(process.cwd(), ".generated");
 
-const createIndexFile = async (filenames: string[]) => {
+async function createIndexFile(filenames: string[]) {
   const exports = filenames.map((filename) => `export { ${filename} } from "./${filename}";`);
   await fse.writeFile(path.join(OUTPUT_DIR, "index.ts"), exports.join("\n"));
-};
+}
 
-const main = async () => {
+async function main() {
   const paths = await globby(["./src/templates/**/*.tsx"], { absolute: true });
 
   const renderPromises = paths.map(async (filepath) => {
@@ -26,7 +27,7 @@ const main = async () => {
     return {
       filename,
       html,
-      newFilename: camelCase(filename + "Html"),
+      newFilename: lodashCamelCase(`${filename}Html`),
     };
   });
 
@@ -39,12 +40,11 @@ const main = async () => {
   await fse.emptyDir(OUTPUT_DIR);
 
   const writeFilePromises = renderedTemplates.map(async ({ newFilename: name, html }) => {
-    html = escape(html);
+    html = lodashEscape(html);
 
-    const ts = `
-      import unescape from "lodash.unescape";
-      export const ${name}: string = unescape(\`${html}\`);
-      export default ${name};
+    const ts = dedent`
+      import lodashUnescape from "lodash.unescape";
+      export const ${name}: string = lodashUnescape("${html}");
     `;
 
     await fse.writeFile(path.join(OUTPUT_DIR, `${name}.ts`), ts);
@@ -52,11 +52,11 @@ const main = async () => {
     console.log(`Wrote ${name}.ts`);
   });
 
-  writeFilePromises.push(createIndexFile(map(renderedTemplates, "newFilename")));
+  writeFilePromises.push(createIndexFile(lodashMap(renderedTemplates, "newFilename")));
 
   await Promise.all(writeFilePromises);
 
   console.log("Done!");
-};
+}
 
 main();
