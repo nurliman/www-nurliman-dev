@@ -33,5 +33,8 @@
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|astro|vue)": "eslint --cache --fix",
     "**/*.+(js|mjs|cjs|jsx|ts|tsx|astro|vue|css|scss|json|yml|yaml)": "prettier --write --cache --ignore-path .gitignore --ignore-path .prettierignore"
   },
-  "packageManager": "bun@1.1.7"
+  "packageManager": "bun@1.1.7",
+  "resolutions": {
+    "eslint": "$eslint"
+  }
 }
