@@ -53,6 +53,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     {description ? <meta name="twitter:description" content={description} /> : null}
 
     <script
+      is:inline
       set:html={createThemeScript({
         defaultTheme: DEFAULT_THEME,
         oppositeTheme: OPPOSITE_THEME,
