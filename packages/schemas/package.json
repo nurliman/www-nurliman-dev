@@ -25,7 +25,7 @@
     "clean:dist": "npx -y del-cli dist"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^18.2.4",
+    "@tsconfig/node20": "^20.1.4",
     "@valibot/valibot": "npm:@jsr/valibot__valibot@^0.30.0"
   },
   "peerDependencies": {

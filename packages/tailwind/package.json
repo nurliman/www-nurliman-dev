@@ -26,7 +26,7 @@
     "clean:dist": "npx -y del-cli dist"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^18.2.4",
+    "@tsconfig/node20": "^20.1.4",
     "@types/object-inspect": "^1.13.0",
     "@types/postcss-import": "^14.0.3",
     "cssnano": "^7.0.1",
