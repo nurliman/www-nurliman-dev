@@ -19,7 +19,6 @@
     "build": "npm run build:templates && npm run build:scripts",
     "build:scripts": "tsup --config tsup.config.ts",
     "build:templates": "cross-env NODE_ENV=production bun run scripts/build.ts",
-    "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.gitignore .",
     "prepare": "exists .generated/index.ts -s --onError \"npm run build:templates\""
   },
   "dependencies": {

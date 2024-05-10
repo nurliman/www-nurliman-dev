@@ -9,6 +9,9 @@
     "lint": "biome check .",
     "lint:fix": "npm run lint -- --apply",
     "lint-staged": "lint-staged",
+    "format:prettier": "prettier --write --cache \"**/*.+(astro|css|scss|html|md|yml|yaml)\"",
+    "format:biome": "biome format --write .",
+    "format": "npm run format:prettier && npm run format:biome",
     "prepare": "lefthook install"
   },
   "devDependencies": {
@@ -26,7 +29,9 @@
     "typescript": "^5.4.5"
   },
   "lint-staged": {
-    "**/*.+(js|mjs|cjs|jsx|ts|cts|mts|tsx|astro|css|scss|json|yml|yaml)": "biome check --apply --no-errors-on-unmatched"
+    "**/*.+(js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc)": "biome check --apply --no-errors-on-unmatched",
+    "**/*.+(css|scss|html|md|yml|yaml)": "prettier --write --cache",
+    "**/*.astro": ["prettier --write --cache", "biome check --apply --no-errors-on-unmatched"]
   },
   "packageManager": "bun@1.1.7"
 }

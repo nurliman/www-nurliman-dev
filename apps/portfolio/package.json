@@ -7,8 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier --write --cache --ignore-path ../../.prettierignore ."
+    "astro": "astro"
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.20",
