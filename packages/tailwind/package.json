@@ -24,11 +24,9 @@
     "clean:turbo": "npx -y del-cli .turbo",
     "clean:node_modules": "npx -y del-cli node_modules",
     "clean:dist": "npx -y del-cli dist",
-    "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.prettierignore .",
-    "lint": "npm run format && eslint --cache --fix ."
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore --ignore-path ./.prettierignore ."
   },
   "devDependencies": {
-    "@nurliman.dev/eslint-config": "workspace:*",
     "@tsconfig/node18": "^18.2.4",
     "@types/object-inspect": "^1.13.0",
     "@types/postcss-import": "^14.0.3",

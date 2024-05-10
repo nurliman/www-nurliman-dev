@@ -1,7 +1,0 @@
-.DS_Store
-node_modules
-/.generated
-/dist
-.env
-.env.*
-!.env.example

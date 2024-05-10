@@ -8,8 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write --cache --ignore-path ../../.prettierignore .",
-    "lint": "npm run format && eslint --cache --fix ."
+    "format": "prettier --write --cache --ignore-path ../../.prettierignore ."
   },
   "dependencies": {
     "@fontsource/racing-sans-one": "^5.0.20",
@@ -39,7 +38,6 @@
     "@astrojs/solid-js": "^4.2.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.6.0",
-    "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman.dev/tailwind": "workspace:*",
     "@types/is-callable": "^1.1.2",
     "@types/lodash-es": "^4.17.12",

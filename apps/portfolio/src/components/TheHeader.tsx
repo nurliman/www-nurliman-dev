@@ -30,7 +30,6 @@ export default function TheHeader(props: TheHeaderProps) {
   };
 
   onMount(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     // biome-ignore lint/suspicious/noExplicitAny: cant find type for astro:after-swap event
     const setPath = (evt?: any) => {
       const pathname = evt?.target?.location?.pathname || window.location.pathname;

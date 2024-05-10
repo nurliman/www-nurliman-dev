@@ -24,7 +24,6 @@ export const verifyCaptcha = async (token: string) => {
   });
 
   if (!data.success) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const err = new ErrorWithCodes("Failed to verify captcha", data["error-codes"]);
 
     throw err;

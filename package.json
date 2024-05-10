@@ -13,11 +13,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
-    "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman/file-exists-cli": "^0.2.1",
     "@types/bun": "latest",
     "@types/node": "^20",
-    "eslint": "^8",
     "lefthook": "^1.6.10",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
@@ -30,8 +28,5 @@
   "lint-staged": {
     "**/*.+(js|mjs|cjs|jsx|ts|cts|mts|tsx|astro|css|scss|json|yml|yaml)": "biome check --apply --no-errors-on-unmatched"
   },
-  "packageManager": "bun@1.1.7",
-  "resolutions": {
-    "eslint": "$eslint"
-  }
+  "packageManager": "bun@1.1.7"
 }

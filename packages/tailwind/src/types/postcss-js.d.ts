@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // Type definitions for postcss-js 4.0
 // Project: https://github.com/postcss/postcss-js
 // Definitions by: Adam Thompson-Sharpe <https://github.com/MysteryBlokHed>

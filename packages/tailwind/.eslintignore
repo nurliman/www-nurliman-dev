@@ -1,7 +1,0 @@
-.DS_Store
-node_modules
-/src/styles
-/dist
-.env
-.env.*
-!.env.example
