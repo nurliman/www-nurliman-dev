@@ -1,4 +1,3 @@
-import type { TransitionModule } from "astro:transitions";
 import TheButton from "@/components/TheButton";
 import TheHamburgerButton from "@/components/TheHamburgerButton";
 import TheSidebar from "@/components/TheSidebar";
