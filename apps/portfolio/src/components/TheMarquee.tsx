@@ -1,6 +1,9 @@
+import { Rerun } from "@solid-primitives/keyed";
 import { clsx } from "clsx";
+import lodashIsFinite from "lodash-es/isFinite";
 import {
   For,
+  type JSX,
   Show,
   createEffect,
   createMemo,
@@ -10,7 +13,6 @@ import {
   onCleanup,
   onMount,
 } from "solid-js";
-import { Rerun } from "@solid-primitives/keyed";
 import styles from "./TheMarquee.module.css";
 
 export type TheMarqueeProps = {
@@ -21,7 +23,7 @@ export type TheMarqueeProps = {
   loop?: number;
   clone?: boolean;
   gradient?: boolean;
-  gradientColor?: any;
+  gradientColor?: [number, number, number];
   gradientWidth?: string;
   gradientLength?: string;
   pauseOnHover?: boolean;
@@ -31,7 +33,7 @@ export type TheMarqueeProps = {
   onLoopComplete?: () => void;
   onResume?: () => void;
   onPause?: () => void;
-  children?: any;
+  children?: JSX.Element;
 };
 
 export default function TheMarquee(originalProps: TheMarqueeProps) {
@@ -100,13 +102,15 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
 
         const localCloneAmount = Math.ceil(containerHeight() / contentHeight());
 
-        setCloneAmount(isFinite(localCloneAmount) ? localCloneAmount : 0);
+        setCloneAmount(lodashIsFinite(localCloneAmount) ? localCloneAmount : 0);
 
         // resume the animation
         setVerticalAnimationPause(false);
 
         return cloneAmount();
-      } else if (
+      }
+
+      if (
         !props.vertical &&
         "clientWidth" in marqueeContent &&
         "clientWidth" in marqueeOverlayContainer
@@ -116,14 +120,14 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
 
         const localCloneAmount = Math.ceil(containerWidth() / contentWidth());
 
-        setCloneAmount(isFinite(localCloneAmount) ? localCloneAmount : 0);
+        setCloneAmount(lodashIsFinite(localCloneAmount) ? localCloneAmount : 0);
 
         return cloneAmount();
-      } else {
-        setMinWidth("100%");
-        setMinHeight("100%");
-        return 0;
       }
+
+      setMinWidth("100%");
+      setMinHeight("100%");
+      return 0;
     }, 100);
   };
 
@@ -187,7 +191,7 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
       "--marquee-pause-on-click": props.pauseOnClick ? "paused" : "running",
       "--marquee-pause-animation":
         (props.vertical && verticalAnimationPause()) || props.pause ? "paused" : "running",
-      "--marquee-loops": props.loop === 0 ? "infinite" : props.loop + "",
+      "--marquee-loops": props.loop === 0 ? "infinite" : `${props.loop}`,
       "--marquee-gradient-color": `rgba(${props.gradientColor[0]},${props.gradientColor[1]},${props.gradientColor[2]},1),rgba(${props.gradientColor[0]},${props.gradientColor[1]},${props.gradientColor[2]},0)`,
       "--marquee-gradient-length": gradientLength(),
       "--marquee-min-width": minWidth(),

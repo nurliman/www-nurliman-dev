@@ -1,11 +1,11 @@
 import path from "node:path";
-import fse from "fs-extra";
-import lodashEscape from "lodash-es/escape";
-import lodashCamelCase from "lodash-es/camelCase";
-import lodashMap from "lodash-es/map";
-import dedent from "dedent";
-import { globby } from "globby";
 import { render } from "@react-email/render";
+import dedent from "dedent";
+import fse from "fs-extra";
+import { globby } from "globby";
+import lodashCamelCase from "lodash-es/camelCase";
+import lodashEscape from "lodash-es/escape";
+import lodashMap from "lodash-es/map";
 
 const OUTPUT_DIR = path.join(process.cwd(), ".generated");
 

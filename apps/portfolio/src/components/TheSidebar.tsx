@@ -1,9 +1,9 @@
-import { For, type Accessor } from "solid-js";
-import { clsx } from "clsx";
+import TheButton from "@/components/TheButton";
 import { sections } from "@/data/sections";
 import { socials } from "@/data/socials";
 import { isActivePath } from "@/utils/isActivePath";
-import TheButton from "@/components/TheButton";
+import { clsx } from "clsx";
+import { type Accessor, For } from "solid-js";
 
 export type TheSidebarProps = {
   isOpen: Accessor<boolean>;

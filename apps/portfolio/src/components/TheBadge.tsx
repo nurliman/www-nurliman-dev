@@ -1,7 +1,7 @@
-import { mergeProps, splitProps, type ValidComponent } from "solid-js";
 import type { VariantProps } from "cva";
-import { Dynamic } from "solid-js/web";
 import { cva, cx } from "cva";
+import { type JSX, type ValidComponent, mergeProps, splitProps } from "solid-js";
+import { Dynamic } from "solid-js/web";
 
 const badgeVariant = cva({
   variants: {
@@ -28,7 +28,7 @@ const badgeVariant = cva({
 export type BadgeVariant = VariantProps<typeof badgeVariant>;
 
 export type TheBadgeProps = BadgeVariant & {
-  children?: any;
+  children?: JSX.Element;
   component?: ValidComponent;
   class?: string;
 };

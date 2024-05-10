@@ -1,5 +1,5 @@
 import { createEnv } from "@nurliman/env-valibot/nextjs";
-import { string as vString, email as vEmail, minLength as vMinLength } from "@valibot/valibot";
+import { email as vEmail, minLength as vMinLength, string as vString } from "@valibot/valibot";
 
 export const env = createEnv({
   server: {

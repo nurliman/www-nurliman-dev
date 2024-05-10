@@ -1,5 +1,5 @@
-import pupa from "pupa";
 import script from "@generated/script";
+import pupa from "pupa";
 
 export type Theme = "light" | "dark";
 

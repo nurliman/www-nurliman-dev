@@ -1,9 +1,9 @@
 import {
-  string as vString,
-  object as vObject,
+  type Input as VInput,
   email as vEmail,
   minLength as vMinLength,
-  type Input as VInput,
+  object as vObject,
+  string as vString,
 } from "@valibot/valibot";
 
 export const contactFormSchema = vObject({

@@ -1,5 +1,5 @@
-import { splitProps, type ComponentProps } from "solid-js";
 import { clsx } from "clsx";
+import { type ComponentProps, splitProps } from "solid-js";
 import styles from "./TheProgressBar.module.css";
 
 export type TheProgressBarProps = {
@@ -12,8 +12,8 @@ export default function TheProgressBar(props: TheProgressBarProps) {
   return (
     <div
       class={clsx(styles.progress, localProps.class, localProps.classList)}
-      style={{ "--progress": localProps.progress * 100 + "%" }}
+      style={{ "--progress": `${localProps.progress * 100}%` }}
       {...restProps}
-    ></div>
+    />
   );
 }

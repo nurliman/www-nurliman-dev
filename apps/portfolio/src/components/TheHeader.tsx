@@ -1,12 +1,13 @@
-import { clsx } from "clsx";
-import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
-import { createMediaQuery } from "@solid-primitives/media";
-import { sections } from "@/data/sections";
-import { isActivePath } from "@/utils/isActivePath";
+import type { TransitionModule } from "astro:transitions";
 import TheButton from "@/components/TheButton";
 import TheHamburgerButton from "@/components/TheHamburgerButton";
-import TheThemeSwithcerButton from "@/components/TheThemeSwithcerButton";
 import TheSidebar from "@/components/TheSidebar";
+import TheThemeSwithcerButton from "@/components/TheThemeSwithcerButton";
+import { sections } from "@/data/sections";
+import { isActivePath } from "@/utils/isActivePath";
+import { createMediaQuery } from "@solid-primitives/media";
+import { clsx } from "clsx";
+import { For, Show, createSignal, onCleanup, onMount } from "solid-js";
 
 export type TheHeaderProps = {
   currentPath: string;
@@ -18,7 +19,10 @@ export default function TheHeader(props: TheHeaderProps) {
   const [sidebarOpened, setSidebarOpened] = createSignal(false);
 
   const changeMenuOpened = (isOpen?: boolean) => {
-    setSidebarOpened((sidebarOpened) => (isOpen ??= !sidebarOpened));
+    setSidebarOpened((sidebarOpened) => {
+      const newState = isOpen ?? !sidebarOpened;
+      return newState;
+    });
   };
 
   const closeMenu = () => {
@@ -27,6 +31,7 @@ export default function TheHeader(props: TheHeaderProps) {
 
   onMount(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // biome-ignore lint/suspicious/noExplicitAny: cant find type for astro:after-swap event
     const setPath = (evt?: any) => {
       const pathname = evt?.target?.location?.pathname || window.location.pathname;
       setCurrentPath(pathname);

@@ -1,7 +1,14 @@
+import isCallable from "is-callable";
 import { onCleanup, onMount, splitProps } from "solid-js";
 import type { ComponentProps } from "solid-js";
-import type { RenderParameters, TurnstileObject } from "turnstile-types";
+import type { RenderParameters } from "turnstile-types";
 import type { CamelCasedProperties } from "type-fest";
+
+declare global {
+  interface Window {
+    onloadTurnstileCallback?: () => void;
+  }
+}
 
 export type TurnstileRef = {
   reset: () => void;
@@ -20,6 +27,7 @@ export type TurnstileBaseProps = CamelCasedProperties<
     | "refresh-expired"
   >
 > & {
+  // biome-ignore lint/suspicious/noExplicitAny: don't know what type this is
   reset?: any;
   ref?: TurnstileRef | ((v: TurnstileRef) => void);
   onVerify: (token: string) => void;
@@ -55,11 +63,12 @@ export default function Turnstile(props: TurnstileProps) {
     "onUnsupported",
   ]);
 
-  const turnstile = () => (window as any).turnstile as TurnstileObject;
+  const turnstile = () => window.turnstile;
   let element: HTMLDivElement | undefined;
 
   const ready = () => {
-    const id = turnstile().render(element!, {
+    if (!element) return;
+    const id = turnstile().render(element, {
       sitekey: localProps.sitekey,
       theme: localProps.theme,
       language: localProps.language,
@@ -78,13 +87,15 @@ export default function Turnstile(props: TurnstileProps) {
     });
     localProps.onLoad?.(id);
 
-    (localProps?.ref as any)?.({
+    if (!isCallable(localProps?.ref)) return;
+
+    localProps.ref({
       reset: () => turnstile().reset(id),
     });
   };
 
   onMount(() => {
-    (window as any).onloadTurnstileCallback = ready;
+    window.onloadTurnstileCallback = ready;
 
     if (document.getElementById(SCRIPT_ID)) return ready();
     const scriptEl = document.createElement("script");
@@ -97,7 +108,7 @@ export default function Turnstile(props: TurnstileProps) {
 
     onCleanup(() => {
       document.getElementById(SCRIPT_ID)?.remove?.();
-      delete (window as any).onloadTurnstileCallback;
+      window.onloadTurnstileCallback = undefined;
       element && turnstile()?.remove?.(element);
     });
   });

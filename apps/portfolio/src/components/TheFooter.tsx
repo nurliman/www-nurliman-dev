@@ -1,6 +1,6 @@
-import { For, Show, createSignal, onMount } from "solid-js";
-import { clsx } from "clsx";
 import { socials } from "@/data/socials";
+import { clsx } from "clsx";
+import { For, Show, createSignal, onMount } from "solid-js";
 
 export default function TheFooter() {
   const [currentYear, setCurrentYear] = createSignal(new Date().getFullYear());
@@ -28,6 +28,7 @@ export default function TheFooter() {
                   href={social.link}
                   class="underline underline-offset-2 hover:text-zinc-100"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {social.name}
                 </a>

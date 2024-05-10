@@ -1,4 +1,3 @@
-import lodashEscape from "lodash-es/escape";
 import {
   Body,
   Container,
@@ -9,6 +8,7 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
+import lodashEscape from "lodash-es/escape";
 
 const PREVIEW = lodashEscape("Email from {{senderName}}");
 const TITLE = lodashEscape("{{title}}");
@@ -40,14 +40,17 @@ export default function ContactFormEmail() {
             {/* @ts-ignore: For some reason, Headings are not recognized as valid JSX elements */}
             <Heading
               className="mx-0 my-[30px] p-0 text-4xl font-bold leading-10 text-[#1d1c1d]"
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
               dangerouslySetInnerHTML={{ __html: TITLE }}
             />
             <Text
               className="mb-[30px] text-xl leading-7"
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
               dangerouslySetInnerHTML={{ __html: HEADING }}
             />
             <Text
               className="text-sm leading-6 text-black"
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
               dangerouslySetInnerHTML={{ __html: MESSAGE }}
             />
           </Container>

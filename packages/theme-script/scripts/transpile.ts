@@ -1,7 +1,7 @@
 import path from "node:path";
+import dedent from "dedent";
 import fse from "fs-extra";
 import lodashEscape from "lodash-es/escape";
-import dedent from "dedent";
 
 const SCRIPT_PATH = path.join(process.cwd(), "src/script.ts");
 const OUTPUT_PATH = path.join(process.cwd(), ".generated/script.ts");
@@ -24,7 +24,9 @@ async function main() {
       .then((text) => text?.trim?.() ?? ""),
 
     // ensure output directory exists and clear it
-    fse.ensureDir(path.dirname(OUTPUT_PATH)).then(() => fse.emptyDir(path.dirname(OUTPUT_PATH))),
+    fse
+      .ensureDir(path.dirname(OUTPUT_PATH))
+      .then(() => fse.emptyDir(path.dirname(OUTPUT_PATH))),
   ]);
 
   const ts = dedent`

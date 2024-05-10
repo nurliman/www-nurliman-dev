@@ -5,11 +5,7 @@
   "license": "MIT",
   "type": "commonjs",
   "main": "index.js",
-  "files": [
-    "package.json",
-    "index.js",
-    "react.js"
-  ],
+  "files": ["package.json", "index.js", "react.js"],
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json",

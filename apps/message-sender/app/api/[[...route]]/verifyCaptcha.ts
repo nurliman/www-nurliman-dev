@@ -1,7 +1,17 @@
-import { ofetch } from "ofetch";
 import { env } from "@/env.mjs";
+import { ofetch } from "ofetch";
 
 const VERIFY_CAPTCHA_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
+class ErrorWithCodes extends Error {
+  constructor(
+    message: string,
+    public codes?: string[],
+  ) {
+    super(message);
+    this.codes = codes;
+  }
+}
 
 export const verifyCaptcha = async (token: string) => {
   const formData = new FormData();
@@ -15,8 +25,7 @@ export const verifyCaptcha = async (token: string) => {
 
   if (!data.success) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const err: any = new Error("Failed to verify captcha");
-    err.codes = data["error-codes"];
+    const err = new ErrorWithCodes("Failed to verify captcha", data["error-codes"]);
 
     throw err;
   }

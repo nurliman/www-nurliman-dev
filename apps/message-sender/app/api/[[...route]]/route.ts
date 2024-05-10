@@ -1,8 +1,8 @@
-import { Hono } from "hono";
-import { handle } from "hono/vercel";
-import { cors } from "hono/cors";
-import { flatten, safeParse } from "@valibot/valibot";
 import { contactFormSchema } from "@nurliman.dev/schemas";
+import { flatten, safeParse } from "@valibot/valibot";
+import { Hono } from "hono";
+import { cors } from "hono/cors";
+import { handle } from "hono/vercel";
 import { sendMessage } from "./sendMessage";
 import { verifyCaptcha } from "./verifyCaptcha";
 
@@ -13,7 +13,7 @@ const app = new Hono().basePath("/api");
 
 app.use("/*", cors());
 app.post("/messages", async (c) => {
-  let body;
+  let body: unknown;
   try {
     body = await c.req.json();
   } catch (e) {

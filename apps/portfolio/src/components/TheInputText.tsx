@@ -1,6 +1,6 @@
-import { Show, createUniqueId, mergeProps, splitProps, type JSX } from "solid-js";
-import { Dynamic, type DynamicProps } from "solid-js/web";
 import { clsx } from "clsx";
+import { type JSX, Show, createUniqueId, mergeProps, splitProps } from "solid-js";
+import { Dynamic, type DynamicProps } from "solid-js/web";
 import styles from "./TheInputText.module.css";
 
 export type InputTag = "input" | "textarea";

@@ -1,7 +1,7 @@
-import type { EmailTransactionalMessageData, EmailSend } from "elasticemail";
-import { renderContactFormHtml } from "@nurliman.dev/emails";
-import { ofetch } from "ofetch";
 import { env } from "@/env.mjs";
+import { renderContactFormHtml } from "@nurliman.dev/emails";
+import type { EmailSend, EmailTransactionalMessageData } from "elasticemail";
+import { ofetch } from "ofetch";
 
 const ELASTIC_EMAIL_API_URL = "https://api.elasticemail.com/v4/emails/transactional";
 

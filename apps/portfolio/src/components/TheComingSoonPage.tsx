@@ -8,7 +8,7 @@ export default function TheComingSoonPage() {
       if (dots().length >= 3) {
         setDots(".");
       } else {
-        setDots((dots) => dots + ".");
+        setDots((dots) => `${dots}.`);
       }
     }, 500);
 

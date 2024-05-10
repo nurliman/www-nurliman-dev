@@ -1,15 +1,15 @@
+import TheButton from "@/components/TheButton";
+import TheInputText from "@/components/TheInputText";
+import Turnstile, { type TurnstileRef } from "@/components/Turnstile";
+import { env } from "@/env";
+import { type ContactForm, contactFormSchema } from "@nurliman.dev/schemas";
+import { createForm } from "@tanstack/solid-form";
+import { valibotValidator } from "@tanstack/valibot-form-adapter";
 import { clsx } from "clsx";
-import { ofetch, FetchError } from "ofetch";
+import { FetchError, ofetch } from "ofetch";
 import { Show, createSignal } from "solid-js";
 import { Portal } from "solid-js/web";
 import { Toaster, toast } from "solid-sonner";
-import { createForm } from "@tanstack/solid-form";
-import { valibotValidator } from "@tanstack/valibot-form-adapter";
-import { contactFormSchema, type ContactForm } from "@nurliman.dev/schemas";
-import { env } from "@/env";
-import Turnstile, { type TurnstileRef } from "@/components/Turnstile";
-import TheButton from "@/components/TheButton";
-import TheInputText from "@/components/TheInputText";
 
 const DEFAULT_ERROR_MESSAGE = "Something went wrong.";
 
@@ -83,7 +83,8 @@ export default function TheContactForm() {
           validators={{
             onChange: contactFormSchema.entries.name,
           }}
-          children={(field) => (
+        >
+          {(field) => (
             <TheInputText
               labelClass="text-sm md:text-base"
               inputClass="text-sm md:text-base"
@@ -96,14 +97,15 @@ export default function TheContactForm() {
               errorMessage={field().state.meta.errors?.[0]}
             />
           )}
-        />
+        </form.Field>
 
         <form.Field
           name="email"
           validators={{
             onChange: contactFormSchema.entries.email,
           }}
-          children={(field) => (
+        >
+          {(field) => (
             <TheInputText
               labelClass="text-sm md:text-base"
               inputClass="text-sm md:text-base"
@@ -117,14 +119,15 @@ export default function TheContactForm() {
               errorMessage={field().state.meta.errors?.[0]}
             />
           )}
-        />
+        </form.Field>
 
         <form.Field
           name="subject"
           validators={{
             onChange: contactFormSchema.entries.subject,
           }}
-          children={(field) => (
+        >
+          {(field) => (
             <TheInputText
               labelClass="text-sm md:text-base"
               inputClass="text-sm md:text-base"
@@ -137,14 +140,15 @@ export default function TheContactForm() {
               errorMessage={field().state.meta.errors?.[0]}
             />
           )}
-        />
+        </form.Field>
 
         <form.Field
           name="message"
           validators={{
             onChange: contactFormSchema.entries.message,
           }}
-          children={(field) => (
+        >
+          {(field) => (
             <TheInputText
               labelClass="text-sm md:text-base"
               inputClass="text-sm md:text-base"
@@ -159,14 +163,15 @@ export default function TheContactForm() {
               errorMessage={field().state.meta.errors?.[0]}
             />
           )}
-        />
+        </form.Field>
 
         <form.Field
           name="captchaToken"
           validators={{
             onChange: contactFormSchema.entries.captchaToken,
           }}
-          children={(field) => (
+        >
+          {(field) => (
             <div>
               <Turnstile
                 ref={turnstileRef}
@@ -185,7 +190,7 @@ export default function TheContactForm() {
               </Show>
             </div>
           )}
-        />
+        </form.Field>
 
         <TheButton
           type="submit"

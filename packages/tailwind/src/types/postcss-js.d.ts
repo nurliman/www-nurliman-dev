@@ -5,7 +5,9 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare module "postcss-js" {
-  type CssInJs = Record<string, any>;
+  type CssInJs = {
+    [k: string]: string | CssInJs;
+  };
   /**
    * Convert a PostCSS `Root` into a CSS-in-JS object
    * @param root The root to convert

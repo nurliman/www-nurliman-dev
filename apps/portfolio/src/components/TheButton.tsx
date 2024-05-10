@@ -1,7 +1,7 @@
+import { type VariantProps, cva, cx } from "cva";
 import type { JSX, ValidComponent } from "solid-js";
 import { mergeProps, splitProps } from "solid-js";
 import { Dynamic, type DynamicProps } from "solid-js/web";
-import { cva, cx, type VariantProps } from "cva";
 
 const buttonVariant = cva({
   base: "brutal-btn",
@@ -29,6 +29,7 @@ const buttonVariant = cva({
 export type ButtonVariant = VariantProps<typeof buttonVariant>;
 
 export type TheButtonBaseProps = ButtonVariant &
+  // biome-ignore lint/suspicious/noExplicitAny: using `any` here just to simplify the type
   Pick<JSX.HTMLAttributes<any>, "children" | "class" | "classList">;
 
 export type TheButtonProps<T extends ValidComponent> = TheButtonBaseProps &
