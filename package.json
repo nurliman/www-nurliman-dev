@@ -2,19 +2,17 @@
   "name": "www-nurliman-dev",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
+    "lint": "biome check .",
+    "lint:fix": "npm run lint -- --apply",
     "lint-staged": "lint-staged",
-    "format": "prettier --write --cache \"**/*.+(js|mjs|cjs|jsx|ts|tsx|css|scss|md|json|yml|yaml)\" --ignore .gitignore --ignore .prettierignore",
     "prepare": "lefthook install"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.7.3",
     "@nurliman.dev/eslint-config": "workspace:*",
     "@nurliman/file-exists-cli": "^0.2.1",
     "@types/bun": "latest",
@@ -30,8 +28,7 @@
     "typescript": "^5.4.5"
   },
   "lint-staged": {
-    "**/*.+(js|mjs|cjs|jsx|ts|tsx|astro|vue)": "eslint --cache --fix",
-    "**/*.+(js|mjs|cjs|jsx|ts|tsx|astro|vue|css|scss|json|yml|yaml)": "prettier --write --cache --ignore-path .gitignore --ignore-path .prettierignore"
+    "**/*.+(js|mjs|cjs|jsx|ts|cts|mts|tsx|astro|css|scss|json|yml|yaml)": "biome check --apply --no-errors-on-unmatched"
   },
   "packageManager": "bun@1.1.7",
   "resolutions": {
