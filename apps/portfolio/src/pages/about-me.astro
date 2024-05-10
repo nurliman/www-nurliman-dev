@@ -1,4 +1,5 @@
 ---
+import dedent from "dedent";
 import TheNurlimanMarquee from "@/components/TheNurlimanMarquee";
 import TheContactInfoMarquee from "@/components/TheContactInfoMarquee";
 import Layout from "@/layouts/Layout.astro";
@@ -7,26 +8,32 @@ import styles from "./about-me.module.css";
 const thingsIDo = [
   {
     title: "Front-End Development",
-    description:
-      "I utilize modern JavaScript/TypeScript to craft high-performance User Interfaces that are optimized for cross-browser and multi-platform compatibility.",
+    description: dedent`I utilize modern JavaScript/TypeScript
+      to craft high-performance User Interfaces
+      that are optimized for cross-browser
+      and multi-platform compatibility.`,
     icon: "/assets/whatido-frontend.svg",
   },
   {
     title: "Back-End Development",
-    description:
-      "My focus is on writing maintainable, testable, and efficient Web Backends using various languages and frameworks, always keeping performance in mind.",
+    description: dedent`My focus is on writing maintainable, testable,
+      and efficient Web Backends using various languages and frameworks,
+      always keeping performance in mind.`,
     icon: "/assets/whatido-backend.svg",
   },
   {
     title: "Cloud Development",
-    description:
-      "I specialize in building and managing Kubernetes, VMs, Cloud Databases, Cloud Computing, Cloud Storage, Cloud Network, Load Balancers, and more, leveraging the capabilities of the Google Cloud Platform.",
+    description: dedent`I specialize in building and managing 
+      Kubernetes, VMs, Cloud Databases, Cloud Computing,
+      Cloud Storage, Cloud Network, Load Balancers, and more,
+      leveraging the capabilities of the Google Cloud Platform.`,
     icon: "/assets/whatido-cloud.svg",
   },
   {
     title: "Graphic Design",
-    description:
-      "I excel in creating user flows, wireframes, prototypes, and mockups. My ability to translate requirements into style guides, design systems, design patterns, and aesthetically pleasing user interfaces sets me apart.",
+    description: dedent`I excel in creating user flows, wireframes, prototypes, and mockups.
+      My ability to translate requirements into style guides, design systems,
+      design patterns, and aesthetically pleasing user interfaces sets me apart.`,
     icon: "/assets/whatido-design.svg",
   },
 ] as const;

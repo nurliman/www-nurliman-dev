@@ -1,5 +1,6 @@
 ---
 import type { NProgressOptions } from "nprogress";
+import dedent from "dedent";
 import styles from "./NProgress.module.css";
 
 type Props = NProgressOptions & {
@@ -113,7 +114,7 @@ const {
   data-trickle-speed={trickleSpeed}></astro-nprogress>
 
 <style
-  set:html={`
+  set:html={dedent`
     :root {
       --nprogress-color:${color};
       --nprogress-height:${height};
