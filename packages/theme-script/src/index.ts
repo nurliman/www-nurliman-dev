@@ -1,4 +1,4 @@
-import script from "@generated/script";
+import script from "@generated/script.ts";
 import pupa from "pupa";
 
 export type Theme = "light" | "dark";

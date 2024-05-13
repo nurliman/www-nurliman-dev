@@ -1,3 +1,3 @@
-export * from "./preset";
-export * from "./plugin";
-export { plugin as default } from "./plugin";
+export * from "./preset.ts";
+export * from "./plugin.ts";
+export { plugin as default } from "./plugin.ts";

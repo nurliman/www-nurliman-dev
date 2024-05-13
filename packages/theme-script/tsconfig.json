@@ -3,6 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "types": ["astro/client", "bun"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],

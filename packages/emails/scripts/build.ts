@@ -8,10 +8,13 @@ import lodashEscape from "lodash-es/escape";
 import lodashMap from "lodash-es/map";
 
 const OUTPUT_DIR = path.join(process.cwd(), ".generated");
+const FILE_EXT = "ts";
 
 async function createIndexFile(filenames: string[]) {
-  const exports = filenames.map((filename) => `export { ${filename} } from "./${filename}";`);
-  await fse.writeFile(path.join(OUTPUT_DIR, "index.ts"), exports.join("\n"));
+  const exports = filenames.map((filename) => {
+    return `export { ${filename} } from "./${filename}.${FILE_EXT}";`;
+  });
+  await fse.writeFile(path.join(OUTPUT_DIR, `index.${FILE_EXT}`), exports.join("\n"));
 }
 
 async function main() {
@@ -47,9 +50,9 @@ async function main() {
       export const ${name}: string = lodashUnescape("${html}");
     `;
 
-    await fse.writeFile(path.join(OUTPUT_DIR, `${name}.ts`), ts);
+    await fse.writeFile(path.join(OUTPUT_DIR, `${name}.${FILE_EXT}`), ts);
 
-    console.log(`Wrote ${name}.ts`);
+    console.log(`Wrote ${name}.${FILE_EXT}`);
   });
 
   writeFilePromises.push(createIndexFile(lodashMap(renderedTemplates, "newFilename")));
