@@ -33,5 +33,5 @@
     "**/*.+(css|scss|html|md|yml|yaml)": "prettier --write --cache",
     "**/*.astro": ["prettier --write --cache", "biome check --apply --no-errors-on-unmatched"]
   },
-  "packageManager": "bun@1.1.7"
+  "packageManager": "bun@1.1.8"
 }
