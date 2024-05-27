@@ -16,13 +16,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
-    "@nurliman/file-exists-cli": "^0.2.1",
+    "@nurliman/file-exists-cli": "^1.0.0",
     "@types/bun": "latest",
     "@types/node": "^20",
-    "lefthook": "^1.6.10",
-    "lint-staged": "^15.2.2",
+    "lefthook": "^1.6.12",
+    "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "tsup": "^8.0.2",
     "turbo": "^1.13.3",
@@ -33,5 +33,5 @@
     "**/*.+(css|scss|html|md|yml|yaml)": "prettier --write --cache",
     "**/*.astro": ["prettier --write --cache", "biome check --apply --no-errors-on-unmatched"]
   },
-  "packageManager": "bun@1.1.8"
+  "packageManager": "bun@1.1.10"
 }
