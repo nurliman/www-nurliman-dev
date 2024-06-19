@@ -1,6 +1,7 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "pipeline": {
+  "globalDependencies": [".env"],
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
@@ -12,13 +13,13 @@
       "cache": false
     },
     "portfolio#build": {
-      "dependsOn": [
-        "$SENTRY_DSN",
-        "$NEXT_PUBLIC_SENTRY_DSN",
-        "$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY",
-        "$NEXT_PUBLIC_RECAPTCHA_KEY"
+      "dependsOn": [],
+      "env": [
+        "SENTRY_DSN",
+        "NEXT_PUBLIC_SENTRY_DSN",
+        "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY",
+        "NEXT_PUBLIC_RECAPTCHA_KEY"
       ]
     }
-  },
-  "globalDependencies": [".env"]
+  }
 }

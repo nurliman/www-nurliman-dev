@@ -1,19 +1,25 @@
 import {
-  type Input as VInput,
+  type InferInput,
   email as vEmail,
   minLength as vMinLength,
   object as vObject,
+  pipe as vPipe,
   string as vString,
 } from "@valibot/valibot";
 
 export const contactFormSchema = vObject({
-  name: vString([vMinLength(1, "Please enter your name")]),
-  email: vString([vMinLength(1, "Please enter your email"), vEmail("Please enter a valid email")]),
-  subject: vString([vMinLength(1, "Please enter a subject")]),
-  message: vString([vMinLength(1, "Please enter a message")]),
-  captchaToken: vString([
+  name: vPipe(vString(), vMinLength(1, "Please enter your name")),
+  email: vPipe(
+    vString(),
+    vMinLength(1, "Please enter your email"),
+    vEmail("Please enter a valid email"),
+  ),
+  subject: vPipe(vString(), vMinLength(1, "Please enter a subject")),
+  message: vPipe(vString(), vMinLength(1, "Please enter a message")),
+  captchaToken: vPipe(
+    vString(),
     vMinLength(1, "Please check the captcha box.\nTry refreshing the page if it doesn't appear."),
-  ]),
+  ),
 });
 
-export type ContactForm = VInput<typeof contactFormSchema>;
+export type ContactForm = InferInput<typeof contactFormSchema>;

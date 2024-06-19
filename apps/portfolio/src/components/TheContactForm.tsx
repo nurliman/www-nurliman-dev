@@ -2,9 +2,9 @@ import TheButton from "@/components/TheButton";
 import TheInputText from "@/components/TheInputText";
 import Turnstile, { type TurnstileRef } from "@/components/Turnstile";
 import { env } from "@/env";
+import { tanstackFormValibotValidator } from "@/utils/tanstackFormValibotValidator";
 import { type ContactForm, contactFormSchema } from "@nurliman.dev/schemas";
 import { createForm } from "@tanstack/solid-form";
-import { valibotValidator } from "@tanstack/valibot-form-adapter";
 import { clsx } from "clsx";
 import { FetchError, ofetch } from "ofetch";
 import { Show, createSignal } from "solid-js";
@@ -62,7 +62,7 @@ export default function TheContactForm() {
         },
       );
     },
-    validatorAdapter: valibotValidator,
+    validatorAdapter: tanstackFormValibotValidator,
   }));
 
   return (
