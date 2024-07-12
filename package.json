@@ -7,7 +7,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "biome check .",
-    "lint:fix": "npm run lint -- --apply",
+    "lint:fix": "npm run lint -- --write",
     "lint-staged": "lint-staged",
     "format:prettier": "prettier --write --cache \"**/*.+(astro|css|scss|html|md|yml|yaml)\"",
     "format:biome": "biome format --write .",
@@ -29,9 +29,9 @@
     "typescript": "^5.5.3"
   },
   "lint-staged": {
-    "**/*.+(js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc)": "biome check --apply --no-errors-on-unmatched",
+    "**/*.+(js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc)": "biome check --write --no-errors-on-unmatched",
     "**/*.+(css|scss|html|md|yml|yaml)": "prettier --write --cache",
-    "**/*.astro": ["prettier --write --cache", "biome check --apply --no-errors-on-unmatched"]
+    "**/*.astro": ["prettier --write --cache", "biome check --write --no-errors-on-unmatched"]
   },
   "packageManager": "bun@1.1.18",
   "trustedDependencies": [
