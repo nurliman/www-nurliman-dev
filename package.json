@@ -12,7 +12,11 @@
     "format:prettier": "prettier --write --cache \"**/*.+(astro|css|scss|html|md|yml|yaml)\"",
     "format:biome": "biome format --write .",
     "format": "npm run format:prettier && npm run format:biome",
-    "prepare": "lefthook install"
+    "prepare:astro": "astro telemetry disable",
+    "prepare:lefthook": "lefthook install",
+    "prepare:nextjs": "next telemetry disable",
+    "prepare:turbo": "turbo telemetry disable",
+    "prepare": "npx -y concurrently \"npm:prepare:*\""
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
