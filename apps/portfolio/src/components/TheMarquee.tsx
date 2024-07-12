@@ -1,6 +1,5 @@
 import { Rerun } from "@solid-primitives/keyed";
 import { clsx } from "clsx";
-import lodashIsFinite from "lodash-es/isFinite";
 import {
   For,
   type JSX,
@@ -102,7 +101,7 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
 
         const localCloneAmount = Math.ceil(containerHeight() / contentHeight());
 
-        setCloneAmount(lodashIsFinite(localCloneAmount) ? localCloneAmount : 0);
+        setCloneAmount(Number.isFinite(localCloneAmount) ? localCloneAmount : 0);
 
         // resume the animation
         setVerticalAnimationPause(false);
@@ -120,7 +119,7 @@ export default function TheMarquee(originalProps: TheMarqueeProps) {
 
         const localCloneAmount = Math.ceil(containerWidth() / contentWidth());
 
-        setCloneAmount(lodashIsFinite(localCloneAmount) ? localCloneAmount : 0);
+        setCloneAmount(Number.isFinite(localCloneAmount) ? localCloneAmount : 0);
 
         return cloneAmount();
       }
