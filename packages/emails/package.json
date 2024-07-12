@@ -26,8 +26,8 @@
     "pupa": "^3.1.0"
   },
   "devDependencies": {
-    "@react-email/components": "^0.0.19",
-    "@react-email/render": "^0.0.15",
+    "@react-email/components": "^0.0.21",
+    "@react-email/render": "^0.0.16",
     "@tsconfig/vite-react": "^3.0.2",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",
@@ -37,7 +37,7 @@
     "cross-env": "^7.0.3",
     "dedent": "^1.5.3",
     "fs-extra": "^11.2.0",
-    "globby": "^14.0.1",
+    "globby": "^14.0.2",
     "lodash-es": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
