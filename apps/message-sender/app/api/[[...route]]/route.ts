@@ -1,8 +1,8 @@
+import { Hono } from "@hono/hono";
+import { cors } from "@hono/hono/cors";
+import { handle } from "@hono/hono/vercel";
 import { contactFormSchema } from "@nurliman.dev/schemas";
 import { flatten, safeParse } from "@valibot/valibot";
-import { Hono } from "hono";
-import { cors } from "hono/cors";
-import { handle } from "hono/vercel";
 import { sendMessage } from "./sendMessage.ts";
 import { verifyCaptcha } from "./verifyCaptcha.ts";
 
