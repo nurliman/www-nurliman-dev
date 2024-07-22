@@ -4,7 +4,7 @@ import { minifyHtml } from "@/utils/minifyHtml.ts";
 import type { NProgressOptions } from "nprogress";
 import styles from "./NProgress.module.css";
 
-type Props = NProgressOptions & {
+type Props = Partial<NProgressOptions> & {
   height?: number | string;
   color?: string;
   colorDark?: string;
