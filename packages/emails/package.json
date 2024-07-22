@@ -26,8 +26,8 @@
     "pupa": "^3.1.0"
   },
   "devDependencies": {
-    "@react-email/components": "^0.0.21",
-    "@react-email/render": "^0.0.16",
+    "@react-email/components": "^0.0.22",
+    "@react-email/render": "^0.0.17",
     "@tsconfig/vite-react": "^3.0.2",
     "@types/fs-extra": "^11.0.4",
     "@types/lodash-es": "^4.17.12",

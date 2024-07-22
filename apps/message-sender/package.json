@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@hono/hono": "npm:@jsr/hono__hono@^4.4.13",
+    "@hono/hono": "npm:@jsr/hono__hono@^4.5.1",
     "@nurliman.dev/emails": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman/env-valibot": "npm:@jsr/nurliman__env-valibot@^0.7.1",

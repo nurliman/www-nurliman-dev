@@ -23,21 +23,21 @@
     "@nurliman/file-exists-cli": "^1.0.1",
     "@types/bun": "latest",
     "@types/node": "^20",
-    "lefthook": "^1.7.2",
+    "lefthook": "^1.7.6",
     "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2",
-    "prettier-plugin-astro": "^0.14.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "tsup": "^8.1.0",
-    "turbo": "^2.0.6",
-    "typescript": "^5.5.3"
+    "tsup": "^8.2.2",
+    "turbo": "^2.0.9",
+    "typescript": "^5.5.4"
   },
   "lint-staged": {
     "**/*.+(js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc)": "biome check --write --no-errors-on-unmatched",
     "**/*.+(css|scss|html|md|yml|yaml)": "prettier --write --cache",
     "**/*.astro": ["prettier --write --cache", "biome check --write --no-errors-on-unmatched"]
   },
-  "packageManager": "bun@1.1.18",
+  "packageManager": "bun@1.1.20",
   "trustedDependencies": [
     "@biomejs/biome",
     "@nurliman.dev/emails",
