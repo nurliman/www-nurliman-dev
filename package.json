@@ -12,8 +12,9 @@
     "format:prettier": "prettier --write --cache \"**/*.+(astro|css|scss|html|md|yml|yaml)\"",
     "format:biome": "biome format --write .",
     "format": "npm run format:prettier && npm run format:biome",
+    "is-vercel": "npx -y check-env-cli VERCEL=1",
     "prepare:astro": "astro telemetry disable",
-    "prepare:lefthook": "lefthook install",
+    "prepare:lefthook": "npm run is-vercel || lefthook install",
     "prepare:nextjs": "next telemetry disable",
     "prepare:turbo": "turbo telemetry disable",
     "prepare": "npx -y concurrently \"npm:prepare:*\""
