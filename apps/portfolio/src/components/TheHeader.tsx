@@ -1,7 +1,7 @@
-import TheButton from "@/components/TheButton";
 import TheHamburgerButton from "@/components/TheHamburgerButton";
 import TheSidebar from "@/components/TheSidebar";
 import TheThemeSwithcerButton from "@/components/TheThemeSwithcerButton";
+import { Button } from "@/components/ui/button";
 import { sections } from "@/data/sections";
 import { isActivePath } from "@/utils/isActivePath";
 import { createMediaQuery } from "@solid-primitives/media";
@@ -49,9 +49,14 @@ export default function TheHeader(props: TheHeaderProps) {
       <header
         class={clsx(
           "fixed top-0 z-30 w-full overflow-hidden border-b-2",
-          "bg-white transition-colors dark:bg-black dark:text-white",
+          "bg-white/60 transition-colors dark:bg-[#1d1d1f]/40 dark:text-white",
           "p-0 md:px-6",
         )}
+        style={{
+          "backdrop-filter": "blur(20px) saturate(180%)",
+          "transition-timing-function": "cubic-bezier(.28,.11,.32,1)",
+          "transition-duration": ".5s",
+        }}
       >
         <div class="container mx-auto flex items-center justify-between">
           <TheHamburgerButton
@@ -73,21 +78,23 @@ export default function TheHeader(props: TheHeaderProps) {
           </a>
           <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
           <nav class="hidden md:contents">
-            <ul class="flex flex-1 flex-row px-3">
+            <ul class="flex flex-1 flex-row items-center px-3">
               <For each={sections}>
                 {(section) => (
                   <li class="contents">
-                    <TheButton
-                      component="a"
+                    <Button
+                      as="a"
                       href={section.link}
+                      size="sm"
+                      variant="ghost"
                       class={clsx(
-                        "rounded-full px-3 py-1.5 text-xs uppercase",
+                        "!rounded-full !px-3 !py-1.5 !text-xs h-fit font-normal uppercase",
                         isActivePath(section.link, currentPath()) && "menu-link-active",
                       )}
                       onClick={() => closeMenu()}
                     >
                       {section.name}
-                    </TheButton>
+                    </Button>
                   </li>
                 )}
               </For>
