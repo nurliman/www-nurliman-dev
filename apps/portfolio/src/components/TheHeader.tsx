@@ -52,6 +52,8 @@ export default function TheHeader(props: TheHeaderProps) {
           "bg-white/60 transition-colors dark:bg-[#1d1d1f]/40 dark:text-white",
         )}
         style={{
+          // prefixed properties for Safari
+          "-webkit-backdrop-filter": "blur(20px) saturate(180%)",
           "backdrop-filter": "blur(20px) saturate(180%)",
           "transition-timing-function": "cubic-bezier(.28,.11,.32,1)",
           "transition-duration": ".5s",
