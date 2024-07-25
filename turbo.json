@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", ".generated/**"]
+      "outputs": [".astro/**", ".generated/**", ".next/**", ".vercel/**", "dist/**"]
     },
     "lint": {
       "outputs": []

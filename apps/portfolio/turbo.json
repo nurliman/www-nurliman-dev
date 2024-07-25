@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "env": ["PUBLIC_MESSAGE_SENDER_SERVICE_HOST", "PUBLIC_CF_TURNSTILE_SITE_KEY"],
-      "outputs": [".vercel/**"]
+      "outputs": [".astro/**", ".vercel/**"]
     }
   }
 }
