@@ -6,7 +6,7 @@
       "path": "src/styles/main.css",
       "variable": true
     },
-    "color": "neutral",
+    "color": "zinc",
     "prefix": ""
   },
   "alias": {
