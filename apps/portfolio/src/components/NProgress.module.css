@@ -24,7 +24,7 @@
 
   & .spinnerIcon {
     @apply box-border h-[18px] w-[18px];
-    @apply animate-spin duration-[400ms];
+    @apply animate-spin duration-300;
 
     border: solid 2px transparent;
     border-top-color: var(--nprogress-color);
