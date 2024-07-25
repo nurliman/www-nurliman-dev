@@ -116,8 +116,11 @@ const educationsTimeline: TimelineItem[] = me.educations.map((edu) => ({
                     class="hidden h-10 w-10 dark:block"
                   />
                 </div>
-                <div class="flex flex-col space-y-2 p-5">
-                  <div class="font-transducer-extended text-sm font-semibold">{cert.name}</div>
+                <div class="flex flex-col space-y-2 p-5 w-full overflow-hidden">
+                  <div
+                    class="font-transducer-extended text-sm font-semibold"
+                    set:text={cert.name}
+                  />
                   {cert.credential ? (
                     <div class="text-xs font-medium text-zinc-700 dark:text-zinc-400">
                       {"Credential: "}
