@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { THEME_LOCAL_STORAGE_KEY } from "@/constants";
 import type { Theme } from "@/types";
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { clsx } from "clsx";
+import { type ComponentProps, createSignal, onCleanup, onMount, splitProps } from "solid-js";
 
-export default function TheThemeSwithcerButton() {
+export type TheThemeSwithcerButtonProps = ComponentProps<typeof Button> & {};
+
+export default function TheThemeSwithcerButton(props: TheThemeSwithcerButtonProps) {
+  const [localProps, restProps] = splitProps(props, ["children", "class", "classList"]);
+
   /** State for the current theme */
   const [currentThemeState, setThemeState] = createSignal<Theme | null>(null);
   /** Reference for the media query */
@@ -71,9 +76,14 @@ export default function TheThemeSwithcerButton() {
 
   return (
     <Button
+      {...restProps}
       size="icon"
       variant="ghost"
-      class="!size-10 dark:!border relative mr-2 rounded-lg"
+      class={clsx(
+        "!size-10 dark:!border relative rounded-lg",
+        localProps.class,
+        localProps.classList,
+      )}
       onClick={() => switchTheme()}
     >
       <img

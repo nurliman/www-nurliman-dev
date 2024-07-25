@@ -50,7 +50,6 @@ export default function TheHeader(props: TheHeaderProps) {
         class={clsx(
           "fixed top-0 z-30 w-full overflow-hidden border-b-2",
           "bg-white/60 transition-colors dark:bg-[#1d1d1f]/40 dark:text-white",
-          "p-0 md:px-6",
         )}
         style={{
           "backdrop-filter": "blur(20px) saturate(180%)",
@@ -58,14 +57,19 @@ export default function TheHeader(props: TheHeaderProps) {
           "transition-duration": ".5s",
         }}
       >
-        <div class="mx-auto flex items-center justify-between lg:container md:h-[52px]">
+        <div
+          class={clsx(
+            "flex items-center justify-between gap-x-4",
+            "mx-auto md:container md:h-[52px]",
+          )}
+        >
           <TheHamburgerButton
             class="md:hidden"
             isSidebarOpen={sidebarOpened}
             onClick={() => changeMenuOpened()}
           />
 
-          <div class="max-md:absolute-center flex-center md:px-4 md:py-2">
+          <div class="max-md:absolute-center flex-center md:py-2">
             <Button
               as="a"
               href="/"
@@ -78,8 +82,9 @@ export default function TheHeader(props: TheHeaderProps) {
           </div>
 
           <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
+
           <nav class="hidden md:contents">
-            <ul class="flex flex-1 flex-row items-center px-3">
+            <ul class="flex flex-1 flex-row items-center">
               <For each={sections}>
                 {(section) => (
                   <li class="contents">
@@ -101,7 +106,8 @@ export default function TheHeader(props: TheHeaderProps) {
               </For>
             </ul>
           </nav>
-          <TheThemeSwithcerButton />
+
+          <TheThemeSwithcerButton class="relative max-md:right-2" />
         </div>
       </header>
 
