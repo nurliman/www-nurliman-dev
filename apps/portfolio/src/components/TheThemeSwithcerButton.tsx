@@ -1,4 +1,4 @@
-import TheButton from "@/components/TheButton";
+import { Button } from "@/components/ui/button";
 import { THEME_LOCAL_STORAGE_KEY } from "@/constants";
 import type { Theme } from "@/types";
 import { createSignal, onCleanup, onMount } from "solid-js";
@@ -70,7 +70,12 @@ export default function TheThemeSwithcerButton() {
   });
 
   return (
-    <TheButton class="relative mr-2 h-10 w-10 rounded-lg dark:border" onClick={() => switchTheme()}>
+    <Button
+      size="icon"
+      variant="ghost"
+      class="!size-10 dark:!border relative mr-2 rounded-lg"
+      onClick={() => switchTheme()}
+    >
       <img
         src="/assets/moon.svg"
         alt="Moon"
@@ -87,6 +92,6 @@ export default function TheThemeSwithcerButton() {
         loading="lazy"
         class="absolute-center opacity-0 transition-opacity dark:opacity-100"
       />
-    </TheButton>
+    </Button>
   );
 }

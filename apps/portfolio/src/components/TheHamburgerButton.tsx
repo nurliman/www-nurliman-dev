@@ -1,11 +1,11 @@
-import TheButton from "@/components/TheButton";
+import { Button } from "@/components/ui/button";
 import { clsx } from "clsx";
 import type { Accessor, ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export type TheHamburgerButtonProps = {
   isSidebarOpen: Accessor<boolean>;
-} & ComponentProps<typeof TheButton<"button">>;
+} & ComponentProps<typeof Button>;
 
 export default function TheHamburgerButton(props: TheHamburgerButtonProps) {
   const [localProps, restProps] = splitProps(props, [
@@ -16,10 +16,13 @@ export default function TheHamburgerButton(props: TheHamburgerButtonProps) {
   ]);
 
   return (
-    <TheButton
+    <Button
       {...restProps}
+      variant="ghost"
+      size="sm"
       class={clsx(
-        "relative h-auto min-h-[3rem] w-12 flex-center border-r",
+        "!h-auto !min-h-[3rem] !w-12 relative flex-center",
+        "!rounded-none border-r",
         localProps.class,
         localProps.classList,
       )}
@@ -68,6 +71,6 @@ export default function TheHamburgerButton(props: TheHamburgerButtonProps) {
           localProps.isSidebarOpen() ? "opacity-100" : "opacity-0",
         )}
       />
-    </TheButton>
+    </Button>
   );
 }

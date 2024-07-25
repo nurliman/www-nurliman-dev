@@ -58,24 +58,25 @@ export default function TheHeader(props: TheHeaderProps) {
           "transition-duration": ".5s",
         }}
       >
-        <div class="mx-auto flex items-center justify-between lg:container">
+        <div class="mx-auto flex items-center justify-between lg:container md:h-[52px]">
           <TheHamburgerButton
             class="md:hidden"
             isSidebarOpen={sidebarOpened}
             onClick={() => changeMenuOpened()}
           />
-          <a href="/" class="contents" onClick={() => closeMenu()}>
-            <div
-              class={clsx(
-                "font-racing-sans text-[1.75rem]",
-                "max-md:absolute-center",
-                "md:text-3xl",
-                "md:px-4 md:py-2",
-              )}
+
+          <div class="max-md:absolute-center flex-center md:px-4 md:py-2">
+            <Button
+              as="a"
+              href="/"
+              variant="link"
+              class="!p-0 font-racing-sans text-[1.75rem] md:text-3xl"
+              onClick={() => closeMenu()}
             >
               nurliman.
-            </div>
-          </a>
+            </Button>
+          </div>
+
           <div class="hidden h-7 w-px bg-zinc-600 md:flex" />
           <nav class="hidden md:contents">
             <ul class="flex flex-1 flex-row items-center px-3">

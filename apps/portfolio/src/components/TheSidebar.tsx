@@ -1,4 +1,4 @@
-import TheButton from "@/components/TheButton";
+import { Button } from "@/components/ui/button";
 import { sections } from "@/data/sections";
 import { socials } from "@/data/socials";
 import { isActivePath } from "@/utils/isActivePath";
@@ -49,33 +49,37 @@ export default function TheSidebar(props: TheSidebarProps) {
             <For each={sections}>
               {(section) => (
                 <li class="contents">
-                  <TheButton
-                    component="a"
+                  <Button
+                    as="a"
                     href={section.link}
+                    variant="ghost"
                     class={clsx(
-                      "border-b px-8 py-3 hover:font-semibold",
+                      "!rounded-none !px-8 !py-5 !justify-start border-b",
+                      "font-normal text-xs",
                       isActivePath(section.link, props.currentPath()) && "menu-link-active",
                     )}
                     onClick={() => props.onChange?.(false)}
                   >
                     {section.name}
-                  </TheButton>
+                  </Button>
                 </li>
               )}
             </For>
           </ul>
         </nav>
         <div class="h-px w-px flex-1" />
-        <div class="flex border-t bg-white p-5 transition-colors dark:bg-black">
+        <div class="flex border-t bg-white px-8 py-5 transition-colors dark:bg-black">
           <ul class="flex flex-row space-x-3.5">
             <For each={socials}>
               {(social) => (
                 <li class="flex">
-                  <TheButton
-                    component="a"
+                  <Button
+                    as="a"
                     href={social.link}
                     target="_blank"
-                    class="rounded border p-1.5"
+                    size="icon"
+                    variant="outline"
+                    class="border-black/70 dark:border-border"
                   >
                     <img
                       src={social.iconUrl}
@@ -89,7 +93,7 @@ export default function TheSidebar(props: TheSidebarProps) {
                       loading="lazy"
                       class="hidden h-[18px] w-[18px] dark:block"
                     />
-                  </TheButton>
+                  </Button>
                 </li>
               )}
             </For>
