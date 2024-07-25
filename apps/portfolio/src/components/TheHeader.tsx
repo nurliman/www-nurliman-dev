@@ -58,7 +58,7 @@ export default function TheHeader(props: TheHeaderProps) {
           "transition-duration": ".5s",
         }}
       >
-        <div class="container mx-auto flex items-center justify-between">
+        <div class="mx-auto flex items-center justify-between lg:container">
           <TheHamburgerButton
             class="md:hidden"
             isSidebarOpen={sidebarOpened}
