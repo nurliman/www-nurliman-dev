@@ -21,7 +21,11 @@ export default function TheSidebar(props: TheSidebarProps) {
           "fixed inset-0 z-10 w-screen bg-black transition-opacity duration-300 md:hidden",
           props.isOpen() ? "pointer-events-auto opacity-50" : "pointer-events-none opacity-0",
         )}
-        style={{ transform: "translateZ(0)" }}
+        style={{
+          height: `calc(100% - ${props.headerHeight}px)`,
+          top: `${props.headerHeight}px`,
+          transform: "translateZ(0)",
+        }}
         onClick={() => props.onChange?.(false)}
         data-aria-hidden
         aria-hidden
