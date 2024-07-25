@@ -19,7 +19,7 @@ export default function TheHamburgerButton(props: TheHamburgerButtonProps) {
     <TheButton
       {...restProps}
       class={clsx(
-        "flex-center relative h-auto min-h-[3rem] w-12 border-r",
+        "relative h-auto min-h-[3rem] w-12 flex-center border-r",
         localProps.class,
         localProps.classList,
       )}

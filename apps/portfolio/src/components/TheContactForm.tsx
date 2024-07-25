@@ -186,7 +186,7 @@ export default function TheContactForm() {
                 onUnsupported={() => field().handleChange("")}
               />
               <Show when={!!field().state.meta.errors?.[0]}>
-                <div class="mt-1.5 text-xs text-red-500">{field().state.meta.errors[0]}</div>
+                <div class="mt-1.5 text-red-500 text-xs">{field().state.meta.errors[0]}</div>
               </Show>
             </div>
           )}

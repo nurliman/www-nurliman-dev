@@ -18,8 +18,8 @@ export default function TheComingSoonPage() {
   });
 
   return (
-    <div class="flex-center flex-1">
-      <span class="font-transducer-extended text-center text-3xl font-semibold md:text-4xl lg:text-5xl">
+    <div class="flex-1 flex-center">
+      <span class="text-center font-semibold font-transducer-extended text-3xl md:text-4xl lg:text-5xl">
         Coming soon{dots()}
       </span>
     </div>

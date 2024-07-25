@@ -10,7 +10,7 @@ export default function TheFooter() {
   });
 
   return (
-    <footer class="bg-zinc-900 px-4 pb-28 pt-10 text-zinc-400 sm:px-6 lg:px-8">
+    <footer class="bg-zinc-900 px-4 pt-10 pb-28 text-zinc-400 sm:px-6 lg:px-8">
       <div
         class={clsx([
           "flex flex-col-reverse items-center justify-between md:flex-row",

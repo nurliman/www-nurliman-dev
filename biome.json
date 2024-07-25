@@ -16,6 +16,9 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "nursery": {
+        "useSortedClasses": "warn"
+      },
       "style": {
         "noParameterAssign": "off",
         "useImportType": "error",

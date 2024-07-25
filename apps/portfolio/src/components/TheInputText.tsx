@@ -83,7 +83,7 @@ function TheInputText<T extends InputTag = "input">(props: TheInputTextProps<T>)
         </Dynamic>
       </div>
       <Show when={!!localProps.errorMessage}>
-        <div class="text-xs text-red-500">{localProps.errorMessage}</div>
+        <div class="text-red-500 text-xs">{localProps.errorMessage}</div>
       </Show>
     </label>
   );
