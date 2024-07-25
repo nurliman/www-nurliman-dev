@@ -50,7 +50,7 @@ export default function TheSidebar(props: TheSidebarProps) {
                     href={section.link}
                     class={clsx(
                       "border-b px-8 py-3 hover:font-semibold",
-                      isActivePath(section.link, props.currentPath()) && "link-active",
+                      isActivePath(section.link, props.currentPath()) && "menu-link-active",
                     )}
                     onClick={() => props.onChange?.(false)}
                   >

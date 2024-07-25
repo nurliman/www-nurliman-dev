@@ -27,7 +27,9 @@
   }
 }
 
-.link-active {
-  @apply underline underline-offset-2;
-  @apply font-medium;
+@layer utilities {
+  .menu-link-active {
+    @apply underline underline-offset-2;
+    @apply font-medium;
+  }
 }

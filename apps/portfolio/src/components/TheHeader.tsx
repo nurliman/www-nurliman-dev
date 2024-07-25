@@ -82,7 +82,7 @@ export default function TheHeader(props: TheHeaderProps) {
                       href={section.link}
                       class={clsx(
                         "rounded-full px-3 py-1.5 text-xs uppercase",
-                        isActivePath(section.link, currentPath()) && "link-active",
+                        isActivePath(section.link, currentPath()) && "menu-link-active",
                       )}
                       onClick={() => closeMenu()}
                     >
