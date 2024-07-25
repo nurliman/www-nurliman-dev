@@ -4,6 +4,7 @@
     "outDir": "dist",
     "types": ["astro/client", "bun"],
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "noEmit": true,
     "baseUrl": ".",
     "paths": {

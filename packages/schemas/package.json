@@ -17,8 +17,7 @@
     }
   },
   "scripts": {
-    "build": "tsup --config tsup.config.ts",
-    "dev": "tsup --config tsup.config.ts --watch",
+    "build": "bun run scripts/bundle.ts",
     "clean": "npx -y concurrently \"npm:clean:*\"",
     "clean:turbo": "npx -y del-cli .turbo",
     "clean:node_modules": "npx -y del-cli node_modules",
