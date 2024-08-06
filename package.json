@@ -12,9 +12,9 @@
     "format:prettier": "prettier --write --cache \"**/*.+(astro|css|scss|html|md|yml|yaml)\"",
     "format:biome": "biome format --write .",
     "format": "npm run format:prettier && npm run format:biome",
-    "is-vercel": "npx -y check-env-cli VERCEL=1",
+    "is-ci": "npx -y check-env-cli CI=1",
     "prepare:astro": "astro telemetry disable",
-    "prepare:lefthook": "npm run is-vercel || lefthook install",
+    "prepare:lefthook": "npm run is-ci || lefthook install",
     "prepare:nextjs": "next telemetry disable",
     "prepare:turbo": "turbo telemetry disable",
     "prepare": "npx -y concurrently \"npm:prepare:*\""
@@ -25,11 +25,11 @@
     "@types/bun": "latest",
     "@types/node": "^20",
     "bun-plugin-dts-auto": "^0.11.1",
-    "lefthook": "^1.7.7",
-    "lint-staged": "^15.2.7",
+    "lefthook": "^1.7.11",
+    "lint-staged": "^15.2.8",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
-    "turbo": "^2.0.9",
+    "turbo": "^2.0.11",
     "typescript": "^5.5.4"
   },
   "lint-staged": {
@@ -37,7 +37,7 @@
     "**/*.+(css|scss|html|md|yml|yaml)": "prettier --write --cache",
     "**/*.astro": ["prettier --write --cache", "biome check --write --no-errors-on-unmatched"]
   },
-  "packageManager": "bun@1.1.20",
+  "packageManager": "bun@1.1.21",
   "trustedDependencies": [
     "@biomejs/biome",
     "@nurliman.dev/emails",
