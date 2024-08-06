@@ -18,10 +18,10 @@
   },
   "scripts": {
     "build": "bun run scripts/bundle.ts",
-    "clean": "npx -y concurrently \"npm:clean:*\"",
-    "clean:turbo": "npx -y del-cli .turbo",
-    "clean:node_modules": "npx -y del-cli node_modules",
-    "clean:dist": "npx -y del-cli dist"
+    "clean": "bunx -y concurrently \"npm:clean:*\"",
+    "clean:turbo": "bunx -y del-cli .turbo",
+    "clean:node_modules": "bunx -y del-cli node_modules",
+    "clean:dist": "bunx -y del-cli dist"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",

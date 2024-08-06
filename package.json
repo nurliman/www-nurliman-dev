@@ -7,17 +7,17 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "biome check .",
-    "lint:fix": "npm run lint -- --write",
+    "lint:fix": "bun run lint -- --write",
     "lint-staged": "lint-staged",
     "format:prettier": "prettier --write --cache \"**/*.+(astro|css|scss|html|md|yml|yaml)\"",
     "format:biome": "biome format --write .",
-    "format": "npm run format:prettier && npm run format:biome",
-    "is-ci": "npx -y check-env-cli CI=1",
+    "format": "bun run format:prettier && bun run format:biome",
+    "is-ci": "bunx -y check-env-cli CI=1",
     "prepare:astro": "astro telemetry disable",
-    "prepare:lefthook": "npm run is-ci || lefthook install",
+    "prepare:lefthook": "bun run is-ci || lefthook install",
     "prepare:nextjs": "next telemetry disable",
     "prepare:turbo": "turbo telemetry disable",
-    "prepare": "npx -y concurrently \"npm:prepare:*\""
+    "prepare": "bunx -y concurrently \"npm:prepare:*\""
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",

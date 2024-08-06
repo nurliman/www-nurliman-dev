@@ -15,10 +15,10 @@
     }
   },
   "scripts": {
-    "build": "npm run build:transpile && npm run build:bundle",
+    "build": "bun run build:transpile && bun run build:bundle",
     "build:transpile": "bun run scripts/transpile.ts",
     "build:bundle": "bun run scripts/bundle.ts",
-    "prepare": "exists .generated/script.ts -s --onError \"npm run build:transpile\""
+    "prepare": "exists .generated/script.ts -s --onError \"bun run build:transpile\""
   },
   "dependencies": {
     "lodash.unescape": "^4.0.1",
