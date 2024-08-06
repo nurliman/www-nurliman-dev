@@ -45,3 +45,7 @@ yarn-error.log*
 
 # ts
 tsconfig.tsbuildinfo
+
+# cache
+.cache
+cache
