@@ -1,3 +1,4 @@
+/** @type {import('postcss-load-config').Config} */
 export default (ctx) => ({
   map: ctx.options.map,
   plugins: {
