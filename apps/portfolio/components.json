@@ -6,11 +6,11 @@
       "path": "src/styles/main.css",
       "variable": true
     },
-    "color": "zinc",
+    "color": "neutral",
     "prefix": ""
   },
   "alias": {
     "component": "@/components",
-    "cn": "@/utils/cn"
+    "cn": "@/utils/shadcn"
   }
 }
