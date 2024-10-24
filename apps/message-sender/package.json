@@ -4,18 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@hono/hono": "npm:@jsr/hono__hono@^4.5.4",
+    "@hono/hono": "npm:@jsr/hono__hono@^4.6.6",
     "@nurliman.dev/emails": "workspace:*",
     "@nurliman.dev/schemas": "workspace:*",
     "@nurliman/env-valibot": "npm:@jsr/nurliman__env-valibot@^0.7.1",
-    "@valibot/valibot": "npm:@jsr/valibot__valibot@^0.37.0",
-    "next": "14.2.5",
-    "ofetch": "^1.3.4",
+    "@valibot/valibot": "npm:@jsr/valibot__valibot@^0.42.1",
+    "next": "^14",
+    "ofetch": "^1.4.1",
     "react": "^18",
     "react-dom": "^18"
   },

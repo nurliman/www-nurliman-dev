@@ -1,0 +1,26 @@
+diff --git a/dist/cjs/parsers/record.js b/dist/cjs/parsers/record.js
+index 9f237a21e0f6dee38867857afad30fbe65b97246..c3a307c7b16d2a8fca17e2d38c2cf7756de3a1e1 100644
+--- a/dist/cjs/parsers/record.js
++++ b/dist/cjs/parsers/record.js
+@@ -4,7 +4,7 @@ exports.parseRecordDef = void 0;
+ const zod_1 = require("zod");
+ const parseDef_js_1 = require("../parseDef.js");
+ const string_js_1 = require("./string.js");
+-const branded_1 = require("./branded");
++const branded_1 = require("./branded.js");
+ function parseRecordDef(def, refs) {
+     if (refs.target === "openApi3" &&
+         def.keyType?._def.typeName === zod_1.ZodFirstPartyTypeKind.ZodEnum) {
+diff --git a/dist/esm/parsers/record.js b/dist/esm/parsers/record.js
+index 57722a9c05e4f2d2caddfb3c4b4a74e989471c3c..ef3bb0ca65eaf073b230a3afbf38dba9d105c60f 100644
+--- a/dist/esm/parsers/record.js
++++ b/dist/esm/parsers/record.js
+@@ -1,7 +1,7 @@
+ import { ZodFirstPartyTypeKind, } from "zod";
+ import { parseDef } from "../parseDef.js";
+ import { parseStringDef } from "./string.js";
+-import { parseBrandedDef } from "./branded";
++import { parseBrandedDef } from "./branded.js";
+ export function parseRecordDef(def, refs) {
+     if (refs.target === "openApi3" &&
+         def.keyType?._def.typeName === ZodFirstPartyTypeKind.ZodEnum) {

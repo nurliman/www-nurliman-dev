@@ -78,7 +78,7 @@ export default function Turnstile(props: TurnstileProps) {
       callback(token) {
         localProps.onVerify?.(token);
       },
-      "expired-callback": () => localProps.onExpire?.(),
+      "expired-callback": (token) => localProps.onExpire?.(token),
       "error-callback": (errorCode) => localProps.onError?.(errorCode),
       "timeout-callback": () => localProps.onTimeout?.(),
       "unsupported-callback": () => localProps.onUnsupported?.(),

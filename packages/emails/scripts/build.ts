@@ -23,7 +23,7 @@ async function main() {
   const renderPromises = paths.map(async (filepath) => {
     const filename = path.basename(filepath, ".tsx");
     const template = await import(filepath).then((module) => module.default);
-    const html = render(template());
+    const html = await render(template());
 
     console.log(`Rendering ${filename}...`);
 
