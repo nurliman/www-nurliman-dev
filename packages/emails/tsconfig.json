@@ -2,6 +2,7 @@
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
+    "isolatedModules": true,
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
