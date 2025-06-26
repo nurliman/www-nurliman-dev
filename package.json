@@ -39,9 +39,6 @@
     "lefthook",
     "sharp"
   ],
-  "patchedDependencies": {
-    "zod-to-json-schema@3.23.4": "patches/zod-to-json-schema@3.23.4.patch"
-  },
   "lint-staged": {
     "**/*.+(js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc)": "prettier --write --cache",
     "**/*.+(astro|css|pcss|postcss|scss|html|md|svelte|yml|yaml)": "prettier --write --cache"
