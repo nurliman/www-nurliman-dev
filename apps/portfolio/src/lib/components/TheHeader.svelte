@@ -82,7 +82,12 @@
     data-sidebar="sidebar"
     data-slot="sidebar"
     data-mobile="true"
-    class="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
+    class={cn(
+      "bg-sidebar text-sidebar-foreground",
+      "border-r border-black dark:border-zinc-800",
+      "w-(--sidebar-width) p-0",
+      "[&>button]:hidden",
+    )}
     style="--sidebar-width: {SIDEBAR_WIDTH_MOBILE};"
     side="left"
   >

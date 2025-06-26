@@ -14,8 +14,9 @@
   variant="ghost"
   size="sm"
   class={cn(
-    "flex-center relative !h-auto !min-h-[3rem] !w-12",
-    "!rounded-none border-r",
+    "flex-center relative",
+    "!h-auto !min-h-[3rem] !w-12",
+    "!rounded-none border-r border-black dark:border-zinc-800",
     "cursor-pointer",
     className,
   )}
