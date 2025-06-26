@@ -1,2 +1,4 @@
+telemetry = false
+
 [install.scopes]
 "@jsr" = "https://npm.jsr.io"
