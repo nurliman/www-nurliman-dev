@@ -8,6 +8,7 @@
   import TheHeader from "$lib/components/TheHeader.svelte";
   import { Toaster } from "$lib/components/ui/sonner";
   import { ModeWatcher } from "mode-watcher";
+  import { ProgressBar } from "sveltekit-progress-bar";
 
   const title = "Nurliman Diara Aria | Software Engineer";
   const description = "Crafting Digital Experiences with Excellence";
@@ -49,6 +50,7 @@
 </svelte:head>
 
 <ModeWatcher />
+<ProgressBar color="#f540cc" settleTime={150} zIndex={9999} />
 <Toaster closeButton />
 <TheHeader />
 
@@ -59,3 +61,9 @@
 {#if page.url.pathname !== "/"}
   <TheFooter></TheFooter>
 {/if}
+
+<style>
+  :global(.svelte-progress-bar) {
+    height: 2px !important;
+  }
+</style>

@@ -46,6 +46,7 @@
     "globals": "^16.2.0",
     "svelte": "^5.34.8",
     "svelte-check": "^4.2.2",
+    "sveltekit-progress-bar": "npm:@prgm/sveltekit-progress-bar@^3.0.2",
     "sveltekit-superforms": "^2.27.0",
     "tailwindcss": "^4.1.11",
     "tw-animate-css": "^1.3.4",
