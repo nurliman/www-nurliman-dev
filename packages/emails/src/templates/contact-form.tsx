@@ -38,7 +38,7 @@ export default function ContactFormEmail() {
           <Container className="mx-auto my-0 max-w-2xl">
             {/* @ts-ignore: For some reason, Headings are not recognized as valid JSX elements */}
             <Heading
-              className="mx-0 my-[30px] p-0 font-bold text-4xl text-[#1d1c1d] leading-10"
+              className="mx-0 my-[30px] p-0 text-4xl leading-10 font-bold text-[#1d1c1d]"
               // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
               dangerouslySetInnerHTML={{ __html: TITLE }}
             />
@@ -48,7 +48,7 @@ export default function ContactFormEmail() {
               dangerouslySetInnerHTML={{ __html: HEADING }}
             />
             <Text
-              className="text-black text-sm leading-6"
+              className="text-sm leading-6 text-black"
               // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
               dangerouslySetInnerHTML={{ __html: MESSAGE }}
             />

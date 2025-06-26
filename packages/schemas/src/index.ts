@@ -1,10 +1,10 @@
 import {
-  type InferInput,
   email as vEmail,
   minLength as vMinLength,
   object as vObject,
   pipe as vPipe,
   string as vString,
+  type InferInput,
 } from "@valibot/valibot";
 
 export const contactFormSchema = vObject({

@@ -24,9 +24,7 @@ async function main() {
       .then((text) => text?.trim?.() ?? ""),
 
     // ensure output directory exists and clear it
-    fse
-      .ensureDir(path.dirname(OUTPUT_PATH))
-      .then(() => fse.emptyDir(path.dirname(OUTPUT_PATH))),
+    fse.ensureDir(path.dirname(OUTPUT_PATH)).then(() => fse.emptyDir(path.dirname(OUTPUT_PATH))),
   ]);
 
   const ts = dedent`
