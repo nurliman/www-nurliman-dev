@@ -42,6 +42,7 @@
     "@biomejs/biome",
     "@nurliman.dev/emails",
     "@nurliman.dev/theme-script",
+    "@tailwindcss/oxide",
     "esbuild",
     "lefthook",
     "sharp"

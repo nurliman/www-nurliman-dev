@@ -1,0 +1,84 @@
+@reference "@app.css";
+
+.timeline {
+  @apply relative;
+  @apply flex flex-col;
+  @apply pb-8 pl-8;
+
+  &:last-child {
+    & .line {
+      height: calc(100% - 3rem);
+
+      &::after {
+        content: "";
+        background-color: var(--line-color);
+        @apply absolute bottom-0 -left-0.5;
+        @apply block h-[5px] w-[5px];
+        @apply rounded-full;
+      }
+    }
+  }
+}
+
+.line {
+  @apply h-full w-px;
+  @apply absolute top-3.5 left-2;
+  background-color: var(--line-color);
+
+  --line-color: var(--color-zinc-400);
+
+  :where(html:global(.dark)) & {
+    --line-color: var(--color-zinc-700);
+  }
+}
+
+.bullet {
+  @apply relative top-0 left-0;
+
+  --bullet-color: var(--color-white);
+  --shadow-color: --alpha(var(--color-teal-500) / 50%);
+  --shadow-pulse-color: --alpha(var(--color-teal-500) / 30%);
+
+  :where(html:global(.dark)) & {
+    --bullet-color: var(--color-black);
+    --shadow-color: --alpha(var(--color-teal-500) / 40%);
+    --shadow-pulse-color: --alpha(var(--color-teal-500) / 25%);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    @apply block;
+    @apply rounded-full;
+    @apply absolute-center;
+  }
+
+  &::before {
+    @apply h-2.5 w-2.5;
+    background-color: var(--color-teal-500);
+    box-shadow: 0 0 0 4px var(--shadow-color);
+    animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  &::after {
+    @apply h-[5px] w-[5px];
+    background-color: var(--bullet-color);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 4px var(--shadow-pulse-color);
+  }
+}
+
+.description {
+  & ul {
+    @apply list-disc pl-4;
+    @apply space-y-1.5;
+  }
+
+  & > strong {
+    @apply leading-8;
+  }
+}

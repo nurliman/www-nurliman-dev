@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".astro/**", ".generated/**", ".next/**", ".vercel/**", "dist/**"]
+      "outputs": [".generated/**", ".next/**", ".svelte-kit/**", ".vercel/**", "dist/**"]
     },
     "lint": {
       "outputs": []
