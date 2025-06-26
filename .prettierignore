@@ -1,23 +1,22 @@
-public/
+**/public
+**/static
 
-.DS_Store
-node_modules
-build/
-dist/
-.astro/
-.svelte-kit/
-.nuxt/
-.vercel/
-package/
+**/.DS_Store
+**/node_modules
+**/build
+**/dist
+**/.astro
+**/.svelte-kit
+**/.nuxt
+**/.vercel
 .env
 .env.*
 !.env.example
 
 # Ignore files for PNPM, NPM and YARN
-pnpm-lock.yaml
-package-lock.json
-yarn.lock
-
+**/pnpm-lock.yaml
+**/package-lock.json
+**/yarn.lock
 
 # minified files
-*.min.*
+**/*.min.*
