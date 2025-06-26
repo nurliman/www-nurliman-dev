@@ -9,7 +9,7 @@
     <Badge
       class={cn(
         "mb-5 inline-flex rounded-full md:mb-6",
-        "px-2 py-0.5 sm:px-2.5 sm:py-1 md:px-3 md:py-1 lg:px-3.5 lg:py-1.5",
+        "px-2 py-0.5 sm:px-2.5 sm:py-1 md:px-3 md:py-1 lg:px-4 lg:py-1",
         "text-xs sm:text-xs md:text-sm lg:text-base",
       )}
     >
