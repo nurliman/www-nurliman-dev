@@ -3,6 +3,8 @@
   import "$lib/styles/fonts/transducer/extended.css";
   import "@fontsource/racing-sans-one/latin.css";
   import "../app.css";
+  import { inject } from "@vercel/analytics";
+  import { dev } from "$app/environment";
   import { page } from "$app/state";
   import TheFooter from "$lib/components/TheFooter.svelte";
   import TheHeader from "$lib/components/TheHeader.svelte";
@@ -15,6 +17,8 @@
   const canonicalURL = new URL(page.url.pathname, page.url.origin);
 
   let { children } = $props();
+
+  inject({ mode: dev ? "development" : "production" });
 </script>
 
 <svelte:head>
