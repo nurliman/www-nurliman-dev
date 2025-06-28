@@ -1,24 +1,10 @@
-<script lang="ts" module>
-  import { email, minLength, object, pipe, string } from "valibot";
-
-  const formSchema = object({
-    name: pipe(string(), minLength(1, "Please enter your name")),
-    email: pipe(string(), email("Please enter a valid email")),
-    subject: pipe(string(), minLength(1, "Please enter a subject")),
-    message: pipe(string(), minLength(1, "Please enter a message")),
-    captchaToken: pipe(
-      string(),
-      minLength(1, "Please check the captcha box.\nTry refreshing the page if it doesn't appear."),
-    ),
-  });
-</script>
-
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
   import { Textarea } from "$lib/components/ui/textarea";
   import { env } from "$lib/env";
+  import { contactFormSchema } from "$lib/schemas";
   import { mode } from "mode-watcher";
   import { FetchError, ofetch } from "ofetch";
   import { toast } from "svelte-sonner";
@@ -32,9 +18,9 @@
   let resetTurnstile = $state<() => void>();
   let submitLoading = $state(false);
 
-  const form = superForm(defaults(valibot(formSchema)), {
+  const form = superForm(defaults(valibot(contactFormSchema)), {
     SPA: true,
-    validators: valibot(formSchema),
+    validators: valibot(contactFormSchema),
     onUpdate({ form }) {
       resetTurnstile?.();
 
@@ -47,8 +33,7 @@
       toast.promise(
         async () => {
           submitLoading = true;
-          return ofetch("/api/messages", {
-            baseURL: env.PUBLIC_MESSAGE_SENDER_SERVICE_HOST,
+          return ofetch("/api/send-message", {
             method: "post",
             body: form.data,
             timeout: 10000,
