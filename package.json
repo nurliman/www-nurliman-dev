@@ -13,12 +13,13 @@
     "lint-staged": "lint-staged",
     "format": "prettier --write --cache .",
     "prepare:turbo": "turbo telemetry disable",
-    "prepare": "bunx -y concurrently \"npm:prepare:*\""
+    "prepare": "concurrently \"npm:prepare:*\""
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^22",
     "bun-plugin-dts-auto": "0.11.1",
+    "concurrently": "^9.2.0",
     "lefthook": "^1.11.14",
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.2",
