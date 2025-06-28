@@ -165,6 +165,8 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
+
+  @apply 2xl:max-w-350;
 }
 
 @utility absolute-center {
