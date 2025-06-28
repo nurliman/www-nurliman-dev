@@ -3,7 +3,7 @@
   import "$lib/styles/fonts/transducer/extended.css";
   import "@fontsource/racing-sans-one/latin.css";
   import "../app.css";
-  import { inject } from "@vercel/analytics";
+  import { injectAnalytics } from "@vercel/analytics/sveltekit";
   import { dev } from "$app/environment";
   import { page } from "$app/state";
   import TheFooter from "$lib/components/TheFooter.svelte";
@@ -18,7 +18,9 @@
 
   let { children } = $props();
 
-  inject({ mode: dev ? "development" : "production" });
+  injectAnalytics({
+    mode: dev ? "development" : "production",
+  });
 </script>
 
 <svelte:head>
