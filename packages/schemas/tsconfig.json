@@ -1,9 +1,0 @@
-{
-  "extends": "@tsconfig/node20/tsconfig.json",
-  "compilerOptions": {
-    "module": "ES2020",
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true
-  },
-  "include": ["src"]
-}

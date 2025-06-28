@@ -2,7 +2,7 @@
   "name": "www-nurliman-dev",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "bun@1.2.27",
+  "packageManager": "bun@1.2.17",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -12,7 +12,6 @@
     "dev": "turbo run dev --parallel",
     "lint-staged": "lint-staged",
     "format": "prettier --write --cache .",
-    "prepare:nextjs": "next telemetry disable",
     "prepare:turbo": "turbo telemetry disable",
     "prepare": "bunx -y concurrently \"npm:prepare:*\""
   },
@@ -29,17 +28,10 @@
     "turbo": "^2.2.3",
     "typescript": "^5.6.3"
   },
-  "overrides": {
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "react": "^18",
-    "react-dom": "^18"
-  },
   "trustedDependencies": [
     "@tailwindcss/oxide",
     "esbuild",
-    "lefthook",
-    "sharp"
+    "lefthook"
   ],
   "lint-staged": {
     "**/*.+(js|ts|cjs|mjs|d.cts|d.mts|jsx|tsx|json|jsonc)": "prettier --write --cache",
