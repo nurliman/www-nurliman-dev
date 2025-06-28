@@ -1,48 +1,44 @@
 {
   "name": "@nurliman.dev/emails",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.ts",
+  "module": "dist/index.ts",
   "files": [
     "dist"
   ],
   "exports": {
-    "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "default": "./dist/index.ts"
     }
   },
   "scripts": {
-    "dev": "email dev --skip-install --dir src/templates",
-    "build": "bun run build:templates && bun run build:scripts",
-    "build:scripts": "cross-env NODE_ENV=production bun run scripts/bundle.ts",
-    "build:templates": "cross-env NODE_ENV=production bun run scripts/build.ts",
-    "prepare": "exists .generated/index.ts -s --onError \"bun run build:templates\""
+    "dev": "email dev -d src/templates",
+    "export": "email export -d src/templates --pretty",
+    "build": "bun src/builder/cli.ts build"
   },
   "dependencies": {
     "lodash.unescape": "^4.0.1",
     "pupa": "^3.1.0"
   },
   "devDependencies": {
-    "@react-email/components": "^0.0.25",
-    "@react-email/render": "^1.0.1",
-    "@tsconfig/vite-react": "^3.0.2",
-    "@types/fs-extra": "^11.0.4",
+    "@react-email/components": "^0.1.1",
+    "@sveltejs/acorn-typescript": "^1.0.5",
+    "@tsconfig/bun": "^1.0.8",
     "@types/lodash-es": "^4.17.12",
     "@types/lodash.unescape": "^4.0.9",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "cross-env": "^7.0.3",
-    "dedent": "^1.5.3",
-    "fs-extra": "^11.2.0",
-    "globby": "^14.0.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/yargs": "^17.0.33",
+    "acorn": "^8.15.0",
+    "change-case": "^5.4.4",
+    "globby": "^14.1.0",
     "lodash-es": "^4.17.21",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-email": "^3.0.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-email": "^4.0.17",
+    "yargs": "^18.0.0"
   }
 }

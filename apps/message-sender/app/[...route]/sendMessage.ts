@@ -1,5 +1,5 @@
 import { env } from "@/env.mjs";
-import { renderContactFormHtml } from "@nurliman.dev/emails";
+import { renderContactForm } from "@nurliman.dev/emails";
 import type { EmailSend, EmailTransactionalMessageData } from "elasticemail";
 import { ofetch } from "ofetch";
 
@@ -30,7 +30,7 @@ export const sendMessage = async ({ sender, subject, message }: SendEmailArgs) =
           {
             ContentType: "HTML",
             Charset: "utf-8",
-            Content: renderContactFormHtml({
+            Content: renderContactForm({
               senderEmail: sender.email,
               senderName: sender.name,
               title: subject,

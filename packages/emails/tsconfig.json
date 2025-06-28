@@ -1,13 +1,13 @@
 {
-  "extends": "@tsconfig/vite-react/tsconfig.json",
+  "extends": "@tsconfig/bun/tsconfig.json",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "outDir": "dist",
+    "composite": false,
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@generated/*": [".generated/*"]
+      "@package.json": ["./package.json"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".react-email"]
 }

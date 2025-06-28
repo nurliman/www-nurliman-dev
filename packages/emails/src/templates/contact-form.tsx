@@ -3,17 +3,13 @@ import {
   Container,
   Head,
   Heading,
+  Hr,
   Html,
   Preview,
+  Section,
   Tailwind,
   Text,
 } from "@react-email/components";
-import lodashEscape from "lodash-es/escape";
-
-const PREVIEW = lodashEscape("Email from {{senderName}}");
-const TITLE = lodashEscape("{{title}}");
-const HEADING = lodashEscape("Email from {{senderName}} <{{senderEmail}}>");
-const MESSAGE = "{{message}}";
 
 export type ContactFormEmailProps = {
   senderName: string;
@@ -22,39 +18,76 @@ export type ContactFormEmailProps = {
   message: string;
 };
 
-export default function ContactFormEmail() {
+const ContactFormEmail = ({
+  senderName = "{{senderName}}",
+  senderEmail = "{{senderEmail}}",
+  title = "{{title}}",
+  message = "{{message}}",
+}: ContactFormEmailProps) => {
+  const previewText = `Email from ${senderName}`;
+
   return (
     <Tailwind>
       <Html>
         <Head />
-        <Preview>{PREVIEW}</Preview>
-        <Body
-          className="mx-auto my-0 bg-white"
-          style={{
-            fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-          }}
-        >
-          <Container className="mx-auto my-0 max-w-2xl">
-            {/* @ts-ignore: For some reason, Headings are not recognized as valid JSX elements */}
-            <Heading
-              className="mx-0 my-[30px] p-0 text-4xl leading-10 font-bold text-[#1d1c1d]"
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
-              dangerouslySetInnerHTML={{ __html: TITLE }}
-            />
-            <Text
-              className="mb-[30px] text-xl leading-7"
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
-              dangerouslySetInnerHTML={{ __html: HEADING }}
-            />
-            <Text
-              className="text-sm leading-6 text-black"
-              // biome-ignore lint/security/noDangerouslySetInnerHtml: html is already escaped by `pupa`
-              dangerouslySetInnerHTML={{ __html: MESSAGE }}
-            />
+        <Preview>{previewText}</Preview>
+        <Body className="mx-auto my-auto bg-[#f6f9fc] font-sans">
+          <Container className="mx-auto my-[40px] max-w-[600px] rounded-lg border border-[#e6ebf1] bg-white shadow-lg">
+            <Section className="p-[48px]">
+              {/* Header Section */}
+              <Text className="mb-4 text-center text-[11px] font-bold tracking-wide text-[#0a85ea] uppercase">
+                Contact Form Message
+              </Text>
+
+              {/* Title */}
+              <Heading className="mt-0 mb-6 text-center text-[28px] leading-[32px] font-bold text-[#333]">
+                {title}
+              </Heading>
+
+              <Hr className="my-6 border-[#e6ebf1]" />
+
+              {/* Sender Information */}
+              <Section className="mb-6 rounded-lg bg-[#f8f9fa] p-6">
+                <Text className="mb-2 text-[14px] font-semibold tracking-wide text-[#525f7f] uppercase">
+                  From
+                </Text>
+                <Text className="m-0 text-[16px] leading-[24px] font-medium text-[#333]">
+                  {senderName} &lt;{senderEmail}&gt;
+                </Text>
+              </Section>
+
+              {/* Message Content */}
+              <Section>
+                <Text className="mb-4 text-[14px] font-semibold tracking-wide text-[#525f7f] uppercase">
+                  Message
+                </Text>
+                <Section className="rounded-lg border border-[#e6ebf1] bg-[#ffffff] p-6">
+                  <Text className="m-0 text-[16px] leading-[24px] text-[#333]">{message}</Text>
+                </Section>
+              </Section>
+
+              <Hr className="my-8 border-[#e6ebf1]" />
+
+              {/* Footer */}
+              <Text className="text-center text-[12px] leading-[16px] text-[#8898aa]">
+                This message was sent from your website's contact form.
+                <br />
+                Please reply directly to the sender's email address.
+              </Text>
+            </Section>
           </Container>
         </Body>
       </Html>
     </Tailwind>
   );
-}
+};
+
+ContactFormEmail.PreviewProps = {
+  senderName: "John Doe",
+  senderEmail: "john.doe@example.com",
+  title: "Project Inquiry",
+  message:
+    "Hi there!\n\nI'm interested in discussing a potential web development project with you. I have a startup idea that needs a modern, responsive website with e-commerce functionality.\n\nCould we schedule a call to discuss the details and timeline?\n\nBest regards,\nJohn",
+} satisfies ContactFormEmailProps;
+
+export default ContactFormEmail;

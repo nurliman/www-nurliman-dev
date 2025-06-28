@@ -19,7 +19,6 @@
     "prepare": "bunx -y concurrently \"npm:prepare:*\""
   },
   "devDependencies": {
-    "@nurliman/file-exists-cli": "^1.0.1",
     "@types/bun": "latest",
     "@types/node": "^20",
     "bun-plugin-dts-auto": "0.11.1",
@@ -32,8 +31,13 @@
     "turbo": "^2.2.3",
     "typescript": "^5.6.3"
   },
+  "overrides": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "react": "^18",
+    "react-dom": "^18"
+  },
   "trustedDependencies": [
-    "@nurliman.dev/emails",
     "@tailwindcss/oxide",
     "esbuild",
     "lefthook",

@@ -11,6 +11,8 @@ const nextConfig = {
     // (in this case, Biome).
     ignoreDuringBuilds: true,
   },
+  // Enables hot reloading for local packages without a build step
+  transpilePackages: ["@nurliman.dev/emails"],
 };
 
 export default nextConfig;
