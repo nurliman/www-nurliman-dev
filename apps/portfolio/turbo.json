@@ -3,7 +3,14 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "env": ["PUBLIC_MESSAGE_SENDER_SERVICE_HOST", "PUBLIC_CF_TURNSTILE_SITE_KEY"],
+      "env": [
+        "CF_TURNSTILE_SECRET_KEY",
+        "ELASTIC_EMAIL_API_KEY",
+        "PUBLIC_CF_TURNSTILE_SITE_KEY",
+        "PUBLIC_MESSAGE_SENDER_SERVICE_HOST",
+        "RECIPIENT_EMAIL",
+        "SENDER_EMAIL"
+      ],
       "outputs": [".svelte-kit/**", ".vercel/**"]
     }
   }
