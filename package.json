@@ -12,8 +12,6 @@
     "dev": "turbo run dev --parallel",
     "lint-staged": "lint-staged",
     "format": "prettier --write --cache .",
-    "is-ci": "bunx -y check-env-cli CI=1",
-    "prepare:lefthook": "bun run is-ci || lefthook install",
     "prepare:nextjs": "next telemetry disable",
     "prepare:turbo": "turbo telemetry disable",
     "prepare": "bunx -y concurrently \"npm:prepare:*\""
