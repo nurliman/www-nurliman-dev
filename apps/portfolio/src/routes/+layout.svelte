@@ -20,6 +20,8 @@
 
   injectAnalytics({
     mode: dev ? "development" : "production",
+    endpoint: dev ? undefined : "/api/v-event",
+    scriptSrc: dev ? undefined : "/api/v-event/script.js",
   });
 </script>
 
