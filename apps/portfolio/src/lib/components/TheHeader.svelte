@@ -28,6 +28,10 @@
     "dark:border-zinc-800 dark:bg-[#1d1d1f]/40 dark:text-white",
   ]}
   style:backdrop-filter="blur(20px) saturate(180%)"
+  style:-webkit-backdrop-filter="blur(20px) saturate(180%)"
+  style:-moz-backdrop-filter="blur(20px) saturate(180%)"
+  style:-o-backdrop-filter="blur(20px) saturate(180%)"
+  style:-ms-backdrop-filter="blur(20px) saturate(180%)"
   style:transition-timing-function="cubic-bezier(.28,.11,.32,1)"
   style:transition-duration=".5s"
 >
