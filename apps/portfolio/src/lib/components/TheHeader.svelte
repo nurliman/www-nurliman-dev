@@ -6,9 +6,12 @@
   import { Button } from "$lib/components/ui/button";
   import { HEADER_HEIGHT } from "$lib/constants";
   import { sections } from "$lib/data/sections";
+  import { IsMobile } from "$lib/hooks/is-mobile.svelte";
   import { isActivePath } from "$lib/utils/isActivePath";
 
   let sidebarOpened = $state(false);
+
+  const isMobile = new IsMobile();
 
   const changeSidebarOpened = (newState?: boolean) => {
     newState = newState ?? !sidebarOpened;
@@ -18,6 +21,12 @@
   const closeSidebar = () => {
     changeSidebarOpened(false);
   };
+
+  $effect(() => {
+    if (!isMobile.current && sidebarOpened) {
+      closeSidebar();
+    }
+  });
 </script>
 
 <header
@@ -82,9 +91,11 @@
   </div>
 </header>
 
-<!-- '+ 2' includes the header's 2px bottom border for correct alignment -->
-<TheSidebar
-  headerHeight={HEADER_HEIGHT + 2}
-  isOpen={sidebarOpened}
-  onChange={changeSidebarOpened}
-/>
+{#if isMobile.current}
+  <!-- '+ 2' includes the header's 2px bottom border for correct alignment -->
+  <TheSidebar
+    headerHeight={HEADER_HEIGHT + 2}
+    isOpen={sidebarOpened}
+    onChange={changeSidebarOpened}
+  />
+{/if}
