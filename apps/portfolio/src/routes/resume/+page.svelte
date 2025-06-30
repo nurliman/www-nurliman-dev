@@ -2,6 +2,7 @@
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import { me } from "$lib/data/me";
   import { cn } from "$lib/utils/shadcn";
+  import Certificates from "./Certificates.svelte";
   import Skills from "./Skills.svelte";
   import Timeline from "./Timeline.svelte";
   import type { TimelineItem } from "./types";
@@ -101,56 +102,7 @@
     <h2 class="font-transducer-extended text-xl font-bold">Certifications:</h2>
     <div class="mb-5"></div>
     <div>
-      <ul class="flex flex-col space-y-4">
-        {#each me.certificates as cert (cert.name + cert.date + cert.credential?.id)}
-          <li class="flex min-h-28 flex-row overflow-hidden rounded-md border-2">
-            <div
-              class={cn(
-                "flex-center min-w-28",
-                "border-r-2 bg-zinc-100",
-                "dark:border-zinc-800 dark:bg-zinc-800",
-              )}
-            >
-              <img
-                src={cert.organization.logoUrl}
-                alt={cert.organization.name + " logo"}
-                loading="lazy"
-                class="h-10 w-10 dark:hidden"
-              />
-              <img
-                src={cert.organization.logoDarkUrl}
-                alt={cert.organization.name + " logo"}
-                loading="lazy"
-                class="hidden h-10 w-10 dark:block"
-              />
-            </div>
-            <div class="flex w-full flex-col space-y-2 overflow-hidden p-5">
-              <div class="font-transducer-extended text-sm font-semibold">
-                {cert.name}
-              </div>
-              {#if cert.credential}
-                <div class="text-xs font-medium text-zinc-700 dark:text-zinc-400">
-                  {"Credential: "}
-                  <a
-                    href={cert.credential.url}
-                    target="_blank"
-                    class={cn(
-                      "underline underline-offset-2",
-                      "transition-colors",
-                      "hover:text-black dark:hover:text-zinc-100",
-                    )}
-                  >
-                    {cert.credential.id}
-                  </a>
-                </div>
-              {/if}
-              {#if cert.date}
-                <div class="text-xs text-zinc-700 dark:text-zinc-400">{cert.date}</div>
-              {/if}
-            </div>
-          </li>
-        {/each}
-      </ul>
+      <Certificates data={me.certificates} />
     </div>
     <div class="mb-14 md:mb-20"></div>
   </div>
