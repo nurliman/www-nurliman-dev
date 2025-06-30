@@ -1,9 +1,8 @@
 <script lang="ts">
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
+  import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
   import { Button } from "$lib/components/ui/button";
   import * as Form from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import { Textarea } from "$lib/components/ui/textarea";
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
   import { mode } from "mode-watcher";
@@ -88,48 +87,70 @@
 
     <form method="POST" class="z-[2] flex flex-col space-y-4" use:enhance>
       <Form.Field {form} name="name">
-        <Form.Control>
-          {#snippet children({ props })}
-            <Form.Label>Full Name</Form.Label>
-            <Input {...props} placeholder="e.g. John Doe" bind:value={$formData.name} />
-          {/snippet}
-        </Form.Control>
-        <Form.FieldErrors />
+        {#snippet children({ errors })}
+          <Form.Control>
+            {#snippet children({ props })}
+              <NeobrutalismInput
+                {...props}
+                label="Full Name"
+                placeholder="e.g. John Doe"
+                errorMessage={errors}
+                bind:value={$formData.name}
+              />
+            {/snippet}
+          </Form.Control>
+        {/snippet}
       </Form.Field>
 
       <Form.Field {form} name="email">
-        <Form.Control>
-          {#snippet children({ props })}
-            <Form.Label>Email Address</Form.Label>
-            <Input
-              {...props}
-              placeholder="e.g. john.doe@example.com"
-              type="email"
-              bind:value={$formData.email}
-            />
-          {/snippet}
-        </Form.Control>
-        <Form.FieldErrors />
+        {#snippet children({ errors })}
+          <Form.Control>
+            {#snippet children({ props })}
+              <NeobrutalismInput
+                {...props}
+                type="email"
+                label="Your Email"
+                placeholder="e.g. john.doe@example.com"
+                errorMessage={errors}
+                bind:value={$formData.email}
+              />
+            {/snippet}
+          </Form.Control>
+        {/snippet}
       </Form.Field>
 
       <Form.Field {form} name="subject">
-        <Form.Control>
-          {#snippet children({ props })}
-            <Form.Label>Subject</Form.Label>
-            <Input {...props} placeholder="Subject" bind:value={$formData.subject} />
-          {/snippet}
-        </Form.Control>
-        <Form.FieldErrors />
+        {#snippet children({ errors })}
+          <Form.Control>
+            {#snippet children({ props })}
+              <NeobrutalismInput
+                {...props}
+                label="Subject"
+                placeholder="Subject"
+                errorMessage={errors}
+                bind:value={$formData.subject}
+              />
+            {/snippet}
+          </Form.Control>
+        {/snippet}
       </Form.Field>
 
       <Form.Field {form} name="message">
-        <Form.Control>
-          {#snippet children({ props })}
-            <Form.Label>Message</Form.Label>
-            <Textarea {...props} placeholder="Message" rows={7} bind:value={$formData.message} />
-          {/snippet}
-        </Form.Control>
-        <Form.FieldErrors />
+        {#snippet children({ errors })}
+          <Form.Control>
+            {#snippet children({ props })}
+              <NeobrutalismInput
+                {...props}
+                component="textarea"
+                label="Message"
+                placeholder="Message"
+                errorMessage={errors}
+                rows={7}
+                bind:value={$formData.message}
+              />
+            {/snippet}
+          </Form.Control>
+        {/snippet}
       </Form.Field>
 
       <Form.Field {form} name="captchaToken">
@@ -158,7 +179,7 @@
             />
           {/snippet}
         </Form.Control>
-        <Form.FieldErrors />
+        <Form.FieldErrors class="text-destructive text-sm font-normal" />
       </Form.Field>
 
       <NeobrutalismButton

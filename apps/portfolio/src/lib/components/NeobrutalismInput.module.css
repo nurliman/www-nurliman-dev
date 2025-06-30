@@ -1,0 +1,58 @@
+@reference "@app.css";
+
+.inputContainer {
+  @apply w-full border-2 border-black p-2.5;
+  @apply cursor-text;
+  @apply focus-within:ring-2 focus-within:ring-indigo-300;
+
+  :where(html:global(.dark)) & {
+    @apply border-zinc-800;
+  }
+
+  &,
+  & > .input {
+    background-color: var(--color-white);
+
+    :where(html:global(.dark)) & {
+      background-color: var(--color-zinc-900);
+    }
+  }
+}
+
+.inputContainerError {
+  @apply ring-2 ring-red-400;
+}
+
+.input {
+  @apply h-full w-full;
+  @apply focus:outline-none;
+
+  :where(html:global(.dark)) & {
+    &::placeholder {
+      color: var(--color-zinc-400);
+    }
+  }
+
+  &:-webkit-autofill {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: var(--color-zinc-900);
+      box-shadow: 0 0 0px 1000px var(--color-teal-100) inset;
+      font-family: var(--font-transducer);
+
+      /*
+       * This is a hack to override browser autofill styles. The long transition delay
+       * prevents the user-agent's styles from reappearing.
+       * See: https://stackoverflow.com/questions/71640408/trouble-with-input-styling-and-autofill
+       */
+      transition: background-color 5000s ease-in-out 0s;
+
+      .inputContainer:has(&) {
+        background-color: var(--color-teal-100);
+      }
+    }
+  }
+}
