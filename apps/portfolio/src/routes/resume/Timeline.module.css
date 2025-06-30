@@ -30,10 +30,6 @@
   :where(html:global(.dark)) & {
     --line-color: var(--color-zinc-700);
   }
-
-  @media (prefers-color-scheme: dark) {
-    --line-color: var(--color-zinc-700);
-  }
 }
 
 .bullet {
@@ -44,12 +40,6 @@
   --shadow-pulse-color: --alpha(var(--color-teal-500) / 30%);
 
   :where(html:global(.dark)) & {
-    --bullet-color: var(--color-black);
-    --shadow-color: --alpha(var(--color-teal-500) / 40%);
-    --shadow-pulse-color: --alpha(var(--color-teal-500) / 25%);
-  }
-
-  @media (prefers-color-scheme: dark) {
     --bullet-color: var(--color-black);
     --shadow-color: --alpha(var(--color-teal-500) / 40%);
     --shadow-pulse-color: --alpha(var(--color-teal-500) / 25%);
