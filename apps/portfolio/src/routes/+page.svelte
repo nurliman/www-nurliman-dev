@@ -1,21 +1,24 @@
 <script lang="ts">
+  import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
-  import { Badge } from "$lib/components/ui/badge";
   import { cn } from "$lib/utils/shadcn";
 </script>
 
 <main class="flex-center relative -top-4 flex-1 flex-col p-4 text-center">
   <h1 class="font-transducer-extended">
-    <Badge
+    <NeobrutalismBadge
       class={cn(
         "mb-5 inline-flex rounded-full md:mb-6",
         "px-2 py-0.5 sm:px-2.5 sm:py-1 md:px-3 md:py-1 lg:px-4 lg:py-1",
         "text-xs sm:text-xs md:text-sm lg:text-base",
+        "shadow-neobrutalism-sm md:shadow-neobrutalism",
       )}
+      shadow="none"
+      variant="zinc"
     >
       <span>Nurliman Diara</span>
       <span class="absolute text-transparent">:</span>
-    </Badge>
+    </NeobrutalismBadge>
 
     <br />
     <span class="text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-8xl">Crafting Digital</span>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge } from "$lib/components/ui/badge";
+  import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import { me } from "$lib/data/me";
   import { cn } from "$lib/utils/shadcn";
   import Skills from "./Skills.svelte";
@@ -89,9 +89,9 @@
       <ul>
         {#each me.knowledges as item (item)}
           <li class="contents">
-            <Badge class="mx-0.5 my-1 inline-block">
+            <NeobrutalismBadge class="mx-0.5 my-1 inline-block rounded" shadow="sm">
               {item}
-            </Badge>
+            </NeobrutalismBadge>
           </li>
         {/each}
       </ul>
