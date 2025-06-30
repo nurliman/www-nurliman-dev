@@ -10,12 +10,15 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "changeset": "changeset",
     "lint-staged": "lint-staged",
     "format": "prettier --write --cache .",
     "prepare:turbo": "turbo telemetry disable",
     "prepare": "concurrently \"npm:prepare:*\""
   },
   "devDependencies": {
+    "@changesets/changelog-git": "^0.2.1",
+    "@changesets/cli": "^2.29.5",
     "@types/bun": "latest",
     "@types/node": "^22",
     "bun-plugin-dts-auto": "0.11.1",
