@@ -26,9 +26,9 @@
   style:top="{headerHeight}px"
   style:transform="translateZ(0)"
   onclick={() => onChange?.(false)}
-  data-aria-hidden="true"
-  aria-hidden="true"
   aria-label="Sidebar overlay"
+  aria-hidden={!isOpen}
+  tabindex={isOpen ? 0 : -1}
 >
 </button>
 
