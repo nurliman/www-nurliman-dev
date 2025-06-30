@@ -85,7 +85,7 @@
 
     <div class="mb-5"></div>
 
-    <form method="POST" class="z-[2] flex flex-col space-y-4" use:enhance>
+    <form class="z-[2] flex flex-col space-y-4" use:enhance>
       <Form.Field {form} name="name">
         {#snippet children({ errors })}
           <Form.Control>
