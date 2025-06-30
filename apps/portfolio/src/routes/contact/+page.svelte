@@ -22,14 +22,12 @@
     SPA: true,
     validators: valibot(contactFormSchema),
     onUpdate({ form }) {
-      resetTurnstile?.();
-
       if (!form.valid) {
         console.error("Form validation failed");
         toast.error("Please ensure all fields are filled out correctly.");
         return;
       }
-
+      resetTurnstile?.();
       toast.promise(
         async () => {
           submitLoading = true;
