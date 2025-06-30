@@ -1,9 +1,11 @@
 <script lang="ts">
+  import ClipboardIcon from "@lucide/svelte/icons/clipboard";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
   import * as Form from "$lib/components/ui/form";
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
+  import copy from "copy-to-clipboard";
   import { mode } from "mode-watcher";
   import { FetchError, ofetch } from "ofetch";
   import { toast } from "svelte-sonner";
@@ -11,6 +13,30 @@
   import { valibot } from "sveltekit-superforms/adapters";
   import { defaults, superForm } from "sveltekit-superforms/client";
   import styles from "./+page.module.css";
+
+  type InfoItem = {
+    label: string;
+    value: string;
+    link: string;
+  };
+
+  const infos: InfoItem[] = [
+    {
+      label: "Residence",
+      value: "Bandung, Indonesia",
+      link: "https://maps.app.goo.gl/49vqfMGu8Hso64mF6",
+    },
+    {
+      label: "Phone",
+      value: "+62 851-7447-4227",
+      link: "https://wa.me/6285174474227",
+    },
+    {
+      label: "Email",
+      value: "nurliman@duck.com",
+      link: "mailto:nurliman@duck.com",
+    },
+  ];
 
   const DEFAULT_ERROR_MESSAGE = "Something went wrong.";
 
@@ -73,24 +99,34 @@
     <div class="mb-5"></div>
 
     <div class="flex flex-col items-start space-y-2">
-      <NeobrutalismButton class="h-8 text-sm md:text-base" size="sm" shadow="sm" variant="zinc"
-        >Residence: Bandung, Indonesia</NeobrutalismButton
-      >
-      <NeobrutalismButton
-        class="h-8 text-sm md:text-base"
-        href="https://wa.me/6285174474227"
-        target="_blank"
-        size="sm"
-        shadow="sm"
-        variant="zinc">Phone: +62 851-7447-4227</NeobrutalismButton
-      >
-      <NeobrutalismButton
-        class="h-8 text-sm md:text-base"
-        href="mailto:nurliman@duck.com"
-        size="sm"
-        shadow="sm"
-        variant="zinc">Email: nurliman@duck.com</NeobrutalismButton
-      >
+      {#each infos as item}
+        <div class="flex items-center">
+          <NeobrutalismButton
+            class="h-8 cursor-pointer text-sm md:text-base"
+            href={item.link}
+            target="_blank"
+            size="sm"
+            shadow="sm"
+            variant="zinc">{item.label}: {item.value}</NeobrutalismButton
+          >
+          <NeobrutalismButton
+            class="z-[2] -ml-0.5 h-8 cursor-pointer"
+            size="icon"
+            shadow="sm"
+            variant="zinc"
+            onclick={() => {
+              const isCopied = copy(item.value);
+              if (isCopied) {
+                toast.success(`${item.label} copied to clipboard`);
+              } else {
+                toast.error(`Failed to copy ${item.label}`);
+              }
+            }}
+          >
+            <ClipboardIcon class="size-4" />
+          </NeobrutalismButton>
+        </div>
+      {/each}
     </div>
 
     <div class="mb-5"></div>

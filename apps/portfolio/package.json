@@ -20,6 +20,7 @@
     "@t3-oss/env-core": "^0.13.8",
     "bits-ui": "^2.8.10",
     "clsx": "^2.1.1",
+    "copy-to-clipboard": "^3.3.3",
     "dedent": "^1.6.0",
     "formsnap": "^2.0.1",
     "is-relative-url": "^4.0.0",
