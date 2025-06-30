@@ -247,7 +247,7 @@
       class={styles.img}
       src="/assets/undraw_digital_nomad_re_w8uy.svg"
       alt="Digital Nomad"
-      loading="lazy"
+      fetchpriority="high"
     />
   </div>
 </main>
