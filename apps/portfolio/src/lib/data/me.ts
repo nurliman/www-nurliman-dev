@@ -1,23 +1,6 @@
 import dedent from "dedent";
 
 export const me = {
-  name: "Nurliman Diara",
-  titles: [
-    "Web Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "JavaScript/TypeScript Programmer",
-    "DevOps",
-    "Linux Administrator",
-    "UI/UX Designer",
-    "Graphic Designer",
-  ],
-  address: "Ujungberung, Bandung",
-  email: "nurliman@duck.com",
-  phone: {
-    display: "+62 851-7447-4227",
-    value: 6285174474227,
-  },
   experiences: [
     {
       period: "Sep 2020 - Jan 2024 (3 years 5 months)",
