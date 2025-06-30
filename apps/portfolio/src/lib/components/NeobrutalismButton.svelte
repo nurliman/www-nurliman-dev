@@ -15,22 +15,17 @@
     ),
     variants: {
       variant: {
-        default: clsx(
-          "text-white bg-teal-500",
-          "border-2 border-black dark:border-zinc-800 shadow-neobrutalism",
-          "hover:translate-1 hover:shadow-none",
+        default: "text-white bg-teal-500 border-2 border-black dark:border-zinc-800",
+        zinc: clsx(
+          "bg-zinc-200 text-black border-2 border-black",
+          "hover:bg-zinc-300 active:bg-zinc-400",
+          "dark:bg-zinc-900 dark:text-white dark:border-zinc-800",
+          "dark:hover:bg-zinc-950 dark:active:bg-black",
         ),
-        noShadow: "text-white bg-teal-500 border-2 border-black dark:border-zinc-800",
         neutral: clsx(
-          "bg-white dark:bg-zinc-900 text-black dark:text-white",
-          "border-2 border-black dark:border-zinc-800 shadow-neobrutalism",
-          "hover:translate-1 hover:shadow-none",
-        ),
-        reverse: clsx(
-          "text-white bg-teal-500",
+          "bg-white dark:bg-zinc-900",
+          "text-black dark:text-white",
           "border-2 border-black dark:border-zinc-800",
-          "hover:-translate-1",
-          "hover:shadow-neobrutalism",
         ),
       },
       size: {
@@ -39,21 +34,27 @@
         lg: "h-11 px-8",
         icon: "size-10",
       },
+      shadow: {
+        default: "shadow-neobrutalism hover:shadow-none hover:translate-1",
+        sm: "shadow-neobrutalism-sm hover:shadow-none hover:translate-0.5",
+        reverse: "hover:-translate-1 hover:shadow-neobrutalism",
+        reverseSm: "hover:-translate-0.5 hover:shadow-neobrutalism-sm",
+        none: "",
+        false: "",
+      },
     },
     defaultVariants: {
       size: "default",
+      shadow: "default",
       variant: "default",
     },
   });
 
-  export type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
-  export type ButtonSize = VariantProps<typeof buttonVariants>["size"];
+  export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
 
   export type ButtonProps = WithElementRef<HTMLButtonAttributes> &
-    WithElementRef<HTMLAnchorAttributes> & {
-      variant?: ButtonVariant;
-      size?: ButtonSize;
-    };
+    WithElementRef<HTMLAnchorAttributes> &
+    ButtonVariantProps;
 </script>
 
 <script lang="ts">
@@ -61,6 +62,7 @@
     class: className,
     variant = "default",
     size = "default",
+    shadow = "default",
     ref = $bindable(null),
     href = undefined,
     type = "button",
@@ -74,7 +76,7 @@
   <a
     bind:this={ref}
     data-slot="brutailsm-button"
-    class={cn(buttonVariants({ variant, size }), className)}
+    class={cn(buttonVariants({ variant, size, shadow }), className)}
     href={disabled ? undefined : href}
     aria-disabled={disabled}
     role={disabled ? "link" : undefined}
@@ -87,7 +89,7 @@
   <button
     bind:this={ref}
     data-slot="brutailsm-button"
-    class={cn(buttonVariants({ variant, size }), className)}
+    class={cn(buttonVariants({ variant, size, shadow }), className)}
     {type}
     {disabled}
     {...restProps}
