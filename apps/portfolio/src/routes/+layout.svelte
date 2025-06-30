@@ -2,13 +2,14 @@
   import "$lib/styles/fonts/transducer/plain.css";
   import "$lib/styles/fonts/transducer/extended.css";
   import "@fontsource/racing-sans-one/latin.css";
-  import "../app.css";
+  import "@app.css";
   import { injectAnalytics } from "@vercel/analytics/sveltekit";
   import { dev } from "$app/environment";
   import { page } from "$app/state";
   import TheFooter from "$lib/components/TheFooter.svelte";
   import TheHeader from "$lib/components/TheHeader.svelte";
   import { Toaster } from "$lib/components/ui/sonner";
+  import { HEADER_HEIGHT } from "$lib/constants";
   import { ModeWatcher } from "mode-watcher";
   import { ProgressBar } from "sveltekit-progress-bar";
 
@@ -62,7 +63,8 @@
 <Toaster closeButton />
 <TheHeader />
 
-<div class="flex flex-1 pt-[50px] md:pt-[54px]">
+<!-- '+ 2' includes the header's 2px bottom border for correct alignment -->
+<div class="flex flex-1" style:padding-top={`${HEADER_HEIGHT + 2}px`}>
   {@render children()}
 </div>
 

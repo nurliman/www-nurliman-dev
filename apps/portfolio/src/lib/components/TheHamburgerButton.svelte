@@ -15,7 +15,7 @@
   size="sm"
   class={cn(
     "flex-center relative",
-    "!h-auto !min-h-[3rem] !w-12",
+    "aspect-square !h-full !min-h-[3rem] !w-auto",
     "!rounded-none border-r border-black dark:border-zinc-800",
     "cursor-pointer",
     className,

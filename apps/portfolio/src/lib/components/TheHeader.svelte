@@ -4,10 +4,10 @@
   import TheSidebar from "$lib/components/TheSidebar.svelte";
   import TheThemeSwitcher from "$lib/components/TheThemeSwitcher.svelte";
   import { Button } from "$lib/components/ui/button";
+  import { HEADER_HEIGHT } from "$lib/constants";
   import { sections } from "$lib/data/sections";
   import { isActivePath } from "$lib/utils/isActivePath";
 
-  let headerHeight = 50;
   let sidebarOpened = $state(false);
 
   const changeSidebarOpened = (newState?: boolean) => {
@@ -21,7 +21,6 @@
 </script>
 
 <header
-  bind:offsetHeight={headerHeight}
   class={[
     "fixed top-0 z-30 w-full overflow-hidden",
     "border-b-2 border-black bg-white/60 transition-colors",
@@ -35,7 +34,10 @@
   style:transition-timing-function="cubic-bezier(.28,.11,.32,1)"
   style:transition-duration=".5s"
 >
-  <div class="mx-auto flex items-center justify-between gap-x-4 md:container md:h-[52px]">
+  <div
+    class="mx-auto flex items-center justify-between gap-x-4 md:container"
+    style:height={`${HEADER_HEIGHT}px`}
+  >
     <TheHamburgerButton
       class="md:hidden"
       isSidebarOpen={sidebarOpened}
@@ -76,8 +78,13 @@
       </ul>
     </nav>
 
-    <TheThemeSwitcher class="relative max-md:right-2" />
+    <TheThemeSwitcher class="relative max-md:right-4" />
   </div>
 </header>
 
-<TheSidebar {headerHeight} isOpen={sidebarOpened} onChange={changeSidebarOpened} />
+<!-- '+ 2' includes the header's 2px bottom border for correct alignment -->
+<TheSidebar
+  headerHeight={HEADER_HEIGHT + 2}
+  isOpen={sidebarOpened}
+  onChange={changeSidebarOpened}
+/>
