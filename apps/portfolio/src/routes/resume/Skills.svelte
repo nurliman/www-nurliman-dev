@@ -22,7 +22,7 @@
           {skill.value * 100}%
         </div>
       </div>
-      <NeobrutalismProgress value={skill.value * 100} class="h-3" />
+      <NeobrutalismProgress class="h-3" label={skill.name} value={skill.value * 100} />
     </li>
   {/each}
 </ul>
