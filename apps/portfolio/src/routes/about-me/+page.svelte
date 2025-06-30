@@ -39,8 +39,7 @@
 
   const contactInfo = [
     ["Age", "25"],
-    ["Residence", "Indonesia"],
-    ["Address", "Ujungberung, Bandung"],
+    ["Residence", "Bandung, Indonesia"],
     ["e-mail", "nurliman@duck.com"],
     ["Phone", "+62 851-7447-4227"],
   ];
