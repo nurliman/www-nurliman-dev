@@ -36,6 +36,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* neobrutalism */
+  --neobrutalism-shadow: 4px 4px 0px 0px var(--color-black);
+  --neobrutalism-shadow-sm: 2px 2px 0px 0px var(--color-black);
 }
 
 .dark {
@@ -70,6 +74,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* neobrutalism */
+  --neobrutalism-shadow: 4px 4px 0px 0px var(--color-zinc-800);
+  --neobrutalism-shadow-sm: 2px 2px 0px 0px var(--color-zinc-800);
 }
 
 @theme inline {
@@ -122,6 +130,10 @@
   --color-teal-900: oklch(0.3692 0.0506 191.31);
   --color-teal-950: oklch(0.2643 0.039 192.32);
   --color-teal: var(--color-teal-500);
+
+  /* neobrutalism */
+  --shadow-neobrutalism: var(--neobrutalism-shadow);
+  --shadow-neobrutalism-sm: var(--neobrutalism-shadow-sm);
 }
 
 @theme {

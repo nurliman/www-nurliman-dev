@@ -1,4 +1,5 @@
 <script lang="ts">
+  import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import { Button } from "$lib/components/ui/button";
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
@@ -160,11 +161,16 @@
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Button
-        class="cursor-pointer self-start"
+      <NeobrutalismButton
+        class={[
+          "cursor-pointer self-start",
+          "p-2 md:p-2.5 lg:p-3",
+          "text-sm md:text-base",
+          "min-w-36 md:min-w-48",
+        ]}
         size="lg"
         type="submit"
-        disabled={submitLoading}>Submit</Form.Button
+        disabled={submitLoading}>Send</NeobrutalismButton
       >
     </form>
 

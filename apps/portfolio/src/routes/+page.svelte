@@ -1,6 +1,6 @@
 <script lang="ts">
+  import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import { Badge } from "$lib/components/ui/badge";
-  import { Button } from "$lib/components/ui/button";
   import { cn } from "$lib/utils/shadcn";
 </script>
 
@@ -33,15 +33,15 @@
 
   <div class="h-8 md:h-10"></div>
 
-  <div class="flex-center flex-row">
-    <Button
-      class="mr-4 min-w-32 md:mr-6 md:h-10 md:min-w-48 md:rounded-md md:px-6 md:text-base lg:h-11"
-      href="/about-me">Explore</Button
+  <div class="flex-center flex-row space-x-4 md:space-x-6">
+    <NeobrutalismButton
+      class="min-w-32 md:h-10 md:min-w-48 md:px-6 md:text-base lg:h-11"
+      href="/about-me">Explore</NeobrutalismButton
     >
-    <Button
-      class="min-w-32 md:h-10 md:min-w-48 md:rounded-md md:px-6 md:text-base lg:h-11"
+    <NeobrutalismButton
+      class="min-w-32 md:h-10 md:min-w-48 md:px-6 md:text-base lg:h-11"
       href="/contact"
-      variant="outline">Contact</Button
+      variant="neutral">Contact</NeobrutalismButton
     >
   </div>
 </main>
