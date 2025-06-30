@@ -1,7 +1,6 @@
 <script lang="ts">
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
-  import { Button } from "$lib/components/ui/button";
   import * as Form from "$lib/components/ui/form";
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
@@ -74,11 +73,24 @@
     <div class="mb-5"></div>
 
     <div class="flex flex-col items-start space-y-2">
-      <Button variant="outline">Residence: Bandung, Indonesia</Button>
-      <Button variant="outline" href="https://wa.me/6285174474227" target="_blank"
-        >Phone: +62 851-7447-4227</Button
+      <NeobrutalismButton class="h-8 text-sm md:text-base" size="sm" shadow="sm" variant="zinc"
+        >Residence: Bandung, Indonesia</NeobrutalismButton
       >
-      <Button variant="outline" href="mailto:nurliman@duck.com">Email: nurliman@duck.com</Button>
+      <NeobrutalismButton
+        class="h-8 text-sm md:text-base"
+        href="https://wa.me/6285174474227"
+        target="_blank"
+        size="sm"
+        shadow="sm"
+        variant="zinc">Phone: +62 851-7447-4227</NeobrutalismButton
+      >
+      <NeobrutalismButton
+        class="h-8 text-sm md:text-base"
+        href="mailto:nurliman@duck.com"
+        size="sm"
+        shadow="sm"
+        variant="zinc">Email: nurliman@duck.com</NeobrutalismButton
+      >
     </div>
 
     <div class="mb-5"></div>
