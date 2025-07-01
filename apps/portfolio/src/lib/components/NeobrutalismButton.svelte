@@ -6,7 +6,7 @@
 
   export const buttonVariants = tv({
     base: clsx(
-      "inline-flex items-center justify-center whitespace-nowrap gap-2",
+      "inline-flex items-center justify-center whitespace-nowrap",
       "text-sm font-medium",
       "ring-offset-white transition-all",
       "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2",
