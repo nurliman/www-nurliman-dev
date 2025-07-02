@@ -3,6 +3,41 @@ import dedent from "dedent";
 export const me = {
   experiences: [
     {
+      period: "Mar 2024 - Jun 2025 (1 year 4 months)",
+      company: "Pelita Textiles",
+      title: "IT Programmer",
+      description: dedent`
+        Solely developed and delivered a comprehensive suite of enterprise applications, managing
+        the entire software development lifecycle from initial user research and UI/UX design to
+        production deployment and ongoing maintenance.
+        <br /><br />
+        **Mobile Application Development:**
+        - Designed and built a mobile-first warehouse management app using React Native/Expo, including both frontend and backend API development.
+        - Established a monorepo structure for multiple applications (mobile client, backend services, printer integration, data sync).
+        - Implemented multi-stage receiving workflows with role-based access control, and conducted user testing with warehouse staff, accounting, and management to optimize processes.
+        - Integrated thermal printing and real-time data synchronization; deployed to production with monitoring and error tracking.
+
+        **ERP System Development:**
+        - Led the design and frontend development of a modern ERP system using Next.js 15 and TypeScript.
+        - Built modules for customer, product, supplier, warehouse, price list, and document management.
+        - Leveraged GraphQL (TanStack Query), Nanostores, and React Hook Form with Valibot for robust, type-safe, and error-resistant solutions.
+        - Established E2E and unit testing strategies (Playwright, Vitest) to ensure high reliability.
+
+        **Desktop Application Development:**
+        - Designed and developed a desktop invoice printing app with Electron, React, and TypeScript.
+        - Implemented printer management, QR code/logo printing, auto-updates, and Sentry-based error handling.
+        - Supported both USB and network printers, with extensive cross-model testing.
+        - Managed deployment pipeline: code signing, installer creation, and automated releases via GitHub.
+
+        **Technical Architecture & DevOps:**
+        - Architected modern monorepo workflows with Turbo, enabling code sharing and streamlined deployments.
+        - Built CI/CD pipelines, automated testing, and multi-platform deployment (mobile, web, desktop).
+        - Utilized tRPC for type-safe APIs, DrizzleORM with SQLite for database management, and Docker for containerization.
+        - Enforced code quality with Biome, and managed production deployments with monitoring and rollback capabilities.
+        - Continuously improved performance and features based on user feedback and business needs.
+      `,
+    },
+    {
       period: "Sep 2020 - Jan 2024 (3 years 5 months)",
       company: "PT. Knitto Tekstil Indonesia",
       title: "Lead Frontend & DevOps Engineer",
@@ -100,6 +135,12 @@ export const me = {
     { name: "Rust", value: 0.85 },
     { name: "React/Preact", value: 0.99 },
     { name: "React Native", value: 0.98 },
+    { name: "Electron", value: 0.92 },
+    { name: "Expo", value: 0.95 },
+    { name: "GraphQL", value: 0.93 },
+    { name: "tRPC", value: 0.94 },
+    { name: "DrizzleORM", value: 0.9 },
+    { name: "SQLite", value: 0.88 },
     { name: "Astro", value: 0.95 },
     { name: "Solid.js", value: 0.95 },
     { name: "Svelte", value: 0.92 },
@@ -122,6 +163,15 @@ export const me = {
     { name: "Google Cloud Platform", value: 0.9 },
     { name: "Vercel", value: 0.9 },
     { name: "npm", value: 0.9 },
+    { name: "Turbo", value: 0.88 },
+    { name: "Biome", value: 0.85 },
+    { name: "Playwright", value: 0.89 },
+    { name: "Vitest", value: 0.87 },
+    { name: "Sentry", value: 0.83 },
+    { name: "TanStack Query", value: 0.91 },
+    { name: "Nanostores", value: 0.86 },
+    { name: "Radix UI", value: 0.88 },
+    { name: "shadcn/ui", value: 0.89 },
     { name: "Computer Networking", value: 0.8 },
     { name: "Linux", value: 0.9 },
     { name: "Nginx", value: 0.9 },
@@ -145,19 +195,40 @@ export const me = {
     "REST API",
     "GraphQL",
     "gRPC",
+    "tRPC",
     "JWT",
     "OAuth",
     "PASETO",
     "Preact",
     "SolidJS",
     "Svelte",
+    "React Native",
+    "Electron",
     "UI/UX",
+    "User Research",
     "TailwindCSS",
     "Design System",
+    "Mobile-First Design",
+    "Cross-Platform Development",
+    "Desktop Application Development",
     "TDD",
+    "E2E Testing",
+    "Unit Testing",
     "Vite",
     "Vitest",
+    "Playwright",
     "Cypress",
+    "Error Tracking",
+    "Performance Monitoring",
+    "Enterprise Resource Planning (ERP)",
+    "Warehouse Management Systems",
+    "Role-Based Access Control (RBAC)",
+    "Real-time Data Synchronization",
+    "Thermal Printing Integration",
+    "Multi-Platform Deployment",
+    "Code Signing",
+    "Auto-Updates",
+    "Production Deployment",
     "WebAssembly",
     "Webpack",
     "Rust",
