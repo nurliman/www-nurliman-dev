@@ -1,6 +1,9 @@
 <script lang="ts">
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
+  import TableOfContents from "$lib/components/TableOfContents.svelte";
+  import { HEADER_HEIGHT } from "$lib/constants";
   import { me } from "$lib/data/me";
+  import { IsLarge } from "$lib/hooks/is-large.svelte";
   import { cn } from "$lib/utils/shadcn";
   import Certificates from "./Certificates.svelte";
   import Skills from "./Skills.svelte";
@@ -20,90 +23,140 @@
     title: edu.field,
     description: edu.description,
   }));
+
+  const tocSections = [
+    { id: "summary", title: "Summary" },
+    { id: "experience", title: "Experience" },
+    { id: "education", title: "Education" },
+    { id: "technical-skills", title: "Technical Skills" },
+    { id: "other-skills", title: "Other Skills" },
+    { id: "knowledges", title: "Knowledges" },
+    { id: "certifications", title: "Certifications" },
+  ];
+
+  const isLarge = new IsLarge();
 </script>
 
 <main class="relative container flex w-full flex-col">
-  <div class="mx-auto flex w-full max-w-xl flex-col lg:mx-0">
-    <div class="mb-8"></div>
+  <div class="mt-8 mb-14 flex w-full justify-between md:mb-20">
+    <!-- Main Content -->
+    <div class="mx-auto flex w-full max-w-xl flex-col lg:mx-0 lg:max-w-full lg:flex-1">
+      <h1 class="font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">
+        Resume
+      </h1>
+      <div class="mb-5"></div>
+      <div class="text-sm">
+        <span>Download my </span>
+        <a
+          class={cn(
+            "font-semibold underline underline-offset-2",
+            "transition-colors",
+            "hover:text-zinc-700 dark:hover:text-zinc-400",
+          )}
+          href="https://drive.google.com/file/d/1QkF7VNpAJoWCLBu6mc4F7oJJtGfNHgT0/view?usp=sharing"
+          target="_blank">ATS Friendly CV</a
+        >.
+      </div>
+      <div class="mb-8"></div>
 
-    <h1 class="font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">Resume</h1>
-    <div class="mb-5"></div>
-    <div class="text-sm">
-      <span>Download my </span>
-      <a
-        class={cn(
-          "font-semibold underline underline-offset-2",
-          "transition-colors",
-          "hover:text-zinc-700 dark:hover:text-zinc-400",
-        )}
-        href="https://drive.google.com/file/d/1QkF7VNpAJoWCLBu6mc4F7oJJtGfNHgT0/view?usp=sharing"
-        target="_blank">ATS Friendly CV</a
-      >.
-    </div>
-    <div class="mb-8"></div>
+      <section id="summary" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Summary:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <p class="text-sm md:leading-relaxed">
+            Results-oriented Software Engineer, proficient in Frontend Development, and well-versed
+            in DevOps practices. Adept at crafting high-performance, user-centric applications with
+            a keen eye for detail. Demonstrated success in optimizing software delivery pipelines,
+            implementing scalable solutions, and fostering cross-functional collaboration. Proactive
+            problem-solver with a passion for staying abreast of emerging technologies. Seeking a
+            challenging role to leverage technical expertise and contribute to innovative projects
+            in a dynamic environment.
+          </p>
+        </div>
+        <div class="mb-8"></div>
+      </section>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Summary:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <p class="text-sm">
-        Results-oriented Software Engineer, proficient in Frontend Development, and well-versed in
-        DevOps practices. Adept at crafting high-performance, user-centric applications with a keen
-        eye for detail. Demonstrated success in optimizing software delivery pipelines, implementing
-        scalable solutions, and fostering cross-functional collaboration. Proactive problem-solver
-        with a passion for staying abreast of emerging technologies. Seeking a challenging role to
-        leverage technical expertise and contribute to innovative projects in a dynamic environment.
-      </p>
-    </div>
-    <div class="mb-8"></div>
+      <section id="experience" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Experience:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <Timeline data={experiencesTimeline} />
+        </div>
+        <div class="mb-8"></div>
+      </section>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Experience:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <Timeline data={experiencesTimeline} />
-    </div>
-    <div class="mb-8"></div>
+      <section id="education" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Education:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <Timeline data={educationsTimeline} />
+        </div>
+        <div class="mb-8"></div>
+      </section>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Education:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <Timeline data={educationsTimeline} />
-    </div>
-    <div class="mb-8"></div>
+      <section id="technical-skills" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Technical Skills:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <Skills data={me.technicalSkills} />
+        </div>
+        <div class="mb-8"></div>
+      </section>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Technical Skills:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <Skills data={me.technicalSkills} />
-    </div>
-    <div class="mb-8"></div>
+      <section id="other-skills" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Other Skills:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <Skills data={me.otherSkills} />
+        </div>
+        <div class="mb-8"></div>
+      </section>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Other Skills:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <Skills data={me.otherSkills} />
-    </div>
-    <div class="mb-8"></div>
+      <section id="knowledges" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Knowledges:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <ul>
+            {#each me.knowledges as item (item)}
+              <li class="contents">
+                <NeobrutalismBadge class="mx-0.5 my-1 inline-block rounded" shadow="sm">
+                  {item}
+                </NeobrutalismBadge>
+              </li>
+            {/each}
+          </ul>
+        </div>
+        <div class="mb-10"></div>
+      </section>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Knowledges:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <ul>
-        {#each me.knowledges as item (item)}
-          <li class="contents">
-            <NeobrutalismBadge class="mx-0.5 my-1 inline-block rounded" shadow="sm">
-              {item}
-            </NeobrutalismBadge>
-          </li>
-        {/each}
-      </ul>
+      <section id="certifications" class="scroll-mt-20">
+        <h2 class="font-transducer-extended text-xl font-bold">Certifications:</h2>
+        <div class="mb-5"></div>
+        <div>
+          <Certificates data={me.certificates} />
+        </div>
+      </section>
     </div>
-    <div class="mb-10"></div>
 
-    <h2 class="font-transducer-extended text-xl font-bold">Certifications:</h2>
-    <div class="mb-5"></div>
-    <div>
-      <Certificates data={me.certificates} />
+    <!-- spacer -->
+    <div class="hidden h-0 w-12 lg:block xl:w-20"></div>
+
+    <!-- Table of Contents Sidebar -->
+    <div class="hidden lg:block lg:w-84 lg:shrink-0 xl:w-96">
+      {#if isLarge.current}
+        <!-- 
+          The value '2' is added for the header border.
+          The value '32' is added for padding (could be top or bottom padding).
+        -->
+        <TableOfContents
+          class="sticky overflow-y-auto"
+          style={`
+            top: ${HEADER_HEIGHT + 2 + 32}px;
+            max-height: calc(100vh - ${HEADER_HEIGHT + 2 + 32 + 32}px);
+          `}
+          sections={tocSections}
+        />
+      {/if}
     </div>
-    <div class="mb-14 md:mb-20"></div>
   </div>
 </main>
