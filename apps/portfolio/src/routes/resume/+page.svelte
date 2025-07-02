@@ -1,10 +1,11 @@
 <script lang="ts">
+  import DownloadIcon from "@lucide/svelte/icons/download";
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
+  import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import TableOfContents from "$lib/components/TableOfContents.svelte";
   import { HEADER_HEIGHT } from "$lib/constants";
   import { me } from "$lib/data/me";
   import { IsLarge } from "$lib/hooks/is-large.svelte";
-  import { cn } from "$lib/utils/shadcn";
   import Certificates from "./Certificates.svelte";
   import Skills from "./Skills.svelte";
   import Timeline from "./Timeline.svelte";
@@ -45,19 +46,24 @@
         Resume
       </h1>
       <div class="mb-5"></div>
-      <div class="text-sm">
-        <span>Download my </span>
-        <a
-          class={cn(
-            "font-semibold underline underline-offset-2",
-            "transition-colors",
-            "hover:text-zinc-700 dark:hover:text-zinc-400",
-          )}
+
+      <!-- Updated CV Download Section -->
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-center">
+        <p class="text-muted-foreground text-sm">
+          Download my resume for a detailed summary of my experience.
+        </p>
+        <NeobrutalismButton
+          variant="zinc"
+          size="sm"
+          shadow="sm"
           href="https://drive.google.com/file/d/1QkF7VNpAJoWCLBu6mc4F7oJJtGfNHgT0/view?usp=sharing"
-          target="_blank">ATS Friendly CV</a
-        >.
+          target="_blank"
+          class="w-fit"
+        >
+          <DownloadIcon class="mr-2 size-4 stroke-[2.5]" />
+          Download Resume (PDF)
+        </NeobrutalismButton>
       </div>
-      <div class="mb-8"></div>
 
       <section id="summary" class="scroll-mt-20">
         <h2 class="font-transducer-extended text-xl font-bold">Summary:</h2>
