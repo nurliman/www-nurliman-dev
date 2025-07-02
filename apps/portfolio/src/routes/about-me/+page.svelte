@@ -102,7 +102,13 @@
 
   <div class={cn("grid grid-cols-1 gap-8 md:grid-cols-2 ", containerClass)}>
     {#each thingsIDo as thing (thing.title)}
-      <Card.Root>
+      <Card.Root
+        class={[
+          "!shadow-neobrutalism",
+          "rounded-none",
+          "border-2 border-black dark:border-zinc-800",
+        ]}
+      >
         <Card.Header class="flex flex-col space-y-3">
           <img
             src={thing.icon}

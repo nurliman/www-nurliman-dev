@@ -25,9 +25,19 @@
 <ul class="flex flex-col space-y-4">
   {#each data as cert (cert.name + cert.date + cert.credential?.id)}
     <li class="p-0">
-      <Card.Root class="min-h-28 flex-row gap-0 overflow-hidden p-0">
+      <Card.Root
+        class={[
+          "!shadow-neobrutalism-sm min-h-28 flex-row gap-0 p-0",
+          "overflow-hidden rounded-none border-2 border-black dark:border-zinc-800",
+        ]}
+      >
         <Card.Content class="flex size-full flex-row items-stretch gap-0 p-0">
-          <div class="flex-center min-h-28 min-w-28 border-r bg-zinc-100 dark:bg-zinc-800">
+          <div
+            class={[
+              "flex-center min-h-28 min-w-28 bg-zinc-100",
+              "border-r border-black dark:border-zinc-800 dark:bg-zinc-800",
+            ]}
+          >
             <img
               src={cert.organization.logoUrl}
               alt={cert.organization.name + " logo"}
@@ -41,7 +51,7 @@
               class="hidden h-10 w-10 dark:block"
             />
           </div>
-          <div class="flex w-full flex-col space-y-2 overflow-hidden p-5 shadow-lg">
+          <div class="flex w-full flex-col space-y-2 overflow-hidden p-5">
             <div class="font-transducer-extended text-sm font-semibold">
               {cert.name}
             </div>
