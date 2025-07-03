@@ -16,7 +16,7 @@
     <div class="container mx-auto max-w-6xl">
       <!-- Top Section -->
       <div class="mb-12 text-center">
-        <h3 class="font-racing-sans mb-4 text-4xl font-bold text-white">nurliman.</h3>
+        <div class="font-racing-sans mb-4 text-4xl font-bold text-white">nurliman.</div>
         <p class="mx-auto max-w-md text-sm leading-relaxed text-zinc-400 md:text-base">
           Feel free to reach out for collaborations, opportunities, or just to say hello.
         </p>
