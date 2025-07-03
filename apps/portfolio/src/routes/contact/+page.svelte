@@ -114,6 +114,7 @@
             size="icon"
             shadow="sm"
             variant="zinc"
+            aria-label={`Copy ${item.label}`}
             onclick={() => {
               const isCopied = copy(item.value);
               if (isCopied) {
