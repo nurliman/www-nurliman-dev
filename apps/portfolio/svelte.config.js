@@ -9,6 +9,12 @@ const config = {
     alias: {
       "@app.css": "./src/app.css",
     },
+    prerender: {
+      // Set the prerender origin to ensure the correct canonical URL is used during prerendering.
+      // By default, SvelteKit uses `http://sveltekit-prerender`, which is not desired for production.
+      // This value should match the site's actual production URL.
+      origin: "https://nurliman.dev",
+    },
   },
 };
 
