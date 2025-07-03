@@ -1,5 +1,14 @@
 # @nurliman.dev/portfolio
 
+## 0.3.1
+
+### Patch Changes
+
+- faaeab5: feat: add aria-label to copy button in contact page for improved accessibility
+- 6b19448: fix: change footer heading from h3 to div
+- e69e917: update dependencies
+- 9032dde: feat: add prerender configuration to svelte.config.js for correct canonical URL during production
+
 ## 0.3.0
 
 ### Minor Changes
