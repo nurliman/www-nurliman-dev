@@ -1,10 +1,12 @@
 <script lang="ts">
   import ClipboardIcon from "@lucide/svelte/icons/clipboard";
+  import RotateCcwIcon from "@lucide/svelte/icons/rotate-ccw";
   import RotateCwIcon from "@lucide/svelte/icons/rotate-cw";
   import SendIcon from "@lucide/svelte/icons/send";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
   import * as Form from "$lib/components/ui/form";
+  import * as Tooltip from "$lib/components/ui/tooltip";
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
   import copy from "copy-to-clipboard";
@@ -220,27 +222,53 @@
       <Form.Field {form} name="captchaToken">
         <Form.Control>
           {#snippet children({ props })}
-            <Turnstile
-              siteKey={env.PUBLIC_CF_TURNSTILE_SITE_KEY}
-              responseFieldName={props.name}
-              theme={mode.current === "dark" ? "dark" : "light"}
-              bind:reset={resetTurnstile}
-              on:callback={(e) => {
-                $formData.captchaToken = e.detail.token;
-              }}
-              on:error={() => {
-                $formData.captchaToken = "";
-              }}
-              on:expired={() => {
-                $formData.captchaToken = "";
-              }}
-              on:timeout={() => {
-                $formData.captchaToken = "";
-              }}
-              on:unsupported={() => {
-                $formData.captchaToken = "";
-              }}
-            />
+            <div
+              class={[
+                "flex flex-col items-start space-y-2",
+                "min-[420px]:flex-row min-[420px]:space-y-0 min-[420px]:space-x-2",
+              ]}
+            >
+              <Turnstile
+                siteKey={env.PUBLIC_CF_TURNSTILE_SITE_KEY}
+                responseFieldName={props.name}
+                theme={mode.current === "dark" ? "dark" : "light"}
+                bind:reset={resetTurnstile}
+                on:callback={(e) => {
+                  $formData.captchaToken = e.detail.token;
+                }}
+                on:error={() => {
+                  $formData.captchaToken = "";
+                }}
+                on:expired={() => {
+                  $formData.captchaToken = "";
+                }}
+                on:timeout={() => {
+                  $formData.captchaToken = "";
+                }}
+                on:unsupported={() => {
+                  $formData.captchaToken = "";
+                }}
+              />
+              <Tooltip.Provider>
+                <Tooltip.Root>
+                  <Tooltip.Trigger>
+                    <NeobrutalismButton
+                      class="shrink-0 cursor-pointer space-x-2"
+                      size="icon"
+                      shadow="sm"
+                      variant="zinc"
+                      type="button"
+                      onclick={() => resetTurnstile?.()}
+                    >
+                      <RotateCcwIcon class="size-3 stroke-[2.5]" />
+                    </NeobrutalismButton>
+                  </Tooltip.Trigger>
+                  <Tooltip.Content>
+                    <p>Reset Captcha</p>
+                  </Tooltip.Content>
+                </Tooltip.Root>
+              </Tooltip.Provider>
+            </div>
           {/snippet}
         </Form.Control>
         <Form.FieldErrors class="text-destructive text-sm font-normal" />
