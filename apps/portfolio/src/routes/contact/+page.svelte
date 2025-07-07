@@ -6,6 +6,7 @@
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
   import copy from "copy-to-clipboard";
+  import set from "lodash-es/set";
   import { mode } from "mode-watcher";
   import { FetchError, ofetch } from "ofetch";
   import { toast } from "svelte-sonner";
@@ -86,6 +87,19 @@
   });
 
   const { form: formData, enhance } = form;
+
+  // Persists form data across reloads, except captchaToken for security.
+  export const snapshot = {
+    capture() {
+      const value = form.capture();
+      set(value, "data.captchaToken", "");
+      return value;
+    },
+    restore(value) {
+      set(value, "data.captchaToken", "");
+      form.restore(value);
+    },
+  } satisfies Pick<typeof form, "capture" | "restore">;
 </script>
 
 <main class="relative container flex w-full flex-col">
