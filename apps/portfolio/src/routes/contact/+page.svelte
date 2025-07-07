@@ -46,6 +46,7 @@
 
   const form = superForm(defaults(valibot(contactFormSchema)), {
     SPA: true,
+    resetForm: false,
     validators: valibot(contactFormSchema),
     onUpdate({ form }) {
       if (!form.valid) {
