@@ -1,5 +1,7 @@
 <script lang="ts">
   import ClipboardIcon from "@lucide/svelte/icons/clipboard";
+  import RotateCwIcon from "@lucide/svelte/icons/rotate-cw";
+  import SendIcon from "@lucide/svelte/icons/send";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
   import * as Form from "$lib/components/ui/form";
@@ -246,15 +248,22 @@
 
       <NeobrutalismButton
         class={[
-          "cursor-pointer self-start",
+          "cursor-pointer space-x-2 self-start",
           "p-2 md:p-2.5 lg:p-3",
           "text-sm md:text-base",
           "min-w-36 md:min-w-48",
         ]}
         size="lg"
         type="submit"
-        disabled={submitLoading}>Send</NeobrutalismButton
+        disabled={submitLoading}
       >
+        {#if submitLoading}
+          <RotateCwIcon class="size-4 animate-spin" />
+        {:else}
+          <SendIcon class="size-4" />
+        {/if}
+        <span>Send</span>
+      </NeobrutalismButton>
     </form>
 
     <div class="mb-16"></div>
