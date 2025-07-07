@@ -48,7 +48,12 @@
       <div class="mb-5"></div>
 
       <!-- Updated CV Download Section -->
-      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-center">
+      <div
+        class={[
+          "mb-8 flex flex-col space-y-4",
+          "md:flex-row md:items-center md:space-y-0 md:space-x-4",
+        ]}
+      >
         <p class="text-muted-foreground text-sm">
           Download my resume for a detailed summary of my experience.
         </p>

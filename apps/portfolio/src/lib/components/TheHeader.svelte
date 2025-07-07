@@ -44,7 +44,7 @@
   style:transition-duration=".5s"
 >
   <div
-    class="mx-auto flex items-center justify-between gap-x-4 md:container"
+    class="mx-auto flex items-center justify-between space-x-4 md:container"
     style:height={`${HEADER_HEIGHT}px`}
   >
     <TheHamburgerButton

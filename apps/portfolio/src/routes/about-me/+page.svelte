@@ -104,12 +104,12 @@
     {#each thingsIDo as thing (thing.title)}
       <Card.Root
         class={[
+          "gap-0 space-y-6",
+          "rounded-none border-2 border-black dark:border-zinc-800",
           "!shadow-neobrutalism",
-          "rounded-none",
-          "border-2 border-black dark:border-zinc-800",
         ]}
       >
-        <Card.Header class="flex flex-col space-y-3">
+        <Card.Header class="flex flex-col space-y-5">
           <img
             src={thing.icon}
             alt={thing.title}

@@ -4,7 +4,7 @@
 
   export const badgeVariants = tv({
     base: clsx([
-      "inline-flex items-center justify-center gap-1 w-fit shrink-0 overflow-hidden whitespace-nowrap",
+      "inline-flex items-center justify-center w-fit shrink-0 overflow-hidden whitespace-nowrap",
       "px-2.5 py-0.5 text-xs font-medium",
       "border-2 border-black dark:border-zinc-800",
       "focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 ring-offset-white",

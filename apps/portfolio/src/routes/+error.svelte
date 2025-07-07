@@ -100,7 +100,7 @@
     </div>
 
     <!-- Action buttons -->
-    <div class="flex-center flex-col gap-4 sm:flex-row">
+    <div class="flex-center flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
       <NeobrutalismButton
         class="h-11 min-w-40 text-base font-semibold md:min-w-48"
         href="/"
