@@ -139,7 +139,7 @@
               }
             }}
           >
-            <ClipboardIcon class="size-4" />
+            <ClipboardIcon class="size-4 stroke-[2.5]" />
           </NeobrutalismButton>
         </div>
       {/each}
