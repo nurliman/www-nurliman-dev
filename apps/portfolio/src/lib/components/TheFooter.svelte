@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Button } from "$lib/components/ui/button";
   import * as Tooltip from "$lib/components/ui/tooltip";
   import { socials } from "$lib/data/socials";
   import { onMount } from "svelte";
@@ -13,12 +14,18 @@
 <footer class="relative bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
   <!-- Main Content -->
   <div class="relative px-6 py-16 md:py-20">
-    <div class="container mx-auto max-w-6xl">
+    <div class="container mx-auto w-full">
       <!-- Top Section -->
       <div class="mb-12 text-center">
-        <div class="font-racing-sans mb-4 text-4xl font-bold text-white">nurliman.</div>
+        <Button
+          href="/"
+          variant="link"
+          class="font-racing-sans mb-4 !p-0 text-4xl font-bold text-white"
+        >
+          nurliman.
+        </Button>
         <p class="mx-auto max-w-md text-sm leading-relaxed text-zinc-400 md:text-base">
-          Feel free to reach out for collaborations, opportunities, or just to say hello.
+          Reach out for business partnerships, project work, and professional opportunities.
         </p>
       </div>
 
