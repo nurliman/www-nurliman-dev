@@ -40,13 +40,7 @@
   };
 </script>
 
-<main
-  class={cn(
-    "flex-center relative flex-1 flex-col overflow-hidden",
-    "px-4 pt-8 pb-14 text-center",
-    "md:pt-12 md:pb-20",
-  )}
->
+<main class="flex-center relative flex-1 flex-col overflow-hidden px-4 pt-16 pb-24 text-center">
   <!-- Error badge with status code -->
   <div class="relative z-10 mx-auto max-w-2xl space-y-8">
     <div>

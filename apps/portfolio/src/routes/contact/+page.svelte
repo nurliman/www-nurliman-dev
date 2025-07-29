@@ -109,7 +109,7 @@
 
 <main class="relative container flex w-full flex-col">
   <div class="mx-auto flex w-full max-w-xl flex-col lg:mx-0">
-    <div class="mb-6 md:mb-8"></div>
+    <div class="mb-16"></div>
 
     <h1 class="font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">
       Get in touch
@@ -252,16 +252,19 @@
               <Tooltip.Provider>
                 <Tooltip.Root>
                   <Tooltip.Trigger>
-                    <NeobrutalismButton
-                      class="shrink-0 cursor-pointer space-x-2"
-                      size="icon"
-                      shadow="sm"
-                      variant="zinc"
-                      type="button"
-                      onclick={() => resetTurnstile?.()}
-                    >
-                      <RotateCcwIcon class="size-3 stroke-[2.5]" />
-                    </NeobrutalismButton>
+                    {#snippet child({ props })}
+                      <NeobrutalismButton
+                        {...props}
+                        class="shrink-0 cursor-pointer space-x-2"
+                        size="icon"
+                        shadow="sm"
+                        variant="zinc"
+                        type="button"
+                        onclick={() => resetTurnstile?.()}
+                      >
+                        <RotateCcwIcon class="size-4 stroke-[2.5]" />
+                      </NeobrutalismButton>
+                    {/snippet}
                   </Tooltip.Trigger>
                   <Tooltip.Content>
                     <p>Reset Captcha</p>
@@ -294,7 +297,7 @@
       </NeobrutalismButton>
     </form>
 
-    <div class="mb-16"></div>
+    <div class="mb-24"></div>
 
     <img
       class={styles.img}

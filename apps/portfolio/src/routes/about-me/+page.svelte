@@ -49,11 +49,11 @@
 
 <main class="flex w-full flex-col text-left">
   <div
-    class={cn(
+    class={[
       "min-h-[25px] border-b-2 border-black bg-zinc-200 py-1",
       "dark:border-zinc-800 dark:bg-zinc-900",
       "md:-top-[2px]",
-    )}
+    ]}
   >
     <Marquee clone>
       <div class="font-transducer-extended inline-flex text-[10px] font-bold">
@@ -63,21 +63,18 @@
     </Marquee>
   </div>
 
-  <div class="mb-6"></div>
+  <div class="mb-16"></div>
 
   <div class={containerClass}>
-    <h1
-      class={cn([
-        "font-transducer-extended font-semibold",
-        "text-xl sm:text-3xl md:text-4xl lg:text-5xl",
-      ])}
-    >
+    <h1 class="font-transducer-extended">
       <span class="relative mb-2 inline-flex text-sm font-medium md:mb-4 md:text-lg">
         <span>About Me</span>
         <span class="absolute text-transparent">:</span>
       </span>
       <br />
-      <span>Years of Mastery in JavaScript/TypeScript.</span>
+      <span class="text-xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl">
+        Years of Mastery in JavaScript/TypeScript.
+      </span>
     </h1>
 
     <div class="mb-4 md:mb-6"></div>
@@ -94,7 +91,7 @@
 
   <div class="mb-12"></div>
 
-  <div class={cn("flex flex-col ", containerClass)}>
+  <div class={cn("flex flex-col", containerClass)}>
     <h2 class="font-transducer-extended text-xl font-bold">What I Do:</h2>
   </div>
 
@@ -127,14 +124,14 @@
     {/each}
   </div>
 
-  <div class="mb-14 md:mb-20"></div>
+  <div class="mb-24"></div>
 
   <div
-    class={cn(
+    class={[
       "min-h-9 py-2",
       "border-y-2 border-black dark:border-zinc-800",
       "bg-zinc-200 dark:bg-zinc-950",
-    )}
+    ]}
   >
     <a href="/contact" class="block">
       <Marquee clone>

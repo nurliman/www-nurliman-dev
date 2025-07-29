@@ -39,7 +39,7 @@
 </script>
 
 <main class="relative container flex w-full flex-col">
-  <div class="mt-8 mb-14 flex w-full justify-between md:mb-20">
+  <div class="mt-16 mb-24 flex w-full justify-between">
     <!-- Main Content -->
     <div class="mx-auto flex w-full max-w-xl flex-col lg:mx-0 lg:max-w-full lg:flex-1">
       <h1 class="font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">
@@ -127,10 +127,10 @@
         <h2 class="font-transducer-extended text-xl font-bold">Knowledges:</h2>
         <div class="mb-5"></div>
         <div>
-          <ul>
+          <ul class="flex flex-wrap gap-2">
             {#each me.knowledges as item (item)}
               <li class="contents">
-                <NeobrutalismBadge class="mx-0.5 my-1 inline-block rounded" shadow="sm">
+                <NeobrutalismBadge class="rounded" shadow="sm">
                   {item}
                 </NeobrutalismBadge>
               </li>
