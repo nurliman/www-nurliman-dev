@@ -128,23 +128,32 @@
             shadow="sm"
             variant="zinc">{item.label}: {item.value}</NeobrutalismButton
           >
-          <NeobrutalismButton
-            class="z-[2] -ml-0.5 h-8 cursor-pointer"
-            size="icon"
-            shadow="sm"
-            variant="zinc"
-            aria-label={`Copy ${item.label}`}
-            onclick={() => {
-              const isCopied = copy(item.value);
-              if (isCopied) {
-                toast.success(`${item.label} copied to clipboard`);
-              } else {
-                toast.error(`Failed to copy ${item.label}`);
-              }
-            }}
-          >
-            <ClipboardIcon class="size-4 stroke-[2.5]" />
-          </NeobrutalismButton>
+          <Tooltip.Provider>
+            <Tooltip.Root delayDuration={100}>
+              <Tooltip.Trigger>
+                <NeobrutalismButton
+                  class="z-[2] -ml-0.5 h-8 cursor-pointer"
+                  size="icon"
+                  shadow="sm"
+                  variant="zinc"
+                  aria-label={`Copy ${item.label}`}
+                  onclick={() => {
+                    const isCopied = copy(item.value);
+                    if (isCopied) {
+                      toast.success(`${item.label} copied to clipboard`);
+                    } else {
+                      toast.error(`Failed to copy ${item.label}`);
+                    }
+                  }}
+                >
+                  <ClipboardIcon class="size-4 stroke-[2.5]" />
+                </NeobrutalismButton>
+              </Tooltip.Trigger>
+              <Tooltip.Content>
+                <p>Copy {item.label}</p>
+              </Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
         </div>
       {/each}
     </div>
@@ -250,7 +259,7 @@
                 }}
               />
               <Tooltip.Provider>
-                <Tooltip.Root>
+                <Tooltip.Root delayDuration={100}>
                   <Tooltip.Trigger>
                     {#snippet child({ props })}
                       <NeobrutalismButton
