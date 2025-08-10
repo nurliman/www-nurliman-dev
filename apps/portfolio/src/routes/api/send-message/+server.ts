@@ -1,7 +1,7 @@
 import type { Config } from "@sveltejs/adapter-vercel";
 import { json, type RequestHandler } from "@sveltejs/kit";
 import { contactFormSchema } from "$lib/schemas";
-import { flatten, safeParse } from "valibot";
+import * as z4 from "zod/v4/core";
 import { sendMessage } from "./sendMessage";
 import { verifyCaptcha } from "./verifyCaptcha";
 
@@ -19,14 +19,14 @@ export const POST: RequestHandler = async ({ request }) => {
     return json({ message: "Invalid JSON" }, { status: 400 });
   }
 
-  const parseResult = safeParse(contactFormSchema, data);
+  const parseResult = z4.safeParse(contactFormSchema, data);
 
   if (!parseResult.success) {
-    const error = flatten(parseResult.issues);
+    const error = z4.treeifyError(parseResult.error);
     return json({ error, message: "Request body is invalid" }, { status: 400 });
   }
 
-  const safeData = parseResult.output;
+  const safeData = parseResult.data;
 
   try {
     await verifyCaptcha(safeData.captchaToken);

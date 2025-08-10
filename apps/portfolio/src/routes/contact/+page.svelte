@@ -15,7 +15,7 @@
   import { FetchError, ofetch } from "ofetch";
   import { toast } from "svelte-sonner";
   import { Turnstile } from "svelte-turnstile";
-  import { valibot } from "sveltekit-superforms/adapters";
+  import { zod4 } from "sveltekit-superforms/adapters";
   import { defaults, superForm } from "sveltekit-superforms/client";
   import styles from "./+page.module.css";
 
@@ -48,10 +48,10 @@
   let resetTurnstile = $state<() => void>();
   let submitLoading = $state(false);
 
-  const form = superForm(defaults(valibot(contactFormSchema)), {
+  const form = superForm(defaults(zod4(contactFormSchema)), {
     SPA: true,
     resetForm: false,
-    validators: valibot(contactFormSchema),
+    validators: zod4(contactFormSchema),
     onUpdate({ form }) {
       if (!form.valid) {
         console.error("Form validation failed");
