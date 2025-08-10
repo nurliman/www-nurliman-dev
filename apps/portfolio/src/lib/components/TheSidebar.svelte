@@ -3,6 +3,8 @@
   import { Button } from "$lib/components/ui/button";
   import { sections } from "$lib/data/sections";
   import { isActivePath } from "$lib/utils/isActivePath";
+  import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+  import { onDestroy } from "svelte";
 
   type Props = {
     isOpen: boolean;
@@ -11,6 +13,23 @@
   };
 
   let { isOpen, headerHeight, onChange }: Props = $props();
+  let sidebarElement: HTMLDivElement;
+
+  // Lock body scroll when sidebar is open
+  $effect(() => {
+    if (!sidebarElement) return;
+    if (isOpen) {
+      disableBodyScroll(sidebarElement);
+    } else {
+      enableBodyScroll(sidebarElement);
+    }
+  });
+
+  // Cleanup on component destroy
+  onDestroy(() => {
+    if (!sidebarElement) return;
+    enableBodyScroll(sidebarElement);
+  });
 </script>
 
 <!-- Overlay button -->
@@ -34,10 +53,12 @@
 
 <!-- Sidebar -->
 <div
+  bind:this={sidebarElement}
   class={[
-    "fixed z-40 flex w-screen flex-col will-change-transform md:hidden",
+    "fixed z-40 flex w-screen flex-col md:hidden",
     "bg-background text-foreground border-r border-black dark:border-zinc-800",
-    "transition-all duration-300 ease-out sm:max-w-xs",
+    "transition-all duration-300 ease-out will-change-transform",
+    "overflow-auto sm:max-w-xs",
   ]}
   style:height="calc(100vh - {headerHeight}px)"
   style:top="{headerHeight}px"
