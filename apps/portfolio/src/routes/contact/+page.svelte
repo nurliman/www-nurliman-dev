@@ -269,6 +269,7 @@
                         shadow="sm"
                         variant="zinc"
                         type="button"
+                        aria-label="Reset captcha"
                         onclick={() => resetTurnstile?.()}
                       >
                         <RotateCcwIcon class="size-4 stroke-[2.5]" />
