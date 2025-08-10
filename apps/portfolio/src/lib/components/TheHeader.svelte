@@ -29,6 +29,16 @@
   });
 </script>
 
+<!-- Handle Escape key to close sidebar -->
+<svelte:body
+  onkeydown={(event) => {
+    if (isMobile.current && sidebarOpened && event.key === "Escape") {
+      event.preventDefault();
+      closeSidebar();
+    }
+  }}
+/>
+
 <header
   class={[
     "fixed top-0 z-30 w-full overflow-hidden",
