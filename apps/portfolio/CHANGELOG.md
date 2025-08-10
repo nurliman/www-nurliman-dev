@@ -1,5 +1,32 @@
 # @nurliman.dev/portfolio
 
+## 0.4.0
+
+### Minor Changes
+
+- 642336f: feat: integrate Button component in footer for enhanced navigation and update text for clarity
+- be7a986: feat: add project showcase with detailed ProjectCard component and integrate projects data for enhanced portfolio presentation
+- a29f8a0: feat: add reset button to contact form with rotate icon for enhanced user interaction
+- fb8c8fc: update dependencies
+- e4a988b: feat: update robots.txt to allow all user agents and add sitemap.xml for better SEO
+- e4b5f87: feat: enhance contact form button with loading state and icons for improved user feedback
+- f5eb434: feat: enhance form handling in contact page by adding capture and restore functionality for improved state management
+- 7ac5c1e: refactor: update project descriptions and key features for clarity and consistency across portfolio entries
+- 55e11bd: refactor: migrate from valibot to zod for form validation and environment variable checks
+
+### Patch Changes
+
+- 0a26d04: feat: add tooltips to theme switcher and contact buttons for improved user guidance
+- 511afa9: refactor: simplify SVG pointer events handling in NeobrutalismButton component for improved performance
+- a291be8: fix: adjust stroke width of ClipboardIcon in contact page for improved visual consistency
+- 0b04f25: refactor: update component styles for improved layout and spacing consistency across the portfolio
+- 7ef4979: refactor: update layout and spacing across multiple pages for improved consistency and user experience
+- ce676c3: feat: modify form configuration in contact page to disable automatic reset for enhanced user experience
+- 4206fb3: feat: add Escape key functionality to close sidebar in TheHeader component for improved user experience
+- b864f42: feat: implement body scroll locking in TheSidebar component for improved user experience when sidebar is open
+- Updated dependencies [fb8c8fc]
+  - @nurliman.dev/emails@0.3.0
+
 ## 0.3.1
 
 ### Patch Changes
