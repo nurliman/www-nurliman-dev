@@ -125,10 +125,10 @@
 
 <Card.Root
   class={[
-    "!shadow-neobrutalism border-4 border-black dark:border-zinc-800",
+    "!shadow-neobrutalism dark:bg-background",
     "gap-0 space-y-6 sm:space-y-8 lg:space-y-12",
-    "overflow-hidden rounded-none",
-    "pt-0 pb-6 sm:pb-8 lg:pb-12",
+    "overflow-hidden rounded-none pt-0 pb-6 sm:pb-8 lg:pb-12",
+    "border-4 border-black dark:border-zinc-800",
   ]}
 >
   <!-- Category Header -->
