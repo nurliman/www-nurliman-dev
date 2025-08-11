@@ -1,5 +1,11 @@
 # @nurliman.dev/portfolio
 
+## 0.4.1
+
+### Patch Changes
+
+- a8ea901: feat: add aria-label for captcha reset button to enhance accessibility
+
 ## 0.4.0
 
 ### Minor Changes
