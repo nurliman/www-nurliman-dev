@@ -1,4 +1,4 @@
-# www-nurliman.dev 🚀
+# nurliman.dev 🚀
 
 A modern, monorepo-based personal website and portfolio built with cutting-edge web technologies.
 
