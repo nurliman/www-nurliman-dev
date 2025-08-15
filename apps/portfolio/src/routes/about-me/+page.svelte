@@ -1,6 +1,7 @@
 <script lang="ts">
   import Marquee from "$lib/components/Marquee.svelte";
   import * as Card from "$lib/components/ui/card";
+  import { personalInfo } from "$lib/data/personal";
   import { cn } from "$lib/utils/shadcn";
   import dedent from "dedent";
 
@@ -38,10 +39,10 @@
   ];
 
   const contactInfo = [
-    ["Age", "25"],
-    ["Residence", "Bandung, Indonesia"],
-    ["e-mail", "nurliman@duck.com"],
-    ["Phone", "+62 851-7447-4227"],
+    ["Age", personalInfo.age],
+    ["Residence", personalInfo.residence],
+    ["e-mail", personalInfo.email],
+    ["Phone", personalInfo.phoneFormatted],
   ];
 
   const containerClass = "mx-auto w-full container";

@@ -1,6 +1,7 @@
 <script lang="ts">
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
+  import { personalInfo } from "$lib/data/personal";
   import { cn } from "$lib/utils/shadcn";
 </script>
 
@@ -16,7 +17,7 @@
       shadow="none"
       variant="zinc"
     >
-      <span>Nurliman Diara</span>
+      <span>{personalInfo.name}</span>
       <span class="absolute text-transparent">:</span>
     </NeobrutalismBadge>
 

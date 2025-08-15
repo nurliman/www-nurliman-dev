@@ -7,6 +7,7 @@
   import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
   import * as Form from "$lib/components/ui/form";
   import * as Tooltip from "$lib/components/ui/tooltip";
+  import { personalInfo } from "$lib/data/personal";
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
   import copy from "copy-to-clipboard";
@@ -28,18 +29,18 @@
   const infos: InfoItem[] = [
     {
       label: "Residence",
-      value: "Bandung, Indonesia",
-      link: "https://maps.app.goo.gl/49vqfMGu8Hso64mF6",
+      value: personalInfo.residence,
+      link: personalInfo.mapsLink,
     },
     {
       label: "Phone",
-      value: "+62 851-7447-4227",
-      link: "https://wa.me/6285174474227",
+      value: personalInfo.phoneFormatted,
+      link: personalInfo.whatsappLink,
     },
     {
       label: "Email",
-      value: "nurliman@duck.com",
-      link: "mailto:nurliman@duck.com",
+      value: personalInfo.email,
+      link: `mailto:${personalInfo.email}`,
     },
   ];
 
