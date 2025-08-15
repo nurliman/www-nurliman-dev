@@ -4,21 +4,25 @@
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import TableOfContents from "$lib/components/TableOfContents.svelte";
   import { HEADER_HEIGHT } from "$lib/constants";
-  import { me } from "$lib/data/me";
+  import { certificates } from "$lib/data/certificates";
+  import { education } from "$lib/data/education";
+  import { experiences } from "$lib/data/experiences";
+  import { knowledge } from "$lib/data/knowledge";
+  import { otherSkills, technicalSkills } from "$lib/data/skills";
   import { IsLarge } from "$lib/hooks/is-large.svelte";
   import Certificates from "./Certificates.svelte";
   import Skills from "./Skills.svelte";
   import Timeline from "./Timeline.svelte";
   import type { TimelineItem } from "./types";
 
-  const experiencesTimeline: TimelineItem[] = me.experiences.map((exp) => ({
+  const experiencesTimeline: TimelineItem[] = experiences.map((exp) => ({
     period: exp.period,
     institution: exp.company,
     title: exp.title,
     description: exp.description,
   }));
 
-  const educationsTimeline: TimelineItem[] = me.educations.map((edu) => ({
+  const educationsTimeline: TimelineItem[] = education.map((edu) => ({
     period: edu.period,
     institution: edu.school,
     title: edu.field,
@@ -109,7 +113,7 @@
         <h2 class="font-transducer-extended text-xl font-bold">Technical Skills:</h2>
         <div class="mb-5"></div>
         <div>
-          <Skills data={me.technicalSkills} />
+          <Skills data={technicalSkills} />
         </div>
         <div class="mb-8"></div>
       </section>
@@ -118,7 +122,7 @@
         <h2 class="font-transducer-extended text-xl font-bold">Other Skills:</h2>
         <div class="mb-5"></div>
         <div>
-          <Skills data={me.otherSkills} />
+          <Skills data={otherSkills} />
         </div>
         <div class="mb-8"></div>
       </section>
@@ -128,7 +132,7 @@
         <div class="mb-5"></div>
         <div>
           <ul class="flex flex-wrap gap-2">
-            {#each me.knowledges as item (item)}
+            {#each knowledge as item (item)}
               <li class="contents">
                 <NeobrutalismBadge class="rounded" shadow="sm">
                   {item}
@@ -144,7 +148,7 @@
         <h2 class="font-transducer-extended text-xl font-bold">Certifications:</h2>
         <div class="mb-5"></div>
         <div>
-          <Certificates data={me.certificates} />
+          <Certificates data={certificates} />
         </div>
       </section>
     </div>
