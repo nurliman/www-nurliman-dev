@@ -13,9 +13,15 @@
   import { ModeWatcher } from "mode-watcher";
   import { ProgressBar } from "sveltekit-progress-bar";
 
-  const title = "Nurliman Diara Aria | Software Engineer";
-  const description = "Crafting Digital Experiences with Excellence";
-  const canonicalURL = new URL(page.url.pathname, page.url.origin);
+  // Layout metadata constants
+  const LAYOUT_TITLE = "Nurliman Diara Aria | Full-Stack Developer & DevOps Engineer";
+  const LAYOUT_DESCRIPTION =
+    "Full-stack developer specializing in modern web applications, cloud infrastructure, and DevOps. Expert in JavaScript/TypeScript, React, Node.js, and Google Cloud Platform.";
+  const SITE_NAME = "Nurliman Diara Aria";
+  const OG_IMAGE_URL = "https://nurliman.dev/assets/og-image.jpg";
+  const THEME_COLOR = "#23a094";
+
+  const canonicalURL = $derived(new URL(page.url.pathname, page.url.origin));
 
   let { children } = $props();
 
@@ -27,35 +33,66 @@
 </script>
 
 <svelte:head>
-  <title>{title}</title>
-  <meta name="description" content={description} />
+  <!-- Basic fallback metadata - can be overridden by individual pages -->
+  <title>{LAYOUT_TITLE}</title>
+  <meta name="description" content={LAYOUT_DESCRIPTION} />
 
-  {#if canonicalURL}
-    <link rel="canonical" href={canonicalURL.toString()} />
-  {/if}
+  <link rel="canonical" href={canonicalURL.toString()} />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://nurliman.dev/assets/og-image.jpg" />
-  <meta property="og:title" content={title} />
-  <meta property="og:site_name" content={title?.split?.(" | ")?.[0] || title} />
-  {#if canonicalURL}
-    <meta property="og:url" content={canonicalURL.toString()} />
-  {/if}
-  {#if description}
-    <meta property="og:description" content={description} />
-  {/if}
+  <meta property="og:url" content={canonicalURL.toString()} />
+  <meta property="og:title" content={LAYOUT_TITLE} />
+  <meta property="og:description" content={LAYOUT_DESCRIPTION} />
+  <meta property="og:image" content={OG_IMAGE_URL} />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter/X -->
-  <meta name="twitter:image" content="https://nurliman.dev/assets/og-image.jpg" />
-  <meta name="twitter:title" content={title} />
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL.toString()} />
+  <meta property="twitter:title" content={LAYOUT_TITLE} />
+  <meta property="twitter:description" content={LAYOUT_DESCRIPTION} />
+  <meta property="twitter:image" content={OG_IMAGE_URL} />
   <meta property="twitter:domain" content={page.url.hostname} />
-  {#if canonicalURL}
-    <meta property="twitter:url" content={canonicalURL.toString()} />
-  {/if}
-  {#if description}
-    <meta name="twitter:description" content={description} />
-  {/if}
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content={THEME_COLOR} />
+  <meta name="msapplication-TileColor" content={THEME_COLOR} />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content={SITE_NAME} />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nurliman Diara Aria",
+      "jobTitle": "Full-Stack Developer & DevOps Engineer",
+      "description": "Full-stack developer specializing in modern web applications, cloud infrastructure, and DevOps. Expert in JavaScript/TypeScript, React, Node.js, and Google Cloud Platform.",
+      "url": "https://nurliman.dev",
+      "sameAs": ["https://github.com/nurliman", "https://linkedin.com/in/nurliman"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "knowsAbout": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Google Cloud Platform",
+        "DevOps",
+        "Web Development",
+        "Cloud Computing"
+      ]
+    }
+  </script>
 </svelte:head>
 
 <ModeWatcher />

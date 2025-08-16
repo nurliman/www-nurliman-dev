@@ -3,7 +3,28 @@
   import * as Card from "$lib/components/ui/card";
   import { projects } from "$lib/data/projects";
   import ProjectCard from "./ProjectCard.svelte";
+
+  const PAGE_TITLE = "Portfolio | Nurliman Diara Aria - Full-Stack Developer";
+  const PAGE_DESCRIPTION =
+    "Showcase of innovative web applications, cloud solutions, and full-stack projects. See how modern technologies solve real-world problems.";
+  const PAGE_KEYWORDS =
+    "developer portfolio, web application projects, full-stack case studies, cloud solutions, React projects, Node.js applications, software development showcase";
+  const PAGE_IMAGE_ALT = "Portfolio - Nurliman Diara Aria's Development Projects";
+  const PAGE_AUTHOR = "Nurliman Diara Aria";
 </script>
+
+<svelte:head>
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESCRIPTION} />
+  <meta name="keywords" content={PAGE_KEYWORDS} />
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta property="og:description" content={PAGE_DESCRIPTION} />
+  <meta property="og:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta name="twitter:title" content={PAGE_TITLE} />
+  <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+  <meta name="twitter:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta property="og:article:author" content={PAGE_AUTHOR} />
+</svelte:head>
 
 <main class="w-full pt-16 pb-24">
   <div class="container mx-auto w-full max-sm:px-6">

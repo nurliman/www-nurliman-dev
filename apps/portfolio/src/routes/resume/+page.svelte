@@ -15,6 +15,14 @@
   import Timeline from "./Timeline.svelte";
   import type { TimelineItem } from "./types";
 
+  const PAGE_TITLE = "Resume & Experience | Nurliman Diara Aria - Full-Stack Developer";
+  const PAGE_DESCRIPTION =
+    "Comprehensive resume showcasing 4+ years of full-stack development experience, technical skills, and professional achievements. Download available.";
+  const PAGE_KEYWORDS =
+    "software engineer resume, full-stack developer CV, technical skills, professional experience, software development portfolio, developer resume download";
+  const PAGE_IMAGE_ALT = "Resume & Experience - Nurliman Diara Aria";
+  const PAGE_AUTHOR = "Nurliman Diara Aria";
+
   const experiencesTimeline: TimelineItem[] = experiences.map((exp) => ({
     period: exp.period,
     institution: exp.company,
@@ -41,6 +49,20 @@
 
   const isLarge = new IsLarge();
 </script>
+
+<svelte:head>
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESCRIPTION} />
+  <meta name="keywords" content={PAGE_KEYWORDS} />
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta property="og:description" content={PAGE_DESCRIPTION} />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta name="twitter:title" content={PAGE_TITLE} />
+  <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+  <meta name="twitter:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta property="og:article:author" content={PAGE_AUTHOR} />
+</svelte:head>
 
 <main class="relative container flex w-full flex-col">
   <div class="mt-16 mb-24 flex w-full justify-between">

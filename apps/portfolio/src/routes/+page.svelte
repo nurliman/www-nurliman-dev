@@ -3,7 +3,26 @@
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import { personalInfo } from "$lib/data/personal";
   import { cn } from "$lib/utils/shadcn";
+
+  const PAGE_TITLE = "Nurliman Diara Aria | Full-Stack Developer & DevOps Engineer";
+  const PAGE_DESCRIPTION =
+    "Full-stack software engineer specializing in modern web development, cloud infrastructure, and DevOps. Expert in JavaScript/TypeScript, React, Node.js, and Google Cloud Platform.";
+  const PAGE_KEYWORDS =
+    "full-stack developer, software engineer, JavaScript developer, TypeScript developer, React developer, Node.js developer, DevOps engineer, cloud engineer, Google Cloud Platform, web development";
+  const PAGE_IMAGE_ALT = "Nurliman Diara Aria - Full-Stack Software Engineer & DevOps Specialist";
 </script>
+
+<svelte:head>
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESCRIPTION} />
+  <meta name="keywords" content={PAGE_KEYWORDS} />
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta property="og:description" content={PAGE_DESCRIPTION} />
+  <meta property="og:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta name="twitter:title" content={PAGE_TITLE} />
+  <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+  <meta name="twitter:image:alt" content={PAGE_IMAGE_ALT} />
+</svelte:head>
 
 <main class="flex-center relative -top-4 flex-1 flex-col p-4 text-center">
   <h1 class="font-transducer-extended">

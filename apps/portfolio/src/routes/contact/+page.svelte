@@ -20,6 +20,14 @@
   import { defaults, superForm } from "sveltekit-superforms/client";
   import styles from "./+page.module.css";
 
+  const PAGE_TITLE = "Contact Nurliman Diara Aria | Full-Stack Developer";
+  const PAGE_DESCRIPTION =
+    "Professional web development and cloud consulting services. Get in touch for custom solutions, project collaboration, or development inquiries.";
+  const PAGE_KEYWORDS =
+    "hire developer, contact software engineer, web development services, cloud consulting, project collaboration, freelance developer";
+  const PAGE_IMAGE_ALT = "Contact Nurliman Diara Aria - Get in Touch";
+  const PAGE_AUTHOR = "Nurliman Diara Aria";
+
   type InfoItem = {
     label: string;
     value: string;
@@ -107,6 +115,19 @@
     },
   } satisfies Pick<typeof form, "capture" | "restore">;
 </script>
+
+<svelte:head>
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESCRIPTION} />
+  <meta name="keywords" content={PAGE_KEYWORDS} />
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta property="og:description" content={PAGE_DESCRIPTION} />
+  <meta property="og:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta name="twitter:title" content={PAGE_TITLE} />
+  <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+  <meta name="twitter:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta property="og:article:author" content={PAGE_AUTHOR} />
+</svelte:head>
 
 <main class="relative container flex w-full flex-col">
   <div class="mx-auto flex w-full max-w-xl flex-col lg:mx-0">

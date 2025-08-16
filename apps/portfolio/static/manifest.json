@@ -1,19 +1,61 @@
 {
-  "name": "Nurliman Diara - Web Developer",
-  "short_name": "Nurliman Diara",
+  "$schema": "https://www.schemastore.org/web-manifest-combined.json",
+  "name": "Nurliman Diara Aria - Full-Stack Developer & DevOps Engineer",
+  "short_name": "Nurliman",
+  "description": "Full-stack developer specializing in modern web applications, cloud infrastructure, and DevOps. Expert in JavaScript/TypeScript, React, Node.js, and Google Cloud Platform.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "Resume",
+      "url": "/resume",
+      "description": "View professional experience, skills, and education."
+    },
+    {
+      "name": "Portfolio",
+      "url": "/portfolio",
+      "description": "Explore featured projects and case studies."
+    },
+    {
+      "name": "Contact",
+      "url": "/contact",
+      "description": "Get in touch for project collaboration."
+    }
+  ],
+  "theme_color": "#23a094",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "any",
+  "categories": ["development", "personal", "portfolio"],
+  "lang": "en",
+  "dir": "ltr"
 }

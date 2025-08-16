@@ -5,6 +5,14 @@
   import { cn } from "$lib/utils/shadcn";
   import dedent from "dedent";
 
+  const PAGE_TITLE = "About Nurliman Diara Aria | Full-Stack Developer & DevOps Engineer";
+  const PAGE_DESCRIPTION =
+    "Experienced full-stack developer with 4+ years building scalable web applications. Expert in JavaScript/TypeScript, cloud infrastructure, and modern development practices.";
+  const PAGE_KEYWORDS =
+    "about developer, full-stack engineer, JavaScript expert, TypeScript developer, cloud engineer, DevOps specialist, web developer profile, software engineer background";
+  const PAGE_IMAGE_ALT = "About Nurliman Diara Aria - Full-Stack Developer Profile";
+  const PAGE_AUTHOR = "Nurliman Diara Aria";
+
   const thingsIDo = [
     {
       title: "Front-End Development",
@@ -47,6 +55,24 @@
 
   const containerClass = "mx-auto w-full container";
 </script>
+
+<svelte:head>
+  <title>{PAGE_TITLE}</title>
+  <meta name="description" content={PAGE_DESCRIPTION} />
+  <meta name="keywords" content={PAGE_KEYWORDS} />
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta property="og:description" content={PAGE_DESCRIPTION} />
+  <meta property="og:type" content="profile" />
+  <meta property="profile:first_name" content="Nurliman" />
+  <meta property="profile:last_name" content="Diara Aria" />
+  <meta property="profile:username" content="nurliman" />
+  <meta property="profile:gender" content="male" />
+  <meta property="og:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta name="twitter:title" content={PAGE_TITLE} />
+  <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+  <meta name="twitter:image:alt" content={PAGE_IMAGE_ALT} />
+  <meta property="og:article:author" content={PAGE_AUTHOR} />
+</svelte:head>
 
 <main class="flex w-full flex-col text-left">
   <div
