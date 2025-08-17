@@ -36,40 +36,43 @@
             <Tooltip.Provider>
               <Tooltip.Root delayDuration={100}>
                 <Tooltip.Trigger>
-                  <a
-                    href={social.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={social.name}
-                    class={[
-                      "group flex-center relative size-12",
-                      "border border-white/10",
-                      "bg-gradient-to-br from-white/5 to-white/0",
-                      "transition-all duration-300",
-                      "hover:-translate-y-1 hover:scale-110 hover:border-white/20 hover:bg-white/10",
-                    ]}
-                  >
-                    <!-- Icon -->
-                    <img
-                      src={social.iconDarkUrl}
-                      alt={social.name}
+                  {#snippet child({ props })}
+                    <a
+                      {...props}
+                      href={social.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={social.name}
                       class={[
-                        "size-5 opacity-80",
+                        "group flex-center relative size-12",
+                        "border border-white/10",
+                        "bg-gradient-to-br from-white/5 to-white/0",
                         "transition-all duration-300",
-                        "group-hover:scale-110 group-hover:opacity-100",
+                        "hover:-translate-y-1 hover:scale-110 hover:border-white/20 hover:bg-white/10",
                       ]}
-                    />
+                    >
+                      <!-- Icon -->
+                      <img
+                        src={social.iconDarkUrl}
+                        alt={social.name}
+                        class={[
+                          "size-5 opacity-80",
+                          "transition-all duration-300",
+                          "group-hover:scale-110 group-hover:opacity-100",
+                        ]}
+                      />
 
-                    <!-- Hover Glow Effect -->
-                    <div
-                      class={[
-                        "absolute inset-0 -z-10",
-                        "bg-gradient-to-br from-blue-500/20 to-purple-600/20",
-                        "opacity-0 blur-md",
-                        "transition-opacity duration-300 group-hover:opacity-100",
-                      ]}
-                    ></div>
-                  </a>
+                      <!-- Hover Glow Effect -->
+                      <div
+                        class={[
+                          "absolute inset-0 -z-10",
+                          "bg-gradient-to-br from-blue-500/20 to-purple-600/20",
+                          "opacity-0 blur-md",
+                          "transition-opacity duration-300 group-hover:opacity-100",
+                        ]}
+                      ></div>
+                    </a>
+                  {/snippet}
                 </Tooltip.Trigger>
                 <Tooltip.Content>
                   <p>{social.name}</p>
