@@ -80,8 +80,8 @@
                   "dark:text-gray-300",
                 ]}
               >
-                I'm curating a set of featured case studies. In the meantime, you can explore my
-                experience or get in touch.
+                I'm currently curating featured case studies to showcase my best work. In the
+                meantime, explore my experience or reach out to discuss your project needs.
               </p>
             </div>
 
@@ -125,7 +125,7 @@
             "dark:text-gray-300",
           ]}
         >
-          Let's discuss how I can help bring your vision to life.
+          Let's discuss how I can help build your next project.
         </p>
       </Card.Content>
       <Card.Footer

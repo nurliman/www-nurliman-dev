@@ -16,32 +16,26 @@
   const thingsIDo = [
     {
       title: "Front-End Development",
-      description: dedent`I utilize modern JavaScript/TypeScript
-        to craft high-performance User Interfaces
-        that are optimized for cross-browser
-        and multi-platform compatibility.`,
+      description: dedent`I craft high-performance user interfaces using modern JavaScript/TypeScript,
+        ensuring cross-browser compatibility and responsive design across all platforms.`,
       icon: "/assets/whatido-frontend.svg",
     },
     {
       title: "Back-End Development",
-      description: dedent`My focus is on writing maintainable, testable,
-        and efficient Web Backends using various languages and frameworks,
-        always keeping performance in mind.`,
+      description: dedent`I build maintainable, testable web backends with performance-focused architecture,
+        using various languages and frameworks to create robust server-side solutions.`,
       icon: "/assets/whatido-backend.svg",
     },
     {
       title: "Cloud Development",
-      description: dedent`I specialize in building and managing 
-        Kubernetes, VMs, Cloud Databases, Cloud Computing,
-        Cloud Storage, Cloud Network, Load Balancers, and more,
-        leveraging the capabilities of the Google Cloud Platform.`,
+      description: dedent`I design and manage cloud infrastructure including Kubernetes clusters, virtual machines,
+        databases, storage, networking, and load balancers on Google Cloud Platform.`,
       icon: "/assets/whatido-cloud.svg",
     },
     {
       title: "Graphic Design",
-      description: dedent`I excel in creating user flows, wireframes, prototypes, and mockups.
-        My ability to translate requirements into style guides, design systems,
-        design patterns, and aesthetically pleasing user interfaces sets me apart.`,
+      description: dedent`I create user flows, wireframes, prototypes, and mockups with a focus on user experience.
+        My expertise includes developing style guides, design systems, and intuitive interfaces.`,
       icon: "/assets/whatido-design.svg",
     },
   ];
@@ -100,19 +94,18 @@
       </span>
       <br />
       <span class="text-xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl">
-        Years of Mastery in JavaScript/TypeScript.
+        Crafting Digital Solutions with Modern Technologies.
       </span>
     </h1>
 
     <div class="mb-4 md:mb-6"></div>
 
     <p class="max-md:text-sm">
-      I am a proficient Javascript/Typescript programmer with over 4 years of experience as a Web
-      Developer. My expertise extends across Backend, Frontend, and DevOps technologies. Currently,
-      I am actively seeking employment as a Programmer at any technology-based company. My skill set
-      includes exceptional abilities in designing, coding, testing, and implementing customizations
-      to surpass customer expectations. Additionally, I possess a strong eagerness to acquire new
-      skills.
+      I'm a JavaScript/TypeScript developer with over 4 years of experience building web
+      applications. My expertise spans frontend, backend, and DevOps technologies. I'm currently
+      seeking opportunities as a programmer at technology companies where I can contribute to
+      innovative projects. I excel at designing, coding, testing, and implementing custom solutions
+      that exceed expectations, and I'm always eager to learn new technologies.
     </p>
   </div>
 

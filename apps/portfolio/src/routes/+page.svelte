@@ -49,9 +49,9 @@
   <div class="h-5 md:h-8"></div>
 
   <p class="text-sm sm:text-xl">
-    <span>Simple Solutions with a Significant Purpose,</span>
+    <span>Building meaningful solutions that make a difference,</span>
     <br class="hidden sm:block" />
-    <span>Navigating the Landscape of Digital Development.</span>
+    <span>while pushing the boundaries of modern web development.</span>
   </p>
 
   <div class="h-8 md:h-10"></div>

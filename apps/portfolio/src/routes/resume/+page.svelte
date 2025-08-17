@@ -101,13 +101,13 @@
         <div class="mb-5"></div>
         <div>
           <p class="text-sm md:leading-relaxed">
-            Results-oriented Software Engineer, proficient in Frontend Development, and well-versed
-            in DevOps practices. Adept at crafting high-performance, user-centric applications with
-            a keen eye for detail. Demonstrated success in optimizing software delivery pipelines,
-            implementing scalable solutions, and fostering cross-functional collaboration. Proactive
-            problem-solver with a passion for staying abreast of emerging technologies. Seeking a
-            challenging role to leverage technical expertise and contribute to innovative projects
-            in a dynamic environment.
+            Results-driven software engineer with expertise in frontend development and DevOps
+            practices. I specialize in creating high-performance, user-centric applications with
+            meticulous attention to detail. My track record includes optimizing software delivery
+            pipelines, implementing scalable solutions, and fostering cross-functional
+            collaboration. I'm a proactive problem-solver who stays current with emerging
+            technologies and seeks challenging opportunities to leverage technical expertise in
+            innovative projects.
           </p>
         </div>
         <div class="mb-8"></div>
