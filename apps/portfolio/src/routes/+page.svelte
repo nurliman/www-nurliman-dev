@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { personalInfo } from "@nurliman.dev/data";
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
-  import { personalInfo } from "$lib/data/personal";
   import { cn } from "$lib/utils/shadcn";
 
   const PAGE_TITLE = "Nurliman Diara Aria | Full-Stack Developer & DevOps Engineer";

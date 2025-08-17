@@ -16,6 +16,7 @@
     "@fontsource/racing-sans-one": "^5.2.6",
     "@internationalized/date": "^3.8.2",
     "@lucide/svelte": "^0.539.0",
+    "@nurliman.dev/data": "workspace:*",
     "@nurliman.dev/emails": "workspace:*",
     "@t3-oss/env-core": "^0.13.8",
     "bits-ui": "^2.9.3",

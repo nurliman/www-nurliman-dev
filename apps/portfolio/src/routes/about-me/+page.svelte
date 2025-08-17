@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { personalInfo } from "@nurliman.dev/data";
   import Marquee from "$lib/components/Marquee.svelte";
   import * as Card from "$lib/components/ui/card";
-  import { personalInfo } from "$lib/data/personal";
   import { cn } from "$lib/utils/shadcn";
   import dedent from "dedent";
 

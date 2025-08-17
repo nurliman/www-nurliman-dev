@@ -7,6 +7,7 @@ A modern, monorepo-based personal website and portfolio built with cutting-edge 
 This is a monorepo managed with [Turbo](https://turbo.build/) and [Bun](https://bun.sh/), containing:
 
 - **`apps/portfolio/`** - Main SvelteKit portfolio website
+- **`packages/data/`** - Shared data package for portfolio information, skills, projects, and more
 - **`packages/emails/`** - Reusable email templates package
 
 ## 🛠️ Tech Stack
@@ -25,6 +26,7 @@ This is a monorepo managed with [Turbo](https://turbo.build/) and [Bun](https://
 - **Performance**: Optimized with Vite and SvelteKit
 - **Responsive**: Mobile-first design with Tailwind CSS
 - **Type Safety**: Full TypeScript support across the stack
+- **Data Sharing**: Centralized data package for cross-app consistency
 - **Email Integration**: Custom email templates for contact forms
 
 ## 🚀 Getting Started

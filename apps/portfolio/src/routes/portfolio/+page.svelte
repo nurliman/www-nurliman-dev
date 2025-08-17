@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { projects } from "@nurliman.dev/data";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import * as Card from "$lib/components/ui/card";
-  import { projects } from "$lib/data/projects";
   import ProjectCard from "./ProjectCard.svelte";
 
   const PAGE_TITLE = "Portfolio | Nurliman Diara Aria - Full-Stack Developer";

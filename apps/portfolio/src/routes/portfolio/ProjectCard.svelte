@@ -26,10 +26,10 @@
   import TrendingUpIcon from "@lucide/svelte/icons/trending-up";
   import UsersIcon from "@lucide/svelte/icons/users";
   import ZapIcon from "@lucide/svelte/icons/zap";
+  import type { Project, ProjectCategory, ProjectMetric } from "@nurliman.dev/data";
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import * as Card from "$lib/components/ui/card";
-  import type { Project, ProjectCategory, ProjectMetric } from "$lib/data/projects";
   import { cn } from "$lib/utils/shadcn";
   import snarkdown from "snarkdown";
 

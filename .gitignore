@@ -11,6 +11,7 @@ node_modules/
 # Testing
 coverage
 test-results
+*.lcov
 
 # Build output
 dist/
@@ -22,17 +23,25 @@ out/
 .generated/
 .react-email/
 .astro/
+*.tgz
 
 # Environment variables
 .env*
 !.env.example
 !.env.test
+!.env.development.local
+!.env.test.local
+!.env.production.local
+!.env.local
 
 # Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # OS files
 .DS_Store
@@ -58,3 +67,6 @@ vite.config.ts.timestamp-*
 
 # VSCode
 .vscode/
+
+# IntelliJ based IDEs
+.idea

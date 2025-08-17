@@ -3,11 +3,11 @@
   import RotateCcwIcon from "@lucide/svelte/icons/rotate-ccw";
   import RotateCwIcon from "@lucide/svelte/icons/rotate-cw";
   import SendIcon from "@lucide/svelte/icons/send";
+  import { personalInfo } from "@nurliman.dev/data";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import NeobrutalismInput from "$lib/components/NeobrutalismInput.svelte";
   import * as Form from "$lib/components/ui/form";
   import * as Tooltip from "$lib/components/ui/tooltip";
-  import { personalInfo } from "$lib/data/personal";
   import { env } from "$lib/env";
   import { contactFormSchema } from "$lib/schemas";
   import copy from "copy-to-clipboard";

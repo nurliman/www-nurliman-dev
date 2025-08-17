@@ -1,14 +1,17 @@
 <script lang="ts">
   import DownloadIcon from "@lucide/svelte/icons/download";
+  import {
+    certificates,
+    education,
+    experiences,
+    knowledge,
+    otherSkills,
+    technicalSkills,
+  } from "@nurliman.dev/data";
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import TableOfContents from "$lib/components/TableOfContents.svelte";
   import { HEADER_HEIGHT } from "$lib/constants";
-  import { certificates } from "$lib/data/certificates";
-  import { education } from "$lib/data/education";
-  import { experiences } from "$lib/data/experiences";
-  import { knowledge } from "$lib/data/knowledge";
-  import { otherSkills, technicalSkills } from "$lib/data/skills";
   import { IsLarge } from "$lib/hooks/is-large.svelte";
   import Certificates from "./Certificates.svelte";
   import Skills from "./Skills.svelte";
