@@ -1,5 +1,17 @@
 # @nurliman.dev/portfolio
 
+## 0.5.0
+
+### Minor Changes
+
+- 50435af: feat: enhance SEO and metadata across routes
+- 5decb51: refactor: update text content for clarity and impact across portfolio routes
+
+### Patch Changes
+
+- c964e90: update dependencies
+- d93f659: fix: change dark background for ProjectCard component
+
 ## 0.4.1
 
 ### Patch Changes
