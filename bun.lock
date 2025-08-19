@@ -21,7 +21,7 @@
     },
     "apps/portfolio": {
       "name": "@nurliman.dev/portfolio",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "dependencies": {
         "@fontsource/racing-sans-one": "^5.2.6",
         "@internationalized/date": "^3.8.2",

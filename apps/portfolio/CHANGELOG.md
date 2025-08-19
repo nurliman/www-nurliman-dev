@@ -1,5 +1,12 @@
 # @nurliman.dev/portfolio
 
+## 0.5.1
+
+### Patch Changes
+
+- 1504990: update dependencies
+- d2bcd5d: fix: use child snippets to prevent nested button elements in tooltips
+
 ## 0.5.0
 
 ### Minor Changes
