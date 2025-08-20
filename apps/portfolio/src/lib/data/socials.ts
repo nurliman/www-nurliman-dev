@@ -1,3 +1,5 @@
+import { personalInfo } from "@nurliman.dev/data";
+
 export type Social = {
   name: string;
   link: string;
@@ -8,19 +10,19 @@ export type Social = {
 export const socials = [
   {
     name: "Github",
-    link: "https://github.com/nurliman",
+    link: personalInfo.githubLink,
     iconUrl: "/assets/github.svg",
     iconDarkUrl: "/assets/github-dark.svg",
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/nurliman",
+    link: personalInfo.linkedinLink,
     iconUrl: "/assets/linkedin.svg",
     iconDarkUrl: "/assets/linkedin-dark.svg",
   },
   {
     name: "WhatsApp",
-    link: "https://wa.me/6285174474227",
+    link: personalInfo.whatsappLink,
     iconUrl: "/assets/whatsapp.svg",
     iconDarkUrl: "/assets/whatsapp-dark.svg",
   },
