@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { socials } from "@nurliman.dev/data";
   import { Button } from "$lib/components/ui/button";
   import * as Tooltip from "$lib/components/ui/tooltip";
+  import { socials } from "$lib/data/socials";
   import { onMount } from "svelte";
 
   let currentYear = $state(new Date().getFullYear());
