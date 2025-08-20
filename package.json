@@ -32,6 +32,7 @@
     "typescript": "^5.9.2"
   },
   "trustedDependencies": [
+    "@nurliman.dev/portfolio",
     "@tailwindcss/oxide",
     "esbuild",
     "lefthook"

@@ -112,6 +112,7 @@
   "trustedDependencies": [
     "@tailwindcss/oxide",
     "esbuild",
+    "@nurliman.dev/portfolio",
     "lefthook",
   ],
   "packages": {
