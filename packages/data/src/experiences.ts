@@ -79,17 +79,17 @@ export const experiences: Experience[] = [
       <br /><br />
       **Main Website Development:**
       - Spearheaded the design and development of the company's main website, focusing on creating an intuitive and visually appealing online platform.
-      - Implemented responsive web design principles to ensure seamless user experiences across various devices, contributing to a 20% increase in website traffic.
+      - Implemented responsive web design principles to ensure seamless user experiences across various devices, contributing to a significant increase in website traffic and user engagement.
       - Collaborated closely with cross-functional teams to gather requirements and translate them into functional features, enhancing the overall online brand presence.
 
       **Online Ordering Web App:**
       - Led the development of a user-friendly online ordering web application, streamlining the customer ordering process.
       - Integrated secure payment gateways and implemented robust authentication mechanisms to ensure the confidentiality and integrity of customer data.
-      - Improved the app's performance through optimization techniques, resulting in a 15% decrease in page load times and increased customer satisfaction.
+      - Improved the app's performance through optimization techniques, resulting in noticeably faster page load times and increased customer satisfaction.
 
       **Internal Apps Development:**
       - Developed and maintained several internal applications to enhance operational efficiency.
-      - Implemented custom features based on user feedback, resulting in a 25% reduction in manual data entry and improved overall workflow automation.
+      - Implemented custom features based on user feedback, resulting in substantial reduction in manual data entry and improved overall workflow automation.
 
       **Technological Stack:**
       - Utilized a stack comprising HTML, CSS, JavaScript, and various frontend frameworks to create dynamic and engaging user interfaces.
