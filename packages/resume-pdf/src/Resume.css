@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.markdown {
+  & ul {
+    @apply list-disc pl-4;
+  }
+
+  & strong {
+    @apply text-sm;
+  }
+}

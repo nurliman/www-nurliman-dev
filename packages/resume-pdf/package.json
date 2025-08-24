@@ -1,0 +1,30 @@
+{
+  "name": "@nurliman.dev/resume-pdf",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "bun --hot src/dev.html",
+    "build": "bun run build.ts"
+  },
+  "dependencies": {
+    "@nurliman.dev/data": "workspace:*",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.541.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "snarkdown": "^2.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "@tsconfig/bun": "^1.0.8",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "bun-plugin-tailwind": "^0.0.15",
+    "puppeteer": "^24.17.0",
+    "tailwindcss": "^4.1.12"
+  }
+}
