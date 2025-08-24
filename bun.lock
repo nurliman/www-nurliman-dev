@@ -21,7 +21,7 @@
     },
     "apps/portfolio": {
       "name": "@nurliman.dev/portfolio",
-      "version": "0.5.1",
+      "version": "0.6.0",
       "dependencies": {
         "@fontsource/racing-sans-one": "^5.2.6",
         "@internationalized/date": "^3.8.2",
@@ -73,7 +73,7 @@
     },
     "packages/data": {
       "name": "@nurliman.dev/data",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "dependencies": {
         "dedent": "^1.6.0",
       },
@@ -83,7 +83,7 @@
     },
     "packages/emails": {
       "name": "@nurliman.dev/emails",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "dependencies": {
         "lodash.unescape": "^4.0.1",
         "pupa": "^3.1.0",

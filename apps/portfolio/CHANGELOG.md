@@ -1,5 +1,21 @@
 # @nurliman.dev/portfolio
 
+## 0.6.0
+
+### Minor Changes
+
+- cf7cbb2: chore: update experience years in about me and resume pages to reflect 5+ years of development experience
+
+### Patch Changes
+
+- e280b91: update dependencies
+- Updated dependencies [52e32b4]
+- Updated dependencies [3267f77]
+- Updated dependencies [e68885e]
+- Updated dependencies [e280b91]
+  - @nurliman.dev/data@0.2.0
+  - @nurliman.dev/emails@0.3.1
+
 ## 0.5.1
 
 ### Patch Changes
