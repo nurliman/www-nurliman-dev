@@ -7,7 +7,7 @@
 
   const PAGE_TITLE = "About Nurliman Diara Aria | Full-Stack Developer & DevOps Engineer";
   const PAGE_DESCRIPTION =
-    "Experienced full-stack developer with 4+ years building scalable web applications. Expert in JavaScript/TypeScript, cloud infrastructure, and modern development practices.";
+    "Experienced full-stack developer with 5+ years building scalable web applications. Expert in JavaScript/TypeScript, cloud infrastructure, and modern development practices.";
   const PAGE_KEYWORDS =
     "about developer, full-stack engineer, JavaScript expert, TypeScript developer, cloud engineer, DevOps specialist, web developer profile, software engineer background";
   const PAGE_IMAGE_ALT = "About Nurliman Diara Aria - Full-Stack Developer Profile";

@@ -20,7 +20,7 @@
 
   const PAGE_TITLE = "Resume & Experience | Nurliman Diara Aria - Full-Stack Developer";
   const PAGE_DESCRIPTION =
-    "Comprehensive resume showcasing 4+ years of full-stack development experience, technical skills, and professional achievements. Download available.";
+    "Comprehensive resume showcasing 5+ years of full-stack development experience, technical skills, and professional achievements. Download available.";
   const PAGE_KEYWORDS =
     "software engineer resume, full-stack developer CV, technical skills, professional experience, software development portfolio, developer resume download";
   const PAGE_IMAGE_ALT = "Resume & Experience - Nurliman Diara Aria";
