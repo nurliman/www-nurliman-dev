@@ -24,7 +24,6 @@ A comprehensive email template system built with React Email, providing type-saf
 ### Prerequisites
 
 - [Bun](https://bun.sh/) (v1.2.20 or higher)
-- [Node.js](https://nodejs.org/) (v18 or higher)
 
 ### Development
 

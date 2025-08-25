@@ -34,7 +34,6 @@ This is a monorepo managed with [Turbo](https://turbo.build/) and [Bun](https://
 ### Prerequisites
 
 - [Bun](https://bun.sh/) (v1.2.20 or higher)
-- [Node.js](https://nodejs.org/) (v18 or higher)
 
 ### Installation
 
