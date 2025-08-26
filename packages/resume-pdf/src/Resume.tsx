@@ -100,11 +100,11 @@ export default function Resume({ className, ...props }: ComponentProps<"div"> = 
               {formatSkills([
                 "Docker",
                 "Kubernetes",
-                "Linux",
+                "Jenkins",
                 "GitHub Actions",
                 "Google Cloud Platform",
+                "Linux",
                 "Nginx",
-                "CI/CD",
               ])}
             </div>
           </div>
@@ -115,11 +115,14 @@ export default function Resume({ className, ...props }: ComponentProps<"div"> = 
             <div className="text-sm leading-relaxed text-gray-600">
               {formatSkills([
                 "React",
-                "Svelte/SvelteKit",
-                "Astro",
+                "Redux",
+                "TailwindCSS",
+                "styled-components",
+                "SCSS",
+                "Storybook",
+                "Svelte",
                 "Solid.js",
-                "TanStack Query",
-                "shadcn/ui",
+                "Astro",
               ])}
             </div>
           </div>
@@ -155,12 +158,14 @@ export default function Resume({ className, ...props }: ComponentProps<"div"> = 
             <div className="text-sm leading-relaxed text-gray-600">
               {formatSkills([
                 "Git/GitHub",
-                "Figma",
-                "Playwright",
+                "Jest",
+                "Vite",
                 "Vitest",
+                "Playwright",
                 "Sentry",
+                "Turborepo",
+                "Figma",
                 "Adobe Illustrator",
-                "Turbo",
               ])}
             </div>
           </div>
