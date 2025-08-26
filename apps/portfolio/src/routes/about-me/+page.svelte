@@ -40,13 +40,6 @@
     },
   ];
 
-  const contactInfo = [
-    ["Age", personalInfo.age],
-    ["Residence", personalInfo.residence],
-    ["e-mail", personalInfo.email],
-    ["Phone", personalInfo.phoneFormatted],
-  ];
-
   const containerClass = "mx-auto w-full container";
 </script>
 
@@ -78,7 +71,7 @@
   >
     <Marquee clone>
       <div class="font-transducer-extended inline-flex text-[10px] font-bold">
-        <span>NURLIMAN DIARA ARIA</span>
+        <span class="uppercase">{personalInfo.name}</span>
         <span class="mx-3">&#8226;</span>
       </div>
     </Marquee>
@@ -148,26 +141,16 @@
 
   <div
     class={[
-      "min-h-9 py-2",
+      "min-h-7.5 py-1.5",
       "border-y-2 border-black dark:border-zinc-800",
       "bg-zinc-200 dark:bg-zinc-950",
     ]}
   >
-    <a href="/contact" class="block">
-      <Marquee clone>
-        <ul class="flex text-xs">
-          {#each contactInfo as [key, value], index (key)}
-            <li>
-              <span>{key}&nbsp;</span>
-              <span class="font-bold">{value}</span>
-              {#if index < contactInfo.length - 1}
-                <span>&nbsp;|&nbsp;</span>
-              {/if}
-            </li>
-          {/each}
-          <li class="mx-4">&#8226;</li>
-        </ul>
-      </Marquee>
-    </a>
+    <Marquee clone>
+      <div class="font-transducer-extended inline-flex text-[10px] font-bold">
+        <span class="uppercase">{personalInfo.name}</span>
+        <span class="mx-3">&#8226;</span>
+      </div>
+    </Marquee>
   </div>
 </main>
