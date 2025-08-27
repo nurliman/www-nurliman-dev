@@ -13,7 +13,7 @@ export const experiences: Experience[] = [
     company: "Pelita Textiles",
     title: "IT Programmer",
     description: dedent`
-      Solely developed and delivered a comprehensive suite of enterprise applications, managing
+      Developed and delivered a comprehensive suite of enterprise applications, managing
       the entire software development lifecycle from initial user research and UI/UX design to
       production deployment and ongoing maintenance.
       <br /><br />
