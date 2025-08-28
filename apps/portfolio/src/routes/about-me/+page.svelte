@@ -94,7 +94,7 @@
     <div class="mb-4 md:mb-6"></div>
 
     <p class="max-md:text-sm">
-      I'm a JavaScript/TypeScript developer with over 4 years of experience building web
+      I'm a JavaScript/TypeScript developer with over 5 years of experience building web
       applications. My expertise spans frontend, backend, and DevOps technologies. I'm currently
       seeking opportunities as a programmer at technology companies where I can contribute to
       innovative projects. I excel at designing, coding, testing, and implementing custom solutions
