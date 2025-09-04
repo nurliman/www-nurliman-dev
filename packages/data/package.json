@@ -16,7 +16,7 @@
   },
   "scripts": {},
   "dependencies": {
-    "dedent": "^1.6.0"
+    "dedent": "^1.7.0"
   },
   "devDependencies": {
     "@tsconfig/bun": "^1.0.8"
