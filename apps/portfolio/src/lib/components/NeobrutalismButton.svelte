@@ -2,7 +2,7 @@
   import { cn, type WithElementRef } from "$lib/utils/shadcn";
   import { clsx } from "clsx";
   import type { HTMLAnchorAttributes, HTMLButtonAttributes } from "svelte/elements";
-  import { tv, type VariantProps } from "tailwind-variants";
+  import { tv, type VariantProps } from "tailwind-variants/lite";
 
   export const buttonVariants = tv({
     base: clsx(

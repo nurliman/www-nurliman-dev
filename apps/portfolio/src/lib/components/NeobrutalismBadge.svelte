@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import { clsx } from "clsx";
-  import { tv, type VariantProps } from "tailwind-variants";
+  import { tv, type VariantProps } from "tailwind-variants/lite";
 
   export const badgeVariants = tv({
     base: clsx([
