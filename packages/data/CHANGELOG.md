@@ -1,5 +1,15 @@
 # @nurliman.dev/data
 
+## 0.3.0
+
+### Minor Changes
+
+- 5e5e51a: fix: update experience description for Pelita Textiles role
+
+### Patch Changes
+
+- 9d88b7a: update dependencies
+
 ## 0.2.0
 
 ### Minor Changes

@@ -21,7 +21,7 @@
     },
     "apps/portfolio": {
       "name": "@nurliman.dev/portfolio",
-      "version": "0.6.0",
+      "version": "0.7.0",
       "dependencies": {
         "@fontsource/racing-sans-one": "^5.2.6",
         "@internationalized/date": "^3.9.0",
@@ -75,7 +75,7 @@
     },
     "packages/data": {
       "name": "@nurliman.dev/data",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "dependencies": {
         "dedent": "^1.7.0",
       },
@@ -112,7 +112,7 @@
     },
     "packages/resume-pdf": {
       "name": "@nurliman.dev/resume-pdf",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "dependencies": {
         "@nurliman.dev/data": "workspace:*",
         "clsx": "^2.1.1",

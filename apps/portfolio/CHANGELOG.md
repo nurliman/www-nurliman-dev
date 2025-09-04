@@ -1,5 +1,21 @@
 # @nurliman.dev/portfolio
 
+## 0.7.0
+
+### Minor Changes
+
+- eaf1111: refactor: simplify contact information display in about me page
+- 76b08fd: feat: add new project screenshots for Pelita Textiles and Get It Printed
+- 4fe91ac: feat: integrate BiggerPicture and Carousel components in ProjectCard
+
+### Patch Changes
+
+- 0c51400: fix: update experience description to reflect 5 years of development experience
+- 9d88b7a: update dependencies
+- Updated dependencies [9d88b7a]
+- Updated dependencies [5e5e51a]
+  - @nurliman.dev/data@0.3.0
+
 ## 0.6.0
 
 ### Minor Changes
