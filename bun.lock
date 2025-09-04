@@ -34,6 +34,7 @@
         "clsx": "^2.1.1",
         "copy-to-clipboard": "^3.3.3",
         "dedent": "^1.6.0",
+        "embla-carousel-svelte": "^8.6.0",
         "formsnap": "^2.0.1",
         "is-relative-url": "^4.0.0",
         "lodash-es": "^4.17.21",
@@ -1026,6 +1027,12 @@
     "elasticemail": ["@elasticemail/elasticemail-client-ts-axios@github:ElasticEmail/elasticemail-ts-axios#22a640f", { "dependencies": { "axios": "^0.21.4" } }, "ElasticEmail-elasticemail-ts-axios-22a640f"],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.203", "", {}, "sha512-uz4i0vLhfm6dLZWbz/iH88KNDV+ivj5+2SA+utpgjKaj9Q0iDLuwk6Idhe9BTxciHudyx6IvTvijhkPvFGUQ0g=="],
+
+    "embla-carousel": ["embla-carousel@8.6.0", "", {}, "sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA=="],
+
+    "embla-carousel-reactive-utils": ["embla-carousel-reactive-utils@8.6.0", "", { "peerDependencies": { "embla-carousel": "8.6.0" } }, "sha512-fMVUDUEx0/uIEDM0Mz3dHznDhfX+znCCDCeIophYb1QGVM7YThSWX+wz11zlYwWFOr74b4QLGg0hrGPJeG2s4A=="],
+
+    "embla-carousel-svelte": ["embla-carousel-svelte@8.6.0", "", { "dependencies": { "embla-carousel": "8.6.0", "embla-carousel-reactive-utils": "8.6.0" }, "peerDependencies": { "svelte": "^3.49.0 || ^4.0.0 || ^5.0.0" } }, "sha512-ZDsKk8Sdv+AUTygMYcwZjfRd1DTh+JSUzxkOo8b9iKAkYjg+39mzbY/lwHsE3jXSpKxdKWS69hPSNuzlOGtR2Q=="],
 
     "emoji-regex": ["emoji-regex@10.4.0", "", {}, "sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw=="],
 

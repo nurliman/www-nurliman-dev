@@ -24,6 +24,7 @@
     "clsx": "^2.1.1",
     "copy-to-clipboard": "^3.3.3",
     "dedent": "^1.6.0",
+    "embla-carousel-svelte": "^8.6.0",
     "formsnap": "^2.0.1",
     "is-relative-url": "^4.0.0",
     "lodash-es": "^4.17.21",
