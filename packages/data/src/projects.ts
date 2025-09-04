@@ -73,7 +73,13 @@ export const projects: Project[] = [
       and detailed audit trail tracking. Utilized TypeScript, Drizzle ORM, tRPC, and Turbo
       monorepo structure for optimal performance and maintainability.
     `,
-    screenshotUrls: [],
+    screenshotUrls: [
+      "/assets/pelitatex-mobile-1.jpg",
+      "/assets/pelitatex-mobile-2.jpg",
+      "/assets/pelitatex-mobile-3.jpg",
+      "/assets/pelitatex-mobile-4.jpg",
+      "/assets/pelitatex-mobile-5.jpg",
+    ],
     category: "Mobile Development",
     technologies: [
       "React Native",
@@ -365,7 +371,11 @@ export const projects: Project[] = [
       The solution features content management capabilities, automated backup systems,
       and analytics integration for business intelligence and performance tracking.
     `,
-    screenshotUrls: [],
+    screenshotUrls: [
+      "/assets/getitprinted.com.au-1.png",
+      "/assets/getitprinted.com.au-2.png",
+      "/assets/getitprinted.com.au-3.png",
+    ],
     category: "Web Development",
     technologies: ["WordPress", "WPBakery", "cPanel", "PHP", "MySQL", "CSS3", "JavaScript"],
     repositoryUrl: "",
