@@ -200,6 +200,7 @@
                   bp.open?.({
                     items: document.querySelectorAll(`#${imageGalleryId} [data-project-image]`),
                     el: e.currentTarget!,
+                    scale: 0.9,
                   });
                 }}
               />
