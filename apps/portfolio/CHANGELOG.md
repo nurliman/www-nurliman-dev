@@ -1,5 +1,11 @@
 # @nurliman.dev/portfolio
 
+## 0.7.1
+
+### Patch Changes
+
+- c47de9a: feat: adjust image scaling in ProjectCard component
+
 ## 0.7.0
 
 ### Minor Changes
