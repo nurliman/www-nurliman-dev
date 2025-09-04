@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "bigger-picture/css";
   import ActivityIcon from "@lucide/svelte/icons/activity";
   import AlertTriangleIcon from "@lucide/svelte/icons/alert-triangle";
   import BarChart3Icon from "@lucide/svelte/icons/bar-chart-3";
@@ -30,8 +31,12 @@
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import * as Card from "$lib/components/ui/card";
+  import * as Carousel from "$lib/components/ui/carousel";
   import { cn } from "$lib/utils/shadcn";
+  import BiggerPicture, { type BiggerPictureInstance } from "bigger-picture/svelte";
   import snarkdown from "snarkdown";
+  import { onMount } from "svelte";
+  import ProjectImage from "./ProjectImage.svelte";
 
   type Props = {
     project: Project;
@@ -121,6 +126,16 @@
   };
 
   const CategoryIcon = getCategoryIcon(project.category);
+
+  const imageGalleryId = $props.id();
+
+  let bp: BiggerPictureInstance;
+
+  onMount(() => {
+    bp = BiggerPicture({
+      target: document.body,
+    });
+  });
 </script>
 
 <Card.Root
@@ -161,61 +176,64 @@
     </Card.Description>
   </Card.Header>
 
-  <Card.Content class="space-y-6 p-0 px-4 sm:space-y-8 sm:px-6 lg:px-8">
+  <Card.Content class="space-y-6 p-0 sm:space-y-8">
     <!-- Image Gallery -->
     {#if project.screenshotUrls?.length}
-      <div
-        class={[
-          "grid grid-cols-1 gap-3 sm:gap-4",
-          project.screenshotUrls.length >= 2 && "sm:grid-cols-2",
-          project.screenshotUrls.length >= 3 && "lg:grid-cols-3",
-        ]}
-      >
-        {#each project.screenshotUrls as screenshotUrl, imgIndex}
-          <div class="group relative">
-            <img
-              src={screenshotUrl}
-              alt="{project.title} screenshot {imgIndex + 1}"
+      <Carousel.Root opts={{ dragFree: true }}>
+        <Carousel.Content id={imageGalleryId} class="ml-0 pb-2">
+          {#each project.screenshotUrls as screenshotUrl, imgIndex}
+            <Carousel.Item
               class={[
-                "h-40 w-full sm:h-48",
-                "p-3 sm:p-6",
-                "shadow-neobrutalism border-2 border-black dark:border-zinc-700",
-                "bg-white dark:bg-zinc-800",
-                "object-contain object-center",
+                "min-w-0 basis-auto",
+                "pl-3 sm:pl-4",
+                "first:pl-4 sm:first:pl-6 lg:first:pl-8",
+                "last:pr-4 sm:last:pr-6 lg:last:pr-8",
               ]}
-              loading="lazy"
-              onerror={(e) => {
-                (e.currentTarget as HTMLImageElement).src = "/assets/undraw_images_of1m.svg";
-              }}
-            />
-          </div>
-        {/each}
-      </div>
+            >
+              <ProjectImage
+                src={screenshotUrl}
+                alt="{project.title} screenshot {imgIndex + 1}"
+                data-project-image
+                onclick={(e) => {
+                  if (!bp) return;
+                  e.preventDefault?.();
+                  bp.open?.({
+                    items: document.querySelectorAll(`#${imageGalleryId} [data-project-image]`),
+                    el: e.currentTarget!,
+                  });
+                }}
+              />
+            </Carousel.Item>
+          {/each}
+        </Carousel.Content>
+      </Carousel.Root>
     {/if}
 
     <!-- Detailed Description -->
-    <div
-      class={[
-        "border-2 border-black dark:border-zinc-700",
-        "bg-gray-100 dark:bg-zinc-800",
-        "p-4 sm:p-6",
-      ]}
-    >
-      <p
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div
         class={[
-          "text-sm sm:text-base",
-          "leading-relaxed font-medium",
-          "text-gray-800 dark:text-gray-200",
-          "[&_ul]:ml-[15px] [&_ul]:list-disc",
+          "border-2 border-black dark:border-zinc-700",
+          "bg-gray-100 dark:bg-zinc-800",
+          "p-4 sm:p-6",
         ]}
       >
-        {@html snarkdown(project.description)}
-      </p>
+        <p
+          class={[
+            "text-sm sm:text-base",
+            "leading-relaxed font-medium",
+            "text-gray-800 dark:text-gray-200",
+            "[&_ul]:ml-[15px] [&_ul]:list-disc",
+          ]}
+        >
+          {@html snarkdown(project.description)}
+        </p>
+      </div>
     </div>
 
     <!-- Tech Stack -->
     {#if project.technologies?.length}
-      <div class="space-y-3 sm:space-y-4">
+      <div class="space-y-3 px-4 sm:space-y-4 sm:px-6 lg:px-8">
         <div class="font-transducer-extended text-lg font-black sm:text-xl">TECH STACK</div>
         <div class="flex flex-wrap gap-2 sm:gap-3">
           {#each project.technologies as technology}
@@ -236,7 +254,7 @@
 
     <!-- Metrics -->
     {#if project.performanceMetrics?.length}
-      <div class="space-y-3 sm:space-y-4">
+      <div class="space-y-3 px-4 sm:space-y-4 sm:px-6 lg:px-8">
         <div class="font-transducer-extended text-lg font-black sm:text-xl">KEY METRICS</div>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {#each project.performanceMetrics as metric}
@@ -269,7 +287,7 @@
 
     <!-- Key Features -->
     {#if project.keyFeatures?.length}
-      <div class="space-y-3 sm:space-y-4">
+      <div class="space-y-3 px-4 sm:space-y-4 sm:px-6 lg:px-8">
         <div class="font-transducer-extended text-lg font-black sm:text-xl">KEY FEATURES</div>
         <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3">
           {#each project.keyFeatures as feature}

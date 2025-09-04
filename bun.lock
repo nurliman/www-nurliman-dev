@@ -29,6 +29,7 @@
         "@nurliman.dev/data": "workspace:*",
         "@nurliman.dev/emails": "workspace:*",
         "@t3-oss/env-core": "^0.13.8",
+        "bigger-picture": "^1.1.19",
         "bits-ui": "^2.9.4",
         "body-scroll-lock": "^4.0.0-beta.0",
         "clsx": "^2.1.1",
@@ -137,6 +138,9 @@
     "@nurliman.dev/portfolio",
     "lefthook",
   ],
+  "patchedDependencies": {
+    "bigger-picture@1.1.19": "patches/bigger-picture@1.1.19.patch",
+  },
   "packages": {
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
@@ -865,6 +869,8 @@
     "basic-ftp": ["basic-ftp@5.0.5", "", {}, "sha512-4Bcg1P8xhUuqcii/S0Z9wiHIrQVPMermM1any+MX5GeGD7faD3/msQUDGLol9wOcz4/jbg/WJnGqoJF6LiBdtg=="],
 
     "better-path-resolve": ["better-path-resolve@1.0.0", "", { "dependencies": { "is-windows": "^1.0.0" } }, "sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g=="],
+
+    "bigger-picture": ["bigger-picture@1.1.19", "", {}, "sha512-LhBPJ3z7YcNsK5lo/4i2KGbMqTMgpl7cI9If5F52VPKLcTUD5+dLr7m0G7np1yVuLlOWr28BK9yb/C8CBlKbOw=="],
 
     "binary-extensions": ["binary-extensions@2.3.0", "", {}, "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw=="],
 

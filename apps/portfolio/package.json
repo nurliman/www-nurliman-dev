@@ -19,6 +19,7 @@
     "@nurliman.dev/data": "workspace:*",
     "@nurliman.dev/emails": "workspace:*",
     "@t3-oss/env-core": "^0.13.8",
+    "bigger-picture": "^1.1.19",
     "bits-ui": "^2.9.4",
     "body-scroll-lock": "^4.0.0-beta.0",
     "clsx": "^2.1.1",
