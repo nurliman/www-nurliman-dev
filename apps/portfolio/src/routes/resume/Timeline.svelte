@@ -14,13 +14,13 @@
 <ul class="flex flex-col">
   {#each data as item (item.period + item.institution + item.title)}
     <li class={styles.timeline}>
-      <div class="font-transducer text-foreground mb-2 text-xl font-bold tracking-tight">
+      <div class="mb-2 font-transducer text-xl font-bold tracking-tight text-foreground">
         {item.title}
       </div>
-      <div class="text-foreground/90 mb-1.5 text-base font-medium">
+      <div class="mb-1.5 text-base font-medium text-foreground/90">
         {item.institution}
       </div>
-      <div class="text-muted-foreground mb-3 text-sm font-medium">
+      <div class="mb-3 text-sm font-medium text-muted-foreground">
         {item.period}
       </div>
       <div

@@ -72,7 +72,7 @@
 <div
   class={cn(
     "h-fit w-full p-6",
-    "shadow-neobrutalism border-2 border-black",
+    "border-2 border-black shadow-neobrutalism",
     "bg-white dark:border-zinc-800 dark:bg-zinc-950",
     className,
   )}

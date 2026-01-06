@@ -262,7 +262,7 @@
             {@const MetricIcon = getMetricIcon(metric.iconName)}
             <div
               class={[
-                "shadow-neobrutalism border-2 border-black bg-white",
+                "border-2 border-black bg-white shadow-neobrutalism",
                 "p-3 text-center sm:p-4",
                 "dark:border-zinc-700 dark:bg-zinc-800",
               ]}

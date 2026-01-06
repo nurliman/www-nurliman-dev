@@ -25,7 +25,7 @@
   <meta name="twitter:image:alt" content={PAGE_IMAGE_ALT} />
 </svelte:head>
 
-<main class="flex-center relative -top-4 flex-1 flex-col p-4 text-center">
+<main class="relative -top-4 flex-center flex-1 flex-col p-4 text-center">
   <h1 class="font-transducer-extended">
     <NeobrutalismBadge
       class={cn(

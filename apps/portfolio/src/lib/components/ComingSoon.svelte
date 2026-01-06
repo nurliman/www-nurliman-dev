@@ -21,7 +21,7 @@
 
 <!-- '+ 2' includes the header's 2px bottom border for correct alignment -->
 <div class="flex-center flex-1" style:min-height={`calc(100vh - ${HEADER_HEIGHT + 2}px)`}>
-  <span class="font-transducer-extended text-center text-3xl font-semibold md:text-4xl lg:text-5xl">
+  <span class="text-center font-transducer-extended text-3xl font-semibold md:text-4xl lg:text-5xl">
     Coming soon{dots}
   </span>
 </div>

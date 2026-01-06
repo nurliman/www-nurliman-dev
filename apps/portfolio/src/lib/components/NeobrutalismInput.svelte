@@ -88,7 +88,7 @@
   </div>
 
   {#if isError}
-    <div class="text-destructive mt-1.5 text-sm">
+    <div class="mt-1.5 text-sm text-destructive">
       {#each normalizedErrors as error}
         {error}{endsWith(error, ".") ? " " : ". "}
       {/each}

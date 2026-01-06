@@ -70,7 +70,7 @@
     ]}
   >
     <Marquee clone>
-      <div class="font-transducer-extended inline-flex text-[10px] font-bold">
+      <div class="inline-flex font-transducer-extended text-[10px] font-bold">
         <span class="uppercase">{personalInfo.name}</span>
         <span class="mx-3">&#8226;</span>
       </div>
@@ -147,7 +147,7 @@
     ]}
   >
     <Marquee clone>
-      <div class="font-transducer-extended inline-flex text-[10px] font-bold">
+      <div class="inline-flex font-transducer-extended text-[10px] font-bold">
         <span class="uppercase">{personalInfo.name}</span>
         <span class="mx-3">&#8226;</span>
       </div>

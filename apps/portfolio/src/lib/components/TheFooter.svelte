@@ -21,7 +21,7 @@
         <Button
           href={resolve("/")}
           variant="link"
-          class="font-racing-sans mb-4 !p-0 text-4xl font-bold text-white"
+          class="mb-4 !p-0 font-racing-sans text-4xl font-bold text-white"
         >
           nurliman.
         </Button>
@@ -45,7 +45,7 @@
                       rel="noreferrer"
                       aria-label={social.name}
                       class={[
-                        "group flex-center relative size-12",
+                        "group relative flex-center size-12",
                         "border border-white/10",
                         "bg-gradient-to-br from-white/5 to-white/0",
                         "transition-all duration-300",

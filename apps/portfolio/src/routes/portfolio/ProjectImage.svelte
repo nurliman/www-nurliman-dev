@@ -20,7 +20,7 @@
   class={[
     "relative inline-block overflow-hidden",
     "h-56 sm:h-64 md:h-72 lg:h-80",
-    isLoaded && "shadow-neobrutalism border-2 border-black dark:border-zinc-700",
+    isLoaded && "border-2 border-black shadow-neobrutalism dark:border-zinc-700",
     isLoaded && "bg-gray-100 dark:bg-gray-800",
     className,
   ]}

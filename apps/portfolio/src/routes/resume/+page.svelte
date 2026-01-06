@@ -83,7 +83,7 @@
           "md:flex-row md:items-center md:space-y-0 md:space-x-4",
         ]}
       >
-        <p class="text-muted-foreground text-sm">
+        <p class="text-sm text-muted-foreground">
           Download my resume for a detailed summary of my experience.
         </p>
         <NeobrutalismButton

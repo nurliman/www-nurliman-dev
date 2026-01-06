@@ -309,7 +309,7 @@
             </div>
           {/snippet}
         </Form.Control>
-        <Form.FieldErrors class="text-destructive text-sm font-normal" />
+        <Form.FieldErrors class="text-sm font-normal text-destructive" />
       </Form.Field>
 
       <NeobrutalismButton

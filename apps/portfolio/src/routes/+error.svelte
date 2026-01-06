@@ -41,7 +41,7 @@
   };
 </script>
 
-<main class="flex-center relative flex-1 flex-col overflow-hidden px-4 pt-16 pb-24 text-center">
+<main class="relative flex-center flex-1 flex-col overflow-hidden px-4 pt-16 pb-24 text-center">
   <!-- Error badge with status code -->
   <div class="relative z-10 mx-auto max-w-2xl space-y-8">
     <div>
@@ -82,14 +82,14 @@
         class={cn(
           "font-transducer-extended font-bold",
           "text-3xl sm:text-4xl md:text-5xl lg:text-6xl",
-          "from-foreground to-foreground bg-gradient-to-r via-teal-600",
+          "bg-gradient-to-r from-foreground via-teal-600 to-foreground",
           "bg-clip-text text-transparent",
         )}
       >
         {config.title}
       </h1>
 
-      <p class="text-muted-foreground mx-auto text-sm leading-relaxed sm:text-base">
+      <p class="mx-auto text-sm leading-relaxed text-muted-foreground sm:text-base">
         {config.description}
       </p>
     </div>

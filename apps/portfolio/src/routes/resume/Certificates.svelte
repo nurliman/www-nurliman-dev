@@ -27,7 +27,7 @@
     <li class="p-0">
       <Card.Root
         class={[
-          "!shadow-neobrutalism-sm min-h-28 flex-row gap-0 p-0",
+          "min-h-28 flex-row gap-0 p-0 !shadow-neobrutalism-sm",
           "overflow-hidden rounded-none border-2 border-black dark:border-zinc-800",
         ]}
       >

@@ -64,11 +64,11 @@
       onclick={() => changeSidebarOpened()}
     />
 
-    <div class="max-md:absolute-center flex-center md:py-2">
+    <div class="flex-center max-md:absolute-center md:py-2">
       <Button
         href={resolve("/")}
         variant="link"
-        class="font-racing-sans !p-0 text-[1.75rem] md:text-3xl"
+        class="!p-0 font-racing-sans text-[1.75rem] md:text-3xl"
         onclick={() => closeSidebar()}
       >
         nurliman.

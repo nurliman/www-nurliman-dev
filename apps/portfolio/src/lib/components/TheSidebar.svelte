@@ -56,7 +56,7 @@
   bind:this={sidebarElement}
   class={[
     "fixed z-40 flex w-screen flex-col md:hidden",
-    "bg-background text-foreground border-r border-black dark:border-zinc-800",
+    "border-r border-black bg-background text-foreground dark:border-zinc-800",
     "transition-all duration-300 ease-out will-change-transform",
     "overflow-auto sm:max-w-xs",
   ]}

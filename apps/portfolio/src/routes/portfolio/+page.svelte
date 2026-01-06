@@ -52,7 +52,7 @@
       {:else}
         <Card.Root
           class={[
-            "!shadow-neobrutalism rounded-none border-4 border-black",
+            "rounded-none border-4 border-black !shadow-neobrutalism",
             "py-12 sm:py-16 lg:py-20",
             "dark:border-zinc-800",
           ]}
@@ -113,7 +113,7 @@
     >
       <Card.Header class="px-4 sm:px-6 md:px-8">
         <Card.Title
-          class="font-transducer-extended text-center text-xl font-black sm:text-2xl md:text-3xl"
+          class="text-center font-transducer-extended text-xl font-black sm:text-2xl md:text-3xl"
         >
           READY TO COLLABORATE?
         </Card.Title>
