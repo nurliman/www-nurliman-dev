@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import TheHamburgerButton from "$lib/components/TheHamburgerButton.svelte";
   import TheSidebar from "$lib/components/TheSidebar.svelte";
@@ -65,7 +66,7 @@
 
     <div class="max-md:absolute-center flex-center md:py-2">
       <Button
-        href="/"
+        href={resolve("/")}
         variant="link"
         class="font-racing-sans !p-0 text-[1.75rem] md:text-3xl"
         onclick={() => closeSidebar()}

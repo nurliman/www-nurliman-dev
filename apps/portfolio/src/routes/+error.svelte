@@ -2,6 +2,7 @@
   import ArrowLeftIcon from "@lucide/svelte/icons/arrow-left";
   import HouseIcon from "@lucide/svelte/icons/house";
   import { browser } from "$app/environment";
+  import { resolve } from "$app/paths";
   import { page } from "$app/state";
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
@@ -97,7 +98,7 @@
     <div class="flex-center flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
       <NeobrutalismButton
         class="h-11 min-w-40 text-base font-semibold md:min-w-48"
-        href="/"
+        href={resolve("/")}
         variant="default"
       >
         <HouseIcon class="mr-2 size-8" strokeWidth={2.5} />

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { Button } from "$lib/components/ui/button";
   import * as Tooltip from "$lib/components/ui/tooltip";
   import { socials } from "$lib/data/socials";
@@ -18,7 +19,7 @@
       <!-- Top Section -->
       <div class="mb-12 text-center">
         <Button
-          href="/"
+          href={resolve("/")}
           variant="link"
           class="font-racing-sans mb-4 !p-0 text-4xl font-bold text-white"
         >

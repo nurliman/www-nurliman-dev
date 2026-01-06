@@ -1,5 +1,6 @@
 <script lang="ts">
   import { projects } from "@nurliman.dev/data";
+  import { resolve } from "$app/paths";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import * as Card from "$lib/components/ui/card";
   import ProjectCard from "./ProjectCard.svelte";
@@ -137,13 +138,13 @@
       >
         <NeobrutalismButton
           class="w-full py-3 text-sm font-black sm:py-4 sm:text-base md:h-11 lg:min-w-52"
-          href="/contact"
+          href={resolve("/contact")}
         >
           REACH OUT
         </NeobrutalismButton>
         <NeobrutalismButton
           class="w-full py-3 text-sm font-black sm:py-4 sm:text-base md:h-11 lg:min-w-52"
-          href="/resume"
+          href={resolve("/resume")}
           variant="neutral"
         >
           SEE MY EXPERIENCE

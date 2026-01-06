@@ -57,7 +57,7 @@
             </div>
             {#if cert.credential}
               <div class="text-xs font-medium text-zinc-700 dark:text-zinc-400">
-                {"Credential: "}
+                Credential:
                 <a
                   href={cert.credential.url}
                   target="_blank"

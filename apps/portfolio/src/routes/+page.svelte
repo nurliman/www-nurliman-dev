@@ -1,5 +1,6 @@
 <script lang="ts">
   import { personalInfo } from "@nurliman.dev/data";
+  import { resolve } from "$app/paths";
   import NeobrutalismBadge from "$lib/components/NeobrutalismBadge.svelte";
   import NeobrutalismButton from "$lib/components/NeobrutalismButton.svelte";
   import { cn } from "$lib/utils/shadcn";
@@ -59,11 +60,11 @@
   <div class="flex-center flex-row space-x-4 md:space-x-6">
     <NeobrutalismButton
       class="min-w-32 md:h-10 md:min-w-48 md:px-6 md:text-base lg:h-11"
-      href="/about-me">Explore</NeobrutalismButton
+      href={resolve("/about-me")}>Explore</NeobrutalismButton
     >
     <NeobrutalismButton
       class="min-w-32 md:h-10 md:min-w-48 md:px-6 md:text-base lg:h-11"
-      href="/contact"
+      href={resolve("/contact")}
       variant="neutral">Contact</NeobrutalismButton
     >
   </div>

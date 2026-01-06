@@ -29,7 +29,6 @@
     labelClass,
     label,
     errorMessage = [],
-    children,
     onfocus,
     value = $bindable(),
     id = $bindable(defaultId),
