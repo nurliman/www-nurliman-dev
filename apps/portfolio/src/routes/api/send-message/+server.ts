@@ -1,13 +1,8 @@
-import type { Config } from "@sveltejs/adapter-vercel";
 import { json, type RequestHandler } from "@sveltejs/kit";
 import { contactFormSchema } from "$lib/schemas";
 import * as z4 from "zod/v4/core";
 import { sendMessage } from "./sendMessage";
 import { verifyCaptcha } from "./verifyCaptcha";
-
-export const config: Config = {
-  runtime: "edge",
-};
 
 export const POST: RequestHandler = async ({ request }) => {
   let data: unknown;
