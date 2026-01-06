@@ -1,5 +1,15 @@
 # @nurliman.dev/portfolio
 
+## 0.7.2
+
+### Patch Changes
+
+- d75004b: refactor: remove edge runtime configuration from send-message API handler
+- 9e17990: update dependencies
+- Updated dependencies [9e17990]
+  - @nurliman.dev/emails@0.3.2
+  - @nurliman.dev/data@0.3.1
+
 ## 0.7.1
 
 ### Patch Changes
